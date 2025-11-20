@@ -1,0 +1,168 @@
+# EasyPanel Configuration - XCloud IPTV
+# Domínio: xcloudiptv.com.br
+
+app:
+  name: xcloud-iptv
+  type: nodejs
+  version: 18-alpine
+  
+# Source Configuration
+source:
+  type: git
+  git_url: ""  # Preencher com URL do repositório Git
+  git_branch: main
+  git_username: ""  # Opcional: se repo for privado
+  git_password: ""  # Opcional: token ou senha
+
+# Build Configuration
+build:
+  install_command: npm ci --only=production=false
+  build_command: npm run build
+  start_command: npm start
+  
+# Environment Variables
+environment:
+  - name: NODE_ENV
+    value: production
+  - name: PORT
+    value: "3000"
+  - name: NEXT_PUBLIC_SITE_URL
+    value: https://xcloudiptv.com.br
+  - name: NEXT_TELEMETRY_DISABLED
+    value: "1"
+  - name: NEXT_OPTIMIZE_FONTS
+    value: "true"
+  - name: NEXT_OPTIMIZE_IMAGES
+    value: "true"
+
+# Resource Limits
+resources:
+  memory_limit: 1GB
+  memory_reservation: 512MB
+  cpu_limit: 0.5
+  cpu_reservation: 0.25
+  storage: 5GB
+
+# Port Configuration
+ports:
+  - internal: 3000
+    external: auto  # EasyPanel assigna automaticamente
+    protocol: HTTP
+
+# Health Check
+health_check:
+  enabled: true
+  path: /api/health
+  interval: 30
+  timeout: 10
+  retries: 3
+  start_period: 60
+
+# Auto-scaling (opcional)
+autoscaling:
+  enabled: false
+  min_replicas: 1
+  max_replicas: 3
+  target_cpu_utilization: 70
+  target_memory_utilization: 80
+
+# Domains and SSL
+domains:
+  - name: xcloudiptv.com.br
+    ssl: true
+    redirect_www: true
+    force_https: true
+  - name: www.xcloudiptv.com.br
+    ssl: true
+    redirect_root: true
+    force_https: true
+
+# Volumes (opcional - para persistência)
+volumes:
+  - name: logs
+    path: /app/logs
+    size: 1GB
+  - name: uploads
+    path: /app/public/uploads
+    size: 2GB
+
+# Backup Configuration
+backup:
+  enabled: true
+  schedule: "0 3 * * *"  # Daily 3AM
+  retention_days: 7
+  include_volumes: true
+
+# Monitoring
+monitoring:
+  enabled: true
+  metrics:
+    - cpu_usage
+    - memory_usage
+    - disk_usage
+    - network_io
+  alerts:
+    - type: cpu
+      threshold: 80
+      duration: 5m
+    - type: memory
+      threshold: 85
+      duration: 5m
+
+# Security
+security:
+  read_only_root_filesystem: false
+  drop_capabilities:
+    - ALL
+  add_capabilities: []
+  run_as_non_root: true
+  run_as_user: 1000
+  run_as_group: 1000
+
+# Network
+network:
+  mode: bridge
+  aliases:
+    - xcloud-iptv
+  
+# Environment specific (production)
+deployment:
+  strategy: rolling
+  max_surge: 1
+  max_unavailable: 0
+  timeout: 300
+  
+# Pre/post deployment hooks
+hooks:
+  pre_deployment: |
+    echo "Iniciando deploy do XCloud IPTV..."
+    # Limpar cache antigo
+    rm -rf .next/cache
+    
+  post_deployment: |
+    echo "Deploy concluído! Verificando health check..."
+    sleep 10
+    curl -f http://localhost:3000/api/health || exit 1
+    echo "XCloud IPTV está rodando perfeitamente!"
+
+# Labels for organization
+labels:
+  project: xcloud-iptv
+  environment: production
+  domain: xcloudiptv.com.br
+  maintainer: admin
+  
+# Notes
+notes: |
+  Configuração otimizada para XCloud IPTV
+  - Next.js 14 com App Router
+  - TypeScript habilitado
+  - Tailwind CSS para estilos
+  - Webhook integration configurado
+  - SEO otimizado
+  - Performance otimizada (Core Web Vitals)
+  
+  URLs importantes:
+  - Site: https://xcloudiptv.com.br
+  - Health Check: https://xcloudiptv.com.br/api/health
+  - Termos: https://xcloudiptv.com.br/termos-de-uso

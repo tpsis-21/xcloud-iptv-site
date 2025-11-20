@@ -1,0 +1,365 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { CheckCircle2, Star, Zap, ShieldCheck, CreditCard, Clock, Users, Smartphone, Tv, Download } from 'lucide-react'
+import { MetaTags } from '@/components/seo/MetaTags'
+import { JsonLD } from '@/components/seo/JsonLD'
+import { SCHEMA_TEMPLATES } from '@/config/schemas'
+import { EXTERNAL_LINKS, createInternalLink } from '@/config/links'
+import { SEO_CONFIG } from '@/config/seo'
+import { Breadcrumb } from '@/components/ui/breadcrumb'
+import { XCloudPlanProductSchema } from '@/components/schemas/ProductSchema'
+import { ReviewSchemaWithProtections, ReviewDisplay, generateSampleReviews } from '@/components/schemas/ReviewSchema'
+
+export const metadata: Metadata = {
+  title: 'Planos XCloud IPTV | Assine XCloud IPTV - Mensal R$ 30, Trimestral R$ 81, Semestral R$ 153, Anual R$ 288',
+  description: 'Planos XCloud IPTV: assine XCloud IPTV mensal R$ 30, XCloud IPTV trimestral R$ 81, XCloud IPTV semestral R$ 153, XCloud IPTV anual R$ 288. Teste grátis XCloud IPTV disponível.',
+  keywords: 'planos xcloud iptv, assinar xcloud iptv, xcloud iptv mensal, xcloud iptv trimestral, xcloud iptv semestral, xcloud iptv anual, xcloud iptv preços',
+  openGraph: {
+    title: 'Planos XCloud IPTV - Assine XCloud IPTV com Preços Incríveis',
+    description: 'Planos XCloud IPTV: assine XCloud IPTV mensal R$ 30, trimestral R$ 81, semestral R$ 153, anual R$ 288. Teste grátis XCloud IPTV.'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Planos XCloud IPTV | Assine XCloud IPTV - Mensal R$ 30',
+    description: 'Planos XCloud IPTV: assine XCloud IPTV mensal R$ 30, trimestral R$ 81, semestral R$ 153, anual R$ 288. Teste grátis XCloud IPTV.'
+  },
+  alternates: {
+    canonical: 'https://xcloudtv.com.br/planos-xcloud-iptv'
+  }
+}
+
+export default function Page() {
+  // Usar links centralizados do config/links.ts
+  const planos = [
+    { 
+      meses: 1, 
+      preco: 30, 
+      link: EXTERNAL_LINKS.payments.mensal, // ✅ URL centralizada
+      popular: false,
+      titulo: 'Plano XCloud IPTV Mensal',
+      descricao: 'Plano XCloud IPTV mensal R$ 30 - Assine XCloud IPTV mensal ideal para começar',
+      economia: '0%',
+      precoPorMes: 30
+    },
+    { 
+      meses: 3, 
+      preco: 81, 
+      link: EXTERNAL_LINKS.payments.trimestral, // ✅ URL centralizada
+      popular: true,
+      titulo: 'Plano XCloud IPTV Trimestral',
+      descricao: 'Plano XCloud IPTV trimestral R$ 81 - Assine XCloud IPTV trimestral e economize 10%',
+      economia: '10%',
+      precoPorMes: 27
+    },
+    { 
+      meses: 6, 
+      preco: 153, 
+      link: EXTERNAL_LINKS.payments.semestral, // ✅ URL centralizada
+      popular: false,
+      titulo: 'Plano XCloud IPTV Semestral',
+      descricao: 'Plano XCloud IPTV semestral R$ 153 - Assine XCloud IPTV semestral e economize 15%',
+      economia: '15%',
+      precoPorMes: 25.50
+    },
+    { 
+      meses: 12, 
+      preco: 288, 
+      link: EXTERNAL_LINKS.payments.anual, // ✅ URL centralizada
+      popular: false,
+      titulo: 'Plano XCloud IPTV Anual',
+      descricao: 'Plano XCloud IPTV anual R$ 288 - Assine XCloud IPTV anual e economize 20%',
+      economia: '20%',
+      precoPorMes: 24
+    }
+  ]
+
+  // Criar link interno contextual para teste grátis
+  const testeGratisLink = createInternalLink('/teste-gratis-xcloud-iptv', 'Teste Grátis XCloud IPTV');
+
+  // Schema JSON-LD para página de planos
+  const plansSchema = SCHEMA_TEMPLATES.breadcrumbList([
+    { name: 'Home', url: '/' },
+    { name: 'Planos XCloud IPTV', url: '/planos-xcloud-iptv' }
+  ]);
+
+  // Features comuns dos planos
+  const planFeatures = [
+    'Milhares de conteúdos',
+    '1 Conexão simultânea', 
+    'Conteúdos variados',
+    'Suporte via email',
+    'Ativação imediata'
+  ];
+
+  // Gerar reviews de exemplo (em produção, vir do backend)
+  const sampleReviews = generateSampleReviews('XCloud IPTV');
+
+  return (
+    <>
+      {/* Meta tags otimizadas */}
+      <MetaTags
+        title="Planos XCloud IPTV"
+        description="Planos XCloud IPTV: Assinaturas a partir de R$ 30/mês. Assine XCloud IPTV mensal, trimestral R$ 81, semestral R$ 153 e anual R$ 288. Teste grátis disponível."
+        canonical="/planos-xcloud-iptv"
+        keywords={['planos xcloud iptv', 'assinar xcloud iptv', 'preços xcloud']}
+      />
+      
+      {/* Schema JSON-LD */}
+      <JsonLD schema={plansSchema} />
+
+      {/* Product schemas para cada plano */}
+      {planos.map((plano) => (
+        <XCloudPlanProductSchema
+          key={plano.meses}
+          planName={plano.meses === 1 ? 'Mensal' : plano.meses === 3 ? 'Trimestral' : plano.meses === 6 ? 'Semestral' : 'Anual'}
+          price={plano.preco.toString()}
+          period={`${plano.meses} meses`}
+          features={planFeatures}
+        />
+      ))}
+
+      {/* Review schema com proteções */}
+      <ReviewSchemaWithProtections
+        reviews={sampleReviews}
+        productName="XCloud IPTV"
+        productSku="XCLOUD-IPTV-SERVICE"
+      />
+
+      <div className="relative min-h-screen">
+        {/* Breadcrumb */}
+        <div className="pt-6 px-6 lg:px-8">
+          <Breadcrumb items={[{ label: 'Planos XCloud IPTV' }]} />
+        </div>
+        
+        {/* Hero Section */}
+        <section className="relative py-20 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+          <div className="absolute inset-0 z-0">
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-green-900/10 via-transparent to-green-900/5"></div>
+            <div className="absolute top-1/3 left-1/4 w-56 h-56 bg-green-500/5 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-1/4 right-1/3 w-40 h-40 bg-green-400/6 rounded-full blur-2xl"></div>
+          </div>
+
+          <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-black text-gradient-brand mb-6">
+                Planos XCloud IPTV | Assine XCloud IPTV - Mensal R$ 30
+              </h1>
+              <p className="text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
+                Assine XCloud IPTV com planos acessíveis: XCloud IPTV mensal R$ 30, XCloud IPTV trimestral R$ 81, XCloud IPTV semestral R$ 153, XCloud IPTV anual R$ 288. Todos os planos XCloud IPTV incluem teste grátis.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-400">
+                <div className="flex items-center space-x-2">
+                  <CheckCircle2 className="h-4 w-4 text-green-500" />
+                  <span>Teste grátis disponível</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <CheckCircle2 className="h-4 w-4 text-green-500" />
+                  <span>Cancelamento a qualquer momento</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <CheckCircle2 className="h-4 w-4 text-green-500" />
+                  <span>Suporte via email</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Planos */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+              {planos.map((plano) => (
+                <div key={plano.meses} className={`relative group ${plano.popular ? 'lg:scale-110' : ''}`}>
+                  {plano.popular && (
+                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
+                      <Badge className="gradient-brand text-white px-4 py-2 font-bold">
+                        <Star className="h-4 w-4 mr-1" />
+                        MAIS POPULAR
+                      </Badge>
+                    </div>
+                  )}
+                  
+                  <div className={`glass-card rounded-2xl p-8 h-full transition-all duration-300 group-hover:scale-105 ${
+                    plano.popular ? 'border-green-500/50 shadow-2xl shadow-green-500/20' : 'border-white/10'
+                  }`}>
+                    <div className="text-center space-y-6">
+                      {/* Header do plano */}
+                      <div>
+                        <h3 className="text-xl font-bold text-white mb-2">
+                          {plano.meses === 1 ? 'Plano Mensal XCloud IPTV' : plano.meses === 3 ? 'Plano Trimestral XCloud IPTV' : plano.meses === 6 ? 'Plano Semestral XCloud IPTV' : 'Plano Anual XCloud IPTV'}
+                        </h3>
+                        <p className="text-gray-400 text-sm mb-4">
+                          {plano.descricao}
+                        </p>
+                        
+                        <div className="space-y-2">
+                          <div className="text-4xl font-bold text-gradient-brand">
+                            R$ {plano.preco}
+                          </div>
+                          <div className="text-gray-400">
+                            {plano.meses === 1 ? 'Mensal' : `${plano.meses} meses`}
+                          </div>
+                          <div className="text-sm text-green-500 font-semibold">
+                            Economia de {plano.economia}
+                          </div>
+                          <div className="text-xs text-gray-500">
+                            R$ {plano.precoPorMes.toFixed(2)}/mês
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Benefícios */}
+                      <div className="space-y-3 text-left">
+                        <div className="flex items-center space-x-2 text-gray-300">
+                          <CheckCircle2 className="h-4 w-4 text-green-500" />
+                          <span>Milhares de conteúdos</span>
+                        </div>
+                        <div className="flex items-center space-x-2 text-gray-300">
+                          <CheckCircle2 className="h-4 w-4 text-green-500" />
+                          <span>1 Conexão simultânea</span>
+                        </div>
+                        <div className="flex items-center space-x-2 text-gray-300">
+                          <CheckCircle2 className="h-4 w-4 text-green-500" />
+                          <span>Conteúdos Variados</span>
+                        </div>
+                        <div className="flex items-center space-x-2 text-gray-300">
+                          <CheckCircle2 className="h-4 w-4 text-green-500" />
+                          <span>Suporte via email</span>
+                        </div>
+                        <div className="flex items-center space-x-2 text-gray-300">
+                          <CheckCircle2 className="h-4 w-4 text-green-500" />
+                          <span>Ativação imediata</span>
+                        </div>
+                      </div>
+                      
+                      {/* Botão CTA com link centralizado */}
+                      <Button className={`w-full py-4 text-lg font-semibold rounded-xl transition-all duration-300 ${
+                        plano.popular 
+                          ? 'gradient-brand text-white shadow-lg hover:shadow-xl' 
+                          : 'border-green-500/50 text-green-500 hover:bg-green-500/10'
+                      }`}>
+                        <a href={plano.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center space-x-2">
+                          <CreditCard className="h-5 w-5" />
+                          <span>Assinar XCloud IPTV</span>
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA para teste grátis com link contextual */}
+            <div className="text-center mt-16">
+              <h3 className="text-2xl font-bold text-white mb-4">Ainda Não Assinou XCloud IPTV?</h3>
+              <p className="text-gray-400 mb-4">Ainda não tem certeza?</p>
+              <Link href={testeGratisLink.href}>
+                <Button 
+                  variant="outline" 
+                  className="border-green-500/50 text-green-500 hover:bg-green-500/10 hover:text-green-400 px-8 py-3 text-lg font-semibold rounded-xl transition-all duration-300"
+                  aria-label={testeGratisLink.text}
+                >
+                  <Clock className="h-5 w-5 mr-2" />
+                  {testeGratisLink.text}
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Seção de Benefícios */}
+        <section className="py-20 relative bg-gray-900/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gradient-brand mb-4">
+                Por Que Nos Escolher? Experimente Grátis
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Descubra os benefícios exclusivos que nossa plataforma oferece
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="glass-card rounded-xl p-8 text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <ShieldCheck className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">Estabilidade Garantida</h3>
+                <p className="text-gray-400">
+                  Servidores de alta performance com 99% de uptime garantido. Streaming sem travamentos nem buffering.
+                </p>
+              </div>
+              
+              <div className="glass-card rounded-xl p-8 text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Users className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">Suporte Especializado</h3>
+                <p className="text-gray-400">
+                  Time de suporte treinado e pronto para ajudar. Resposta rápida e eficiente via email.
+                </p>
+              </div>
+              
+              <div className="glass-card rounded-xl p-8 text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Zap className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">Ativação Imediata</h3>
+                <p className="text-gray-400">
+                  Assinatura ativada em até 5 minutos após confirmação do pagamento. Sem espera, sem burocracia.
+                </p>
+              </div>
+              
+              <div className="glass-card rounded-xl p-8 text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Smartphone className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">Multi-dispositivos</h3>
+                <p className="text-gray-400">
+                  Assista em Android, iOS, Windows, Smart TV, Fire Stick e muito mais. 
+                </p>
+              </div>
+              
+              <div className="glass-card rounded-xl p-8 text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Tv className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">Milhares de Conteúdos</h3>
+                <p className="text-gray-400">
+                  Acesso completo a filmes, séries, documentários e muito mais. Conteúdo atualizado regularmente.
+                </p>
+              </div>
+              
+              <div className="glass-card rounded-xl p-8 text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Download className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">Download Aplicativo</h3>
+                <p className="text-gray-400">
+                  Baixe nosso aplicativo e assista onde quiser. Disponível para diversos dispositivos e sistemas operacionais.
+                </p>
+              </div>
+            </div>
+
+            {/* CTA Final */}
+            <div className="text-center mt-12">
+              <Link href={testeGratisLink.href}>
+                <Button 
+                  size="lg" 
+                  className="gradient-brand text-white px-8 py-4 text-lg font-semibold rounded-xl"
+                  aria-label="Experimente XCloud IPTV grátis"
+                >
+                  <Clock className="h-5 w-5 mr-2" />
+                  Experimente XCloud IPTV Grátis
+                </Button>
+              </Link>
+            </div>
+
+            {/* Seção de Reviews com Display Visual */}
+            <ReviewDisplay reviews={sampleReviews} productName="XCloud IPTV" />
+          </div>
+        </section>
+      </div>
+    </>
+  )
+}

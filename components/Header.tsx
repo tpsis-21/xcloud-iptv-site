@@ -1,0 +1,129 @@
+"use client"
+import Link from 'next/link'
+import Image from 'next/image'
+import logoImg from '../app/assets/images/logo_app_xcloudtv.png'
+import { useState } from 'react'
+import { Menu, X, Rocket } from 'lucide-react'
+
+export default function Header() {
+  const [open, setOpen] = useState(false)
+  
+  return (
+    <header className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-gray-800">
+      <nav className="page-container flex h-20 items-center justify-between">
+        <Link href="/" aria-label="Página inicial XCloud IPTV" className="flex items-center gap-3">
+          <Image 
+            src={logoImg} 
+            alt="Logo XCloud IPTV" 
+            priority 
+            className="h-10 w-auto" 
+          />
+          <div className="hidden sm:block">
+            <div className="text-xl font-bold text-gradient-brand">XCloud IPTV</div>
+          </div>
+        </Link>
+        
+        <div className="hidden md:flex items-center gap-8 text-sm font-medium">
+          <Link href="/teste-gratis-xcloud-iptv" className="text-gray-300 hover:text-brand-light transition-colors relative group">
+            Teste Grátis
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand group-hover:w-full transition-all duration-300"></span>
+          </Link>
+          <Link href="/planos-xcloud-iptv" className="text-gray-300 hover:text-brand-light transition-colors relative group">
+            Planos
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand group-hover:w-full transition-all duration-300"></span>
+          </Link>
+          <Link href="/sobre-nos" className="text-gray-300 hover:text-brand-light transition-colors relative group">
+            Sobre Nós
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand group-hover:w-full transition-all duration-300"></span>
+          </Link>
+          <Link href="/contato" className="text-gray-300 hover:text-brand-light transition-colors relative group">
+            Contato
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand group-hover:w-full transition-all duration-300"></span>
+          </Link>
+          <Link 
+            href="/teste-gratis" 
+            className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 rounded-lg font-semibold hover:scale-105 transition-all duration-300 shadow-lg"
+          >
+            <span className="flex items-center space-x-2">
+              <Rocket className="h-4 w-4" />
+              <span>Teste Grátis</span>
+            </span>
+          </Link>
+        </div>
+        
+        <button 
+          aria-label="Abrir menu" 
+          className="md:hidden inline-flex h-12 w-12 items-center justify-center rounded-lg border border-gray-700 hover:border-brand hover:text-brand-light transition-all duration-300"
+          onClick={() => setOpen(true)}
+        >
+          <Menu className="h-6 w-6" />
+        </button>
+      </nav>
+      
+      {/* Menu Mobile */}
+      {open && (
+        <div className="fixed inset-0 z-50">
+          <div className="absolute inset-0 bg-black/90 backdrop-blur-xl" onClick={() => setOpen(false)} />
+          <div className="absolute right-0 top-0 h-full w-3/4 max-w-sm bg-gray-900/95 backdrop-blur-xl border-l border-gray-800 shadow-2xl">
+            <div className="p-6">
+              <button 
+                aria-label="Fechar menu" 
+                className="absolute right-6 top-6 inline-flex h-12 w-12 items-center justify-center rounded-lg border border-gray-700 hover:border-brand hover:text-brand-light transition-all duration-300"
+                onClick={() => setOpen(false)}
+              >
+                <X className="h-6 w-6" />
+              </button>
+              
+              <div className="mt-16 flex flex-col gap-6 text-lg">
+                <Link 
+                  href="/teste-gratis-xcloud-iptv" 
+                  onClick={() => setOpen(false)}
+                  className="flex items-center space-x-3 text-gray-300 hover:text-brand-light transition-colors p-4 rounded-lg hover:bg-gray-800/50"
+                >
+                  <Rocket className="h-5 w-5" />
+                  <span>Teste Grátis</span>
+                </Link>
+                <Link 
+                  href="/planos-xcloud-iptv" 
+                  onClick={() => setOpen(false)}
+                  className="text-gray-300 hover:text-brand-light transition-colors p-4 rounded-lg hover:bg-gray-800/50"
+                >
+                  Planos
+                </Link>
+                <Link 
+                  href="/sobre-nos" 
+                  onClick={() => setOpen(false)}
+                  className="text-gray-300 hover:text-cyan-400 transition-colors p-4 rounded-lg hover:bg-gray-800/50"
+                >
+                  Sobre Nós
+                </Link>
+                <Link 
+                  href="/contato" 
+                  onClick={() => setOpen(false)}
+                  className="text-gray-300 hover:text-cyan-400 transition-colors p-4 rounded-lg hover:bg-gray-800/50"
+                >
+                  Contato
+                </Link>
+              </div>
+              
+              <div className="mt-12 p-4 glass-card rounded-xl">
+                <div className="text-center space-y-3">
+                  <Rocket className="h-8 w-8 text-brand mx-auto" />
+                  <div className="text-white font-semibold">Pronto para começar?</div>
+                  <div className="text-gray-400 text-sm">Teste grátis sem compromisso</div>
+                  <Link 
+                    href="/teste-gratis-xcloud-iptv"
+                    onClick={() => setOpen(false)}
+                    className="block w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white py-3 rounded-lg font-semibold text-center"
+                  >
+                    Ativar Teste Grátis
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </header>
+  )
+}
