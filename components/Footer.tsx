@@ -51,6 +51,7 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-white">Links Rápidos</h3>
             <nav className="space-y-2">
+<<<<<<< HEAD
               <Link href="/" className="block text-gray-300 hover:text-green-400 transition-colors text-sm">
                 Home
               </Link>
@@ -67,6 +68,24 @@ export default function Footer() {
                 Sobre Nós
               </Link>
               <Link href="/contato" className="block text-gray-300 hover:text-green-400 transition-colors text-sm">
+=======
+              <Link href="/" className="block text-gray-300 hover:text-green-500 transition-colors text-sm underline hover:no-underline">
+                Home
+              </Link>
+              <Link href="/planos" className="block text-gray-300 hover:text-green-500 transition-colors text-sm underline hover:no-underline">
+                Planos
+              </Link>
+              <Link href="/teste-gratis" className="block text-gray-300 hover:text-green-500 transition-colors text-sm underline hover:no-underline">
+                Teste Grátis
+              </Link>
+              <Link href="/download" className="block text-gray-300 hover:text-green-500 transition-colors text-sm underline hover:no-underline">
+                Download
+              </Link>
+              <Link href="/sobre-nos" className="block text-gray-300 hover:text-green-500 transition-colors text-sm underline hover:no-underline">
+                Sobre Nós
+              </Link>
+              <Link href="/contato" className="block text-gray-300 hover:text-green-500 transition-colors text-sm underline hover:no-underline">
+>>>>>>> fec9a743a5d2cf3827dada20076ed66804b5d271
                 Contato
               </Link>
             </nav>
@@ -101,7 +120,11 @@ export default function Footer() {
             <div className="space-y-3">
               <Link 
                 href="/contato" 
+<<<<<<< HEAD
                 className="flex items-center space-x-2 text-gray-300 hover:text-green-400 transition-colors text-sm"
+=======
+                className="flex items-center space-x-2 text-gray-300 hover:text-green-500 transition-colors text-sm underline hover:no-underline"
+>>>>>>> fec9a743a5d2cf3827dada20076ed66804b5d271
               >
                 <Mail className="h-4 w-4" />
                 <span>Email: suporte@xcloudtv.com.br</span>

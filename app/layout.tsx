@@ -5,6 +5,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { hexToHslComponents } from '@/lib/color'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' })
 
@@ -50,6 +51,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR" style={styleVars} suppressHydrationWarning>
       <body className={inter.className}>
+        <GoogleAnalytics />
         <Header />
         <main className="bg-black text-white">{children}</main>
         <Footer />
