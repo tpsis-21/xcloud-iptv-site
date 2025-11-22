@@ -64,7 +64,7 @@ export default function Header() {
       {open && (
         <div className="fixed inset-0 z-50">
           <div className="absolute inset-0 bg-black/90 backdrop-blur-xl" onClick={() => setOpen(false)} />
-          <div className="absolute right-0 top-0 h-full w-3/4 max-w-sm bg-gray-900/95 backdrop-blur-xl border-l border-gray-800 shadow-2xl">
+          <div className="absolute right-0 top-0 h-full w-3/4 max-w-sm bg-gray-900/95 backdrop-blur-xl border-l border-gray-800 shadow-2xl overflow-y-auto">
             <div className="p-6">
               <button 
                 aria-label="Fechar menu" 
@@ -74,11 +74,11 @@ export default function Header() {
                 <X className="h-6 w-6" />
               </button>
               
-              <div className="mt-16 flex flex-col gap-6 text-lg">
+              <div className="mt-16 flex flex-col gap-4 text-lg">
                 <Link 
                   href="/teste-gratis-xcloud-iptv" 
                   onClick={() => setOpen(false)}
-                  className="flex items-center space-x-3 text-gray-300 hover:text-brand-light transition-colors p-4 rounded-lg hover:bg-gray-800/50"
+                  className="flex items-center space-x-3 text-gray-300 hover:text-brand-light transition-colors p-3 rounded-lg hover:bg-gray-800/50 min-h-[44px]"
                 >
                   <Rocket className="h-5 w-5" />
                   <span>Teste Grátis</span>
@@ -86,21 +86,21 @@ export default function Header() {
                 <Link 
                   href="/planos-xcloud-iptv" 
                   onClick={() => setOpen(false)}
-                  className="text-gray-300 hover:text-brand-light transition-colors p-4 rounded-lg hover:bg-gray-800/50"
+                  className="text-gray-300 hover:text-brand-light transition-colors p-3 rounded-lg hover:bg-gray-800/50 min-h-[44px]"
                 >
                   Planos
                 </Link>
                 <Link 
                   href="/sobre-nos" 
                   onClick={() => setOpen(false)}
-                  className="text-gray-300 hover:text-cyan-400 transition-colors p-4 rounded-lg hover:bg-gray-800/50"
+                  className="text-gray-300 hover:text-cyan-400 transition-colors p-3 rounded-lg hover:bg-gray-800/50 min-h-[44px]"
                 >
                   Sobre Nós
                 </Link>
                 <Link 
                   href="/contato" 
                   onClick={() => setOpen(false)}
-                  className="text-gray-300 hover:text-cyan-400 transition-colors p-4 rounded-lg hover:bg-gray-800/50"
+                  className="text-gray-300 hover:text-cyan-400 transition-colors p-3 rounded-lg hover:bg-gray-800/50 min-h-[44px]"
                 >
                   Contato
                 </Link>

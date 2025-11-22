@@ -145,7 +145,7 @@ export default function Page() {
               {/* Headline Principal - Layout Exato */}
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <h1 className="text-5xl lg:text-6xl xl:text-7xl font-black leading-tight bg-gradient-to-r from-green-300 via-green-400 to-green-500 bg-clip-text text-transparent drop-shadow-2xl sm:whitespace-nowrap">
+                  <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight bg-gradient-to-r from-green-300 via-green-400 to-green-500 bg-clip-text text-transparent drop-shadow-2xl sm:whitespace-nowrap">
                   XCloud IPTV
                   </h1>
                 </div>
@@ -174,10 +174,10 @@ export default function Page() {
               </div>
 
               {/* CTAs - Estratégia de Conversão Otimizada */}
-              <div className="flex flex-row gap-6">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-6">
                 <div className="flex flex-col items-center gap-3">
-                  <Button asChild className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-10 py-6 text-xl font-bold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 min-h-[48px] min-w-[48px]">
-                    <Link href={createInternalLink('/planos-xcloud-iptv', 'Planos XCloud IPTV')} className="flex items-center space-x-3 w-full h-full">
+                  <Button asChild className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-4 py-3 sm:px-6 sm:py-4 md:px-8 md:py-5 text-base sm:text-lg font-bold rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 min-h-[44px] min-w-[44px]">
+                    <Link href={createInternalLink('/planos-xcloud-iptv', 'Planos XCloud IPTV')} className="flex items-center space-x-3 w-full h-full justify-center">
                       <Crown className="h-6 w-6" />
                       <span>Ver Planos XCloud</span>
                     </Link>
@@ -185,8 +185,8 @@ export default function Page() {
                   <span className="text-xs text-gray-300">Planos a partir de R$ 30/mês</span>
                 </div>
                 <div className="flex flex-col items-center gap-3">
-                  <Button asChild variant="outline" className="border-2 border-green-500 text-green-500 hover:bg-green-500/10 hover:text-green-400 px-10 py-6 text-xl font-bold rounded-2xl transition-all duration-300 min-h-[48px] min-w-[48px]">
-                    <Link href={createInternalLink('/teste-gratis-xcloud-iptv', 'Teste Grátis XCloud IPTV')} className="flex items-center space-x-3 w-full h-full">
+                  <Button asChild variant="outline" className="border-2 border-green-500 text-green-500 hover:bg-green-500/10 hover:text-green-400 px-4 py-3 sm:px-6 sm:py-4 md:px-8 md:py-5 text-base sm:text-lg font-bold rounded-xl sm:rounded-2xl transition-all duration-300 min-h-[44px] min-w-[44px]">
+                    <Link href={createInternalLink('/teste-gratis-xcloud-iptv', 'Teste Grátis XCloud IPTV')} className="flex items-center space-x-3 w-full h-full justify-center">
                       <Rocket className="h-6 w-6" />
                       <span>Teste Grátis</span>
                     </Link>
