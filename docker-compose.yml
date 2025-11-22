@@ -1,0 +1,35 @@
+# Docker Compose para XCloud IPTV - EasyPanel
+version: '3.8'
+
+services:
+  xcloud-iptv:
+    build: .
+    container_name: xcloud-iptv-site
+    restart: unless-stopped
+    ports:
+      - "${PORT:-3010}:3010"  # Porta configurável via variável
+    environment:
+      - NODE_ENV=production
+      - PORT=3010
+      - NEXT_PUBLIC_SITE_URL=https://xcloudiptv.com.br
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - xcloud-network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.xcloud-iptv.rule=Host(`xcloudiptv.com.br`, `www.xcloudiptv.com.br`)"
+      - "traefik.http.routers.xcloud-iptv.tls=true"
+      - "traefik.http.routers.xcloud-iptv.tls.certresolver=letsencrypt"
+      - "traefik.http.services.xcloud-iptv.loadbalancer.server.port=3010"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3010/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  xcloud-network:
+    driver: bridge
+    external: true
