@@ -1,20 +1,24 @@
-# CONFIGURAÇÃO EXTREMA - FORÇAR REBUILD COMPLETO
+# NIXPACKS CACHE NOVO - VERSÃO FINAL
+# Cache completamente novo para forçar rebuild
 
 [phases.setup]
 nixpkgsArchive = 'ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7'
 
 [phases.install]
 cmds = [
-  'pwd && ls -la',
-  'rm -rf node_modules .next package-lock.json',
-  'npm install --verbose'
+  'echo "🆕 CACHE NOVO - REBUILD FORÇADO $(date +%s)"',
+  'npm config set cache /tmp/cache-novo-$(date +%s)',
+  'npm install --no-package-lock --verbose',
+  'echo "✅ Cache novo criado"'
 ]
 
 [phases.build]
 cmds = [
-  'pwd && ls -la components/ui/',
-  'ls -la app/contato/',
-  'npm run build --verbose'
+  'echo "🔨 BUILD COM CACHE NOVO $(date +%s)"',
+  'find components/ui -name "*.tsx" | head -5',
+  'ls -la app/contato/page.tsx',
+  'npm run build --verbose',
+  'echo "✅ Build concluído com cache novo"'
 ]
 
 [start]
@@ -22,4 +26,4 @@ cmd = 'npm run start'
 
 [variables]
 NODE_ENV = 'production'
-NPM_CONFIG_PRODUCTION = 'true'
+CACHE_BUST = '$(date +%s)'

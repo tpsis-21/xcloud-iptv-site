@@ -1,39 +1,36 @@
-# Dockerfile para XCloud IPTV - EasyPanel Deploy
+# DOCKERFILE DEFINITIVO - EASY PANEL
+# Base oficial Node.js 18 Alpine
 FROM node:18-alpine
 
-# Criar diretório do app
+# Definir diretório de trabalho
 WORKDIR /app
 
-# Copiar arquivos de dependências
-COPY package*.json ./
-COPY .env.example ./
+# Instalar dependências do sistema se necessário
+RUN apk add --no-cache git
 
-# Instalar dependências
-RUN npm ci --only=production && npm cache clean --force
+# Copiar arquivos de configuração primeiro (para cache de camadas)
+COPY package*.json ./
+
+# Instalar dependências com limpeza de cache
+RUN npm ci --only=production --no-cache --verbose
 
 # Copiar código fonte
 COPY . .
 
-# Build do Next.js
-RUN npm run build
+# Verificar se os componentes existem
+RUN ls -la components/ui/ && \
+    ls -la app/contato/ && \
+    echo "Componentes verificados"
 
-# Criar usuário não-root para segurança
-RUN addgroup -g 1001 -S nodejs
-RUN adduser -S nextjs -u 1001
-
-# Mudar permissões
-RUN chown -R nextjs:nodejs /app
-RUN chmod -R 755 /app
+# Build do Next.js com logs completos
+RUN npm run build --verbose
 
 # Expor porta
 EXPOSE 3000
 
 # Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
   CMD curl -f http://localhost:3000/api/health || exit 1
 
-# Trocar para usuário não-root
-USER nextjs
-
-# Comando de inicialização
-CMD ["npm", "run", "start:prod"]
+# Comando para iniciar
+CMD ["npm", "run", "start"]
