@@ -289,7 +289,7 @@ export default function Page() {
               </div>
               <h4 className="text-xl font-semibold text-white mb-3">Ativação Imediata XCloud IPTV</h4>
               <p className="text-gray-400">
-                Comece a usar xcloud iptv em minutos. <Link href={createInternalLink('/contato', 'Suporte XCloud IPTV')} className="text-green-300 underline underline-offset-2 hover:text-green-200">Suporte especializado xcloud iptv</Link> disponível de segunda a sábado (9h às 22h) quando você precisar.
+                Comece a usar xcloud iptv em minutos. <span className="text-green-300">Suporte especializado xcloud iptv</span> disponível de segunda a sábado (9h às 22h) quando você precisar.
               </p>
             </div>
             <div className="glass-card rounded-xl p-8 text-center">
@@ -331,7 +331,7 @@ export default function Page() {
                 <Zap className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">2. Receba Acesso Imediato</h3>
-              <p className="text-gray-300">Pagamento confirmado = conta ativada instantaneamente. <Link href={createInternalLink('/contato', 'Suporte XCloud IPTV')} className="text-green-500 hover:text-green-400 underline">Suporte especializado</Link> 9h-22h.</p>
+              <p className="text-gray-300">Pagamento confirmado = conta ativada instantaneamente. <span className="text-green-500">Suporte especializado</span> 9h-22h.</p>
             </div>
 
             <div className="glass-card rounded-2xl p-8 text-center group hover:scale-105 transition-all duration-300">
