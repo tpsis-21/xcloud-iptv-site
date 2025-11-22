@@ -14,7 +14,7 @@ export const contentRules = {
 
 export const SEO_CONFIG = {
   siteName: 'XCloud IPTV',
-  siteUrl: 'https://xcloudtv.com.br',
+  siteUrl: 'https://xcloudiptv.com.br',
   description: 'XCloud IPTV - Streaming de conteúdo com milhares de canais, filmes e séries',
   keywords: {
     primary: 'xcloud iptv',

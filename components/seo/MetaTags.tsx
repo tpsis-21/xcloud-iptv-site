@@ -18,6 +18,12 @@ export function MetaTags({
   noindex = false
 }: MetaTagsProps) {
   const fullTitle = `${title} | ${SEO_CONFIG.siteName}`;
+  const isAbsolute = (u?: string) => !!u && /^https?:\/\//i.test(u);
+  const canonicalHref = canonical
+    ? isAbsolute(canonical)
+      ? canonical
+      : `${SEO_CONFIG.siteUrl}${canonical.startsWith('/') ? canonical : `/${canonical}`}`
+    : undefined;
   
   return (
     <>
@@ -27,15 +33,15 @@ export function MetaTags({
       
       {noindex && <meta name="robots" content="noindex,nofollow" />}
       
-      {canonical && (
-        <link rel="canonical" href={`${SEO_CONFIG.siteUrl}${canonical}`} />
+      {canonicalHref && (
+        <link rel="canonical" href={canonicalHref} />
       )}
       
       {/* Open Graph */}
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={`${SEO_CONFIG.siteUrl}${canonical || ''}`} />
+      <meta property="og:url" content={canonicalHref || SEO_CONFIG.siteUrl} />
       {ogImage && <meta property="og:image" content={ogImage} />}
       
       {/* Twitter */}

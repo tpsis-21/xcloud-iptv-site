@@ -115,8 +115,8 @@ export default function Page() {
         title={pageTitle}
         description={pageDescription}
         keywords={pageKeywords}
-        canonical="https://xcloudtv.com.br"
-        ogImage="https://xcloudtv.com.br/og-home.jpg"
+        canonical="/"
+        ogImage={`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-home.jpg`}
       />
       <JsonLD schema={organizationSchema} />
       <JsonLD schema={faqSchema} />
@@ -152,7 +152,7 @@ export default function Page() {
 
                 <div className="space-y-6">
                   <p className="text-xl lg:text-2xl text-gray-200 leading-relaxed max-w-2xl">
-                    XCloud IPTV oferece streaming completo com canais ao vivo, filmes e séries. Assine <Link href="/planos-xcloud-iptv" className="text-green-400 hover:text-green-300">XCloud IPTV</Link> por apenas R$ 30/mês e <Link href="/teste-gratis-xcloud-iptv" className="text-green-400 hover:text-green-300">teste grátis XCloud IPTV</Link> hoje mesmo.
+                    XCloud IPTV oferece streaming completo com canais ao vivo, filmes e séries. Assine <Link href="/planos-xcloud-iptv" className="text-green-300 underline underline-offset-2 hover:text-green-200">XCloud IPTV</Link> por apenas R$ 30/mês e <Link href="/teste-gratis-xcloud-iptv" className="text-green-300 underline underline-offset-2 hover:text-green-200">teste grátis XCloud IPTV</Link> hoje mesmo.
                   </p>
                   
                   {/* Benefícios em Bullets - Diferenciais de Valor */}
@@ -176,7 +176,7 @@ export default function Page() {
               {/* CTAs - Estratégia de Conversão Otimizada */}
               <div className="flex flex-row gap-6">
                 <div className="flex flex-col items-center gap-2">
-                  <Button className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-10 py-6 text-xl font-bold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 min-h-[48px]">
+                  <Button asChild className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-10 py-6 text-xl font-bold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 min-h-[48px]">
                     <Link href={createInternalLink('/planos-xcloud-iptv', 'Planos XCloud IPTV')} className="flex items-center space-x-3">
                       <Crown className="h-6 w-6" />
                       <span>Ver Planos XCloud</span>
@@ -185,7 +185,7 @@ export default function Page() {
                   <span className="text-xs text-gray-300">Planos a partir de R$ 30/mês</span>
                 </div>
                 <div className="flex flex-col items-center gap-2">
-                  <Button variant="outline" className="border-2 border-green-500 text-green-500 hover:bg-green-500/10 hover:text-green-400 px-10 py-6 text-xl font-bold rounded-2xl transition-all duration-300 min-h-[48px]">
+                  <Button asChild variant="outline" className="border-2 border-green-500 text-green-500 hover:bg-green-500/10 hover:text-green-400 px-10 py-6 text-xl font-bold rounded-2xl transition-all duration-300 min-h-[48px]">
                     <Link href={createInternalLink('/teste-gratis-xcloud-iptv', 'Teste Grátis XCloud IPTV')} className="flex items-center space-x-3">
                       <Rocket className="h-6 w-6" />
                       <span>Teste Grátis</span>

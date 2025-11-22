@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     description: 'Planos XCloud IPTV: assine XCloud IPTV mensal R$ 30, trimestral R$ 81, semestral R$ 153, anual R$ 288. Teste grátis XCloud IPTV.'
   },
   alternates: {
-    canonical: 'https://xcloudtv.com.br/planos-xcloud-iptv'
+    canonical: '/planos-xcloud-iptv'
   }
 }
 
@@ -233,7 +233,7 @@ export default function Page() {
                       </div>
                       
                       {/* Botão CTA com link centralizado */}
-                      <Button className={`w-full py-4 text-lg font-semibold rounded-xl transition-all duration-300 ${
+                      <Button asChild className={`w-full py-4 text-lg font-semibold rounded-xl transition-all duration-300 ${
                         plano.popular 
                           ? 'gradient-brand text-white shadow-lg hover:shadow-xl' 
                           : 'border-green-500/50 text-green-500 hover:bg-green-500/10'
@@ -343,16 +343,16 @@ export default function Page() {
 
             {/* CTA Final */}
             <div className="text-center mt-12">
-              <Link href={testeGratisLink.href}>
-                <Button 
+              <Button asChild 
                   size="lg" 
                   className="gradient-brand text-white px-8 py-4 text-lg font-semibold rounded-xl"
                   aria-label="Experimente XCloud IPTV grátis"
                 >
-                  <Clock className="h-5 w-5 mr-2" />
-                  Experimente XCloud IPTV Grátis
-                </Button>
-              </Link>
+                <Link href={testeGratisLink.href} className="flex items-center justify-center gap-2">
+                  <Clock className="h-5 w-5" />
+                  <span>Experimente XCloud IPTV Grátis</span>
+                </Link>
+              </Button>
             </div>
 
             {/* Seção de Reviews com Display Visual */}

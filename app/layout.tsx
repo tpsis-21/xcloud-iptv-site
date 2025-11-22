@@ -9,7 +9,7 @@ import GoogleAnalytics from '@/components/GoogleAnalytics'
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' })
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudtv.com.br'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -68,7 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               '@type': 'Organization',
               name: 'XCloud IPTV',
               url: siteUrl,
-              logo: `${siteUrl}/logo-xcloudtv.svg`
+              // Removido logo 404; adicionar quando arquivo estiver em /public
             })
           }}
         />
