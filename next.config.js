@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+const path = require('path')
 const nextConfig = {
   experimental: {
     typedRoutes: true,
@@ -41,6 +42,14 @@ const nextConfig = {
         ],
       },
     ]
+  },
+  webpack: (config) => {
+    config.resolve = config.resolve || {}
+    config.resolve.alias = {
+      ...(config.resolve.alias || {}),
+      '@': path.resolve(__dirname),
+    }
+    return config
   },
 }
 
