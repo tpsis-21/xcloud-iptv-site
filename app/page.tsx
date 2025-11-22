@@ -129,7 +129,7 @@ export default function Page() {
       <Particles />
       
       {/* Hero Section - Layout Exato conforme Imagem */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-6 sm:pt-8 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
         {/* Background Sutil */}
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-green-900/10 via-transparent to-green-900/5"></div>
@@ -140,7 +140,7 @@ export default function Page() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[calc(100vh-80px)]">
             {/* Conteúdo textual - Lado Esquerdo */}
-            <div className="space-y-6 lg:space-y-8 text-left">
+            <div className="space-y-6 lg:space-y-8 text-center lg:text-left">
 
               {/* Headline Principal - Layout Exato */}
               <div className="space-y-4">
@@ -157,15 +157,15 @@ export default function Page() {
                   
                   {/* Benefícios em Bullets - Diferenciais de Valor */}
                   <div className="space-y-3">
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center justify-center lg:justify-start space-x-3">
                       <CheckCircle2 className="h-5 w-5 text-green-400 flex-shrink-0" />
                       <span className="text-gray-200">Até 70% mais barato que TV a cabo</span>
                     </div>
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center justify-center lg:justify-start space-x-3">
                       <CheckCircle2 className="h-5 w-5 text-green-400 flex-shrink-0" />
                       <span className="text-gray-200">Instalação imediata em 5 minutos</span>
                     </div>
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center justify-center lg:justify-start space-x-3">
                       <CheckCircle2 className="h-5 w-5 text-green-400 flex-shrink-0" />
                       <span className="text-gray-200">Funciona em todos os dispositivos — veja como instalar XCloud IPTV</span>
                     </div>
