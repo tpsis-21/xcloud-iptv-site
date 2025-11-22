@@ -8,7 +8,7 @@ cmds = ['npm ci']
 cmds = ['npm run build']
 
 [phases.start]
-cmds = ['npm run start']
+cmds = ['chmod +x start-safe.sh && ./start-safe.sh']
 
 [variables]
 NODE_ENV = 'production'

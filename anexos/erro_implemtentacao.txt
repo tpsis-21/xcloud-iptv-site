@@ -1,14 +1,16 @@
-Commit: Fix: Corrige ícone Lightning e desabilita otimização CSS temporariamente 
+Commit: Fix: Corrige erros de build do EasyPanel - adiciona componentes UI e configurações de build 
 ##########################################
 ### Download Github Archive Started...
-### Sat, 22 Nov 2025 20:12:39 GMT
+### Sat, 22 Nov 2025 20:36:54 GMT
 ##########################################
 
 
 ╔════════ Nixpacks v1.34.1 ═══════╗
 ║ setup      │ nodejs_18, npm-9_x ║
 ║─────────────────────────────────║
-║ install    │ npm i              ║
+║ start      │ npm run start      ║
+║─────────────────────────────────║
+║ install    │ npm ci             ║
 ║─────────────────────────────────║
 ║ build      │ npm run build      ║
 ║─────────────────────────────────║
@@ -21,135 +23,69 @@ Saved output to:
 #0 building with "default" instance using docker driver
 
 #1 [internal] load build definition from Dockerfile
-#1 transferring dockerfile: 1.31kB done
+#1 transferring dockerfile: 1.36kB done
 #1 DONE 0.0s
 
 #2 [internal] load metadata for ghcr.io/railwayapp/nixpacks:ubuntu-1741046653
-#2 DONE 0.4s
+#2 DONE 0.1s
 
 #3 [internal] load .dockerignore
 #3 transferring context: 2B done
 #3 DONE 0.0s
 
-#4 [stage-0  1/10] FROM ghcr.io/railwayapp/nixpacks:ubuntu-1741046653@sha256:ed406b77fb751927991b8655e76c33a4521c4957c2afeab293be7c63c2a373d2
+#4 [stage-0  1/12] FROM ghcr.io/railwayapp/nixpacks:ubuntu-1741046653@sha256:ed406b77fb751927991b8655e76c33a4521c4957c2afeab293be7c63c2a373d2
 #4 DONE 0.0s
 
 #5 [internal] load build context
-#5 transferring context: 889.06kB done
+#5 transferring context: 1.94MB 0.0s done
 #5 DONE 0.0s
 
-#6 [stage-0  2/10] WORKDIR /app/
+#6 [stage-0  2/12] WORKDIR /app/
 #6 CACHED
 
-#7 [stage-0  3/10] COPY .nixpacks/nixpkgs-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7.nix .nixpacks/nixpkgs-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7.nix
+#7 [stage-0  3/12] COPY .nixpacks/nixpkgs-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7.nix .nixpacks/nixpkgs-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7.nix
 #7 CACHED
 
-#8 [stage-0  4/10] RUN nix-env -if .nixpacks/nixpkgs-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7.nix && nix-collect-garbage -d
+#8 [stage-0  4/12] RUN nix-env -if .nixpacks/nixpkgs-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7.nix && nix-collect-garbage -d
 #8 CACHED
 
-#9 [stage-0  5/10] COPY . /app/.
+#9 [stage-0  5/12] COPY . /app/.
 #9 DONE 0.0s
 
-#10 [stage-0  6/10] RUN --mount=type=cache,id=OlwKWf4EZgI-/root/npm,target=/root/.npm npm i
-#10 16.19 
-#10 16.19 added 154 packages, and audited 155 packages in 16s
-#10 16.19 
-#10 16.19 26 packages are looking for funding
-#10 16.19   run `npm fund` for details
-#10 16.23 
-#10 16.23 1 critical severity vulnerability
-#10 16.23 
-#10 16.23 To address all issues, run:
-#10 16.23   npm audit fix --force
-#10 16.23 
-#10 16.23 Run `npm audit` for details.
-#10 DONE 16.3s
-
-#11 [stage-0  7/10] COPY . /app/.
-#11 DONE 0.0s
-
-#12 [stage-0  8/10] RUN --mount=type=cache,id=OlwKWf4EZgI-next/cache,target=/app/.next/cache --mount=type=cache,id=OlwKWf4EZgI-node_modules/cache,target=/app/node_modules/.cache npm run build
-#12 0.292 
-#12 0.292 > xcloudtv-site@0.1.0 build
-#12 0.292 > next build
-#12 0.292 
-#12 0.658 Attention: Next.js now collects completely anonymous telemetry regarding usage.
-#12 0.658 This information is used to shape Next.js' roadmap and prioritize features.
-#12 0.658 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
-#12 0.658 https://nextjs.org/telemetry
-#12 0.658 
-#12 0.704   ▲ Next.js 14.2.13
-#12 0.704   - Experiments (use with caution):
-#12 0.704     · typedRoutes
-#12 0.705 
-#12 0.737    Creating an optimized production build ...
-#12 2.212 Failed to compile.
-#12 2.212 
-#12 2.212 ./app/contato/page.tsx
-#12 2.212 Module not found: Can't resolve '@/components/ui/button'
-#12 2.212 
-#12 2.212 https://nextjs.org/docs/messages/module-not-found
-#12 2.212 
-#12 2.212 ./app/contato/page.tsx
-#12 2.212 Module not found: Can't resolve '@/components/ui/input'
-#12 2.212 
-#12 2.212 https://nextjs.org/docs/messages/module-not-found
-#12 2.212 
-#12 2.212 ./app/contato/page.tsx
-#12 2.212 Module not found: Can't resolve '@/components/ui/textarea'
-#12 2.212 
-#12 2.212 https://nextjs.org/docs/messages/module-not-found
-#12 2.212 
-#12 2.212 ./app/contato/page.tsx
-#12 2.212 Module not found: Can't resolve '@/components/ui/label'
-#12 2.212 
-#12 2.212 https://nextjs.org/docs/messages/module-not-found
-#12 2.212 
-#12 2.212 ./app/contato/page.tsx
-#12 2.212 Module not found: Can't resolve '@/components/ui/card'
-#12 2.212 
-#12 2.212 https://nextjs.org/docs/messages/module-not-found
-#12 2.212 
-#12 2.219 
-#12 2.219 > Build failed because of webpack errors
-#12 2.234 npm notice
-#12 2.234 npm notice New major version of npm available! 10.8.2 -> 11.6.3
-#12 2.234 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.6.3
-#12 2.234 npm notice To update run: npm install -g npm@11.6.3
-#12 2.234 npm notice
-#12 ERROR: process "/bin/bash -ol pipefail -c npm run build" did not complete successfully: exit code: 1
+#10 [stage-0  6/12] RUN  npm run start
+#10 0.286 
+#10 0.286 > xcloudtv-site@0.1.0 start
+#10 0.286 > next start
+#10 0.286 
+#10 0.289 sh: 1: next: not found
+#10 ERROR: process "/bin/bash -ol pipefail -c npm run start" did not complete successfully: exit code: 127
 ------
- > [stage-0  8/10] RUN --mount=type=cache,id=OlwKWf4EZgI-next/cache,target=/app/.next/cache --mount=type=cache,id=OlwKWf4EZgI-node_modules/cache,target=/app/node_modules/.cache npm run build:
-2.212 
-2.212 https://nextjs.org/docs/messages/module-not-found
-2.212 
-2.219 
-2.219 > Build failed because of webpack errors
-2.234 npm notice
-2.234 npm notice New major version of npm available! 10.8.2 -> 11.6.3
-2.234 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.6.3
-2.234 npm notice To update run: npm install -g npm@11.6.3
-2.234 npm notice
+ > [stage-0  6/12] RUN  npm run start:
+0.286 
+0.286 > xcloudtv-site@0.1.0 start
+0.286 > next start
+0.286 
+0.289 sh: 1: next: not found
 ------
 
  5 warnings found (use docker --debug to expand):
+ - UndefinedVar: Usage of undefined variable '$NIXPACKS_PATH' (line 22)
  - SecretsUsedInArgOrEnv: Do not use ARG or ENV instructions for sensitive data (ARG "API_SECRET") (line 11)
  - SecretsUsedInArgOrEnv: Do not use ARG or ENV instructions for sensitive data (ARG "JWT_SECRET") (line 11)
  - SecretsUsedInArgOrEnv: Do not use ARG or ENV instructions for sensitive data (ENV "API_SECRET") (line 12)
  - SecretsUsedInArgOrEnv: Do not use ARG or ENV instructions for sensitive data (ENV "JWT_SECRET") (line 12)
- - UndefinedVar: Usage of undefined variable '$NIXPACKS_PATH' (line 18)
-Dockerfile:24
+Dockerfile:19
 --------------------
-  22 |     # build phase
-  23 |     COPY . /app/.
-  24 | >>> RUN --mount=type=cache,id=OlwKWf4EZgI-next/cache,target=/app/.next/cache --mount=type=cache,id=OlwKWf4EZgI-node_modules/cache,target=/app/node_modules/.cache npm run build
-  25 |     
-  26 |     
+  17 |     # start phase
+  18 |     COPY . /app/.
+  19 | >>> RUN  npm run start
+  20 |     
+  21 |     # install phase
 --------------------
-ERROR: failed to build: failed to solve: process "/bin/bash -ol pipefail -c npm run build" did not complete successfully: exit code: 1
+ERROR: failed to build: failed to solve: process "/bin/bash -ol pipefail -c npm run start" did not complete successfully: exit code: 127
 ##########################################
 ### Error
-### Sat, 22 Nov 2025 20:12:58 GMT
+### Sat, 22 Nov 2025 20:36:55 GMT
 ##########################################
 
-Command failed with exit code 1: docker buildx build --network host -f /etc/easypanel/projects/sites/xcloud/code/.nixpacks/Dockerfile -t easypanel/sites/xcloud --label 'keep=true' --build-arg 'NODE_ENV=production' --build-arg 'PORT=3000' --build-arg 'NEXT_PUBLIC_SITE_URL=https://xcloudiptv.com.br' --build-arg 'JWT_SECRET=vL0JYeTfwFpVe914LirP6yU97WGxEcXg' --build-arg 'API_SECRET=fblnyqqqVuVD8Ldpc6pBa6DLj0AMop48' --build-arg 'NEXT_PUBLIC_GA_MEASUREMENT_ID=G-ZC4JVQZT13' --build-arg 'GIT_SHA=fec9a743a5d2cf3827dada20076ed66804b5d271' /etc/easypanel/projects/sites/xcloud/code/
+Command failed with exit code 1: docker buildx build --network host -f /etc/easypanel/projects/sites/xcloud/code/.nixpacks/Dockerfile -t easypanel/sites/xcloud --label 'keep=true' --build-arg 'NODE_ENV=production' --build-arg 'PORT=3000' --build-arg 'NEXT_PUBLIC_SITE_URL=https://xcloudiptv.com.br' --build-arg 'JWT_SECRET=vL0JYeTfwFpVe914LirP6yU97WGxEcXg' --build-arg 'API_SECRET=fblnyqqqVuVD8Ldpc6pBa6DLj0AMop48' --build-arg 'NEXT_PUBLIC_GA_MEASUREMENT_ID=G-ZC4JVQZT13' --build-arg 'GIT_SHA=01ad747371a68483b62531687588cf56ed686d0c' /etc/easypanel/projects/sites/xcloud/code/
