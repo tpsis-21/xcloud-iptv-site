@@ -5,6 +5,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { hexToHslComponents } from '@/lib/color'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' })
 
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   title: 'XCloud IPTV | Streaming de conteúdo completo',
   description:
     'XCloud IPTV: melhor streaming do Brasil. Milhares de canais, filmes e séries. Teste grátis, planos acessíveis e suporte por e-mail. Assine com segurança via Cakto.',
-  alternates: { canonical: '/' },
+  alternates: { canonical: siteUrl },
   openGraph: {
     title: 'XCloud IPTV | Streaming de conteúdo completo',
     description:
@@ -50,6 +51,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR" style={styleVars} suppressHydrationWarning>
       <body className={inter.className}>
+        <GoogleAnalytics />
         <Header />
         <main className="bg-black text-white">{children}</main>
         <Footer />

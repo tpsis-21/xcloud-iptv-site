@@ -182,7 +182,7 @@ export default function Page() {
                       <span>Ver Planos XCloud</span>
                     </Link>
                   </Button>
-                  <span className="text-xs text-gray-400">Planos a partir de R$ 30/mês</span>
+                  <span className="text-xs text-gray-300">Planos a partir de R$ 30/mês</span>
                 </div>
                 <div className="flex flex-col items-center gap-2">
                   <Button variant="outline" className="border-2 border-green-500 text-green-400 hover:bg-green-500/10 hover:text-green-300 px-10 py-5 text-xl font-bold rounded-2xl transition-all duration-300">
@@ -191,7 +191,7 @@ export default function Page() {
                       <span>Teste Grátis</span>
                     </Link>
                   </Button>
-                  <span className="text-xs text-gray-400">Sem cartão • Sem compromisso</span>
+                  <span className="text-xs text-gray-300">Sem cartão • Sem compromisso</span>
                 </div>
               </div>
 
@@ -265,7 +265,7 @@ export default function Page() {
             <h2 className="text-4xl lg:text-5xl font-bold text-gradient-brand mb-4">
               Por Que Escolher a XCloud IPTV no Brasil
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Descubra os benefícios exclusivos da plataforma XCloud IPTV
             </p>
             <h3 className="text-2xl font-semibold text-green-400 mt-6">
@@ -279,7 +279,7 @@ export default function Page() {
                 <CreditCard className="h-8 w-8 text-white" />
               </div>
               <h4 className="text-xl font-semibold text-white mb-3">Planos Acessíveis XCloud IPTV</h4>
-              <p className="text-gray-400">
+              <p className="text-gray-300">
                 Assine xcloud iptv com descontos progressivos. <Link href={createInternalLink('/planos-xcloud-iptv', 'Plano Anual XCloud IPTV')} className="text-green-400 hover:text-green-300">Plano anual xcloud iptv com 20% de economia</Link> e maior custo-benefício para seu bolso.
               </p>
             </div>
@@ -297,7 +297,7 @@ export default function Page() {
                 <Tv className="h-8 w-8 text-white" />
               </div>
               <h4 className="text-xl font-semibold text-white mb-3">Compatibilidade Total XCloud IPTV</h4>
-              <p className="text-gray-400 mb-4">
+              <p className="text-gray-300 mb-4">
                 A xcloud iptv funciona em Android TV, celular Android, iOS, Fire Stick, Mi Stick, Windows, TVs LG, Samsung e Roku. Instale xcloud iptv e comece a assistir hoje mesmo em qualquer dispositivo.
               </p>
             </div>
@@ -312,7 +312,7 @@ export default function Page() {
             <h2 className="text-4xl lg:text-5xl font-bold text-gradient-brand mb-4">
               Como Começar com a XCloud IPTV em Minutos
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Transforme seu entretenimento em minutos. Economize até 70% comparado à TV tradicional.
             </p>
           </div>
@@ -323,7 +323,7 @@ export default function Page() {
                 <Download className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">1. Escolha Seu Plano XCloud IPTV</h3>
-              <p className="text-gray-400">Selecione o plano ideal para você. <Link href={createInternalLink('/planos-xcloud-iptv', 'Planos XCloud IPTV')} className="text-green-400 hover:text-green-300">Planos a partir de R$ 30/mês</Link> com descontos progressivos.</p>
+              <p className="text-gray-300">Selecione o plano ideal para você. <Link href={createInternalLink('/planos-xcloud-iptv', 'Planos XCloud IPTV')} className="text-green-500 hover:text-green-400 underline">Planos a partir de R$ 30/mês</Link> com descontos progressivos.</p>
             </div>
 
             <div className="glass-card rounded-2xl p-8 text-center group hover:scale-105 transition-all duration-300">
@@ -331,7 +331,7 @@ export default function Page() {
                 <Zap className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">2. Receba Acesso Imediato</h3>
-              <p className="text-gray-400">Pagamento confirmado = conta ativada instantaneamente. <Link href={createInternalLink('/contato', 'Suporte XCloud IPTV')} className="text-green-400 hover:text-green-300">Suporte especializado</Link> 9h-22h.</p>
+              <p className="text-gray-300">Pagamento confirmado = conta ativada instantaneamente. <Link href={createInternalLink('/contato', 'Suporte XCloud IPTV')} className="text-green-500 hover:text-green-400 underline">Suporte especializado</Link> 9h-22h.</p>
             </div>
 
             <div className="glass-card rounded-2xl p-8 text-center group hover:scale-105 transition-all duration-300">
@@ -339,7 +339,7 @@ export default function Page() {
                 <Tv className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">3. Aproveite Seu Streaming</h3>
-              <p className="text-gray-400">Ativação imediata em minutos. Milhares de conteúdos disponíveis em todos os dispositivos.</p>
+              <p className="text-gray-300">Ativação imediata em minutos. Milhares de conteúdos disponíveis em todos os dispositivos.</p>
             </div>
           </div>
         </div>
@@ -356,7 +356,7 @@ export default function Page() {
             <h2 className="text-4xl lg:text-5xl font-bold text-gradient-brand mb-4">
               Planos de Assinatura
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Compare nossos valores de ativação mensal, trimestral, semestral e anual. Encontre o plano perfeito para você.
             </p>
             <div className="mt-6">
@@ -422,13 +422,13 @@ export default function Page() {
                       <h3 className="text-xl font-bold text-white mb-2">
                         {plano.titulo}
                       </h3>
-                      <p className="text-gray-400 text-sm mb-4">
+                      <p className="text-gray-300 text-sm mb-4">
                         {plano.descricao}
                       </p>
                       <div className="text-4xl font-bold text-gradient-brand mt-2">
                         R$ {plano.preco}
                       </div>
-                      <div className="text-gray-400">
+                      <div className="text-gray-300">
                         {plano.meses === 1 ? 'Mensal' : `R$ ${(plano.preco/plano.meses).toFixed(2)}/mês`}
                       </div>
                     </div>
@@ -468,7 +468,7 @@ export default function Page() {
             <h2 className="text-4xl lg:text-5xl font-bold text-gradient-brand mb-4">
               Funciona em Todos Seus Dispositivos
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               A XCloud IPTV é compatível com todos os dispositivos que você já possui. Instale em minutos e comece a assistir hoje mesmo.
             </p>
           </div>
@@ -479,7 +479,7 @@ export default function Page() {
                 <Tv className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-lg font-semibold text-white mb-2">Smart TVs</h3>
-              <p className="text-gray-400 text-sm mb-4">Samsung, LG, Android TV</p>
+              <p className="text-gray-300 text-sm mb-4">Samsung, LG, Android TV</p>
               <span className="text-green-400 text-xs">✓ Compatível</span>
             </div>
             
@@ -488,7 +488,7 @@ export default function Page() {
                 <Smartphone className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-lg font-semibold text-white mb-2">Celulares</h3>
-              <p className="text-gray-400 text-sm mb-4">Android e iOS</p>
+              <p className="text-gray-300 text-sm mb-4">Android e iOS</p>
               <span className="text-green-400 text-xs">✓ Compatível</span>
             </div>
             
@@ -497,7 +497,7 @@ export default function Page() {
                 <Zap className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-lg font-semibold text-white mb-2">Dispositivos</h3>
-              <p className="text-gray-400 text-sm mb-4">Fire Stick, Mi Stick, Roku</p>
+              <p className="text-gray-300 text-sm mb-4">Fire Stick, Mi Stick, Roku</p>
               <span className="text-green-400 text-xs">✓ Compatível</span>
             </div>
             
@@ -506,7 +506,7 @@ export default function Page() {
                 <Download className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-lg font-semibold text-white mb-2">Computador</h3>
-              <p className="text-gray-400 text-sm mb-4">Windows e Mac</p>
+              <p className="text-gray-300 text-sm mb-4">Windows e Mac</p>
               <span className="text-green-400 text-xs">✓ Compatível</span>
             </div>
           </div>
@@ -518,7 +518,7 @@ export default function Page() {
                 <span>Ver Guia Completo de Instalação</span>
               </Link>
             </Button>
-            <p className="text-gray-400 text-sm mt-4">Instalação em menos de 5 minutos • Suporte incluído</p>
+            <p className="text-gray-300 text-sm mt-4">Instalação em menos de 5 minutos • Suporte incluído</p>
           </div>
         </div>
       </section>
@@ -541,34 +541,34 @@ export default function Page() {
                   <tr className="border-b border-green-500/30">
                     <th className="pb-4 text-white font-semibold">Características</th>
                     <th className="pb-4 text-green-500 font-semibold">Nossa Plataforma</th>
-                    <th className="pb-4 text-gray-400 font-semibold">TV Tradicional</th>
+                    <th className="pb-4 text-gray-300 font-semibold">TV Tradicional</th>
                   </tr>
                 </thead>
                 <tbody className="text-sm">
                   <tr className="border-b border-gray-800">
                     <td className="py-4 text-white">Preço Mensal</td>
                     <td className="py-4 text-green-500">A partir de R$ 30</td>
-                    <td className="py-4 text-gray-400">R$ 150-300</td>
+                    <td className="py-4 text-gray-300">R$ 150-300</td>
                   </tr>
                   <tr className="border-b border-gray-800">
                     <td className="py-4 text-white">Conteúdo Variado</td>
                     <td className="py-4 text-green-500">✅ Milhares de conteúdos</td>
-                    <td className="py-4 text-gray-400">❌ Limitado</td>
+                    <td className="py-4 text-gray-300">❌ Limitado</td>
                   </tr>
                   <tr className="border-b border-gray-800">
                     <td className="py-4 text-white">Filmes e Séries</td>
                     <td className="py-4 text-green-500">✅ Biblioteca completa</td>
-                    <td className="py-4 text-gray-400">❌ Pago extra</td>
+                    <td className="py-4 text-gray-300">❌ Pago extra</td>
                   </tr>
                   <tr className="border-b border-gray-800">
                     <td className="py-4 text-white">Instalação</td>
                     <td className="py-4 text-green-500">✅ Imediata online</td>
-                    <td className="py-4 text-gray-400">❌ Técnico necessário</td>
+                    <td className="py-4 text-gray-300">❌ Técnico necessário</td>
                   </tr>
                   <tr>
                     <td className="py-4 text-white">Suporte</td>
                     <td className="py-4 text-green-500">✅ Segunda a sábado, 9h às 22h</td>
-                    <td className="py-4 text-gray-400">❌ Horário comercial</td>
+                    <td className="py-4 text-gray-300">❌ Horário comercial</td>
                   </tr>
                 </tbody>
               </table>
@@ -596,7 +596,7 @@ export default function Page() {
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-white mb-3">Invista em uma Boa Conexão de Internet</h3>
-                <p className="text-gray-400">Uma conexão estável de pelo menos 20 Mbps garante streaming ao vivo sem travamentos. Use conexão via cabo quando possível para maior estabilidade.</p>
+                <p className="text-gray-300">Uma conexão estável de pelo menos 20 Mbps garante streaming ao vivo sem travamentos. Use conexão via cabo quando possível para maior estabilidade.</p>
               </div>
             </div>
 
@@ -728,7 +728,7 @@ export default function Page() {
                     <AccordionTrigger className="text-white hover:text-green-500 px-6 py-4 text-lg">
                       {item.pergunta}
                     </AccordionTrigger>
-                    <AccordionContent className="text-gray-400 px-6 pb-4">
+                    <AccordionContent className="text-gray-300 px-6 pb-4">
                       {item.resposta}
                     </AccordionContent>
                   </AccordionItem>

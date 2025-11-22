@@ -37,7 +37,7 @@ export default function Footer() {
               />
               <h3 className="text-xl font-bold text-white">XCloud IPTV</h3>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed">
+            <p className="text-gray-300 text-sm leading-relaxed">
               A melhor experiência de streaming com XCloud IPTV. Milhares de canais, filmes e séries para toda a família.
             </p>
             <div className="flex items-center space-x-2 text-sm text-gray-400">
@@ -51,22 +51,22 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-white">Links Rápidos</h3>
             <nav className="space-y-2">
-              <Link href="/" className="block text-gray-400 hover:text-green-500 transition-colors text-sm">
+              <Link href="/" className="block text-gray-300 hover:text-green-500 transition-colors text-sm underline hover:no-underline">
                 Home
               </Link>
-              <Link href="/planos" className="block text-gray-400 hover:text-green-500 transition-colors text-sm">
+              <Link href="/planos" className="block text-gray-300 hover:text-green-500 transition-colors text-sm underline hover:no-underline">
                 Planos
               </Link>
-              <Link href="/teste-gratis" className="block text-gray-400 hover:text-green-500 transition-colors text-sm">
+              <Link href="/teste-gratis" className="block text-gray-300 hover:text-green-500 transition-colors text-sm underline hover:no-underline">
                 Teste Grátis
               </Link>
-              <Link href="/download" className="block text-gray-400 hover:text-green-500 transition-colors text-sm">
+              <Link href="/download" className="block text-gray-300 hover:text-green-500 transition-colors text-sm underline hover:no-underline">
                 Download
               </Link>
-              <Link href="/sobre-nos" className="block text-gray-400 hover:text-green-500 transition-colors text-sm">
+              <Link href="/sobre-nos" className="block text-gray-300 hover:text-green-500 transition-colors text-sm underline hover:no-underline">
                 Sobre Nós
               </Link>
-              <Link href="/contato" className="block text-gray-400 hover:text-green-500 transition-colors text-sm">
+              <Link href="/contato" className="block text-gray-300 hover:text-green-500 transition-colors text-sm underline hover:no-underline">
                 Contato
               </Link>
             </nav>
@@ -101,7 +101,7 @@ export default function Footer() {
             <div className="space-y-3">
               <Link 
                 href="/contato" 
-                className="flex items-center space-x-2 text-gray-400 hover:text-green-500 transition-colors text-sm"
+                className="flex items-center space-x-2 text-gray-300 hover:text-green-500 transition-colors text-sm underline hover:no-underline"
               >
                 <Mail className="h-4 w-4" />
                 <span>Email: suporte@xcloudtv.com.br</span>
