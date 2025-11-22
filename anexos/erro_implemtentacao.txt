@@ -1,0 +1,423 @@
+Commit Adiciona Google Analytics G-ZC4JVQZT13 
+##########################################
+### Download Github Archive Started...
+### Sat, 22 Nov 2025 190645 GMT
+##########################################
+
+
+╔════════ Nixpacks v1.34.1 ═══════╗
+║ setup      │ nodejs_18, npm-9_x ║
+║─────────────────────────────────║
+║ install    │ npm i              ║
+║─────────────────────────────────║
+║ build      │ npm run build      ║
+║─────────────────────────────────║
+║ start      │ npm run start      ║
+╚═════════════════════════════════╝
+
+
+Saved output to
+  etceasypanelprojectssitesxcloudcode
+#0 building with default instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile 1.31kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for ghcr.iorailwayappnixpacksubuntu-1741046653
+#2 DONE 0.4s
+
+#3 [internal] load .dockerignore
+#3 transferring context 2B done
+#3 DONE 0.0s
+
+#4 [stage-0  110] FROM ghcr.iorailwayappnixpacksubuntu-1741046653@sha256ed406b77fb751927991b8655e76c33a4521c4957c2afeab293be7c63c2a373d2
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context 887.89kB done
+#5 DONE 0.0s
+
+#6 [stage-0  210] WORKDIR app
+#6 CACHED
+
+#7 [stage-0  310] COPY .nixpacksnixpkgs-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7.nix .nixpacksnixpkgs-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7.nix
+#7 DONE 0.0s
+
+#8 [stage-0  410] RUN nix-env -if .nixpacksnixpkgs-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7.nix && nix-collect-garbage -d
+#8 0.166 unpacking 'httpsgithub.comNixOSnixpkgsarchiveffeebf0acf3ae8b29f8c7049cd911b9636efd7e7.tar.gz' into the Git cache...
+#8 17.56 unpacking 'httpsgithub.comrailwayappnix-npm-overlayarchivemain.tar.gz' into the Git cache...
+#8 18.13 installing 'ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7-env'
+#8 18.75 these 6 derivations will be built
+#8 18.75   nixstore6vy68gykpxfphbmmyd59ya88xvrwvvaa-npm-9.9.4.tgz.drv
+#8 18.75   nixstore9smjjb5pkmcbykz8p4786s3a4nq6m030-builder.pl.drv
+#8 18.75   nixstorecjdjkmr6gy2h8l0cra71whgrvy030kx1-libraries.drv
+#8 18.75   nixstorebs6g8vhkfynvlzidhlqbsvnc9wijbaaz-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7-env.drv
+#8 18.75   nixstorew9h0z1lhfwxc0m38f3w5brfdqrzm4wyj-npm.drv
+#8 18.75   nixstore9jwhwnx07rlarp2ancqq1cnwz1z7kzg0-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7-env.drv
+#8 18.75 these 74 paths will be fetched (116.25 MiB download, 554.75 MiB unpacked)
+#8 18.75   nixstorecf7gkacyxmm66lwl5nj6j6yykbrg4q5c-acl-2.3.2
+#8 18.75   nixstorea9jgnlhkjkxav6qrc3rzg2q84pkl2wvr-attr-2.5.2
+#8 18.75   nixstore5mh7kaj2fyv8mk4sfq1brwxgc02884wi-bash-5.2p37
+#8 18.75   nixstorej7p46r8v9gcpbxx89pbqlh61zhd33gzv-binutils-2.43.1
+#8 18.75   nixstoredf2a8k58k00f2dh2x930dg6xs6g6mliv-binutils-2.43.1-lib
+#8 18.75   nixstoresrcmmqi8kxjfygd0hyy42c8hv6cws83b-binutils-wrapper-2.43.1
+#8 18.75   nixstoreivl2v8rgg7qh1jkj5pwpqycax3rc2hnl-bzip2-1.0.8
+#8 18.75   nixstoremglixp03lsp0w986svwdvm7vcy17rdax-bzip2-1.0.8-bin
+#8 18.75   nixstore4s9rah4cwaxflicsk5cndnknqlk9n4p3-coreutils-9.5
+#8 18.75   nixstorepkc7mb4a4qvyz73srkqh4mwl70w98dsv-curl-8.11.0
+#8 18.75   nixstorep123cq20klajcl9hj8jnkjip5nw6awhz-curl-8.11.0-bin
+#8 18.75   nixstore5f5linrxzhhb3mrclkwdpm9bd8ygldna-curl-8.11.0-dev
+#8 18.75   nixstoreagvks3qmzja0yj54szi3vja6vx3cwkkw-curl-8.11.0-man
+#8 18.75   nixstore00g69vw7c9lycy63h45ximy0wmzqx5y6-diffutils-3.10
+#8 18.75   nixstore74h4z8k82pmp24xryflv4lxkz8jlpqqd-ed-1.20.2
+#8 18.75   nixstoreqbry6090vlr9ar33kdmmbq2p5apzbga8-expand-response-params
+#8 18.75   nixstorec4rj90r2m89rxs64hmm857mipwjhig5d-file-5.46
+#8 18.75   nixstorejqrz1vq5nz4lnv9pqzydj0ir58wbjfy1-findutils-4.10.0
+#8 18.75   nixstorea3c47r5z1q2c4rz0kvq8hlilkhx2s718-gawk-5.3.1
+#8 18.75   nixstorel89iqc7am6i60y8vk507zwrzxf0wcd3v-gcc-14-20241116
+#8 18.75   nixstorebpq1s72cw9qb2fs8mnmlw6hn2c7iy0ss-gcc-14-20241116-lib
+#8 18.75   nixstore17v0ywnr3akp85pvdi56gwl99ljv95kx-gcc-14-20241116-libgcc
+#8 18.75   nixstorexcn9p4xxfbvlkpah7pwchpav4ab9d135-gcc-wrapper-14-20241116
+#8 18.75   nixstore65h17wjrrlsj2rj540igylrx7fqcd6vq-glibc-2.40-36
+#8 18.75   nixstore1c6bmxrrhm8bd26ai2rjqld2yyjrxhds-glibc-2.40-36-bin
+#8 18.75   nixstorekj8hbqx4ds9qm9mq7hyikxyfwwg13kzj-glibc-2.40-36-dev
+#8 18.75   nixstorekryrg7ds05iwcmy81amavk8w13y4lxbs-gmp-6.3.0
+#8 18.75   nixstorea2byxfv4lc8f2g5xfzw8cz5q8k05wi29-gmp-with-cxx-6.3.0
+#8 18.75   nixstore1m67ipsk39xvhyqrxnzv2m2p48pil8kl-gnu-config-2024-01-01
+#8 18.75   nixstoreaap6cq56amx4mzbyxp2wpgsf1kqjcr1f-gnugrep-3.11
+#8 18.75   nixstorefp6cjl1zcmm6mawsnrb5yak1wkz2ma8l-gnumake-4.4.1
+#8 18.75   nixstoreabm77lnrkrkb58z6xp1qwjcr1xgkcfwm-gnused-4.9
+#8 18.75   nixstore9cwwj1c9csmc85l2cqzs3h9hbf1vwl6c-gnutar-1.35
+#8 18.75   nixstorenvvj6sk0k6px48436drlblf4gafgbvzr-gzip-1.13
+#8 18.75   nixstorewwipgdqb4p2fr46kmw9c5wlk799kbl68-icu4c-74.2
+#8 18.75   nixstorem8w3mf0i4862q22bxad0wspkgdy4jnkk-icu4c-74.2-dev
+#8 18.75   nixstorexmbv8s4p4i4dbxgkgdrdfb0ym25wh6gk-isl-0.20
+#8 18.75   nixstore2wh1gqyzf5xsvxpdz2k0bxiz583wwq29-keyutils-1.6.3-lib
+#8 18.75   nixstoremilph81dilrh96isyivh5n50agpx39k2-krb5-1.21.3
+#8 18.75   nixstoreb56mswksrql15knpb1bnhv3ysif340kd-krb5-1.21.3-dev
+#8 18.75   nixstorev9c1s50x7magpiqgycxxkn36avzbcg0g-krb5-1.21.3-lib
+#8 18.75   nixstore34z2792zyd4ayl5186vx0s98ckdaccz9-libidn2-2.3.7
+#8 18.75   nixstore2a3anh8vl3fcgk0fvaravlimrqawawza-libmpc-1.3.1
+#8 18.75   nixstore8675pnfr4fqnwv4pzjl67hdwls4q13aa-libssh2-1.11.1
+#8 18.75   nixstored7zhcrcc7q3yfbm3qkqpgc3daq82spwi-libssh2-1.11.1-dev
+#8 18.75   nixstorexcqcgqazykf6s7fsn08k0blnh0wisdcl-libunistring-1.3
+#8 18.75   nixstorer9ac2hwnmb0nxwsrvr6gi9wsqf2whfqj-libuv-1.49.2
+#8 18.75   nixstorell14czvpxglf6nnwmmrmygplm830fvlv-libuv-1.49.2-dev
+#8 18.75   nixstore6cr0spsvymmrp1hj5n0kbaxw55w1lqyp-libxcrypt-4.4.36
+#8 18.75   nixstorepc74azbkr19rkd5bjalq2xwx86cj3cga-linux-headers-6.12
+#8 18.75   nixstorefv7gpnvg922frkh81w5hkdhpz0nw3iiz-mirrors-list
+#8 18.75   nixstoreqs22aazzrdd4dnjf9vffl0n31hvls43h-mpfr-4.2.1
+#8 18.75   nixstoregrixvx878884hy8x3xs0c0s1i00j632k-nghttp2-1.64.0
+#8 18.75   nixstoredz97fw51rm5bl9kz1vg0haj1j1a7r1mr-nghttp2-1.64.0-dev
+#8 18.75   nixstoreqcghigzrz56vczwlzg9c02vbs6zr9jkz-nghttp2-1.64.0-lib
+#8 18.75   nixstorewlpq101dsifq98z2bk300x4dk80wcybr-nodejs-18.20.5
+#8 18.75   nixstore9l9n7a0v4aibcz0sgd0crs209an9p7dz-openssl-3.3.2
+#8 18.75   nixstoreh1ydpxkw9qhjdxjpic1pdc2nirggyy6f-openssl-3.3.2
+#8 18.75   nixstorelygl27c44xv73kx1spskcgvzwq7z337c-openssl-3.3.2-bin
+#8 18.75   nixstoreqq5q0alyzywdazhmybi7m69akz0ppk05-openssl-3.3.2-bin
+#8 18.75   nixstorekqm7wpqkzc4bwjlzqizcbz0mgkj06a9x-openssl-3.3.2-dev
+#8 18.75   nixstorepp2zf8bdgyz60ds8vcshk2603gcjgp72-openssl-3.3.2-dev
+#8 18.75   nixstore5yja5dpk2qw1v5mbfbl2d7klcdfrh90w-patch-2.7.6
+#8 18.75   nixstoresrfxqk119fijwnprgsqvn68ys9kiw0bn-patchelf-0.15.0
+#8 18.75   nixstore3j1p598fivxs69wx3a657ysv3rw8k06l-pcre2-10.44
+#8 18.75   nixstore1i003ijlh9i0mzp6alqby5hg3090pjdx-perl-5.40.0
+#8 18.75   nixstore4ig84cyqi6qy4n0sanrbzsw1ixa497jx-stdenv-linux
+#8 18.75   nixstored0gfdcag8bxzvg7ww4s7px4lf8sxisyx-stdenv-linux
+#8 18.75   nixstored29r1bdmlvwmj52apgcdxfl1mm9c5782-update-autotools-gnu-config-scripts-hook
+#8 18.75   nixstoreacfkqzj5qrqs88a4a6ixnybbjxja663d-xgcc-14-20241116-libgcc
+#8 18.75   nixstorec2njy6bv84kw1i4bjf5k5gn7gz8hn57n-xz-5.6.3
+#8 18.75   nixstoreh18s640fnhhj2qdh5vivcfbxvz377srg-xz-5.6.3-bin
+#8 18.75   nixstorecqlaa2xf6lslnizyj9xqa8j0ii1yqw0x-zlib-1.3.1
+#8 18.75   nixstore1lggwqzapn5mn49l9zy4h566ysv9kzdb-zlib-1.3.1-dev
+#8 18.76 copying path 'nixstore17v0ywnr3akp85pvdi56gwl99ljv95kx-gcc-14-20241116-libgcc' from 'httpscache.nixos.org'...
+#8 18.76 copying path 'nixstore1m67ipsk39xvhyqrxnzv2m2p48pil8kl-gnu-config-2024-01-01' from 'httpscache.nixos.org'...
+#8 18.76 copying path 'nixstorexcqcgqazykf6s7fsn08k0blnh0wisdcl-libunistring-1.3' from 'httpscache.nixos.org'...
+#8 18.76 copying path 'nixstorepc74azbkr19rkd5bjalq2xwx86cj3cga-linux-headers-6.12' from 'httpscache.nixos.org'...
+#8 18.76 copying path 'nixstorefv7gpnvg922frkh81w5hkdhpz0nw3iiz-mirrors-list' from 'httpscache.nixos.org'...
+#8 18.76 copying path 'nixstoreacfkqzj5qrqs88a4a6ixnybbjxja663d-xgcc-14-20241116-libgcc' from 'httpscache.nixos.org'...
+#8 18.76 copying path 'nixstoreagvks3qmzja0yj54szi3vja6vx3cwkkw-curl-8.11.0-man' from 'httpscache.nixos.org'...
+#8 18.76 copying path 'nixstoregrixvx878884hy8x3xs0c0s1i00j632k-nghttp2-1.64.0' from 'httpscache.nixos.org'...
+#8 18.78 copying path 'nixstored29r1bdmlvwmj52apgcdxfl1mm9c5782-update-autotools-gnu-config-scripts-hook' from 'httpscache.nixos.org'...
+#8 18.86 copying path 'nixstore34z2792zyd4ayl5186vx0s98ckdaccz9-libidn2-2.3.7' from 'httpscache.nixos.org'...
+#8 18.91 copying path 'nixstore65h17wjrrlsj2rj540igylrx7fqcd6vq-glibc-2.40-36' from 'httpscache.nixos.org'...
+#8 19.31 copying path 'nixstorea9jgnlhkjkxav6qrc3rzg2q84pkl2wvr-attr-2.5.2' from 'httpscache.nixos.org'...
+#8 19.31 copying path 'nixstore5mh7kaj2fyv8mk4sfq1brwxgc02884wi-bash-5.2p37' from 'httpscache.nixos.org'...
+#8 19.31 copying path 'nixstoreivl2v8rgg7qh1jkj5pwpqycax3rc2hnl-bzip2-1.0.8' from 'httpscache.nixos.org'...
+#8 19.31 copying path 'nixstore9l9n7a0v4aibcz0sgd0crs209an9p7dz-openssl-3.3.2' from 'httpscache.nixos.org'...
+#8 19.31 copying path 'nixstore6cr0spsvymmrp1hj5n0kbaxw55w1lqyp-libxcrypt-4.4.36' from 'httpscache.nixos.org'...
+#8 19.31 copying path 'nixstoreqcghigzrz56vczwlzg9c02vbs6zr9jkz-nghttp2-1.64.0-lib' from 'httpscache.nixos.org'...
+#8 19.31 copying path 'nixstore74h4z8k82pmp24xryflv4lxkz8jlpqqd-ed-1.20.2' from 'httpscache.nixos.org'...
+#8 19.31 copying path 'nixstorebpq1s72cw9qb2fs8mnmlw6hn2c7iy0ss-gcc-14-20241116-lib' from 'httpscache.nixos.org'...
+#8 19.31 copying path 'nixstorea3c47r5z1q2c4rz0kvq8hlilkhx2s718-gawk-5.3.1' from 'httpscache.nixos.org'...
+#8 19.31 copying path 'nixstorer9ac2hwnmb0nxwsrvr6gi9wsqf2whfqj-libuv-1.49.2' from 'httpscache.nixos.org'...
+#8 19.31 copying path 'nixstorekryrg7ds05iwcmy81amavk8w13y4lxbs-gmp-6.3.0' from 'httpscache.nixos.org'...
+#8 19.31 copying path 'nixstorefp6cjl1zcmm6mawsnrb5yak1wkz2ma8l-gnumake-4.4.1' from 'httpscache.nixos.org'...
+#8 19.31 copying path 'nixstore2wh1gqyzf5xsvxpdz2k0bxiz583wwq29-keyutils-1.6.3-lib' from 'httpscache.nixos.org'...
+#8 19.31 copying path 'nixstoreqbry6090vlr9ar33kdmmbq2p5apzbga8-expand-response-params' from 'httpscache.nixos.org'...
+#8 19.31 copying path 'nixstore1c6bmxrrhm8bd26ai2rjqld2yyjrxhds-glibc-2.40-36-bin' from 'httpscache.nixos.org'...
+#8 19.31 copying path 'nixstoreabm77lnrkrkb58z6xp1qwjcr1xgkcfwm-gnused-4.9' from 'httpscache.nixos.org'...
+#8 19.33 copying path 'nixstoreh1ydpxkw9qhjdxjpic1pdc2nirggyy6f-openssl-3.3.2' from 'httpscache.nixos.org'...
+#8 19.33 copying path 'nixstoredz97fw51rm5bl9kz1vg0haj1j1a7r1mr-nghttp2-1.64.0-dev' from 'httpscache.nixos.org'...
+#8 19.33 copying path 'nixstore3j1p598fivxs69wx3a657ysv3rw8k06l-pcre2-10.44' from 'httpscache.nixos.org'...
+#8 19.37 copying path 'nixstorecf7gkacyxmm66lwl5nj6j6yykbrg4q5c-acl-2.3.2' from 'httpscache.nixos.org'...
+#8 19.38 copying path 'nixstorec2njy6bv84kw1i4bjf5k5gn7gz8hn57n-xz-5.6.3' from 'httpscache.nixos.org'...
+#8 19.40 copying path 'nixstorecqlaa2xf6lslnizyj9xqa8j0ii1yqw0x-zlib-1.3.1' from 'httpscache.nixos.org'...
+#8 19.41 copying path 'nixstore5yja5dpk2qw1v5mbfbl2d7klcdfrh90w-patch-2.7.6' from 'httpscache.nixos.org'...
+#8 19.42 copying path 'nixstorell14czvpxglf6nnwmmrmygplm830fvlv-libuv-1.49.2-dev' from 'httpscache.nixos.org'...
+#8 19.42 copying path 'nixstoremglixp03lsp0w986svwdvm7vcy17rdax-bzip2-1.0.8-bin' from 'httpscache.nixos.org'...
+#8 19.45 copying path 'nixstore9cwwj1c9csmc85l2cqzs3h9hbf1vwl6c-gnutar-1.35' from 'httpscache.nixos.org'...
+#8 19.48 copying path 'nixstoredf2a8k58k00f2dh2x930dg6xs6g6mliv-binutils-2.43.1-lib' from 'httpscache.nixos.org'...
+#8 19.48 copying path 'nixstorec4rj90r2m89rxs64hmm857mipwjhig5d-file-5.46' from 'httpscache.nixos.org'...
+#8 19.49 copying path 'nixstore1lggwqzapn5mn49l9zy4h566ysv9kzdb-zlib-1.3.1-dev' from 'httpscache.nixos.org'...
+#8 19.50 copying path 'nixstorexmbv8s4p4i4dbxgkgdrdfb0ym25wh6gk-isl-0.20' from 'httpscache.nixos.org'...
+#8 19.50 copying path 'nixstoreqs22aazzrdd4dnjf9vffl0n31hvls43h-mpfr-4.2.1' from 'httpscache.nixos.org'...
+#8 19.52 copying path 'nixstoreh18s640fnhhj2qdh5vivcfbxvz377srg-xz-5.6.3-bin' from 'httpscache.nixos.org'...
+#8 19.55 copying path 'nixstoreaap6cq56amx4mzbyxp2wpgsf1kqjcr1f-gnugrep-3.11' from 'httpscache.nixos.org'...
+#8 19.55 copying path 'nixstorenvvj6sk0k6px48436drlblf4gafgbvzr-gzip-1.13' from 'httpscache.nixos.org'...
+#8 19.64 copying path 'nixstorekj8hbqx4ds9qm9mq7hyikxyfwwg13kzj-glibc-2.40-36-dev' from 'httpscache.nixos.org'...
+#8 19.71 copying path 'nixstore2a3anh8vl3fcgk0fvaravlimrqawawza-libmpc-1.3.1' from 'httpscache.nixos.org'...
+#8 19.74 copying path 'nixstorev9c1s50x7magpiqgycxxkn36avzbcg0g-krb5-1.21.3-lib' from 'httpscache.nixos.org'...
+#8 19.74 copying path 'nixstoreqq5q0alyzywdazhmybi7m69akz0ppk05-openssl-3.3.2-bin' from 'httpscache.nixos.org'...
+#8 19.74 copying path 'nixstore8675pnfr4fqnwv4pzjl67hdwls4q13aa-libssh2-1.11.1' from 'httpscache.nixos.org'...
+#8 19.87 copying path 'nixstorej7p46r8v9gcpbxx89pbqlh61zhd33gzv-binutils-2.43.1' from 'httpscache.nixos.org'...
+#8 19.87 copying path 'nixstorea2byxfv4lc8f2g5xfzw8cz5q8k05wi29-gmp-with-cxx-6.3.0' from 'httpscache.nixos.org'...
+#8 19.87 copying path 'nixstorewwipgdqb4p2fr46kmw9c5wlk799kbl68-icu4c-74.2' from 'httpscache.nixos.org'...
+#8 19.87 copying path 'nixstoresrfxqk119fijwnprgsqvn68ys9kiw0bn-patchelf-0.15.0' from 'httpscache.nixos.org'...
+#8 19.87 copying path 'nixstorel89iqc7am6i60y8vk507zwrzxf0wcd3v-gcc-14-20241116' from 'httpscache.nixos.org'...
+#8 19.88 copying path 'nixstorelygl27c44xv73kx1spskcgvzwq7z337c-openssl-3.3.2-bin' from 'httpscache.nixos.org'...
+#8 19.90 copying path 'nixstorekqm7wpqkzc4bwjlzqizcbz0mgkj06a9x-openssl-3.3.2-dev' from 'httpscache.nixos.org'...
+#8 19.92 copying path 'nixstorepkc7mb4a4qvyz73srkqh4mwl70w98dsv-curl-8.11.0' from 'httpscache.nixos.org'...
+#8 19.92 copying path 'nixstoremilph81dilrh96isyivh5n50agpx39k2-krb5-1.21.3' from 'httpscache.nixos.org'...
+#8 19.95 copying path 'nixstore4s9rah4cwaxflicsk5cndnknqlk9n4p3-coreutils-9.5' from 'httpscache.nixos.org'...
+#8 20.01 copying path 'nixstored7zhcrcc7q3yfbm3qkqpgc3daq82spwi-libssh2-1.11.1-dev' from 'httpscache.nixos.org'...
+#8 20.04 copying path 'nixstorepp2zf8bdgyz60ds8vcshk2603gcjgp72-openssl-3.3.2-dev' from 'httpscache.nixos.org'...
+#8 20.13 copying path 'nixstoreb56mswksrql15knpb1bnhv3ysif340kd-krb5-1.21.3-dev' from 'httpscache.nixos.org'...
+#8 20.23 copying path 'nixstorep123cq20klajcl9hj8jnkjip5nw6awhz-curl-8.11.0-bin' from 'httpscache.nixos.org'...
+#8 20.30 copying path 'nixstore1i003ijlh9i0mzp6alqby5hg3090pjdx-perl-5.40.0' from 'httpscache.nixos.org'...
+#8 20.30 copying path 'nixstorejqrz1vq5nz4lnv9pqzydj0ir58wbjfy1-findutils-4.10.0' from 'httpscache.nixos.org'...
+#8 20.30 copying path 'nixstore00g69vw7c9lycy63h45ximy0wmzqx5y6-diffutils-3.10' from 'httpscache.nixos.org'...
+#8 20.43 copying path 'nixstore5f5linrxzhhb3mrclkwdpm9bd8ygldna-curl-8.11.0-dev' from 'httpscache.nixos.org'...
+#8 20.54 copying path 'nixstore4ig84cyqi6qy4n0sanrbzsw1ixa497jx-stdenv-linux' from 'httpscache.nixos.org'...
+#8 20.70 building 'nixstore9smjjb5pkmcbykz8p4786s3a4nq6m030-builder.pl.drv'...
+#8 20.73 copying path 'nixstoresrcmmqi8kxjfygd0hyy42c8hv6cws83b-binutils-wrapper-2.43.1' from 'httpscache.nixos.org'...
+#8 20.76 building 'nixstorecjdjkmr6gy2h8l0cra71whgrvy030kx1-libraries.drv'...
+#8 20.90 building 'nixstore6vy68gykpxfphbmmyd59ya88xvrwvvaa-npm-9.9.4.tgz.drv'...
+#8 21.12 
+#8 21.12 trying httpsregistry.npmjs.orgnpm-npm-9.9.4.tgz
+#8 21.12   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+#8 21.12                                  Dload  Upload   Total   Spent    Left  Speed
+#8 21.23 copying path 'nixstorem8w3mf0i4862q22bxad0wspkgdy4jnkk-icu4c-74.2-dev' from 'httpscache.nixos.org'...
+#8 21.46 100 2648k  100 2648k    0     0  7634k      0 ------ ------ ------ 7631k
+#8 21.51 building 'nixstorebs6g8vhkfynvlzidhlqbsvnc9wijbaaz-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7-env.drv'...
+#8 21.67 copying path 'nixstorewlpq101dsifq98z2bk300x4dk80wcybr-nodejs-18.20.5' from 'httpscache.nixos.org'...
+#8 24.51 copying path 'nixstorexcn9p4xxfbvlkpah7pwchpav4ab9d135-gcc-wrapper-14-20241116' from 'httpscache.nixos.org'...
+#8 24.52 copying path 'nixstored0gfdcag8bxzvg7ww4s7px4lf8sxisyx-stdenv-linux' from 'httpscache.nixos.org'...
+#8 24.54 building 'nixstorew9h0z1lhfwxc0m38f3w5brfdqrzm4wyj-npm.drv'...
+#8 24.57 Running phase unpackPhase
+#8 24.58 unpacking source archive nixstorefkd1ma3nify8r9wp463yg5rqz9hdcyf1-npm-9.9.4.tgz
+#8 24.65 source root is package
+#8 24.70 setting SOURCE_DATE_EPOCH to timestamp 499162500 of file packagepackage.json
+#8 24.70 Running phase installPhase
+#8 25.00 building 'nixstore9jwhwnx07rlarp2ancqq1cnwz1z7kzg0-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7-env.drv'...
+#8 25.05 created 33 symlinks in user environment
+#8 25.08 building 'nixstore5a2vq9j2f92sp4l956v3396pwqh3vh74-user-environment.drv'...
+#8 25.18 removing old generations of profile nixvarnixprofilesper-userrootchannels
+#8 25.18 removing old generations of profile nixvarnixprofilesper-userrootprofile
+#8 25.18 removing profile version 1
+#8 25.18 removing old generations of profile nixvarnixprofilesper-userrootchannels
+#8 25.18 removing old generations of profile nixvarnixprofilesper-userrootprofile
+#8 25.18 finding garbage collector roots...
+#8 25.18 removing stale link from 'nixvarnixgcrootsautolzjbmb2ry0z7lma2fvpqprb12921pnb5' to 'nixvarnixprofilesper-userrootprofile-1-link'
+#8 25.18 deleting garbage...
+#8 25.19 deleting 'nixstoreir9fki7838bmk4hlj0zmwbw45q101j66-user-environment.drv'
+#8 25.19 deleting 'nixstoreb9rj4wk1cxh7g2ib89aqbcapzzar8p2s-user-environment'
+#8 25.19 deleting 'nixstorexxyn8jfxcpr5ac9dvismfzx39ijh9kiv-env-manifest.nix'
+#8 25.20 deleting 'nixstore1i003ijlh9i0mzp6alqby5hg3090pjdx-perl-5.40.0'
+#8 25.23 deleting 'nixstored0gfdcag8bxzvg7ww4s7px4lf8sxisyx-stdenv-linux'
+#8 25.23 deleting 'nixstore4ig84cyqi6qy4n0sanrbzsw1ixa497jx-stdenv-linux'
+#8 25.23 deleting 'nixstore5yja5dpk2qw1v5mbfbl2d7klcdfrh90w-patch-2.7.6'
+#8 25.23 deleting 'nixstoreh18s640fnhhj2qdh5vivcfbxvz377srg-xz-5.6.3-bin'
+#8 25.23 deleting 'nixstorec2njy6bv84kw1i4bjf5k5gn7gz8hn57n-xz-5.6.3'
+#8 25.24 deleting 'nixstore5f5linrxzhhb3mrclkwdpm9bd8ygldna-curl-8.11.0-dev'
+#8 25.24 deleting 'nixstorep123cq20klajcl9hj8jnkjip5nw6awhz-curl-8.11.0-bin'
+#8 25.24 deleting 'nixstorepkc7mb4a4qvyz73srkqh4mwl70w98dsv-curl-8.11.0'
+#8 25.24 deleting 'nixstoreb56mswksrql15knpb1bnhv3ysif340kd-krb5-1.21.3-dev'
+#8 25.24 deleting 'nixstoremilph81dilrh96isyivh5n50agpx39k2-krb5-1.21.3'
+#8 25.24 deleting 'nixstorev9c1s50x7magpiqgycxxkn36avzbcg0g-krb5-1.21.3-lib'
+#8 25.25 deleting 'nixstore9cwwj1c9csmc85l2cqzs3h9hbf1vwl6c-gnutar-1.35'
+#8 25.25 deleting 'nixstore6cr0spsvymmrp1hj5n0kbaxw55w1lqyp-libxcrypt-4.4.36'
+#8 25.25 deleting 'nixstorea3c47r5z1q2c4rz0kvq8hlilkhx2s718-gawk-5.3.1'
+#8 25.25 deleting 'nixstored7zhcrcc7q3yfbm3qkqpgc3daq82spwi-libssh2-1.11.1-dev'
+#8 25.25 deleting 'nixstorekqm7wpqkzc4bwjlzqizcbz0mgkj06a9x-openssl-3.3.2-dev'
+#8 25.26 deleting 'nixstorexcn9p4xxfbvlkpah7pwchpav4ab9d135-gcc-wrapper-14-20241116'
+#8 25.26 deleting 'nixstoresrcmmqi8kxjfygd0hyy42c8hv6cws83b-binutils-wrapper-2.43.1'
+#8 25.26 deleting 'nixstorel89iqc7am6i60y8vk507zwrzxf0wcd3v-gcc-14-20241116'
+#8 25.31 deleting 'nixstorekj8hbqx4ds9qm9mq7hyikxyfwwg13kzj-glibc-2.40-36-dev'
+#8 25.32 deleting 'nixstorepc74azbkr19rkd5bjalq2xwx86cj3cga-linux-headers-6.12'
+#8 25.33 deleting 'nixstore2a3anh8vl3fcgk0fvaravlimrqawawza-libmpc-1.3.1'
+#8 25.33 deleting 'nixstoreqq5q0alyzywdazhmybi7m69akz0ppk05-openssl-3.3.2-bin'
+#8 25.33 deleting 'nixstoreyjzdra36n5mhn1lm12agv1lg8kv9m0cg-source'
+#8 25.33 deleting 'nixstorec4rj90r2m89rxs64hmm857mipwjhig5d-file-5.46'
+#8 25.33 deleting 'nixstoresrfxqk119fijwnprgsqvn68ys9kiw0bn-patchelf-0.15.0'
+#8 25.33 deleting 'nixstoreaap6cq56amx4mzbyxp2wpgsf1kqjcr1f-gnugrep-3.11'
+#8 25.34 deleting 'nixstoredz97fw51rm5bl9kz1vg0haj1j1a7r1mr-nghttp2-1.64.0-dev'
+#8 25.34 deleting 'nixstoregrixvx878884hy8x3xs0c0s1i00j632k-nghttp2-1.64.0'
+#8 25.34 deleting 'nixstorexmbv8s4p4i4dbxgkgdrdfb0ym25wh6gk-isl-0.20'
+#8 25.34 deleting 'nixstorenvvj6sk0k6px48436drlblf4gafgbvzr-gzip-1.13'
+#8 25.34 deleting 'nixstored29r1bdmlvwmj52apgcdxfl1mm9c5782-update-autotools-gnu-config-scripts-hook'
+#8 25.34 deleting 'nixstore1m67ipsk39xvhyqrxnzv2m2p48pil8kl-gnu-config-2024-01-01'
+#8 25.34 deleting 'nixstoreabm77lnrkrkb58z6xp1qwjcr1xgkcfwm-gnused-4.9'
+#8 25.34 deleting 'nixstorefp6cjl1zcmm6mawsnrb5yak1wkz2ma8l-gnumake-4.4.1'
+#8 25.34 deleting 'nixstorej7p46r8v9gcpbxx89pbqlh61zhd33gzv-binutils-2.43.1'
+#8 25.35 deleting 'nixstoredf2a8k58k00f2dh2x930dg6xs6g6mliv-binutils-2.43.1-lib'
+#8 25.35 deleting 'nixstoremglixp03lsp0w986svwdvm7vcy17rdax-bzip2-1.0.8-bin'
+#8 25.35 deleting 'nixstorefv7gpnvg922frkh81w5hkdhpz0nw3iiz-mirrors-list'
+#8 25.35 deleting 'nixstorelwi59jcfwk2lnrakmm1y5vw85hj3n1bi-source'
+#8 26.75 deleting 'nixstore74h4z8k82pmp24xryflv4lxkz8jlpqqd-ed-1.20.2'
+#8 26.75 deleting 'nixstoreqs22aazzrdd4dnjf9vffl0n31hvls43h-mpfr-4.2.1'
+#8 26.75 deleting 'nixstorekryrg7ds05iwcmy81amavk8w13y4lxbs-gmp-6.3.0'
+#8 26.75 deleting 'nixstore1c0dv2pdlshjz5kmjd4dfp3c96yncr23-libraries'
+#8 26.75 deleting 'nixstore8675pnfr4fqnwv4pzjl67hdwls4q13aa-libssh2-1.11.1'
+#8 26.75 deleting 'nixstoreivl2v8rgg7qh1jkj5pwpqycax3rc2hnl-bzip2-1.0.8'
+#8 26.75 deleting 'nixstore00g69vw7c9lycy63h45ximy0wmzqx5y6-diffutils-3.10'
+#8 26.75 deleting 'nixstoreqbry6090vlr9ar33kdmmbq2p5apzbga8-expand-response-params'
+#8 26.75 deleting 'nixstoreagvks3qmzja0yj54szi3vja6vx3cwkkw-curl-8.11.0-man'
+#8 26.75 deleting 'nixstorewf5zj2gbib3gjqllkabxaw4dh0gzcla3-builder.pl'
+#8 26.75 deleting 'nixstorejqrz1vq5nz4lnv9pqzydj0ir58wbjfy1-findutils-4.10.0'
+#8 26.75 deleting 'nixstore9l9n7a0v4aibcz0sgd0crs209an9p7dz-openssl-3.3.2'
+#8 26.75 deleting 'nixstoreqcghigzrz56vczwlzg9c02vbs6zr9jkz-nghttp2-1.64.0-lib'
+#8 26.75 deleting 'nixstore1c6bmxrrhm8bd26ai2rjqld2yyjrxhds-glibc-2.40-36-bin'
+#8 26.76 deleting 'nixstorefkd1ma3nify8r9wp463yg5rqz9hdcyf1-npm-9.9.4.tgz'
+#8 26.76 deleting 'nixstore3j1p598fivxs69wx3a657ysv3rw8k06l-pcre2-10.44'
+#8 26.76 deleting 'nixstore2wh1gqyzf5xsvxpdz2k0bxiz583wwq29-keyutils-1.6.3-lib'
+#8 26.76 deleting unused links...
+#8 26.76 note currently hard linking saves -0.00 MiB
+#8 26.79 61 store paths deleted, 562.86 MiB freed
+#8 DONE 26.8s
+
+#9 [stage-0  510] COPY . app.
+#9 DONE 0.0s
+
+#10 [stage-0  610] RUN --mount=type=cache,id=OlwKWf4EZgI-rootnpm,target=root.npm npm i
+#10 17.82 
+#10 17.82 added 63 packages, and audited 64 packages in 18s
+#10 17.82 
+#10 17.82 4 packages are looking for funding
+#10 17.82   run `npm fund` for details
+#10 17.86 
+#10 17.86 1 critical severity vulnerability
+#10 17.86 
+#10 17.86 To address all issues, run
+#10 17.86   npm audit fix --force
+#10 17.86 
+#10 17.86 Run `npm audit` for details.
+#10 DONE 17.9s
+
+#11 [stage-0  710] COPY . app.
+#11 DONE 0.0s
+
+#12 [stage-0  810] RUN --mount=type=cache,id=OlwKWf4EZgI-nextcache,target=app.nextcache --mount=type=cache,id=OlwKWf4EZgI-node_modulescache,target=appnode_modules.cache npm run build
+#12 0.288 
+#12 0.288  xcloudtv-site@0.1.0 build
+#12 0.288  next build
+#12 0.288 
+#12 0.689 Attention Next.js now collects completely anonymous telemetry regarding usage.
+#12 0.689 This information is used to shape Next.js' roadmap and prioritize features.
+#12 0.689 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL
+#12 0.689 httpsnextjs.orgtelemetry
+#12 0.689 
+#12 0.738   ▲ Next.js 14.2.13
+#12 0.738   - Experiments (use with caution)
+#12 0.738     · typedRoutes
+#12 0.738 
+#12 0.765    Creating an optimized production build ...
+#12 1.871  ⚠ For production Image Optimization with Next.js, the optional 'sharp' package is strongly recommended. Run 'npm i sharp', and Next.js will use it automatically for Image Optimization.
+#12 1.871 Read more httpsnextjs.orgdocsmessagessharp-missing-in-production
+#12 3.311 Failed to compile.
+#12 3.311 
+#12 3.311 applayout.tsx
+#12 3.311 An error occurred in `nextfont`.
+#12 3.311 
+#12 3.311 Error Cannot find module 'tailwindcss'
+#12 3.311 Require stack
+#12 3.311 - appnode_modulesnextdistbuildwebpackconfigblockscssplugins.js
+#12 3.311 - appnode_modulesnextdistbuildwebpackconfigblockscssindex.js
+#12 3.311 - appnode_modulesnextdistbuildwebpackconfigindex.js
+#12 3.311 - appnode_modulesnextdistbuildwebpack-config.js
+#12 3.311 - appnode_modulesnextdistbuildwebpack-buildimpl.js
+#12 3.311 - appnode_modulesnextdistcompiledjest-workerprocessChild.js
+#12 3.311     at Module._resolveFilename (nodeinternalmodulescjsloader114015)
+#12 3.311     at appnode_modulesnextdistserverrequire-hook.js5536
+#12 3.311     at Function.resolve (nodeinternalmoduleshelpers18819)
+#12 3.311     at loadPlugin (appnode_modulesnextdistbuildwebpackconfigblockscssplugins.js4932)
+#12 3.311     at appnode_modulesnextdistbuildwebpackconfigblockscssplugins.js15756
+#12 3.311     at Array.map (anonymous)
+#12 3.311     at getPostCssPlugins (appnode_modulesnextdistbuildwebpackconfigblockscssplugins.js15747)
+#12 3.311     at async appnode_modulesnextdistbuildwebpackconfigblockscssindex.js12436
+#12 3.311     at async appnode_modulesnextdistbuildwebpackloadersnext-font-loaderindex.js8633
+#12 3.311     at async Span.traceAsyncFn (appnode_modulesnextdisttracetrace.js15420)
+#12 3.311 
+#12 3.311 .appcontatopage.tsx
+#12 3.311 Module not found Can't resolve '@componentsuibutton'
+#12 3.311 
+#12 3.311 httpsnextjs.orgdocsmessagesmodule-not-found
+#12 3.311 
+#12 3.311 .appcontatopage.tsx
+#12 3.311 Module not found Can't resolve '@componentsuiinput'
+#12 3.311 
+#12 3.311 httpsnextjs.orgdocsmessagesmodule-not-found
+#12 3.311 
+#12 3.311 .appcontatopage.tsx
+#12 3.311 Module not found Can't resolve '@componentsuitextarea'
+#12 3.311 
+#12 3.311 httpsnextjs.orgdocsmessagesmodule-not-found
+#12 3.311 
+#12 3.311 .appcontatopage.tsx
+#12 3.311 Module not found Can't resolve '@componentsuilabel'
+#12 3.311 
+#12 3.311 httpsnextjs.orgdocsmessagesmodule-not-found
+#12 3.311 
+#12 3.321 
+#12 3.321  Build failed because of webpack errors
+#12 3.333 npm notice
+#12 3.333 npm notice New major version of npm available! 10.8.2 - 11.6.3
+#12 3.333 npm notice Changelog httpsgithub.comnpmclireleasestagv11.6.3
+#12 3.333 npm notice To update run npm install -g npm@11.6.3
+#12 3.333 npm notice
+#12 ERROR process binbash -ol pipefail -c npm run build did not complete successfully exit code 1
+------
+  [stage-0  810] RUN --mount=type=cache,id=OlwKWf4EZgI-nextcache,target=app.nextcache --mount=type=cache,id=OlwKWf4EZgI-node_modulescache,target=appnode_modules.cache npm run build
+3.311 
+3.311 httpsnextjs.orgdocsmessagesmodule-not-found
+3.311 
+3.321 
+3.321  Build failed because of webpack errors
+3.333 npm notice
+3.333 npm notice New major version of npm available! 10.8.2 - 11.6.3
+3.333 npm notice Changelog httpsgithub.comnpmclireleasestagv11.6.3
+3.333 npm notice To update run npm install -g npm@11.6.3
+3.333 npm notice
+------
+
+ 5 warnings found (use docker --debug to expand)
+ - SecretsUsedInArgOrEnv Do not use ARG or ENV instructions for sensitive data (ENV API_SECRET) (line 12)
+ - SecretsUsedInArgOrEnv Do not use ARG or ENV instructions for sensitive data (ENV JWT_SECRET) (line 12)
+ - UndefinedVar Usage of undefined variable '$NIXPACKS_PATH' (line 18)
+ - SecretsUsedInArgOrEnv Do not use ARG or ENV instructions for sensitive data (ARG API_SECRET) (line 11)
+ - SecretsUsedInArgOrEnv Do not use ARG or ENV instructions for sensitive data (ARG JWT_SECRET) (line 11)
+Dockerfile24
+--------------------
+  22      # build phase
+  23      COPY . app.
+  24   RUN --mount=type=cache,id=OlwKWf4EZgI-nextcache,target=app.nextcache --mount=type=cache,id=OlwKWf4EZgI-node_modulescache,target=appnode_modules.cache npm run build
+  25      
+  26      
+--------------------
+ERROR failed to build failed to solve process binbash -ol pipefail -c npm run build did not complete successfully exit code 1
+##########################################
+### Error
+### Sat, 22 Nov 2025 190735 GMT
+##########################################
+
+Command failed with exit code 1 docker buildx build --network host -f etceasypanelprojectssitesxcloudcode.nixpacksDockerfile -t easypanelsitesxcloud --label 'keep=true' --build-arg 'NODE_ENV=production' --build-arg 'PORT=3000' --build-arg 'NEXT_PUBLIC_SITE_URL=httpsxcloudiptv.com.br' --build-arg 'JWT_SECRET=vL0JYeTfwFpVe914LirP6yU97WGxEcXg' --build-arg 'API_SECRET=fblnyqqqVuVD8Ldpc6pBa6DLj0AMop48' --build-arg 'NEXT_PUBLIC_GA_MEASUREMENT_ID=G-ZC4JVQZT13' --build-arg 'GIT_SHA=1fa5942001d8a71d38f0e0f995a5933eded7a5c6' etceasypanelprojectssitesxcloudcode

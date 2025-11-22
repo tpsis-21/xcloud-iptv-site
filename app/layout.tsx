@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: 'XCloud IPTV | Streaming de conteúdo completo',
   description:
     'XCloud IPTV: melhor streaming do Brasil. Milhares de canais, filmes e séries. Teste grátis, planos acessíveis e suporte por e-mail. Assine com segurança via Cakto.',
-  alternates: { canonical: '/' },
+  alternates: { canonical: new URL('/', siteUrl).href },
   openGraph: {
     title: 'XCloud IPTV | Streaming de conteúdo completo',
     description:

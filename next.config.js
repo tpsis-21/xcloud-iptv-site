@@ -1,43 +1,79 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
   experimental: {
-    typedRoutes: true
+    optimizeCss: true,
   },
-  images: {
-    domains: ['xcloudtv.com.br'],
-    formats: ['image/webp', 'image/avif'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-  },
-  // Otimizações para Core Web Vitals
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  // Configurações de performance
-  productionBrowserSourceMaps: false,
-  // Headers para cache e segurança
+  // Otimizações para ES modules
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        // Remove polyfills desnecessários
+        fs: false,
+        net: false,
+        tls: false,
+      }
+      
+      // Configuração para browsers modernos
+      config.module.rules.push({
+        test: /\.(js|jsx|ts|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'swc-loader',
+          options: {
+            jsc: {
+              parser: {
+                syntax: 'typescript',
+                tsx: true,
+              },
+              target: 'es2020', // Remove transpilação desnecessária
+              loose: false,
+              externalHelpers: false,
+            },
+          },
+        },
+      })
+    }
+    
+    return config
+  },
+  // Headers para performance
   async headers() {
     return [
       {
-        source: '/:all*(svg|jpg|jpeg|png|gif|ico|webp|avif)',
+        source: '/(.*)',
         headers: [
           {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable',
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY',
+          },
+          {
+            key: 'X-XSS-Protection',
+            value: '1; mode=block',
           },
         ],
       },
       {
-        source: '/:all*(js|css)',
+        source: '/api/(.*)',
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
+            value: 'no-cache, no-store, must-revalidate',
           },
         ],
       },
-    ];
+    ]
   },
 }
 

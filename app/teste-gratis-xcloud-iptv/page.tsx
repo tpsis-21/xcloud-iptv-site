@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card'
 import { FormularioTeste } from '@/components/FormularioTeste'
 
-import { Smartphone, Tv, Download, CheckCircle2, Star, Zap, Rocket, Users, Clock, ShieldCheck, Gift, Trophy, Lightning, Sparkles, TrendingUp } from 'lucide-react'
+import { Smartphone, Tv, Download, CheckCircle2, Star, Zap, Rocket, Users, Clock, ShieldCheck, Gift, Trophy, Zap as Lightning, Sparkles, TrendingUp } from 'lucide-react'
 import { MetaTags } from '@/components/seo/MetaTags'
 import { JsonLD } from '@/components/seo/JsonLD'
 import { SCHEMA_TEMPLATES } from '@/config/schemas'
