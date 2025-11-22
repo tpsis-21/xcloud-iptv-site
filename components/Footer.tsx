@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import Image from 'next/image'
+import logoImg from '@/app/assets/images/logo_app_xcloudtv.png'
 import { Button } from '@/components/ui/button'
 import { 
   Smartphone, 
@@ -30,10 +32,13 @@ export default function Footer() {
           {/* Coluna 1 - Sobre */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <img 
-                src="/logo_app_xcloudtv.png" 
-                alt="XCloud IPTV Logo" 
-                className="w-8 h-8 rounded-lg object-contain"
+              <Image 
+                src={logoImg}
+                alt="XCloud IPTV Logo"
+                width={32}
+                height={32}
+                className="rounded-lg object-contain"
+                priority
               />
               <h3 className="text-xl font-bold text-white">XCloud IPTV</h3>
             </div>
@@ -53,10 +58,10 @@ export default function Footer() {
               <Link href="/" className="block text-gray-300 hover:text-green-500 transition-colors text-sm underline hover:no-underline">
                 Home
               </Link>
-              <Link href="/planos" className="block text-gray-300 hover:text-green-500 transition-colors text-sm underline hover:no-underline">
+              <Link href="/planos-xcloud-iptv" className="block text-gray-300 hover:text-green-500 transition-colors text-sm underline hover:no-underline">
                 Planos
               </Link>
-              <Link href="/teste-gratis" className="block text-gray-300 hover:text-green-500 transition-colors text-sm underline hover:no-underline">
+              <Link href="/teste-gratis-xcloud-iptv" className="block text-gray-300 hover:text-green-500 transition-colors text-sm underline hover:no-underline">
                 Teste Grátis
               </Link>
               <Link href="/download" className="block text-gray-300 hover:text-green-500 transition-colors text-sm underline hover:no-underline">
