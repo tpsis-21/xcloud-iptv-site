@@ -152,7 +152,7 @@ export default function Page() {
 
                 <div className="space-y-6">
                   <p className="text-xl lg:text-2xl text-gray-200 leading-relaxed max-w-2xl">
-                    XCloud IPTV oferece streaming completo com canais ao vivo, filmes e séries. Assine <Link href="/planos-xcloud-iptv" className="text-green-300 underline underline-offset-2 hover:text-green-200">XCloud IPTV</Link> por apenas R$ 30/mês e <Link href="/teste-gratis-xcloud-iptv" className="text-green-300 underline underline-offset-2 hover:text-green-200">teste grátis XCloud IPTV</Link> hoje mesmo.
+                    XCloud IPTV oferece streaming completo com canais ao vivo, filmes e séries. Assine XCloud IPTV por apenas R$ 30/mês e faça o teste grátis hoje mesmo.
                   </p>
                   
                   {/* Benefícios em Bullets - Diferenciais de Valor */}
@@ -167,7 +167,7 @@ export default function Page() {
                     </div>
                     <div className="flex items-center space-x-3">
                       <CheckCircle2 className="h-5 w-5 text-green-400 flex-shrink-0" />
-                      <span className="text-gray-200">Funciona em todos os dispositivos - <Link href="/download" className="text-green-400 hover:text-green-300">veja como instalar XCloud IPTV</Link></span>
+                      <span className="text-gray-200">Funciona em todos os dispositivos — veja como instalar XCloud IPTV</span>
                     </div>
                   </div>
                 </div>
@@ -238,17 +238,17 @@ export default function Page() {
                 </div>
                 
                 {/* Stats Cards - Prova Social e Urgência */}
-                <div className="grid grid-cols-3 gap-4 mt-8">
-                  <div className="glass-card rounded-xl p-4 text-center border border-green-500/20 hover:border-green-400/40 transition-all duration-300">
-                    <div className="text-2xl font-black bg-gradient-to-r from-green-300 to-green-500 bg-clip-text text-transparent mb-1">+100 Mil</div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mt-6">
+                  <div className="glass-card rounded-xl p-4 text-center border border-green-500/20 hover:border-green-400/40 transition-all duration-300 min-w-0 break-words">
+                    <div className="text-xl sm:text-2xl font-black bg-gradient-to-r from-green-300 to-green-500 bg-clip-text text-transparent mb-1">+100 Mil</div>
                     <div className="text-xs text-gray-300 font-medium">Conteúdos</div>
                   </div>
-                  <div className="glass-card rounded-xl p-4 text-center border border-green-500/20 hover:border-green-400/40 transition-all duration-300">
-                    <div className="text-2xl font-black bg-gradient-to-r from-green-300 to-green-500 bg-clip-text text-transparent mb-1">99.9%</div>
+                  <div className="glass-card rounded-xl p-4 text-center border border-green-500/20 hover:border-green-400/40 transition-all duration-300 min-w-0 break-words">
+                    <div className="text-xl sm:text-2xl font-black bg-gradient-to-r from-green-300 to-green-500 bg-clip-text text-transparent mb-1">99.9%</div>
                     <div className="text-xs text-gray-300 font-medium">Disponibilidade</div>
                   </div>
-                  <div className="glass-card rounded-xl p-4 text-center border border-green-500/20 hover:border-green-400/40 transition-all duration-300">
-                    <div className="text-2xl font-black bg-gradient-to-r from-green-300 to-green-500 bg-clip-text text-transparent mb-1">Conteúdos</div>
+                  <div className="glass-card rounded-xl p-4 text-center border border-green-500/20 hover:border-green-400/40 transition-all duration-300 min-w-0 break-words">
+                    <div className="text-xl sm:text-2xl font-black bg-gradient-to-r from-green-300 to-green-500 bg-clip-text text-transparent mb-1">Conteúdos</div>
                     <div className="text-xs text-gray-300 font-medium">Variados</div>
                   </div>
                 </div>
