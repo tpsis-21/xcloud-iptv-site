@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   experimental: {
     typedRoutes: true,
-    optimizeCss: true,
+    // optimizeCss: true, // Desabilitado - requer critters
   },
   images: {
     domains: ['xcloudtv.com.br'],

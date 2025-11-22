@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card'
 import { FormularioTeste } from '@/components/FormularioTeste'
 
-import { Smartphone, Tv, Download, CheckCircle2, Star, Zap, Rocket, Users, Clock, ShieldCheck, Gift, Trophy, Lightning, Sparkles, TrendingUp } from 'lucide-react'
+import { Smartphone, Tv, Download, CheckCircle2, Star, Zap, Rocket, Users, Clock, ShieldCheck, Gift, Trophy, Sparkles, TrendingUp } from 'lucide-react'
 import { MetaTags } from '@/components/seo/MetaTags'
 import { JsonLD } from '@/components/seo/JsonLD'
 import { SCHEMA_TEMPLATES } from '@/config/schemas'
@@ -125,7 +125,7 @@ export default function Page() {
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div className="glass-card rounded-xl p-6 text-center group hover:scale-105 transition-all duration-300">
                   <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Lightning className="h-6 w-6 text-white" />
+                    <Zap className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="text-white font-semibold mb-2">Ativação Imediata</h3>
                   <p className="text-gray-400 text-sm">Comece em minutos</p>
