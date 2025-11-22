@@ -1,21 +1,21 @@
-Commit: Fix: Corrige erros de build do EasyPanel - adiciona componentes UI e configurações de build 
+Commit: Fix: Corrige ordem de execução do EasyPanel - adiciona script de inicialização segura 
 ##########################################
 ### Download Github Archive Started...
-### Sat, 22 Nov 2025 20:36:54 GMT
+### Sat, 22 Nov 2025 20:39:00 GMT
 ##########################################
 
 
-╔════════ Nixpacks v1.34.1 ═══════╗
-║ setup      │ nodejs_18, npm-9_x ║
-║─────────────────────────────────║
-║ start      │ npm run start      ║
-║─────────────────────────────────║
-║ install    │ npm ci             ║
-║─────────────────────────────────║
-║ build      │ npm run build      ║
-║─────────────────────────────────║
-║ start      │ npm run start      ║
-╚═════════════════════════════════╝
+╔═══════════════════ Nixpacks v1.34.1 ═══════════════════╗
+║ setup      │ nodejs_18, npm-9_x                        ║
+║────────────────────────────────────────────────────────║
+║ start      │ chmod +x start-safe.sh && ./start-safe.sh ║
+║────────────────────────────────────────────────────────║
+║ install    │ npm ci                                    ║
+║────────────────────────────────────────────────────────║
+║ build      │ npm run build                             ║
+║────────────────────────────────────────────────────────║
+║ start      │ npm run start                             ║
+╚════════════════════════════════════════════════════════╝
 
 
 Saved output to:
@@ -23,11 +23,11 @@ Saved output to:
 #0 building with "default" instance using docker driver
 
 #1 [internal] load build definition from Dockerfile
-#1 transferring dockerfile: 1.36kB done
+#1 transferring dockerfile: 1.39kB done
 #1 DONE 0.0s
 
 #2 [internal] load metadata for ghcr.io/railwayapp/nixpacks:ubuntu-1741046653
-#2 DONE 0.1s
+#2 DONE 0.4s
 
 #3 [internal] load .dockerignore
 #3 transferring context: 2B done
@@ -52,20 +52,47 @@ Saved output to:
 #9 [stage-0  5/12] COPY . /app/.
 #9 DONE 0.0s
 
-#10 [stage-0  6/12] RUN  npm run start
-#10 0.286 
-#10 0.286 > xcloudtv-site@0.1.0 start
-#10 0.286 > next start
-#10 0.286 
-#10 0.289 sh: 1: next: not found
-#10 ERROR: process "/bin/bash -ol pipefail -c npm run start" did not complete successfully: exit code: 127
+#10 [stage-0  6/12] RUN  chmod +x start-safe.sh && ./start-safe.sh
+#10 0.067 🔍 Verificando dependências...
+#10 0.067 ❌ Next.js não encontrado. Instalando dependências...
+#10 0.492 npm error code EUSAGE
+#10 0.493 npm error
+#10 0.493 npm error The `npm ci` command can only install with an existing package-lock.json or
+#10 0.493 npm error npm-shrinkwrap.json with lockfileVersion >= 1. Run an install with npm@5 or
+#10 0.493 npm error later to generate a package-lock.json file, then try again.
+#10 0.493 npm error
+#10 0.493 npm error Clean install a project
+#10 0.493 npm error
+#10 0.493 npm error Usage:
+#10 0.493 npm error npm ci
+#10 0.493 npm error
+#10 0.493 npm error Options:
+#10 0.493 npm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
+#10 0.493 npm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+#10 0.493 npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+#10 0.493 npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+#10 0.493 npm error [--no-bin-links] [--no-fund] [--dry-run]
+#10 0.493 npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+#10 0.493 npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+#10 0.493 npm error
+#10 0.493 npm error aliases: clean-install, ic, install-clean, isntall-clean
+#10 0.493 npm error
+#10 0.493 npm error Run "npm help ci" for more info
+#10 0.494 npm error A complete log of this run can be found in: /root/.npm/_logs/2025-11-22T20_39_01_716Z-debug-0.log
+#10 0.501 ❌ Falha ao instalar dependências do Next.js
+#10 ERROR: process "/bin/bash -ol pipefail -c chmod +x start-safe.sh && ./start-safe.sh" did not complete successfully: exit code: 1
 ------
- > [stage-0  6/12] RUN  npm run start:
-0.286 
-0.286 > xcloudtv-site@0.1.0 start
-0.286 > next start
-0.286 
-0.289 sh: 1: next: not found
+ > [stage-0  6/12] RUN  chmod +x start-safe.sh && ./start-safe.sh:
+0.493 npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+0.493 npm error [--no-bin-links] [--no-fund] [--dry-run]
+0.493 npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+0.493 npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+0.493 npm error
+0.493 npm error aliases: clean-install, ic, install-clean, isntall-clean
+0.493 npm error
+0.493 npm error Run "npm help ci" for more info
+0.494 npm error A complete log of this run can be found in: /root/.npm/_logs/2025-11-22T20_39_01_716Z-debug-0.log
+0.501 ❌ Falha ao instalar dependências do Next.js
 ------
 
  5 warnings found (use docker --debug to expand):
@@ -78,14 +105,14 @@ Dockerfile:19
 --------------------
   17 |     # start phase
   18 |     COPY . /app/.
-  19 | >>> RUN  npm run start
+  19 | >>> RUN  chmod +x start-safe.sh && ./start-safe.sh
   20 |     
   21 |     # install phase
 --------------------
-ERROR: failed to build: failed to solve: process "/bin/bash -ol pipefail -c npm run start" did not complete successfully: exit code: 127
+ERROR: failed to build: failed to solve: process "/bin/bash -ol pipefail -c chmod +x start-safe.sh && ./start-safe.sh" did not complete successfully: exit code: 1
 ##########################################
 ### Error
-### Sat, 22 Nov 2025 20:36:55 GMT
+### Sat, 22 Nov 2025 20:39:02 GMT
 ##########################################
 
-Command failed with exit code 1: docker buildx build --network host -f /etc/easypanel/projects/sites/xcloud/code/.nixpacks/Dockerfile -t easypanel/sites/xcloud --label 'keep=true' --build-arg 'NODE_ENV=production' --build-arg 'PORT=3000' --build-arg 'NEXT_PUBLIC_SITE_URL=https://xcloudiptv.com.br' --build-arg 'JWT_SECRET=vL0JYeTfwFpVe914LirP6yU97WGxEcXg' --build-arg 'API_SECRET=fblnyqqqVuVD8Ldpc6pBa6DLj0AMop48' --build-arg 'NEXT_PUBLIC_GA_MEASUREMENT_ID=G-ZC4JVQZT13' --build-arg 'GIT_SHA=01ad747371a68483b62531687588cf56ed686d0c' /etc/easypanel/projects/sites/xcloud/code/
+Command failed with exit code 1: docker buildx build --network host -f /etc/easypanel/projects/sites/xcloud/code/.nixpacks/Dockerfile -t easypanel/sites/xcloud --label 'keep=true' --build-arg 'NODE_ENV=production' --build-arg 'PORT=3000' --build-arg 'NEXT_PUBLIC_SITE_URL=https://xcloudiptv.com.br' --build-arg 'JWT_SECRET=vL0JYeTfwFpVe914LirP6yU97WGxEcXg' --build-arg 'API_SECRET=fblnyqqqVuVD8Ldpc6pBa6DLj0AMop48' --build-arg 'NEXT_PUBLIC_GA_MEASUREMENT_ID=G-ZC4JVQZT13' --build-arg 'GIT_SHA=76fa7eef90c6eb531d9620e0a0f0ef2a31802204' /etc/easypanel/projects/sites/xcloud/code/

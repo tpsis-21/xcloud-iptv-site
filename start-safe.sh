@@ -6,7 +6,7 @@ echo "🔍 Verificando dependências..."
 # Verificar se o Next.js está instalado
 if [ ! -d "node_modules/next" ]; then
     echo "❌ Next.js não encontrado. Instalando dependências..."
-    npm ci
+    npm install
 fi
 
 # Verificar novamente após instalação
