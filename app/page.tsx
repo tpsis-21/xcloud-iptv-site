@@ -280,7 +280,7 @@ export default function Page() {
               </div>
               <h4 className="text-xl font-semibold text-white mb-3">Planos Acessíveis XCloud IPTV</h4>
               <p className="text-gray-300">
-                Assine xcloud iptv com descontos progressivos. <Link href={createInternalLink('/planos-xcloud-iptv', 'Plano Anual XCloud IPTV')} className="text-green-400 hover:text-green-300">Plano anual xcloud iptv com 20% de economia</Link> e maior custo-benefício para seu bolso.
+                Assine xcloud iptv com descontos progressivos. <Link href={createInternalLink('/planos-xcloud-iptv', 'Plano Anual XCloud IPTV')} className="text-green-300 underline underline-offset-2 hover:text-green-200">Plano anual xcloud iptv com 20% de economia</Link> e maior custo-benefício para seu bolso.
               </p>
             </div>
             <div className="glass-card rounded-xl p-8 text-center">
@@ -289,7 +289,7 @@ export default function Page() {
               </div>
               <h4 className="text-xl font-semibold text-white mb-3">Ativação Imediata XCloud IPTV</h4>
               <p className="text-gray-400">
-                Comece a usar xcloud iptv em minutos. <Link href={createInternalLink('/contato', 'Suporte XCloud IPTV')} className="text-green-400 hover:text-green-300">Suporte especializado xcloud iptv</Link> disponível de segunda a sábado (9h às 22h) quando você precisar.
+                Comece a usar xcloud iptv em minutos. <Link href={createInternalLink('/contato', 'Suporte XCloud IPTV')} className="text-green-300 underline underline-offset-2 hover:text-green-200">Suporte especializado xcloud iptv</Link> disponível de segunda a sábado (9h às 22h) quando você precisar.
               </p>
             </div>
             <div className="glass-card rounded-xl p-8 text-center">
@@ -448,8 +448,8 @@ export default function Page() {
                       </div>
                     </div>
                     
-                    <Button className={`w-full ${plano.popular ? 'gradient-brand text-white' : 'border-green-500/50 text-green-500 hover:bg-green-500/10'} py-6 text-lg font-semibold min-h-[48px]`}>
-                      <a href={plano.link} target="_blank" rel="noopener noreferrer">
+                    <Button asChild className={`w-full ${plano.popular ? 'gradient-brand text-white' : 'border-green-500/50 text-green-500 hover:bg-green-500/10'} py-6 text-lg font-semibold min-h-[48px]`}>
+                      <a href={plano.link} target="_blank" rel="noopener noreferrer" className="block text-center">
                         Assinar Agora
                       </a>
                     </Button>
@@ -512,7 +512,7 @@ export default function Page() {
           </div>
           
           <div className="text-center">
-            <Button className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-10 py-6 text-xl font-bold rounded-2xl hover:scale-105 transition-all duration-300 shadow-2xl min-h-[48px]">
+            <Button asChild className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-10 py-6 text-xl font-bold rounded-2xl hover:scale-105 transition-all duration-300 shadow-2xl min-h-[48px]">
               <Link href={createInternalLink('/download', 'Download XCloud IPTV')} className="flex items-center space-x-3">
                 <Download className="h-6 w-6" />
                 <span>Ver Guia Completo de Instalação</span>
