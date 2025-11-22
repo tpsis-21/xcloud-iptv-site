@@ -233,14 +233,23 @@ export default function Page() {
                       </div>
                       
                       {/* Botão CTA com link centralizado */}
-                      <Button asChild className={`w-full py-4 text-lg font-semibold rounded-xl transition-all duration-300 ${
+                      <Button asChild className={`w-full py-4 text-lg font-semibold rounded-xl transition-all duration-300 min-h-[48px] ${
                         plano.popular 
                           ? 'gradient-brand text-white shadow-lg hover:shadow-xl' 
                           : 'border-green-500/50 text-green-500 hover:bg-green-500/10'
                       }`}>
-                        <a href={plano.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center space-x-2">
+                        <a
+                          href={plano.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-2 w-full h-full"
+                          aria-label={`Assinar plano ${plano.meses === 1 ? 'Mensal' : plano.meses === 3 ? 'Trimestral' : plano.meses === 6 ? 'Semestral' : 'Anual'} por R$ ${plano.preco}`}
+                          title={`Assinar plano ${plano.meses === 1 ? 'Mensal' : plano.meses === 3 ? 'Trimestral' : plano.meses === 6 ? 'Semestral' : 'Anual'} por R$ ${plano.preco}`}
+                        >
                           <CreditCard className="h-5 w-5" />
-                          <span>Assinar XCloud IPTV</span>
+                          <span>
+                            {plano.meses === 1 ? 'Assinar Mensal R$ 30' : plano.meses === 3 ? 'Assinar Trimestral R$ 81' : plano.meses === 6 ? 'Assinar Semestral R$ 153' : 'Assinar Anual R$ 288'}
+                          </span>
                         </a>
                       </Button>
                     </div>

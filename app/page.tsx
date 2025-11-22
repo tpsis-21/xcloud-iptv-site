@@ -145,8 +145,8 @@ export default function Page() {
               {/* Headline Principal - Layout Exato */}
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <h1 className="text-5xl lg:text-6xl xl:text-7xl font-black leading-tight bg-gradient-to-r from-green-300 via-green-400 to-green-500 bg-clip-text text-transparent drop-shadow-2xl whitespace-nowrap">
-                    XCloud IPTV
+                  <h1 className="text-5xl lg:text-6xl xl:text-7xl font-black leading-tight bg-gradient-to-r from-green-300 via-green-400 to-green-500 bg-clip-text text-transparent drop-shadow-2xl sm:whitespace-nowrap">
+                  XCloud IPTV
                   </h1>
                 </div>
 
@@ -175,18 +175,18 @@ export default function Page() {
 
               {/* CTAs - Estratégia de Conversão Otimizada */}
               <div className="flex flex-row gap-6">
-                <div className="flex flex-col items-center gap-2">
-                  <Button asChild className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-10 py-6 text-xl font-bold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 min-h-[48px]">
-                    <Link href={createInternalLink('/planos-xcloud-iptv', 'Planos XCloud IPTV')} className="flex items-center space-x-3">
+                <div className="flex flex-col items-center gap-3">
+                  <Button asChild className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-10 py-6 text-xl font-bold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 min-h-[48px] min-w-[48px]">
+                    <Link href={createInternalLink('/planos-xcloud-iptv', 'Planos XCloud IPTV')} className="flex items-center space-x-3 w-full h-full">
                       <Crown className="h-6 w-6" />
                       <span>Ver Planos XCloud</span>
                     </Link>
                   </Button>
                   <span className="text-xs text-gray-300">Planos a partir de R$ 30/mês</span>
                 </div>
-                <div className="flex flex-col items-center gap-2">
-                  <Button asChild variant="outline" className="border-2 border-green-500 text-green-500 hover:bg-green-500/10 hover:text-green-400 px-10 py-6 text-xl font-bold rounded-2xl transition-all duration-300 min-h-[48px]">
-                    <Link href={createInternalLink('/teste-gratis-xcloud-iptv', 'Teste Grátis XCloud IPTV')} className="flex items-center space-x-3">
+                <div className="flex flex-col items-center gap-3">
+                  <Button asChild variant="outline" className="border-2 border-green-500 text-green-500 hover:bg-green-500/10 hover:text-green-400 px-10 py-6 text-xl font-bold rounded-2xl transition-all duration-300 min-h-[48px] min-w-[48px]">
+                    <Link href={createInternalLink('/teste-gratis-xcloud-iptv', 'Teste Grátis XCloud IPTV')} className="flex items-center space-x-3 w-full h-full">
                       <Rocket className="h-6 w-6" />
                       <span>Teste Grátis</span>
                     </Link>
@@ -449,8 +449,15 @@ export default function Page() {
                     </div>
                     
                     <Button asChild className={`w-full ${plano.popular ? 'gradient-brand text-white' : 'border-green-500/50 text-green-500 hover:bg-green-500/10'} py-6 text-lg font-semibold min-h-[48px]`}>
-                      <a href={plano.link} target="_blank" rel="noopener noreferrer" className="block text-center">
-                        Assinar Agora
+                      <a
+                        href={plano.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block w-full h-full text-center"
+                        aria-label={`Assinar plano ${plano.meses === 1 ? 'Mensal' : plano.meses === 3 ? 'Trimestral' : plano.meses === 6 ? 'Semestral' : 'Anual'} por R$ ${plano.preco}`}
+                        title={`Assinar plano ${plano.meses === 1 ? 'Mensal' : plano.meses === 3 ? 'Trimestral' : plano.meses === 6 ? 'Semestral' : 'Anual'} por R$ ${plano.preco}`}
+                      >
+                        {plano.meses === 1 ? 'Assinar Mensal R$ 30' : plano.meses === 3 ? 'Assinar Trimestral R$ 81' : plano.meses === 6 ? 'Assinar Semestral R$ 153' : 'Assinar Anual R$ 288'}
                       </a>
                     </Button>
                   </div>
