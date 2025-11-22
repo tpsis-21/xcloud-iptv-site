@@ -3,10 +3,13 @@ const path = require('path')
 const nextConfig = {
   experimental: {
     typedRoutes: true,
-    // optimizeCss: true, // Desabilitado - requer critters
+    optimizeCss: true,
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
+  },
+  images: {
+    formats: ['image/avif', 'image/webp'],
   },
   // Headers para performance
   async headers() {

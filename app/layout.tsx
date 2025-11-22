@@ -50,6 +50,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   }
   return (
     <html lang="pt-BR" style={styleVars} suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://static.cloudflareinsights.com" crossOrigin="anonymous" />
+      </head>
       <body className={inter.className}>
         <GoogleAnalytics />
         <Header />
