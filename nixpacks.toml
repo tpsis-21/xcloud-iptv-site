@@ -1,11 +1,21 @@
+# CONFIGURAÇÃO EXTREMA - FORÇAR REBUILD COMPLETO
+
 [phases.setup]
 nixpkgsArchive = 'ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7'
 
 [phases.install]
-cmds = ['npm install']
+cmds = [
+  'pwd && ls -la',
+  'rm -rf node_modules .next package-lock.json',
+  'npm install --verbose'
+]
 
 [phases.build]
-cmds = ['npm run build']
+cmds = [
+  'pwd && ls -la components/ui/',
+  'ls -la app/contato/',
+  'npm run build --verbose'
+]
 
 [start]
 cmd = 'npm run start'
