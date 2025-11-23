@@ -91,38 +91,18 @@ export function XCloudLocalBusinessSchema() {
     "@type": "LocalBusiness",
     name: "XCloud IPTV",
     description: "Serviço de consultoria e tecnologia para streaming com suporte especializado em IPTV e soluções de entretenimento digital.",
-    url: "https://xcloudtv.com.br",
-    telephone: "+55-11-99999-9999",
-    email: "contato@xcloudtv.com.br",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "Av. Paulista, 1000",
-      addressLocality: "São Paulo",
-      addressRegion: "SP",
-      postalCode: "01310-100",
-      addressCountry: "BR"
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: -23.5505,
-      longitude: -46.6333
-    },
+    url: "https://xcloudiptv.com.br",
+    email: "contato@xcloudiptv.com.br",
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
         opens: "09:00",
         closes: "22:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Saturday", "Sunday"],
-        opens: "10:00",
-        closes: "20:00"
       }
     ],
     priceRange: "R$",
-    image: "https://xcloudtv.com.br/logo.png",
+    image: "https://xcloudiptv.com.br/anexos/logo_app_xcloudtv.png",
     areaServed: {
       "@type": "Country",
       name: "BR"
@@ -131,12 +111,7 @@ export function XCloudLocalBusinessSchema() {
       "https://www.facebook.com/xcloudtv",
       "https://www.instagram.com/xcloudtv",
       "https://twitter.com/xcloudtv"
-    ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      reviewCount: "127"
-    }
+    ]
   };
 
   return (

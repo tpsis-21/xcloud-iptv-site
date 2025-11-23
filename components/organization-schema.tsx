@@ -7,18 +7,18 @@ export function OrganizationSchema() {
           '@context': 'https://schema.org',
           '@type': 'Organization',
           name: 'XCloud IPTV',
-          url: 'https://xcloudtv.vercel.app',
-          logo: 'https://xcloudtv.vercel.app/anexos/logo_app_xcloudtv.png',
+          url: 'https://xcloudiptv.com.br',
+          logo: 'https://xcloudiptv.com.br/anexos/logo_app_xcloudtv.png',
           description: 'XCloud IPTV - Melhor IPTV do Brasil com conteúdo variado',
           contactPoint: {
             '@type': 'ContactPoint',
-            telephone: '+55-11-9XXXX-XXXX',
+            email: 'contato@xcloudiptv.com.br',
             contactType: 'customer service',
             areaServed: 'BR',
             availableLanguage: 'Portuguese'
           },
           sameAs: [
-            'https://xcloudtv.vercel.app'
+            'https://xcloudiptv.com.br'
           ]
         })
       }}

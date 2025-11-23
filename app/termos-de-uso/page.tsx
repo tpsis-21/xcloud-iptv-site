@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'Termos de Uso - XCloud IPTV | Políticas e Condições de Serviço',
   description: 'Termos de uso e condições de serviço do XCloud IPTV. Políticas de uso, direitos autorais e responsabilidades do usuário.',
   alternates: {
-    canonical: 'https://xcloudtv.com.br/termos-de-uso'
+    canonical: 'https://xcloudiptv.com.br/termos-de-uso'
   }
 };
 
@@ -32,16 +32,14 @@ export default function TermosDeUso() {
       ])} />
 
       <main className="min-h-screen bg-gray-900">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 max-w-4xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 pb-12 lg:pb-16 max-w-4xl">
           {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Termos de Uso
               <span className="block text-emerald-400">XCloud IPTV</span>
             </h1>
-            <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
-              Última atualização: 17 de novembro de 2025
-            </p>
+            
           </div>
 
           {/* Content */}
@@ -55,7 +53,7 @@ export default function TermosDeUso() {
                   Bem-vindo ao XCloud IPTV. Ao acessar e utilizar nossos serviços, você concorda em cumprir estes termos de uso e todas as leis e regulamentos aplicáveis. Se você não concordar com algum destes termos, está proibido de usar ou acessar nosso serviço.
                 </p>
                 <p className="text-gray-300 leading-relaxed">
-                  O XCloud IPTV é um serviço de consultoria e tecnologia que fornece informações educativas sobre tecnologias de streaming. Não somos responsáveis pelo conteúdo transmitido por terceiros.
+                  O XCloud IPTV é uma plataforma de aplicativo que fornece acesso técnico e suporte ao uso do app XcloudTV. Não hospedamos, produzimos ou distribuímos conteúdo de mídia e não controlamos o catálogo disponibilizado por provedores parceiros. O acesso é concedido mediante contratação, com suporte por email.
                 </p>
               </section>
 
@@ -89,7 +87,7 @@ export default function TermosDeUso() {
               <section className="mb-8">
                 <h2 className="text-2xl font-semibold text-emerald-400 mb-4">3. Direitos Autorais e Propriedade Intelectual</h2>
                 <p className="text-gray-300 leading-relaxed mb-4">
-                  <strong>Importante:</strong> O XCloud IPTV é um serviço de tecnologia e consultoria. Não hospedamos, transmitimos ou controlamos nenhum conteúdo de mídia. Somos uma plataforma educacional que fornece informações sobre tecnologias de streaming.
+                  <strong>Importante:</strong> O XCloud IPTV não hospeda, transmite ou controla conteúdo de mídia. Atuamos apenas como facilitador técnico do aplicativo, com foco em acesso e suporte.
                 </p>
                 <p className="text-gray-300 leading-relaxed mb-4">
                   Respeitamos os direitos autorais de terceiros e esperamos que nossos usuários façam o mesmo. É responsabilidade exclusiva do usuário garantir que seu uso de qualquer tecnologia de streaming esteja em conformidade com as leis de direitos autorais locais e internacionais.
@@ -116,7 +114,7 @@ export default function TermosDeUso() {
                   <li>• Conteúdo acessado através de tecnologias de terceiros</li>
                 </ul>
                 <p className="text-gray-300 leading-relaxed">
-                  O serviço é fornecido exclusivamente para fins educativos e informativos sobre tecnologia de streaming.
+                  O serviço é fornecido para acesso técnico ao aplicativo e suporte ao usuário.
                 </p>
               </section>
 
@@ -181,16 +179,10 @@ export default function TermosDeUso() {
                 </p>
                 <div className="bg-gray-700 rounded-lg p-4">
                   <p className="text-gray-300 mb-2">
-                    <strong>Email:</strong> suporte@xcloudtv.com.br
+                    <strong>Email:</strong> contato@xcloudiptv.com.br
                   </p>
                   <p className="text-gray-300 mb-2">
-                    <strong>WhatsApp:</strong> +55 (11) 9xxxx-xxxx
-                  </p>
-                  <p className="text-gray-300 mb-2">
-                    <strong>Horário de atendimento:</strong> Segunda a Domingo, 9h às 22h (horário de Brasília)
-                  </p>
-                  <p className="text-gray-300">
-                    <strong>Tempo de resposta:</strong> Até 24 horas úteis
+                    <strong>Horário de atendimento:</strong> Segunda a sábado, 9h às 22h (horário de Brasília)
                   </p>
                 </div>
               </section>

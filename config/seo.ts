@@ -25,7 +25,7 @@ export const SEO_CONFIG = {
     instagram: '@xcloudtv',
   },
   contact: {
-    email: 'contato@xcloudtv.com.br',
+    email: 'contato@xcloudiptv.com.br',
     phone: '', // Mantido vazio conforme regra
   },
   business: {
@@ -33,6 +33,17 @@ export const SEO_CONFIG = {
     timezone: 'America/Sao_Paulo'
   }
 };
+
+// Utilitários centralizados de SEO
+export function absoluteUrl(path = ''): string {
+  const p = path.startsWith('/') ? path : `/${path}`;
+  return `${SEO_CONFIG.siteUrl}${p}`;
+}
+
+export function buildCanonical(path?: string): string | undefined {
+  if (!path) return undefined;
+  return absoluteUrl(path);
+}
 
 // Função para criar links internos com âncoras contextuais
 export function createInternalLink(path: string, anchorText: string): any {

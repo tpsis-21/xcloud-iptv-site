@@ -95,7 +95,7 @@ export default function SobreNosPage() {
       <Particles />
       
       {/* Hero Section */}
-      <section className="relative py-20 px-4 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+      <section className="relative pt-24 sm:pt-28 py-20 px-4 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
         {/* Background Sutil */}
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-green-900/10 via-transparent to-green-900/5"></div>
@@ -458,16 +458,15 @@ export default function SobreNosPage() {
             '@type': 'AboutPage',
             name: 'Sobre Nós - XCloud IPTV',
             description: 'Conheça a XCloud IPTV, líder em streaming IPTV no Brasil',
-            url: 'https://xcloudtv.vercel.app/sobre-nos',
+            url: 'https://xcloudiptv.com.br/sobre-nos',
             mainEntity: {
               '@type': 'Organization',
               name: 'XCloud IPTV',
               description: 'XCloud IPTV - Líder em IPTV streaming no Brasil com conteúdo variado, streaming ao vivo e suporte técnico especializado',
-              url: 'https://xcloudtv.vercel.app',
-              logo: 'https://xcloudtv.vercel.app/logo-xcloudtv.svg',
+              url: 'https://xcloudiptv.com.br',
+              logo: 'https://xcloudiptv.com.br/anexos/logo_app_xcloudtv.png',
               sameAs: [
-                'https://xcloudtv.vercel.app',
-                'https://apps.tplay21.in/xcloudtv'
+                'https://xcloudiptv.com.br'
               ],
               address: {
                 '@type': 'PostalAddress',
@@ -488,8 +487,8 @@ export default function SobreNosPage() {
             '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
             itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://xcloudtv.vercel.app/' },
-              { '@type': 'ListItem', position: 2, name: 'Sobre Nós', item: 'https://xcloudtv.vercel.app/sobre-nos' }
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://xcloudiptv.com.br/' },
+              { '@type': 'ListItem', position: 2, name: 'Sobre Nós', item: 'https://xcloudiptv.com.br/sobre-nos' }
             ]
           })
         }}

@@ -38,7 +38,7 @@ export default function Footer() {
                 width={32}
                 height={32}
                 className="rounded-lg object-contain"
-                priority
+                loading="lazy"
               />
               <h3 className="text-xl font-bold text-white">XCloud IPTV</h3>
             </div>
@@ -108,7 +108,7 @@ export default function Footer() {
                 className="flex items-center space-x-2 text-gray-300 hover:text-green-500 transition-colors text-sm underline hover:no-underline"
               >
                 <Mail className="h-4 w-4" />
-                <span>Email: suporte@xcloudtv.com.br</span>
+                <span>Email: contato@xcloudiptv.com.br</span>
               </Link>
               <div className="text-xs text-gray-400">
                 <p>Atendimento: Segunda a Sábado</p>
@@ -120,9 +120,9 @@ export default function Footer() {
                   className="w-full bg-green-600 hover:bg-green-700 text-white"
                   asChild
                 >
-                  <Link href="/contato">
+                  <Link href="/contato" aria-label="Solicitar suporte por email">
                     <Mail className="h-4 w-4 mr-2" />
-                    Falar com Suporte
+                    Solicitar Suporte por Email
                   </Link>
                 </Button>
               </div>
@@ -138,15 +138,9 @@ export default function Footer() {
           <div>
             <h4 className="text-md font-semibold text-white mb-3">Legal</h4>
             <div className="flex flex-wrap gap-4 text-sm">
-              <span className="text-gray-300">
-                Termos de Serviço
-              </span>
-              <span className="text-gray-300">
-                Política de Privacidade
-              </span>
-              <span className="text-gray-300">
-                Política de Reembolso
-              </span>
+              <Link href="/termos-de-uso" className="text-gray-300 hover:text-green-500 underline hover:no-underline">Termos de Serviço</Link>
+              <Link href="/politica-de-privacidade" className="text-gray-300 hover:text-green-500 underline hover:no-underline">Política de Privacidade</Link>
+              <Link href="/politica-de-reembolso" className="text-gray-300 hover:text-green-500 underline hover:no-underline">Política de Reembolso</Link>
             </div>
           </div>
           

@@ -20,7 +20,7 @@ export const SCHEMA_TEMPLATES = {
     '@type': 'Organization',
     name: SEO_CONFIG.siteName,
     url: SEO_CONFIG.siteUrl,
-    logo: `${SEO_CONFIG.siteUrl}/logo.png`,
+    logo: `${SEO_CONFIG.siteUrl}/anexos/logo_app_xcloudtv.png`,
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer service',
@@ -34,10 +34,7 @@ export const SCHEMA_TEMPLATES = {
         timeZone: 'America/Sao_Paulo'
       }
     },
-    sameAs: [
-      SEO_CONFIG.social.instagram,
-      SEO_CONFIG.social.twitter
-    ]
+    sameAs: [SEO_CONFIG.siteUrl]
   },
   
   faqPage: (questions: Array<{question: string; answer: string}>) => ({

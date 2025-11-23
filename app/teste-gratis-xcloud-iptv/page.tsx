@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     description: 'Teste grátis XCloud IPTV! Acesso completo ao conteúdo. Teste IPTV XCloud sem cartão de crédito.',
   },
   alternates: {
-    canonical: 'https://xcloudtv.com.br/teste-gratis-xcloud-iptv'
+    canonical: 'https://xcloudiptv.com.br/teste-gratis-xcloud-iptv'
   }
 }
 
@@ -77,7 +77,7 @@ export default function Page() {
         </div>
         
         {/* Hero Section Melhorada */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-28 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
           <div className="absolute inset-0 z-0">
             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-green-900/20 via-transparent to-green-900/10"></div>
             <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-green-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -115,9 +115,43 @@ export default function Page() {
 
                 <p className="text-xl lg:text-2xl text-gray-200 leading-relaxed max-w-3xl mx-auto">
                   Descubra por que milhares de brasileiros escolhem o XCloud IPTV. 
-                  <strong className="text-green-400">Acesso completo</strong> por tempo limitado 
+                  <strong className="text-green-400">Acesso temporário</strong> de até 6h 
                   e experimente streaming de verdade sem pagar nada.
                 </p>
+              </div>
+
+              {/* CTAs Principais - Visíveis na primeira tela */}
+              <div className="space-y-6">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-8 py-4 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group min-h-[44px]">
+                    <Link href="#formulario-teste" className="flex items-center space-x-2">
+                      <Rocket className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                      <span>Quero Experimentar Agora</span>
+                    </Link>
+                  </Button>
+                  
+                  <Button variant="outline" className="border-2 border-green-500 text-green-400 hover:bg-green-500/10 hover:text-green-300 px-8 py-4 text-lg font-bold rounded-xl transition-all duration-300 min-h-[44px]">
+                    <Link href={planosLink.href} className="flex items-center space-x-2">
+                      <Star className="h-5 w-5" />
+                      <span>Ver Planos Completos</span>
+                    </Link>
+                  </Button>
+                </div>
+
+                <div className="flex items-center justify-center space-x-6 text-sm text-gray-400">
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle2 className="h-4 w-4 text-green-500" />
+                    <span>Sem cartão de crédito</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Clock className="h-4 w-4 text-green-500" />
+                    <span>Ativação imediata</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <ShieldCheck className="h-4 w-4 text-green-500" />
+                    <span>100% seguro</span>
+                  </div>
+                </div>
               </div>
 
               {/* Benefícios em Cards */}
@@ -126,8 +160,8 @@ export default function Page() {
                   <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Zap className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="text-white font-semibold mb-2">Ativação Imediata</h3>
-                  <p className="text-gray-400 text-sm">Comece em minutos</p>
+                  <h3 className="text-white font-semibold mb-2">Ativação Instantânea</h3>
+                  <p className="text-gray-400 text-sm">Comece agora mesmo</p>
                 </div>
 
                 <div className="glass-card rounded-xl p-6 text-center group hover:scale-105 transition-all duration-300">
@@ -155,55 +189,21 @@ export default function Page() {
                 </div>
               </div>
 
-              {/* CTAs Principais */}
-              <div className="space-y-6">
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-10 py-6 text-xl font-bold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group">
-                    <Link href="#formulario-teste" className="flex items-center space-x-3">
-                      <Rocket className="h-7 w-7 group-hover:scale-110 transition-transform" />
-                      <span>Quero Experimentar Agora</span>
-                    </Link>
-                  </Button>
-                  
-                  <Button variant="outline" className="border-2 border-green-500 text-green-400 hover:bg-green-500/10 hover:text-green-300 px-10 py-6 text-xl font-bold rounded-2xl transition-all duration-300">
-                    <Link href={planosLink.href} className="flex items-center space-x-3">
-                      <Star className="h-7 w-7" />
-                      <span>Ver Planos Completos</span>
-                    </Link>
-                  </Button>
-                </div>
-
-                <div className="flex items-center justify-center space-x-6 text-sm text-gray-400">
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle2 className="h-4 w-4 text-green-500" />
-                    <span>Sem cartão de crédito</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle2 className="h-4 w-4 text-green-500" />
-                    <span>Ativação em minutos</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle2 className="h-4 w-4 text-green-500" />
-                    <span>Suporte via email</span>
-                  </div>
-                </div>
-              </div>
-
               {/* Seção de Urgência/Contador */}
               <div className="bg-gradient-to-r from-yellow-900/20 via-orange-900/20 to-yellow-900/20 border border-yellow-500/30 rounded-2xl p-6 max-w-2xl mx-auto">
                 <div className="text-center space-y-4">
                   <div className="flex items-center justify-center space-x-2">
                     <Clock className="h-6 w-6 text-yellow-400" />
-                    <span className="text-yellow-400 font-bold text-lg">Teste por Tempo Limitado</span>
+                    <span className="text-yellow-400 font-bold text-lg">Período de teste: até 6h</span>
                   </div>
                   
                   <div className="grid grid-cols-3 gap-4 text-center">
                     <div className="bg-black/30 rounded-lg p-3">
-                      <div className="text-2xl font-bold text-yellow-400">24</div>
-                      <div className="text-xs text-gray-300">HORAS</div>
+                      <div className="text-2xl font-bold text-yellow-400">ATÉ 6H</div>
+                      <div className="text-xs text-gray-300">DURAÇÃO</div>
                     </div>
                     <div className="bg-black/30 rounded-lg p-3">
-                      <div className="text-2xl font-bold text-yellow-400">60</div>
+                      <div className="text-2xl font-bold text-yellow-400">0</div>
                       <div className="text-xs text-gray-300">MINUTOS</div>
                     </div>
                     <div className="bg-black/30 rounded-lg p-3">
@@ -225,7 +225,7 @@ export default function Page() {
                     <Rocket className="h-8 w-8 text-white" />
                   </div>
                   <h2 className="text-3xl font-bold text-white mb-2">Solicite Seu Teste Agora</h2>
-                  <p className="text-gray-400">Preencha o formulário abaixo e receba acesso instantâneo por email e WhatsApp</p>
+                  <p className="text-gray-400">Preencha o formulário abaixo e receba acesso instantâneo por email</p>
                 </div>
                 <FormularioTeste />
               </div>
@@ -260,8 +260,8 @@ export default function Page() {
                 <div className="text-gray-300">Avaliação Média</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl lg:text-5xl font-bold text-green-400 mb-2">24h</div>
-                <div className="text-gray-300">Ativação Rápida</div>
+                <div className="text-4xl lg:text-5xl font-bold text-green-400 mb-2">6h</div>
+                <div className="text-gray-300">Duração do Teste</div>
               </div>
             </div>
 
@@ -440,7 +440,7 @@ export default function Page() {
                   de assinatura + teste grátis completo. Oferta válida apenas para novos usuários.
                 </p>
                 <div className="text-yellow-300 font-semibold">
-                  ⚡ Últimas 24 horas - Aproveite antes que acabe!
+                  ⚡ Aproveite agora - Teste por tempo limitado!
                 </div>
               </div>
             </div>

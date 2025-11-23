@@ -140,7 +140,7 @@ export default function TesteForm({ onSuccess, onError }: TesteFormProps) {
       
       <div>
         <label htmlFor="telefone" className="block text-sm font-medium text-gray-300 mb-2">
-          WhatsApp *
+          Telefone *
         </label>
         <input
           type="tel"
@@ -171,7 +171,7 @@ export default function TesteForm({ onSuccess, onError }: TesteFormProps) {
           <a href="/politica-de-privacidade" className="text-green-400 hover:text-green-300 underline">
             termos de uso e política de privacidade
           </a>{' '}
-          e autoriza o envio das credenciais por email e WhatsApp
+          e autoriza o envio das credenciais por email
         </label>
       </div>
       

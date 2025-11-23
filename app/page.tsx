@@ -28,7 +28,7 @@ function validateContent(content: string, context: string): { valid: boolean; vi
 const faqQuestions = [
   {
     question: 'Como funciona o teste grátis XCloud IPTV?',
-    answer: 'Basta preencher seu nome, e-mail e telefone que enviaremos as instruções de acesso instantaneamente via email e WhatsApp.'
+    answer: 'Basta preencher seu nome, e-mail e telefone que enviaremos as instruções de acesso instantaneamente por email.'
   },
   {
     question: 'Quais dispositivos são compatíveis com XCloud IPTV?',
@@ -40,7 +40,7 @@ const faqQuestions = [
   },
   {
     question: 'Como funciona o suporte XCloud IPTV?',
-    answer: 'Oferecemos suporte especializado via e-mail e chat web com tempo de resposta ultra-rápido. WhatsApp exclusivo para clientes.'
+    answer: 'Oferecemos suporte especializado via e-mail e chat web com tempo de resposta ultra-rápido. Canais exclusivos para clientes ativos.'
   },
   {
     question: 'Qual a velocidade mínima de internet necessária para XCloud IPTV?',
@@ -129,7 +129,7 @@ export default function Page() {
       <Particles />
       
       {/* Hero Section - Layout Exato conforme Imagem */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-28 lg:pt-0 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-28 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
         {/* Background Sutil */}
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-green-900/10 via-transparent to-green-900/5"></div>
@@ -176,18 +176,18 @@ export default function Page() {
               {/* CTAs - Estratégia de Conversão Otimizada */}
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-6">
                 <div className="flex flex-col items-center gap-3">
-                  <Button asChild className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-4 py-3 sm:px-6 sm:py-4 md:px-8 md:py-5 text-base sm:text-lg font-bold rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 min-h-[44px] min-w-[44px]">
-                    <Link href={createInternalLink('/planos-xcloud-iptv', 'Planos XCloud IPTV')} className="flex items-center space-x-3 w-full h-full justify-center">
-                      <Crown className="h-6 w-6" />
+                  <Button asChild className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 text-base font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 min-h-[44px] min-w-[44px]">
+                    <Link href={createInternalLink('/planos-xcloud-iptv', 'Planos XCloud IPTV')} className="flex items-center space-x-2 w-full h-full justify-center">
+                      <Crown className="h-5 w-5" />
                       <span>Ver Planos XCloud</span>
                     </Link>
                   </Button>
                   <span className="text-xs text-gray-300">Planos a partir de R$ 30/mês</span>
                 </div>
                 <div className="flex flex-col items-center gap-3">
-                  <Button asChild variant="outline" className="border-2 border-green-500 text-green-500 hover:bg-green-500/10 hover:text-green-400 px-4 py-3 sm:px-6 sm:py-4 md:px-8 md:py-5 text-base sm:text-lg font-bold rounded-xl sm:rounded-2xl transition-all duration-300 min-h-[44px] min-w-[44px]">
-                    <Link href={createInternalLink('/teste-gratis-xcloud-iptv', 'Teste Grátis XCloud IPTV')} className="flex items-center space-x-3 w-full h-full justify-center">
-                      <Rocket className="h-6 w-6" />
+                  <Button asChild variant="outline" className="border-2 border-green-500 text-green-500 hover:bg-green-500/10 hover:text-green-400 px-6 py-3 text-base font-bold rounded-xl transition-all duration-300 min-h-[44px] min-w-[44px]">
+                    <Link href={createInternalLink('/teste-gratis-xcloud-iptv', 'Teste Grátis XCloud IPTV')} className="flex items-center space-x-2 w-full h-full justify-center">
+                      <Rocket className="h-5 w-5" />
                       <span>Teste Grátis</span>
                     </Link>
                   </Button>
@@ -224,6 +224,7 @@ export default function Page() {
                     alt="Interface da plataforma de streaming com variedade de conteúdo disponível"
                     className="rounded-2xl shadow-lg w-full h-auto object-cover"
                     priority
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                     placeholder="blur"
                     blurDataURL="data:image/webp;base64,UklGRjQAAABXRUJQVlA4ICgAAADQAQCdASoIAAgAAkA4JQBOgB6gEAAAGgA"  // Blur placeholder otimizado
                   />
@@ -678,7 +679,7 @@ export default function Page() {
               },
               {
                 pergunta: 'Como funciona o suporte?',
-                resposta: 'Oferecemos suporte especializado via e-mail e chat web com tempo de resposta ultra-rápido. WhatsApp exclusivo para clientes.'
+                resposta: 'Oferecemos suporte especializado via e-mail e chat web com tempo de resposta ultra-rápido. Canais exclusivos para clientes ativos.'
               },
               {
                 pergunta: 'Qual a velocidade mínima de internet necessária?',

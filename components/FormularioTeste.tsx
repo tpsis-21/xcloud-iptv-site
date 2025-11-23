@@ -178,7 +178,7 @@ export function FormularioTeste({ onSuccess, onError }: FormularioTesteProps) {
         
         <FormInput
           id="telefone"
-          label="Telefone (WhatsApp)"
+          label="Telefone"
           type="tel"
           placeholder="(00) 00000-0000"
           required

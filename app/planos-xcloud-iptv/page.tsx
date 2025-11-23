@@ -77,7 +77,7 @@ export default function Page() {
   ]
 
   // Criar link interno contextual para teste grátis
-  const testeGratisLink = createInternalLink('/teste-gratis-xcloud-iptv', 'Teste Grátis XCloud IPTV');
+  const testeGratisLink = createInternalLink('/teste-gratis-xcloud-iptv#formulario-teste', 'Teste Grátis XCloud IPTV');
 
   // Schema JSON-LD para página de planos
   const plansSchema = SCHEMA_TEMPLATES.breadcrumbList([
@@ -135,7 +135,7 @@ export default function Page() {
         </div>
         
         {/* Hero Section */}
-        <section className="relative py-20 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+        <section className="relative pt-24 sm:pt-28 py-20 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black">
           <div className="absolute inset-0 z-0">
             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-green-900/10 via-transparent to-green-900/5"></div>
             <div className="absolute top-1/3 left-1/4 w-56 h-56 bg-green-500/5 rounded-full blur-3xl"></div>

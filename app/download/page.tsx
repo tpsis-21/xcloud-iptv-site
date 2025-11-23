@@ -21,9 +21,9 @@ import { XCloudInstallationHowToSchema, AndroidTVInstallationHowToSchema } from 
 import { SoftwareApplicationSchema } from '@/components/schemas/SoftwareApplicationSchema'
 
 export const metadata: Metadata = {
-  title: 'Download XCloud IPTV | Como Baixar e Instalar XCloud IPTV - Tutorial Completo',
+  title: 'Baixe e Instale XCloud IPTV | Download Oficial - Tutorial Completo',
   description:
-    'Download XCloud IPTV: tutorial completo para baixar XCloud IPTV e instalar XCloud IPTV em Smart TV, Android, iOS, Fire Stick. Código XCloudTV para downloader.',
+    'Guia oficial passo a passo para baixar e instalar XCloud IPTV em Smart TV, Android, iOS, Fire Stick e mais. Downloads seguros, código XCloudTV e suporte dedicado.',
   keywords: 'download xcloud iptv, como baixar xcloud iptv, instalar xcloud iptv, xcloud iptv download, xcloud iptv smart tv, xcloud iptv android, xcloud iptv ios, xcloud iptv fire stick, codigo xcloudtv',
   openGraph: {
     title: 'Download XCloud IPTV - Tutorial Completo de Instalação',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     description: 'Guia completo para instalar XCloud IPTV em Smart TV, Android, iOS, Fire Stick e mais dispositivos.'
   },
   alternates: {
-    canonical: 'https://xcloudtv.com.br/download'
+    canonical: 'https://xcloudiptv.com.br/download'
   }
 }
 
@@ -69,21 +69,21 @@ export default function DownloadPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative py-20 z-10">
+      <section className="relative pt-24 sm:pt-28 py-20 z-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-4xl lg:text-6xl font-bold text-gradient-brand mb-6">
-              Download XCloud IPTV | Como Baixar e Instalar XCloud IPTV
+              Baixe e Instale XCloud IPTV em Poucos Minutos
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Download XCloud IPTV: tutorial completo para baixar XCloud IPTV e instalar XCloud IPTV. Como baixar XCloud IPTV em Smart TV, Android, iOS, Fire Stick. Código XCloudTV para downloader.
+              Guia oficial passo a passo com downloads seguros e código XCloudTV no Downloader. Compatível com Android, iOS, Smart TV e Fire TV Stick. Suporte dedicado incluído.
             </p>
           </div>
 
 
 
           {/* Smart TV Section */}
-          <div className="mb-16">
+          <div id="smart-tv" className="mb-16 scroll-mt-20">
             <div className="text-center mb-12">
               <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Tv className="h-8 w-8 text-white" />
@@ -144,7 +144,7 @@ export default function DownloadPage() {
           </div>
 
           {/* Android TV / Fire Stick / Mi Stick */}
-          <div className="mb-16">
+          <div id="android-tv" className="mb-16 scroll-mt-20">
             <div className="text-center mb-12">
               <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Smartphone className="h-8 w-8 text-white" />
@@ -217,7 +217,7 @@ export default function DownloadPage() {
           </div>
 
           {/* Android TV / Fire Stick / Mi Stick */}
-          <div className="mb-16">
+          <div id="mobile-devices" className="mb-16 scroll-mt-20">
             <div className="text-center mb-12">
               <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Smartphone className="h-8 w-8 text-white" />
@@ -375,12 +375,12 @@ export default function DownloadPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-8 py-4 text-lg font-bold rounded-xl">
-                  <Link href={createInternalLink('/teste-gratis', 'Teste Grátis XCloud IPTV')} className="flex items-center space-x-2">
+                  <Link href={createInternalLink('/teste-gratis-xcloud-iptv', 'Teste Grátis XCloud IPTV')} className="flex items-center space-x-2">
                     <span>Teste Grátis</span>
                   </Link>
                 </Button>
                 <Button variant="outline" className="border-green-500/50 text-green-400 hover:bg-green-500/10 px-8 py-4 text-lg font-bold rounded-xl">
-                  <Link href={createInternalLink('/planos', 'Planos XCloud IPTV')} className="flex items-center space-x-2">
+                  <Link href={createInternalLink('/planos-xcloud-iptv', 'Planos XCloud IPTV')} className="flex items-center space-x-2">
                     <span>Ver Planos</span>
                   </Link>
                 </Button>
@@ -397,7 +397,7 @@ export default function DownloadPage() {
                 '@type': 'SoftwareApplication',
                 name: 'XCloud IPTV',
                 description: 'Aplicativo IPTV para Smart TV, Android, iOS, Fire Stick, Mi Stick e Windows',
-                url: 'https://xcloudtv.com.br/download',
+                url: 'https://xcloudiptv.com.br/download',
                 applicationCategory: 'EntertainmentApplication',
                 operatingSystem: 'Android, iOS, Windows, Smart TV, Fire TV, Mi TV',
                 offers: {

@@ -41,7 +41,7 @@ export function SoftwareApplicationSchema({
     publisher: {
       "@type": "Organization",
       name: "XCloud IPTV",
-      url: "https://xcloudtv.com.br"
+      url: "https://xcloudiptv.com.br"
     },
     offers: {
       "@type": "Offer",
@@ -68,8 +68,8 @@ export function XCloudAppSchema() {
     description: "Aplicativo XCloud IPTV para streaming completo com canais ao vivo, filmes e séries. Disponível para Android, iOS, Smart TV e mais dispositivos.",
     operatingSystem: "Android, iOS, Windows, Smart TV",
     applicationCategory: "MultimediaApplication",
-    downloadUrl: "https://xcloudtv.com.br/download",
-    screenshot: "https://xcloudtv.com.br/screenshot-app.jpg",
+    downloadUrl: "https://xcloudiptv.com.br/download",
+    screenshot: "https://xcloudiptv.com.br/anexos/logo_app_xcloudtv.png",
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "4.8",
@@ -78,7 +78,7 @@ export function XCloudAppSchema() {
     publisher: {
       "@type": "Organization",
       name: "XCloud IPTV",
-      url: "https://xcloudtv.com.br"
+      url: "https://xcloudiptv.com.br"
     },
     offers: {
       "@type": "Offer",

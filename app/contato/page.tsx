@@ -18,6 +18,7 @@ import {
   Zap,
   Star
 } from 'lucide-react'
+import { CONTACTS } from '@/config/contacts'
 import { Particles } from '@/components/particles'
 
 export const metadata: Metadata = {
@@ -42,10 +43,10 @@ const canaisSuporte = [
   {
     icone: Mail,
     titulo: 'Email',
-    descricao: 'xcloudtv4pp@gmail.com',
+    descricao: CONTACTS.email,
     subtitulo: 'Resposta via email',
     acao: 'Enviar Email',
-    link: 'mailto:xcloudtv4pp@gmail.com'
+    link: '/contato'
   },
   {
     icone: Clock,
@@ -53,26 +54,26 @@ const canaisSuporte = [
     descricao: 'Segunda a Sábado',
     subtitulo: '9h às 22h, incluindo feriados',
     acao: 'Ver Horários',
-    link: 'mailto:xcloudtv4pp@gmail.com'
+    link: '/contato'
   }
 ]
 
 const perguntasFrequentes = [
   {
     pergunta: 'Qual é o prazo de resposta do suporte?',
-    resposta: 'Nosso chat web responde instantaneamente durante o horário comercial (9h às 18h). Para emails, respondemos rapidamente.'
+    resposta: 'Respondemos todos os emails rapidamente durante nosso horário de atendimento (9h às 22h, segunda a sábado).'
   },
   {
     pergunta: 'Preciso ser cliente para receber suporte?',
     resposta: 'Não! Oferecemos suporte pré-venda para tirar todas suas dúvidas antes de contratar nossos serviços.'
   },
   {
-    pergunta: 'O suporte via WhatsApp é para quem?',
-    resposta: 'O WhatsApp é exclusivo para clientes ativos. Após ativar seu plano, você receberá o número do nosso suporte exclusivo.'
+    pergunta: 'Como funciona o suporte para clientes?',
+    resposta: 'Clientes ativos recebem acesso prioritário ao nosso suporte via email com resposta ainda mais rápida.'
   },
   {
     pergunta: 'Como faço para testar o serviço?',
-    resposta: 'Acesse nossa página de teste grátis em /teste-gratis e preencha o formulário. Você receberá as credenciais em até 5 minutos.'
+    resposta: 'Acesse nossa página de teste grátis em /teste-gratis e preencha o formulário. Você receberá as credenciais instantaneamente.'
   }
 ]
 
@@ -82,7 +83,7 @@ export default function ContatoPage() {
       <Particles />
       
       {/* Hero Section */}
-      <section className="relative py-20 px-4 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+      <section className="relative pt-24 sm:pt-28 py-20 px-4 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
         {/* Background Sutil */}
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-green-900/10 via-transparent to-green-900/5"></div>
@@ -139,7 +140,7 @@ export default function ContatoPage() {
                     >
                       <a href={canal.link}>
                         <Send className="mr-2 h-4 w-4" />
-                        {canal.acao}
+                        Enviar Mensagem
                       </a>
                     </Button>
                   </CardContent>
@@ -301,7 +302,7 @@ export default function ContatoPage() {
               className="bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-6 text-lg"
               asChild
             >
-              <Link href="/teste-gratis">
+              <Link href="/teste-gratis-xcloud-iptv#formulario-teste">
                 <Star className="mr-2 h-5 w-5" />
                 Teste Grátis Agora
               </Link>
@@ -312,7 +313,7 @@ export default function ContatoPage() {
               className="border-green-500 text-green-400 hover:bg-green-500/10 px-8 py-6 text-lg"
               asChild
             >
-              <Link href="/planos">
+              <Link href="/planos-xcloud-iptv">
                 Ver Planos
               </Link>
             </Button>
@@ -329,8 +330,8 @@ export default function ContatoPage() {
             '@type': 'LocalBusiness',
             name: 'XCloud IPTV Brasil',
             description: 'XCloud IPTV - IPTV Streaming com conteúdo variado no Brasil',
-            url: 'https://xcloudtv.vercel.app',
-            email: 'xcloudtv4pp@gmail.com',
+            url: 'https://xcloudiptv.com.br',
+            email: CONTACTS.email,
             address: {
               '@type': 'PostalAddress',
               addressCountry: 'BR',
@@ -340,7 +341,7 @@ export default function ContatoPage() {
             contactPoint: {
               '@type': 'ContactPoint',
               contactType: 'customer service',
-              email: 'xcloudtv4pp@gmail.com',
+              email: CONTACTS.email,
               availableLanguage: ['Portuguese'],
               hoursAvailable: 'Mo-Sa 09:00-22:00'
             },
@@ -350,8 +351,7 @@ export default function ContatoPage() {
             },
             knowsAbout: ['IPTV Streaming', 'Streaming de TV', 'Entretenimento Digital'],
             sameAs: [
-              'https://xcloudtv.vercel.app',
-              'https://apps.tplay21.in/xcloudtv'
+              'https://xcloudiptv.com.br'
             ]
           })
         }}
@@ -365,7 +365,7 @@ export default function ContatoPage() {
             '@type': 'ContactPage',
             name: 'Contato - XCloud IPTV',
             description: 'Entre em contato com a XCloud IPTV. Suporte por email e chat web.',
-            url: 'https://xcloudtv.com.br/contato'
+            url: 'https://xcloudiptv.com.br/contato'
           })
         }}
       />
@@ -377,8 +377,8 @@ export default function ContatoPage() {
             '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
             itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://xcloudtv.vercel.app/' },
-              { '@type': 'ListItem', position: 2, name: 'Contato', item: 'https://xcloudtv.vercel.app/contato' }
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://xcloudiptv.com.br/' },
+              { '@type': 'ListItem', position: 2, name: 'Contato', item: 'https://xcloudiptv.com.br/contato' }
             ]
           })
         }}
