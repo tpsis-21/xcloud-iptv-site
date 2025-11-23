@@ -58,7 +58,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={inter.className}>
         <GoogleAnalytics />
         <Header />
-        <main className="bg-black text-white pt-20 sm:pt-24">{children}</main>
+        <main className="bg-black text-white">{children}</main>
         <Footer />
         <script
           type="application/ld+json"
