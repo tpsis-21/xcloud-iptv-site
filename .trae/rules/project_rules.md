@@ -6,7 +6,7 @@ Marca: Xcloud IPTV
 Logo: "anexos\logo_app_xcloudtv.png"
 cores: use as cores baseadas na logo;
 Persona/região: Brasil, interessados em “Xcloud IPTV” (aplicativo de iptv)
-Url: xcloudiptv.com.br
+Url do site: xcloudiptv.com.br
 
 ➡️ OS Planos São:
 Planos:

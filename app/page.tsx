@@ -129,7 +129,7 @@ export default function Page() {
       <Particles />
       
       {/* Hero Section - Layout Exato conforme Imagem */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-28 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+      <section className="relative overflow-hidden pt-24 sm:pt-28 py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
         {/* Background Sutil */}
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-green-900/10 via-transparent to-green-900/5"></div>
@@ -138,7 +138,7 @@ export default function Page() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[calc(100vh-80px)]">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Conteúdo textual - Lado Esquerdo */}
             <div className="space-y-6 lg:space-y-8 text-center lg:text-left">
 

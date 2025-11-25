@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { Zap, Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Zap, Loader2, CheckCircle2, AlertCircle, Info, X } from 'lucide-react';
+import Link from 'next/link';
 import { FormInput } from '@/components/ui/FormInput';
 import { FormButton } from '@/components/ui/FormButton';
 import { 
@@ -60,13 +61,14 @@ export function FormularioTeste({ onSuccess, onError }: FormularioTesteProps) {
 
       // Enviar para webhook
       const webhookResponse = await enviarDadosTeste(payload);
-      
-      if (!webhookResponse.success) {
-        throw new Error(webhookResponse.message || 'Erro ao processar solicitação');
-      }
 
-      setResponse(webhookResponse);
-      onSuccess?.(webhookResponse);
+      if (webhookResponse.success) {
+        setResponse(webhookResponse);
+        onSuccess?.(webhookResponse);
+      } else {
+        setResponse(webhookResponse);
+        onError?.(webhookResponse.message);
+      }
       
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Erro desconhecido';
@@ -99,7 +101,15 @@ export function FormularioTeste({ onSuccess, onError }: FormularioTesteProps) {
 
   if (response?.success) {
     return (
-      <div className="glass-card rounded-2xl p-8 border border-green-500/20">
+      <div className="glass-card rounded-2xl p-8 border border-green-500/20 relative">
+        <button
+          type="button"
+          aria-label="Fechar mensagem"
+          className="absolute top-4 right-4 inline-flex items-center justify-center w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white border border-white/10 transition-colors"
+          onClick={() => { setResponse(null); setError(''); }}
+        >
+          <X className="h-5 w-5" />
+        </button>
         <div className="text-center space-y-4">
           <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto">
             <CheckCircle2 className="h-8 w-8 text-white" />
@@ -126,6 +136,34 @@ export function FormularioTeste({ onSuccess, onError }: FormularioTesteProps) {
               </div>
             </div>
           )}
+        </div>
+      </div>
+    );
+  }
+
+  if (response && !response.success) {
+    return (
+      <div className="glass-card rounded-2xl p-8 border border-yellow-500/20 relative" role="status" aria-live="polite">
+        <button
+          type="button"
+          aria-label="Fechar mensagem"
+          className="absolute top-4 right-4 inline-flex items-center justify-center w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white border border-white/10 transition-colors"
+          onClick={() => { setResponse(null); setError(''); }}
+        >
+          <X className="h-5 w-5" />
+        </button>
+        <div className="text-center space-y-4">
+          <div className="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mx-auto">
+            <Info className="h-8 w-8 text-black" />
+          </div>
+          <div className="text-gray-200 whitespace-pre-line">
+            {response.message}
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
+            <Link href="/planos-xcloud-iptv#planos" className="inline-flex items-center justify-center px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors duration-200">
+              Ver Planos
+            </Link>
+          </div>
         </div>
       </div>
     );

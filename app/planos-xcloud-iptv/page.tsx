@@ -167,7 +167,7 @@ export default function Page() {
             </div>
 
             {/* Planos */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            <div id="planos" className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto scroll-mt-24">
               {planos.map((plano) => (
                 <div key={plano.meses} className={`relative group ${plano.popular ? 'lg:scale-110' : ''}`}>
                   {plano.popular && (

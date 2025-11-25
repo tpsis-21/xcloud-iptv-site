@@ -46,7 +46,7 @@ export function IndividualReviewSchema({
     publisher: {
       "@type": "Organization",
       name: "XCloud IPTV",
-      url: "https://xcloudtv.com.br"
+      url: "https://xcloudiptv.com.br"
     }
   };
 
@@ -126,7 +126,7 @@ export function ReviewSchemaWithProtections({ reviews, productName, productSku }
       publisher: {
         "@type": "Organization",
         name: "XCloud IPTV",
-        url: "https://xcloudtv.com.br"
+        url: "https://xcloudiptv.com.br"
       }
     }))
   };

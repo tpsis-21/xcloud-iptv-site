@@ -25,8 +25,7 @@ export interface WebhookResponse {
  * Envia dados para o webhook de geração de teste
  */
 export async function enviarDadosTeste(payload: WebhookPayload): Promise<WebhookResponse> {
-  const WEBHOOK_URL = 'https://n8n.tplay21.in/webhook/teste-xcloudtv';
-  
+  const WEBHOOK_URL = '/api/teste-xcloud';
   try {
     const response = await fetch(WEBHOOK_URL, {
       method: 'POST',
@@ -37,26 +36,15 @@ export async function enviarDadosTeste(payload: WebhookPayload): Promise<Webhook
       body: JSON.stringify(payload),
     });
 
-    if (!response.ok) {
-      throw new Error(`Erro HTTP: ${response.status} - ${response.statusText}`);
-    }
-
     const data = await response.json();
-    
-    // Validar estrutura da resposta
-    if (data.success === undefined) {
-      throw new Error('Resposta do webhook inválida: missing success field');
-    }
-
     return data as WebhookResponse;
-    
   } catch (error) {
-    console.error('Erro ao enviar dados para webhook:', error);
-    
-    // Retornar erro estruturado para tratamento na interface
+    const isAbort = error instanceof Error && error.name === 'AbortError';
     return {
       success: false,
-      message: 'Erro ao processar solicitação',
+      message: isAbort
+        ? 'Tempo de resposta excedido. Tente novamente em alguns minutos.'
+        : 'Falha de comunicação com o gerador de testes. Tente novamente em alguns minutos.',
       error: error instanceof Error ? error.message : 'Erro desconhecido',
     };
   }

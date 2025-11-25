@@ -22,7 +22,7 @@ export default function TermosDeUso() {
         title={pageTitle}
         description={pageDescription}
         keywords={pageKeywords}
-        canonical="https://xcloudtv.com.br/termos-de-uso"
+        canonical="https://xcloudiptv.com.br/termos-de-uso"
       />
       
       <JsonLD schema={SCHEMA_TEMPLATES.organization} />
@@ -185,6 +185,23 @@ export default function TermosDeUso() {
                     <strong>Horário de atendimento:</strong> Segunda a sábado, 9h às 22h (horário de Brasília)
                   </p>
                 </div>
+              </section>
+
+              {/* Política de Reembolso */}
+              <section className="mb-8">
+                <h2 className="text-2xl font-semibold text-emerald-400 mb-4">10. Política de Reembolso</h2>
+                <p className="text-gray-300 leading-relaxed mb-4">
+                  Por se tratar de serviço digital com ativação imediata, o reembolso é analisado caso a caso quando houver impossibilidade técnica de acesso não resolvida pelo suporte dentro de um prazo razoável. Para solicitar análise de reembolso, entre em contato por email informando nome, email e data da contratação.
+                </p>
+                <ul className="text-gray-300 space-y-2 mb-4">
+                  <li>• Pagamentos são processados pela plataforma Cakto</li>
+                  <li>• Chargebacks e disputas devem ser formalizados diretamente no meio de pagamento</li>
+                  <li>• Solicitações de reembolso são avaliadas mediante evidências técnicas do problema</li>
+                  <li>• Não há reembolso por uso indevido, descumprimento dos termos ou mudanças de preferência</li>
+                </ul>
+                <p className="text-gray-300 leading-relaxed">
+                  A XCloud IPTV se compromete com suporte por email em português, de segunda a sábado, visando resolver eventuais dificuldades de acesso.
+                </p>
               </section>
 
               {/* Aceitação Final */}

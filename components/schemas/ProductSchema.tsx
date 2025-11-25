@@ -106,14 +106,14 @@ export function XCloudPlanProductSchema({ planName, price, period, features }: {
       name: "XCloud IPTV"
     },
     category: "Software as a Service",
-    image: "https://xcloudtv.com.br/logo.png",
+    image: "https://xcloudiptv.com.br/logo.png",
     offers: {
       "@type": "Offer",
       price: price.replace('R$', '').replace(',', '.'),
       priceCurrency: "BRL",
       availability: "https://schema.org/InStock",
       priceValidUntil: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
-      url: `https://xcloudtv.com.br/planos#${planName.toLowerCase()}`
+      url: `https://xcloudiptv.com.br/planos#${planName.toLowerCase()}`
     },
     aggregateRating: {
       "@type": "AggregateRating",

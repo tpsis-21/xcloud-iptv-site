@@ -53,7 +53,7 @@ export default function DownloadPage() {
         description="Aplicativo XCloud IPTV para streaming completo com canais ao vivo, filmes e séries. Disponível para Android, iOS, Smart TV e mais dispositivos."
         operatingSystem="Android, iOS, Windows, Smart TV"
         applicationCategory="MultimediaApplication"
-        downloadUrl="https://xcloudtv.com.br/download"
+        downloadUrl="https://xcloudiptv.com.br/download"
         aggregateRating={{
           ratingValue: "4.8",
           reviewCount: "256"

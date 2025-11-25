@@ -131,35 +131,35 @@ export function AndroidTVInstallationHowToSchema() {
         position: 1,
         name: "Instalar Downloader",
         text: "Vá para a Google Play Store da sua Android TV e instale o aplicativo 'Downloader'.",
-        image: "https://xcloudtv.com.br/images/android-tv-downloader.jpg"
+        image: "https://xcloudiptv.com.br/images/android-tv-downloader.jpg"
       },
       {
         "@type": "HowToStep",
         position: 2,
         name: "Ativar fontes desconhecidas",
         text: "Vá em Configurações > Segurança e restrições > Ativar 'Fontes desconhecidas' para o Downloader.",
-        image: "https://xcloudtv.com.br/images/android-tv-fontes-desconhecidas.jpg"
+        image: "https://xcloudiptv.com.br/images/android-tv-fontes-desconhecidas.jpg"
       },
       {
         "@type": "HowToStep",
         position: 3,
         name: "Abrir o Downloader",
         text: "Abra o aplicativo Downloader e insira a URL do XCloud IPTV fornecida no site oficial.",
-        image: "https://xcloudtv.com.br/images/android-tv-url.jpg"
+        image: "https://xcloudiptv.com.br/images/android-tv-url.jpg"
       },
       {
         "@type": "HowToStep",
         position: 4,
         name: "Fazer download e instalar",
         text: "Clique em 'Go' para baixar o aplicativo XCloud IPTV e depois clique em 'Instalar'.",
-        image: "https://xcloudtv.com.br/images/android-tv-instalacao.jpg"
+        image: "https://xcloudiptv.com.br/images/android-tv-instalacao.jpg"
       },
       {
         "@type": "HowToStep",
         position: 5,
         name: "Abrir o XCloud IPTV",
         text: "Após a instalação, abra o aplicativo XCloud IPTV e configure com suas credenciais.",
-        image: "https://xcloudtv.com.br/images/android-tv-app-aberto.jpg"
+        image: "https://xcloudiptv.com.br/images/android-tv-app-aberto.jpg"
       }
     ]
   };

@@ -45,8 +45,8 @@ const canaisSuporte = [
     titulo: 'Email',
     descricao: CONTACTS.email,
     subtitulo: 'Resposta via email',
-    acao: 'Enviar Email',
-    link: '/contato'
+    acao: 'Enviar Mensagem',
+    link: '#formulario-contato'
   },
   {
     icone: Clock,
@@ -54,7 +54,7 @@ const canaisSuporte = [
     descricao: 'Segunda a Sábado',
     subtitulo: '9h às 22h, incluindo feriados',
     acao: 'Ver Horários',
-    link: '/contato'
+    link: '#canais-atendimento'
   }
 ]
 
@@ -107,8 +107,8 @@ export default function ContatoPage() {
       </section>
 
       {/* Canais de Suporte */}
-      <section className="py-20 px-4 bg-gray-900/30">
-        <div className="max-w-6xl mx-auto">
+      <section id="canais-atendimento" className="py-20 px-4 bg-gray-900/30">
+        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-green-500">
               Canais de Atendimento
@@ -118,7 +118,7 @@ export default function ContatoPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {canaisSuporte.map((canal, index) => {
               const Icone = canal.icone
               return (
@@ -138,9 +138,9 @@ export default function ContatoPage() {
                       className="w-full bg-green-600 hover:bg-green-700 text-white"
                       asChild
                     >
-                      <a href={canal.link}>
+                      <a href={canal.link} aria-label={canal.acao}>
                         <Send className="mr-2 h-4 w-4" />
-                        Enviar Mensagem
+                        {canal.acao}
                       </a>
                     </Button>
                   </CardContent>
@@ -152,7 +152,7 @@ export default function ContatoPage() {
       </section>
 
       {/* Formulário de Contato */}
-      <section className="py-20 px-4 bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/50">
+      <section id="formulario-contato" className="py-20 px-4 bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-black/50">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-green-500">
