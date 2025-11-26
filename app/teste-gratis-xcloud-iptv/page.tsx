@@ -12,7 +12,7 @@ import { Breadcrumb } from '@/components/ui/breadcrumb'
 
 export const metadata: Metadata = {
   title: 'Teste Grátis XCloud IPTV - Experimente Sem Compromisso',
-  description: 'Teste grátis XCloud IPTV: Acesso completo ao conteúdo. Milhares de canais, filmes e séries. Teste IPTV XCloud sem cartão. Ativação imediata.',
+  description: 'Teste XCloud IPTV sem compromisso e com ativação imediata. Acesso a mais de 100 mil conteúdos. SOlicite e experimente já',
   keywords: 'teste gratis xcloud iptv, teste iptv xcloud, teste grátis, iptv, streaming, canais ao vivo, filmes, séries',
   openGraph: {
     title: 'Teste Grátis XCloud IPTV - Acesso Completo',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   // Criar links internos contextuais
-  const planosLink = createInternalLink('/planos-xcloud-iptv', 'Ver Planos XCloud IPTV');
+  const planosLink = createInternalLink('/planos-xcloud-iptv#mensal', 'Ver Planos XCloud IPTV');
   const downloadLink = createInternalLink('/download', 'Download XCloud IPTV');
 
   // Schema JSON-LD para página de teste
@@ -61,7 +61,7 @@ export default function Page() {
       {/* Meta tags otimizadas */}
       <MetaTags
         title="Teste Grátis XCloud IPTV"
-        description="Teste grátis XCloud IPTV: Acesso completo ao conteúdo. Milhares de canais, filmes e séries. Teste IPTV XCloud sem cartão. Ativação imediata."
+        description="Teste XCloud IPTV sem compromisso e com ativação imediata. Acesso a mais de 100 mil conteúdos. SOlicite e experimente já"
         canonical="/teste-gratis-xcloud-iptv"
         keywords={['teste gratis xcloud iptv', 'teste iptv xcloud', 'experimentar xcloud']}
       />
@@ -111,6 +111,7 @@ export default function Page() {
                     Experimente Agora
                     <Sparkles className="inline h-8 w-8 ml-2" />
                   </div>
+                  <h2 className="text-2xl lg:text-3xl font-bold text-green-400">Faça seu teste iptv xcloud agora</h2>
                 </div>
 
                 <p className="text-xl lg:text-2xl text-gray-200 leading-relaxed max-w-3xl mx-auto">
@@ -228,6 +229,7 @@ export default function Page() {
                   <p className="text-gray-400">Preencha o formulário abaixo e receba acesso instantâneo por email</p>
                 </div>
                 <FormularioTeste />
+                <p className="text-gray-400 text-sm mt-4">Dúvidas? <Link href="/contato" className="text-green-400 underline">Fale com nosso suporte</Link></p>
               </div>
             </div>
           </div>
@@ -248,19 +250,19 @@ export default function Page() {
             {/* Estatísticas de Impacto */}
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
               <div className="text-center">
-                <div className="text-4xl lg:text-5xl font-bold text-green-400 mb-2">50K+</div>
-                <div className="text-gray-300">Testes Realizados</div>
+                <div className="text-2xl lg:text-3xl font-bold text-green-400 mb-2">Ativação Imediata</div>
+                <div className="text-gray-300">Acesso em minutos</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl lg:text-5xl font-bold text-green-400 mb-2">98%</div>
-                <div className="text-gray-300">Taxa de Aprovação</div>
+                <div className="text-2xl lg:text-3xl font-bold text-green-400 mb-2">Suporte em Português</div>
+                <div className="text-gray-300">Atendimento 9h–22h</div>
               </div>
               <div className="text-center">
                 <div className="text-4xl lg:text-5xl font-bold text-green-400 mb-2">4.8</div>
                 <div className="text-gray-300">Avaliação Média</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl lg:text-5xl font-bold text-green-400 mb-2">6h</div>
+                <div className="text-4xl lg:text-5xl font-bold text-green-400 mb-2">ATÉ 6H</div>
                 <div className="text-gray-300">Duração do Teste</div>
               </div>
             </div>

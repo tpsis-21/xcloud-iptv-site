@@ -2,12 +2,20 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import logoImg from '../app/assets/images/logo_app_xcloudtv.png'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { Menu, X, Rocket } from 'lucide-react'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => { document.body.style.overflow = '' }
+  }, [open])
   
   return (
     <header className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-gray-800">
@@ -62,9 +70,9 @@ export default function Header() {
       </nav>
       
       {open && createPortal(
-        <div className="fixed inset-0 z-[100]">
+        <div className="fixed inset-0 z-[9999]">
           <div className="absolute inset-0 bg-black/90 backdrop-blur-xl" onClick={() => setOpen(false)} />
-          <div className="absolute right-0 top-0 h-screen w-3/4 max-w-sm bg-gray-900/95 backdrop-blur-xl border-l border-gray-800 shadow-2xl overflow-y-auto">
+          <div id="mobile-menu" aria-label="Menu de navegação" className="absolute right-0 top-0 h-screen w-3/4 max-w-sm bg-gray-900/95 backdrop-blur-xl border-l border-gray-800 shadow-2xl overflow-y-auto">
             <div className="p-6">
               <button aria-label="Fechar menu" className="absolute right-6 top-6 inline-flex h-12 w-12 items-center justify-center rounded-lg border border-gray-700 hover:border-brand hover:text-brand-light transition-all duration-300" onClick={() => setOpen(false)}>
                 <X className="h-6 w-6" />

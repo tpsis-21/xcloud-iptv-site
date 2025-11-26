@@ -182,7 +182,7 @@ export default function Page() {
                       <span>Ver Planos XCloud</span>
                     </Link>
                   </Button>
-                  <span className="text-xs text-gray-300">Planos a partir de R$ 30/mês</span>
+                  <Link href={createInternalLink('/planos-xcloud-iptv#mensal', 'Planos XCloud IPTV Mensal')} className="text-xs text-green-300 underline underline-offset-2 hover:text-green-200">Planos a partir de R$ 30/mês</Link>
                 </div>
                 <div className="flex flex-col items-center gap-3">
                   <Button asChild variant="outline" className="border-2 border-green-500 text-green-500 hover:bg-green-500/10 hover:text-green-400 px-6 py-3 text-base font-bold rounded-xl transition-all duration-300 min-h-[44px] min-w-[44px]">
@@ -281,7 +281,7 @@ export default function Page() {
               </div>
               <h4 className="text-xl font-semibold text-white mb-3">Planos Acessíveis XCloud IPTV</h4>
               <p className="text-gray-300">
-                Assine xcloud iptv com descontos progressivos. <Link href={createInternalLink('/planos-xcloud-iptv', 'Plano Anual XCloud IPTV')} className="text-green-300 underline underline-offset-2 hover:text-green-200">Plano anual xcloud iptv com 20% de economia</Link> e maior custo-benefício para seu bolso.
+                Assine xcloud iptv com descontos progressivos. <Link href={createInternalLink('/planos-xcloud-iptv#anual', 'Plano Anual XCloud IPTV')} className="text-green-300 underline underline-offset-2 hover:text-green-200">Plano anual xcloud iptv com 20% de economia</Link> e maior custo-benefício para seu bolso.
               </p>
             </div>
             <div className="glass-card rounded-xl p-8 text-center">
@@ -324,7 +324,7 @@ export default function Page() {
                 <Download className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">1. Escolha Seu Plano XCloud IPTV</h3>
-              <p className="text-gray-300">Selecione o plano ideal para você. <Link href={createInternalLink('/planos-xcloud-iptv', 'Planos XCloud IPTV')} className="text-green-500 hover:text-green-400 underline">Planos a partir de R$ 30/mês</Link> com descontos progressivos.</p>
+              <p className="text-gray-300">Selecione o plano ideal para você. <Link href={createInternalLink('/planos-xcloud-iptv#mensal', 'Planos XCloud IPTV Mensal')} className="text-green-500 hover:text-green-400 underline">Planos a partir de R$ 30/mês</Link> com descontos progressivos.</p>
             </div>
 
             <div className="glass-card rounded-2xl p-8 text-center group hover:scale-105 transition-all duration-300">

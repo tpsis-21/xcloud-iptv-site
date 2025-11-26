@@ -169,7 +169,11 @@ export default function Page() {
             {/* Planos */}
             <div id="planos" className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto scroll-mt-24">
               {planos.map((plano) => (
-                <div key={plano.meses} className={`relative group ${plano.popular ? 'lg:scale-110' : ''}`}>
+                <div
+                  key={plano.meses}
+                  id={plano.meses === 1 ? 'mensal' : plano.meses === 3 ? 'trimestral' : plano.meses === 6 ? 'semestral' : 'anual'}
+                  className={`relative group ${plano.popular ? 'lg:scale-110' : ''} scroll-mt-24`}
+                >
                   {plano.popular && (
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
                       <Badge className="gradient-brand text-white px-4 py-2 font-bold">
