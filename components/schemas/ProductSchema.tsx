@@ -1,4 +1,5 @@
 import React from 'react';
+import { absoluteUrl } from '@/config/seo';
 
 interface ProductOffer {
   price: string;
@@ -56,13 +57,69 @@ export function ProductSchema({
       priceCurrency: offer.priceCurrency,
       availability: `https://schema.org/${offer.availability}`,
       ...(offer.validThrough && { priceValidUntil: offer.validThrough }),
-      url: offer.url
+      url: offer.url,
+      hasMerchantReturnPolicy: absoluteUrl('/termos-de-uso#politica-de-reembolso'),
+      shippingDetails: {
+        "@type": "OfferShippingDetails",
+        shippingRate: {
+          "@type": "MonetaryAmount",
+          value: "0",
+          currency: offer.priceCurrency || "BRL"
+        },
+        deliveryTime: {
+          "@type": "ShippingDeliveryTime",
+          handlingTime: {
+            "@type": "QuantitativeValue",
+            minValue: 0,
+            maxValue: 5,
+            unitCode: "MIN"
+          },
+          transitTime: {
+            "@type": "QuantitativeValue",
+            minValue: 0,
+            maxValue: 5,
+            unitCode: "MIN"
+          }
+        },
+        shippingDestination: {
+          "@type": "DefinedRegion",
+          addressCountry: "BR"
+        }
+      }
     })) : {
       "@type": "Offer",
       price,
       priceCurrency,
       availability: `https://schema.org/${availability}`,
-      url: window?.location?.href || ''
+      url: window?.location?.href || '',
+      hasMerchantReturnPolicy: absoluteUrl('/termos-de-uso#politica-de-reembolso'),
+      shippingDetails: {
+        "@type": "OfferShippingDetails",
+        shippingRate: {
+          "@type": "MonetaryAmount",
+          value: "0",
+          currency: priceCurrency || "BRL"
+        },
+        deliveryTime: {
+          "@type": "ShippingDeliveryTime",
+          handlingTime: {
+            "@type": "QuantitativeValue",
+            minValue: 0,
+            maxValue: 5,
+            unitCode: "MIN"
+          },
+          transitTime: {
+            "@type": "QuantitativeValue",
+            minValue: 0,
+            maxValue: 5,
+            unitCode: "MIN"
+          }
+        },
+        shippingDestination: {
+          "@type": "DefinedRegion",
+          addressCountry: "BR"
+        }
+      }
     },
     ...(aggregateRating && {
       aggregateRating: {
@@ -113,7 +170,35 @@ export function XCloudPlanProductSchema({ planName, price, period, features }: {
       priceCurrency: "BRL",
       availability: "https://schema.org/InStock",
       priceValidUntil: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
-      url: `https://xcloudiptv.com.br/planos#${planName.toLowerCase()}`
+      url: `https://xcloudiptv.com.br/planos#${planName.toLowerCase()}`,
+      hasMerchantReturnPolicy: absoluteUrl('/termos-de-uso#politica-de-reembolso'),
+      shippingDetails: {
+        "@type": "OfferShippingDetails",
+        shippingRate: {
+          "@type": "MonetaryAmount",
+          value: "0",
+          currency: "BRL"
+        },
+        deliveryTime: {
+          "@type": "ShippingDeliveryTime",
+          handlingTime: {
+            "@type": "QuantitativeValue",
+            minValue: 0,
+            maxValue: 5,
+            unitCode: "MIN"
+          },
+          transitTime: {
+            "@type": "QuantitativeValue",
+            minValue: 0,
+            maxValue: 5,
+            unitCode: "MIN"
+          }
+        },
+        shippingDestination: {
+          "@type": "DefinedRegion",
+          addressCountry: "BR"
+        }
+      }
     },
     aggregateRating: {
       "@type": "AggregateRating",

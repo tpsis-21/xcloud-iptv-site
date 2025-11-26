@@ -188,7 +188,7 @@ export default function TermosDeUso() {
               </section>
 
               {/* Política de Reembolso */}
-              <section className="mb-8">
+              <section className="mb-8" id="politica-de-reembolso">
                 <h2 className="text-2xl font-semibold text-emerald-400 mb-4">10. Política de Reembolso</h2>
                 <p className="text-gray-300 leading-relaxed mb-4">
                   Por se tratar de serviço digital com ativação imediata, o reembolso é analisado caso a caso quando houver impossibilidade técnica de acesso não resolvida pelo suporte dentro de um prazo razoável. Para solicitar análise de reembolso, entre em contato por email informando nome, email e data da contratação.
