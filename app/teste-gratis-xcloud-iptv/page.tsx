@@ -16,13 +16,13 @@ export const metadata: Metadata = {
   keywords: 'teste gratis xcloud iptv, teste iptv xcloud, teste grátis, iptv, streaming, canais ao vivo, filmes, séries',
   openGraph: {
     title: 'Teste Grátis XCloud IPTV - Acesso Completo',
-    description: 'Teste grátis XCloud IPTV. Milhares de canais, filmes e séries. Teste IPTV XCloud sem compromisso.',
+    description: 'Teste XCloud IPTV sem compromisso e com ativação imediata. Acesso a mais de 100 mil conteúdos. SOlicite e experimente já',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Teste Grátis XCloud IPTV - Sem Compromisso',
-    description: 'Teste grátis XCloud IPTV! Acesso completo ao conteúdo. Teste IPTV XCloud sem cartão de crédito.',
+    description: 'Teste XCloud IPTV sem compromisso e com ativação imediata. Acesso a mais de 100 mil conteúdos. SOlicite e experimente já',
   },
   alternates: {
     canonical: 'https://xcloudiptv.com.br/teste-gratis-xcloud-iptv'
