@@ -58,7 +58,12 @@ export function ProductSchema({
       availability: `https://schema.org/${offer.availability}`,
       ...(offer.validThrough && { priceValidUntil: offer.validThrough }),
       url: offer.url,
-      hasMerchantReturnPolicy: absoluteUrl('/termos-de-uso#politica-de-reembolso'),
+      hasMerchantReturnPolicy: {
+        "@type": "MerchantReturnPolicy",
+        applicableCountry: "BR",
+        returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
+        returnPolicyUrl: absoluteUrl('/termos-de-uso#politica-de-reembolso')
+      },
       shippingDetails: {
         "@type": "OfferShippingDetails",
         shippingRate: {
@@ -72,13 +77,13 @@ export function ProductSchema({
             "@type": "QuantitativeValue",
             minValue: 0,
             maxValue: 5,
-            unitCode: "MIN"
+            unitCode: "HUR"
           },
           transitTime: {
             "@type": "QuantitativeValue",
             minValue: 0,
             maxValue: 5,
-            unitCode: "MIN"
+            unitCode: "HUR"
           }
         },
         shippingDestination: {
@@ -92,7 +97,12 @@ export function ProductSchema({
       priceCurrency,
       availability: `https://schema.org/${availability}`,
       url: window?.location?.href || '',
-      hasMerchantReturnPolicy: absoluteUrl('/termos-de-uso#politica-de-reembolso'),
+      hasMerchantReturnPolicy: {
+        "@type": "MerchantReturnPolicy",
+        applicableCountry: "BR",
+        returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
+        returnPolicyUrl: absoluteUrl('/termos-de-uso#politica-de-reembolso')
+      },
       shippingDetails: {
         "@type": "OfferShippingDetails",
         shippingRate: {
@@ -106,13 +116,13 @@ export function ProductSchema({
             "@type": "QuantitativeValue",
             minValue: 0,
             maxValue: 5,
-            unitCode: "MIN"
+            unitCode: "HUR"
           },
           transitTime: {
             "@type": "QuantitativeValue",
             minValue: 0,
             maxValue: 5,
-            unitCode: "MIN"
+            unitCode: "HUR"
           }
         },
         shippingDestination: {
@@ -171,7 +181,12 @@ export function XCloudPlanProductSchema({ planName, price, period, features }: {
       availability: "https://schema.org/InStock",
       priceValidUntil: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
       url: `https://xcloudiptv.com.br/planos#${planName.toLowerCase()}`,
-      hasMerchantReturnPolicy: absoluteUrl('/termos-de-uso#politica-de-reembolso'),
+      hasMerchantReturnPolicy: {
+        "@type": "MerchantReturnPolicy",
+        applicableCountry: "BR",
+        returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
+        returnPolicyUrl: absoluteUrl('/termos-de-uso#politica-de-reembolso')
+      },
       shippingDetails: {
         "@type": "OfferShippingDetails",
         shippingRate: {
@@ -185,13 +200,13 @@ export function XCloudPlanProductSchema({ planName, price, period, features }: {
             "@type": "QuantitativeValue",
             minValue: 0,
             maxValue: 5,
-            unitCode: "MIN"
+            unitCode: "HUR"
           },
           transitTime: {
             "@type": "QuantitativeValue",
             minValue: 0,
             maxValue: 5,
-            unitCode: "MIN"
+            unitCode: "HUR"
           }
         },
         shippingDestination: {
