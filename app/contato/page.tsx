@@ -96,7 +96,7 @@ export default function ContatoPage() {
             <span className="text-sm font-medium text-green-500">Fale Conosco</span>
           </div>
           
-          <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-white">
+          <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-gradient-brand">
             Contato XCloud IPTV
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">

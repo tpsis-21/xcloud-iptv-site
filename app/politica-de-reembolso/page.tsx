@@ -26,7 +26,7 @@ export default function PoliticaReembolso() {
       <main className="min-h-screen bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 pb-12 max-w-4xl">
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">Política de Reembolso</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-gradient-brand mb-2">Política de Reembolso</h1>
             <span className="text-emerald-400 font-semibold">XCloud IPTV</span>
           </div>
 

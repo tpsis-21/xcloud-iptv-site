@@ -145,7 +145,7 @@ export default function Page() {
               {/* Headline Principal - Layout Exato */}
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight bg-gradient-to-r from-green-300 via-green-400 to-green-500 bg-clip-text text-transparent drop-shadow-2xl sm:whitespace-nowrap">
+                  <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight text-gradient-brand drop-shadow-2xl sm:whitespace-nowrap">
                   XCloud IPTV
                   </h1>
                 </div>

@@ -131,10 +131,7 @@ body {
 }
 
 .text-gradient-brand {
-  background: linear-gradient(135deg, hsl(var(--brand)), hsl(var(--brand-light)));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  @apply bg-gradient-to-r from-green-300 via-green-400 to-green-500 bg-clip-text text-transparent;
 }
 
 /* Partículas de fundo */

@@ -27,7 +27,8 @@ export default function Header() {
             alt="Logo XCloud IPTV" 
             width={150}
             height={40}
-            priority 
+            priority
+            unoptimized
             className="h-10 w-auto object-contain" 
           />
           <div className="hidden sm:block">
@@ -73,9 +74,9 @@ export default function Header() {
       </nav>
       
       {mounted && open && createPortal(
-        <div className="fixed inset-0 z-[9999]">
+        <div className="fixed inset-0 z-[99999]" style={{ zIndex: 99999 }}>
           <div className="absolute inset-0 bg-black/90 backdrop-blur-xl" onClick={() => setOpen(false)} />
-          <div id="mobile-menu" aria-label="Menu de navegação" className="absolute right-0 top-0 h-screen w-3/4 max-w-sm bg-gray-900/95 backdrop-blur-xl border-l border-gray-800 shadow-2xl overflow-y-auto">
+          <div id="mobile-menu" aria-label="Menu de navegação" className="absolute right-0 top-0 h-screen w-3/4 max-w-sm bg-gray-900/95 backdrop-blur-xl border-l border-gray-800 shadow-2xl overflow-y-auto transition-transform duration-300">
             <div className="p-6">
               <button aria-label="Fechar menu" className="absolute right-6 top-6 inline-flex h-12 w-12 items-center justify-center rounded-lg border border-gray-700 hover:border-brand hover:text-brand-light transition-all duration-300" onClick={() => setOpen(false)}>
                 <X className="h-6 w-6" />
@@ -88,10 +89,10 @@ export default function Header() {
                 <Link href="/planos-xcloud-iptv" onClick={() => setOpen(false)} className="text-gray-300 hover:text-brand-light transition-colors p-3 rounded-lg hover:bg-gray-800/50 min-h-[44px]">
                   Planos
                 </Link>
-                <Link href="/sobre-nos" onClick={() => setOpen(false)} className="text-gray-300 hover:text-cyan-400 transition-colors p-3 rounded-lg hover:bg-gray-800/50 min-h-[44px]">
+                <Link href="/sobre-nos" onClick={() => setOpen(false)} className="text-gray-300 hover:text-brand-light transition-colors p-3 rounded-lg hover:bg-gray-800/50 min-h-[44px]">
                   Sobre Nós
                 </Link>
-                <Link href="/contato" onClick={() => setOpen(false)} className="text-gray-300 hover:text-cyan-400 transition-colors p-3 rounded-lg hover:bg-gray-800/50 min-h-[44px]">
+                <Link href="/contato" onClick={() => setOpen(false)} className="text-gray-300 hover:text-brand-light transition-colors p-3 rounded-lg hover:bg-gray-800/50 min-h-[44px]">
                   Contato
                 </Link>
               </div>
