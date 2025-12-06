@@ -8,6 +8,8 @@ import { Menu, X, Rocket } from 'lucide-react'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => { setMounted(true) }, [])
   useEffect(() => {
     if (open) {
       document.body.style.overflow = 'hidden'
@@ -69,7 +71,7 @@ export default function Header() {
         </button>
       </nav>
       
-      {open && createPortal(
+      {mounted && open && createPortal(
         <div className="fixed inset-0 z-[9999]">
           <div className="absolute inset-0 bg-black/90 backdrop-blur-xl" onClick={() => setOpen(false)} />
           <div id="mobile-menu" aria-label="Menu de navegação" className="absolute right-0 top-0 h-screen w-3/4 max-w-sm bg-gray-900/95 backdrop-blur-xl border-l border-gray-800 shadow-2xl overflow-y-auto">

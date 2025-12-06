@@ -6,8 +6,9 @@ import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { hexToHslComponents } from '@/lib/color'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
+import { OrganizationSchema } from '@/components/organization-schema'
 
-const inter = Inter({ subsets: ['latin'], display: 'swap' })
+const inter = Inter({ subsets: ['latin'], weight: ['400','700','900'], display: 'swap', preload: true })
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'
 
@@ -61,18 +62,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main className="bg-black text-white">{children}</main>
         <Footer />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Organization',
-              name: 'XCloud IPTV',
-              url: siteUrl,
-              // Removido logo 404; adicionar quando arquivo estiver em /public
-            })
-          }}
-        />
+        <OrganizationSchema />
       </body>
     </html>
   )

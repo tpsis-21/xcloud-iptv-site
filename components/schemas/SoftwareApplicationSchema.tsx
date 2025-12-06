@@ -65,16 +65,11 @@ export function XCloudAppSchema() {
     "@context": "https://schema.org/",
     "@type": "SoftwareApplication",
     name: "XCloud IPTV",
-    description: "Aplicativo XCloud IPTV para streaming completo com canais ao vivo, filmes e séries. Disponível para Android, iOS, Smart TV e mais dispositivos.",
+    description: "Aplicativo XCloud IPTV para streaming completo com conteúdos variados. Disponível para Android, iOS, Smart TV e mais dispositivos.",
     operatingSystem: "Android, iOS, Windows, Smart TV",
     applicationCategory: "MultimediaApplication",
     downloadUrl: "https://xcloudiptv.com.br/download",
-    screenshot: "https://xcloudiptv.com.br/anexos/logo_app_xcloudtv.png",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      reviewCount: "256"
-    },
+    screenshot: "https://xcloudiptv.com.br/logo_app_xcloudtv.png",
     publisher: {
       "@type": "Organization",
       name: "XCloud IPTV",
@@ -85,10 +80,7 @@ export function XCloudAppSchema() {
       price: "0",
       priceCurrency: "BRL",
       availability: "https://schema.org/InStock"
-    },
-    requirements: "Android 5.0+, iOS 12.0+, Windows 10+, Smart TV compatível",
-    datePublished: "2023-01-01",
-    softwareVersion: "2.0.0"
+    }
   };
 
   return (

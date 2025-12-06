@@ -50,14 +50,10 @@ export default function DownloadPage() {
       {/* Schema de SoftwareApplication */}
       <SoftwareApplicationSchema
         name="XCloud IPTV"
-        description="Aplicativo XCloud IPTV para streaming completo com canais ao vivo, filmes e séries. Disponível para Android, iOS, Smart TV e mais dispositivos."
+        description="Aplicativo XCloud IPTV para streaming completo com conteúdos variados. Disponível para Android, iOS, Smart TV e mais dispositivos."
         operatingSystem="Android, iOS, Windows, Smart TV"
         applicationCategory="MultimediaApplication"
         downloadUrl="https://xcloudiptv.com.br/download"
-        aggregateRating={{
-          ratingValue: "4.8",
-          reviewCount: "256"
-        }}
       />
       
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">

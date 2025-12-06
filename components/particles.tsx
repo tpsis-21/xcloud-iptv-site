@@ -9,6 +9,9 @@ export function Particles() {
     const canvas = canvasRef.current
     if (!canvas) return
 
+    const reduceMotion = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (reduceMotion) return
+
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
@@ -29,58 +32,50 @@ export function Particles() {
       opacity: number
     }> = []
 
-    const particleCount = 50
+    const particleCount = Math.max(16, Math.min(40, Math.floor(window.innerWidth / 60)))
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
+        vx: (Math.random() - 0.5) * 0.35,
+        vy: (Math.random() - 0.5) * 0.35,
         size: Math.random() * 2 + 1,
-        opacity: Math.random() * 0.3 + 0.1
+        opacity: Math.random() * 0.25 + 0.08
       })
     }
 
+    let raf = 0
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-      particles.forEach((particle) => {
-        particle.x += particle.vx
-        particle.y += particle.vy
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i]
+        p.x += p.vx
+        p.y += p.vy
 
-        if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1
-        if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1
 
         ctx.beginPath()
-        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(34, 197, 94, ${particle.opacity})`
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2)
+        ctx.fillStyle = `rgba(34, 197, 94, ${p.opacity})`
         ctx.fill()
+      }
 
-        // Conectar partículas próximas
-        particles.forEach((otherParticle) => {
-          const dx = particle.x - otherParticle.x
-          const dy = particle.y - otherParticle.y
-          const distance = Math.sqrt(dx * dx + dy * dy)
-
-          if (distance < 100) {
-            ctx.beginPath()
-            ctx.moveTo(particle.x, particle.y)
-            ctx.lineTo(otherParticle.x, otherParticle.y)
-            ctx.strokeStyle = `rgba(34, 197, 94, ${0.05 * (1 - distance / 100)})`
-            ctx.lineWidth = 0.5
-            ctx.stroke()
-          }
-        })
-      })
-
-      requestAnimationFrame(animate)
+      raf = requestAnimationFrame(animate)
     }
 
-    animate()
+    const start = () => {
+      raf = requestAnimationFrame(animate)
+    }
+
+    const startDelay = setTimeout(start, 1800)
 
     return () => {
       window.removeEventListener('resize', resizeCanvas)
+      if (raf) cancelAnimationFrame(raf)
+      clearTimeout(startDelay)
     }
   }, [])
 

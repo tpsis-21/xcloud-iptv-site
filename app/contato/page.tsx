@@ -19,7 +19,8 @@ import {
   Star
 } from 'lucide-react'
 import { CONTACTS } from '@/config/contacts'
-import { Particles } from '@/components/particles'
+import dynamic from 'next/dynamic'
+const Particles = dynamic(() => import('@/components/particles').then(m => m.Particles), { ssr: false })
 
 export const metadata: Metadata = {
   title: 'Contato XCloud IPTV Brasil - Suporte IPTV Streaming | Email',
@@ -87,8 +88,8 @@ export default function ContatoPage() {
         {/* Background Sutil */}
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-green-900/10 via-transparent to-green-900/5"></div>
-          <div className="absolute top-1/3 left-1/4 w-56 h-56 bg-green-500/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/4 right-1/3 w-40 h-40 bg-green-400/6 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/3 left-1/4 w-56 h-56 bg-green-500/5 rounded-full blur-xl"></div>
+          <div className="absolute bottom-1/4 right-1/3 w-40 h-40 bg-green-400/6 rounded-full blur-md"></div>
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center space-x-2 glass-premium rounded-full px-6 py-2 mb-6">
@@ -96,7 +97,7 @@ export default function ContatoPage() {
             <span className="text-sm font-medium text-green-500">Fale Conosco</span>
           </div>
           
-          <h1 className="text-4xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-green-500 to-green-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-white">
             Contato XCloud IPTV
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">

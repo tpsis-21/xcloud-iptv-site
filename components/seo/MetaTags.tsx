@@ -17,7 +17,7 @@ export function MetaTags({
   ogImage,
   noindex = false
 }: MetaTagsProps) {
-  const fullTitle = `${title} | ${SEO_CONFIG.siteName}`;
+  const fullTitle = title.includes(SEO_CONFIG.siteName) ? title : `${title} | ${SEO_CONFIG.siteName}`;
   const isAbsolute = (u?: string) => !!u && /^https?:\/\//i.test(u);
   const canonicalHref = canonical
     ? isAbsolute(canonical)

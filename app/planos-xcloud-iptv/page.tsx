@@ -14,17 +14,17 @@ import { XCloudPlanProductSchema } from '@/components/schemas/ProductSchema'
 import { ReviewSchemaWithProtections, ReviewDisplay, generateSampleReviews } from '@/components/schemas/ReviewSchema'
 
 export const metadata: Metadata = {
-  title: 'Planos XCloud IPTV | Assine XCloud IPTV - Mensal R$ 30, Trimestral R$ 81, Semestral R$ 153, Anual R$ 288',
-  description: 'Planos XCloud IPTV: assine XCloud IPTV mensal R$ 30, XCloud IPTV trimestral R$ 81, XCloud IPTV semestral R$ 153, XCloud IPTV anual R$ 288. Teste grátis XCloud IPTV disponível.',
-  keywords: 'planos xcloud iptv, assinar xcloud iptv, xcloud iptv mensal, xcloud iptv trimestral, xcloud iptv semestral, xcloud iptv anual, xcloud iptv preços',
+  title: 'Planos XCloud IPTV | Assinar XCloud IPTV no Brasil',
+  description: 'Assine XCloud IPTV com opções mensais, trimestrais, semestrais e anuais. Conteúdos variados, suporte em português (9h–22h) e compatibilidade com Android, iOS, Windows e Smart TVs.',
+  keywords: 'planos xcloud iptv, assinar xcloud iptv, preços xcloud iptv',
   openGraph: {
-    title: 'Planos XCloud IPTV - Assine XCloud IPTV com Preços Incríveis',
-    description: 'Planos XCloud IPTV: assine XCloud IPTV mensal R$ 30, trimestral R$ 81, semestral R$ 153, anual R$ 288. Teste grátis XCloud IPTV.'
+    title: 'Planos XCloud IPTV | Assinar XCloud IPTV no Brasil',
+    description: 'Assine XCloud IPTV com opções mensais, trimestrais, semestrais e anuais. Conteúdos variados, suporte em português (9h–22h) e compatibilidade com Android, iOS, Windows e Smart TVs.'
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Planos XCloud IPTV | Assine XCloud IPTV - Mensal R$ 30',
-    description: 'Planos XCloud IPTV: assine XCloud IPTV mensal R$ 30, trimestral R$ 81, semestral R$ 153, anual R$ 288. Teste grátis XCloud IPTV.'
+    title: 'Planos XCloud IPTV | Assinar XCloud IPTV no Brasil',
+    description: 'Assine XCloud IPTV com opções mensais, trimestrais, semestrais e anuais. Conteúdos variados, suporte em português (9h–22h) e compatibilidade com Android, iOS, Windows e Smart TVs.'
   },
   alternates: {
     canonical: '/planos-xcloud-iptv'
@@ -39,8 +39,8 @@ export default function Page() {
       preco: 30, 
       link: EXTERNAL_LINKS.payments.mensal, // ✅ URL centralizada
       popular: false,
-      titulo: 'Plano XCloud IPTV Mensal',
-      descricao: 'Plano XCloud IPTV mensal R$ 30 - Assine XCloud IPTV mensal ideal para começar',
+      titulo: 'Plano Mensal',
+      descricao: 'Mensal R$ 30 — ideal para começar',
       economia: '0%',
       precoPorMes: 30
     },
@@ -49,8 +49,8 @@ export default function Page() {
       preco: 81, 
       link: EXTERNAL_LINKS.payments.trimestral, // ✅ URL centralizada
       popular: true,
-      titulo: 'Plano XCloud IPTV Trimestral',
-      descricao: 'Plano XCloud IPTV trimestral R$ 81 - Assine XCloud IPTV trimestral e economize 10%',
+      titulo: 'Plano Trimestral',
+      descricao: 'Trimestral R$ 81 — economize 10%',
       economia: '10%',
       precoPorMes: 27
     },
@@ -59,8 +59,8 @@ export default function Page() {
       preco: 153, 
       link: EXTERNAL_LINKS.payments.semestral, // ✅ URL centralizada
       popular: false,
-      titulo: 'Plano XCloud IPTV Semestral',
-      descricao: 'Plano XCloud IPTV semestral R$ 153 - Assine XCloud IPTV semestral e economize 15%',
+      titulo: 'Plano Semestral',
+      descricao: 'Semestral R$ 153 — economize 15%',
       economia: '15%',
       precoPorMes: 25.50
     },
@@ -69,8 +69,8 @@ export default function Page() {
       preco: 288, 
       link: EXTERNAL_LINKS.payments.anual, // ✅ URL centralizada
       popular: false,
-      titulo: 'Plano XCloud IPTV Anual',
-      descricao: 'Plano XCloud IPTV anual R$ 288 - Assine XCloud IPTV anual e economize 20%',
+      titulo: 'Plano Anual',
+      descricao: 'Anual R$ 288 — economize 20%',
       economia: '20%',
       precoPorMes: 24
     }
@@ -87,9 +87,8 @@ export default function Page() {
 
   // Features comuns dos planos
   const planFeatures = [
-    'Milhares de conteúdos',
-    '1 Conexão simultânea', 
     'Conteúdos variados',
+    '1 conexão simultânea', 
     'Suporte via email',
     'Ativação imediata'
   ];
@@ -138,17 +137,17 @@ export default function Page() {
         <section className="relative pt-24 sm:pt-28 py-20 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black">
           <div className="absolute inset-0 z-0">
             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-green-900/10 via-transparent to-green-900/5"></div>
-            <div className="absolute top-1/3 left-1/4 w-56 h-56 bg-green-500/5 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-1/4 right-1/3 w-40 h-40 bg-green-400/6 rounded-full blur-2xl"></div>
+            <div className="absolute top-1/3 left-1/4 w-56 h-56 bg-green-500/5 rounded-full blur-xl"></div>
+            <div className="absolute bottom-1/4 right-1/3 w-40 h-40 bg-green-400/6 rounded-full blur-md"></div>
           </div>
 
           <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-black text-gradient-brand mb-6">
-                Planos XCloud IPTV | Assine XCloud IPTV - Mensal R$ 30
+              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-6">
+                Planos XCloud IPTV
               </h1>
               <p className="text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
-                Assine XCloud IPTV com planos acessíveis: XCloud IPTV mensal R$ 30, XCloud IPTV trimestral R$ 81, XCloud IPTV semestral R$ 153, XCloud IPTV anual R$ 288. Todos os planos XCloud IPTV incluem teste grátis.
+                Assinaturas mensais, trimestrais, semestrais e anuais. Teste grátis disponível e suporte em português (9h–22h).
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-400">
                 <div className="flex items-center space-x-2">
@@ -190,7 +189,7 @@ export default function Page() {
                       {/* Header do plano */}
                       <div>
                         <h3 className="text-xl font-bold text-white mb-2">
-                          {plano.meses === 1 ? 'Plano Mensal XCloud IPTV' : plano.meses === 3 ? 'Plano Trimestral XCloud IPTV' : plano.meses === 6 ? 'Plano Semestral XCloud IPTV' : 'Plano Anual XCloud IPTV'}
+                          {plano.titulo}
                         </h3>
                         <p className="text-gray-400 text-sm mb-4">
                           {plano.descricao}
@@ -297,9 +296,9 @@ export default function Page() {
                 <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                   <ShieldCheck className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">Estabilidade Garantida</h3>
+                <h3 className="text-xl font-semibold text-white mb-3">Alta Disponibilidade</h3>
                 <p className="text-gray-400">
-                  Servidores de alta performance com 99% de uptime garantido. Streaming sem travamentos nem buffering.
+                  Servidores de alta performance com disponibilidade confiável para streaming contínuo.
                 </p>
               </div>
               

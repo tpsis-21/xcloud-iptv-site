@@ -12,17 +12,17 @@ import { Breadcrumb } from '@/components/ui/breadcrumb'
 
 export const metadata: Metadata = {
   title: 'Teste Grátis XCloud IPTV - Experimente Sem Compromisso',
-  description: 'Teste XCloud IPTV sem compromisso e com ativação imediata. Acesso a mais de 100 mil conteúdos. SOlicite e experimente já',
+  description: 'Teste XCloud IPTV sem compromisso e com ativação imediata. Acesso a conteúdos variados. Solicite e experimente já.',
   keywords: 'teste gratis xcloud iptv, teste iptv xcloud, teste grátis, iptv, streaming, canais ao vivo, filmes, séries',
   openGraph: {
     title: 'Teste Grátis XCloud IPTV - Acesso Completo',
-    description: 'Teste XCloud IPTV sem compromisso e com ativação imediata. Acesso a mais de 100 mil conteúdos. SOlicite e experimente já',
+    description: 'Teste XCloud IPTV sem compromisso e com ativação imediata. Acesso a conteúdos variados. Solicite e experimente já.',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Teste Grátis XCloud IPTV - Sem Compromisso',
-    description: 'Teste XCloud IPTV sem compromisso e com ativação imediata. Acesso a mais de 100 mil conteúdos. SOlicite e experimente já',
+    description: 'Teste XCloud IPTV sem compromisso e com ativação imediata. Acesso a conteúdos variados. Solicite e experimente já.',
   },
   alternates: {
     canonical: 'https://xcloudiptv.com.br/teste-gratis-xcloud-iptv'
@@ -61,7 +61,7 @@ export default function Page() {
       {/* Meta tags otimizadas */}
       <MetaTags
         title="Teste Grátis XCloud IPTV"
-        description="Teste XCloud IPTV sem compromisso e com ativação imediata. Acesso a mais de 100 mil conteúdos. SOlicite e experimente já"
+        description="Teste XCloud IPTV sem compromisso e com ativação imediata. Acesso a conteúdos variados. Solicite e experimente já."
         canonical="/teste-gratis-xcloud-iptv"
         keywords={['teste gratis xcloud iptv', 'teste iptv xcloud', 'experimentar xcloud']}
       />
@@ -80,9 +80,9 @@ export default function Page() {
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-28 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
           <div className="absolute inset-0 z-0">
             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-green-900/20 via-transparent to-green-900/10"></div>
-            <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-green-500/10 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-1/3 right-1/4 w-48 h-48 bg-green-400/15 rounded-full blur-2xl"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-green-600/5 rounded-full blur-3xl"></div>
+            <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-green-500/10 rounded-full blur-xl animate-pulse"></div>
+            <div className="absolute bottom-1/3 right-1/4 w-48 h-48 bg-green-400/15 rounded-full blur-md"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-green-600/5 rounded-full blur-xl"></div>
           </div>
 
           <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 w-full">
@@ -97,11 +97,11 @@ export default function Page() {
 
                 <div className="space-y-4">
                   <h1 className="text-5xl lg:text-7xl xl:text-8xl font-black leading-none">
-                    <span className="bg-gradient-to-r from-green-300 via-green-400 to-green-500 bg-clip-text text-transparent drop-shadow-2xl">
+                    <span className="text-gradient-brand">
                       Teste Grátis
                     </span>
                     <br />
-                    <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent drop-shadow-lg">
+                    <span className="text-gradient-brand">
                       XCloud IPTV
                     </span>
                   </h1>
@@ -111,12 +111,12 @@ export default function Page() {
                     Experimente Agora
                     <Sparkles className="inline h-8 w-8 ml-2" />
                   </div>
-                  <h2 className="text-2xl lg:text-3xl font-bold text-green-400">Faça seu teste iptv xcloud agora</h2>
+                  <h2 className="text-2xl lg:text-3xl font-bold text-green-400">Faça seu teste grátis agora</h2>
                 </div>
 
                 <p className="text-xl lg:text-2xl text-gray-200 leading-relaxed max-w-3xl mx-auto">
-                  Descubra por que milhares de brasileiros escolhem o XCloud IPTV. 
-                  <strong className="text-green-400">Acesso temporário</strong> de até 6h 
+                  Descubra por que muitos brasileiros escolhem a nossa plataforma. 
+                  <strong className="text-green-400">Acesso temporário</strong> com duração limitada
                   e experimente streaming de verdade sem pagar nada.
                 </p>
               </div>
@@ -150,7 +150,7 @@ export default function Page() {
                   </div>
                   <div className="flex items-center space-x-2">
                     <ShieldCheck className="h-4 w-4 text-green-500" />
-                    <span>100% seguro</span>
+                    <span>Seguro</span>
                   </div>
                 </div>
               </div>
@@ -169,7 +169,7 @@ export default function Page() {
                   <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
                     <ShieldCheck className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="text-white font-semibold mb-2">100% Seguro</h3>
+                  <h3 className="text-white font-semibold mb-2">Seguro</h3>
                   <p className="text-gray-400 text-sm">Sem riscos ou compromissos</p>
                 </div>
 
@@ -178,15 +178,15 @@ export default function Page() {
                     <Trophy className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="text-white font-semibold mb-2">Conteúdo Premium</h3>
-                  <p className="text-gray-400 text-sm">Milhares de títulos</p>
+                  <p className="text-gray-400 text-sm">Biblioteca ampla de títulos</p>
                 </div>
 
                 <div className="glass-card rounded-xl p-6 text-center group hover:scale-105 transition-all duration-300">
                   <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
                     <TrendingUp className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="text-white font-semibold mb-2">Sucesso Garantido</h3>
-                  <p className="text-gray-400 text-sm">98% de aprovação</p>
+                  <h3 className="text-white font-semibold mb-2">Sucesso Entre Usuários</h3>
+                  <p className="text-gray-400 text-sm">Feedback positivo</p>
                 </div>
               </div>
 
@@ -214,7 +214,7 @@ export default function Page() {
                   </div>
                   
                   <p className="text-yellow-300 text-sm">
-                    🎁 <strong>Bônus Exclusivo:</strong> Teste grátis + 10% de desconto no primeiro mês para quem assinar hoje!
+                    Teste grátis sem cartão de crédito e com acesso temporário.
                   </p>
                 </div>
               </div>
@@ -240,7 +240,7 @@ export default function Page() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl lg:text-5xl font-bold text-gradient-brand mb-4">
-                Milhares Já Experimentaram
+                Muitos já experimentaram
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
                 Veja o que nossos usuários dizem após experimentar o XCloud IPTV
@@ -249,18 +249,18 @@ export default function Page() {
             
             {/* Estatísticas de Impacto */}
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-              <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold text-green-400 mb-2">Ativação Imediata</div>
-                <div className="text-gray-300">Acesso em minutos</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold text-green-400 mb-2">Suporte em Português</div>
-                <div className="text-gray-300">Atendimento 9h–22h</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl lg:text-5xl font-bold text-green-400 mb-2">4.8</div>
-                <div className="text-gray-300">Avaliação Média</div>
-              </div>
+                <div className="text-center">
+                  <div className="text-2xl lg:text-3xl font-bold text-green-400 mb-2">Ativação Imediata</div>
+                  <div className="text-gray-300">Acesso em minutos</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl lg:text-3xl font-bold text-green-400 mb-2">Suporte em Português</div>
+                  <div className="text-gray-300">Atendimento 9h–22h</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl lg:text-3xl font-bold text-green-400 mb-2">Avaliação Positiva</div>
+                  <div className="text-gray-300">Feedback dos usuários</div>
+                </div>
               <div className="text-center">
                 <div className="text-4xl lg:text-5xl font-bold text-green-400 mb-2">ATÉ 6H</div>
                 <div className="text-gray-300">Duração do Teste</div>
@@ -276,7 +276,7 @@ export default function Page() {
                       <Star key={i} className="h-5 w-5 fill-current" />
                     ))}
                   </div>
-                  <span className="ml-2 text-gray-400 text-sm">5.0</span>
+                  
                 </div>
                 <p className="text-gray-300 mb-4">
                   "Fiz o teste grátis e fiquei impressionado com a qualidade. Assinei o plano anual no mesmo dia!"
@@ -291,7 +291,7 @@ export default function Page() {
                       <Star key={i} className="h-5 w-5 fill-current" />
                     ))}
                   </div>
-                  <span className="ml-2 text-gray-400 text-sm">5.0</span>
+                  
                 </div>
                 <p className="text-gray-300 mb-4">
                   "Melhor custo-benefício do mercado. O teste grátis me convenceu, agora sou assinante fiel."
@@ -306,7 +306,7 @@ export default function Page() {
                       <Star key={i} className="h-5 w-5 fill-current" />
                     ))}
                   </div>
-                  <span className="ml-2 text-gray-400 text-sm">4.5</span>
+                  
                 </div>
                 <p className="text-gray-300 mb-4">
                   "Instalação super fácil e suporte excelente. Recomendo muito!"
@@ -324,9 +324,15 @@ export default function Page() {
               <h2 className="text-4xl lg:text-5xl font-bold text-gradient-brand mb-4">
                 Disponível em Todos Seus Dispositivos
               </h2>
+              <h3 className="text-xl font-semibold text-green-400">
+                Teste IPTV XCloud em Android, iOS, Windows e Smart TVs
+              </h3>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
                 Assista onde quiser. Nossa plataforma é compatível com todos os dispositivos populares
               </p>
+              <h3 className="text-xl font-semibold text-green-400 mt-2">
+                Teste IPTV XCloud em Android, iOS, Windows e Smart TVs
+              </h3>
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -419,7 +425,7 @@ export default function Page() {
                 </div>
                 <h2 className="text-3xl font-bold text-white mb-4">Garantia de Satisfação</h2>
                 <p className="text-xl text-gray-300 mb-6">
-                  Se você não ficar 100% satisfeito com o teste grátis, 
+                  Se você não ficar satisfeito com o teste grátis, 
                   <strong className="text-green-400">não precisa de nada</strong> - 
                   zero compromisso, zero risco.
                 </p>
@@ -428,23 +434,6 @@ export default function Page() {
                 </div>
               </div>
 
-              {/* Escassez */}
-              <div className="bg-gradient-to-r from-yellow-900/30 to-orange-900/30 border-2 border-yellow-500/50 rounded-2xl p-8">
-                <div className="flex items-center justify-center space-x-2 mb-4">
-                  <Clock className="h-6 w-6 text-yellow-400" />
-                  <span className="text-yellow-400 font-bold text-lg">OFERTA POR TEMPO LIMITADO</span>
-                </div>
-                <h2 className="text-2xl font-bold text-white mb-4">
-                  🎁 Bônus Exclusivo: 10% de Desconto no Primeiro Mês
-                </h2>
-                <p className="text-gray-300 mb-6">
-                  Aproveite agora e garanta <strong className="text-yellow-400">10% OFF</strong> no primeiro mês 
-                  de assinatura + teste grátis completo. Oferta válida apenas para novos usuários.
-                </p>
-                <div className="text-yellow-300 font-semibold">
-                  ⚡ Aproveite agora - Teste por tempo limitado!
-                </div>
-              </div>
             </div>
 
             {/* CTA Final */}

@@ -8,8 +8,8 @@ export function OrganizationSchema() {
           '@type': 'Organization',
           name: 'XCloud IPTV',
           url: 'https://xcloudiptv.com.br',
-          logo: 'https://xcloudiptv.com.br/anexos/logo_app_xcloudtv.png',
-          description: 'XCloud IPTV - Melhor IPTV do Brasil com conteúdo variado',
+          logo: 'https://xcloudiptv.com.br/logo_app_xcloudtv.png',
+          description: 'Plataforma de streaming com conteúdo variado e suporte em português',
           contactPoint: {
             '@type': 'ContactPoint',
             email: 'contato@xcloudiptv.com.br',

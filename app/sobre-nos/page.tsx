@@ -16,23 +16,28 @@ import {
   Heart,
   Lightbulb
 } from 'lucide-react'
-import { Particles } from '@/components/particles'
+import dynamic from 'next/dynamic'
+const Particles = dynamic(() => import('@/components/particles').then(m => m.Particles), { ssr: false })
+import { Breadcrumb } from '@/components/ui/breadcrumb'
+import { MetaTags } from '@/components/seo/MetaTags'
+import { JsonLD } from '@/components/seo/JsonLD'
+import { SCHEMA_TEMPLATES } from '@/config/schemas'
 
 export const metadata: Metadata = {
-  title: 'Sobre Nós XCloud IPTV - IPTV Streaming Brasil | Líder em Conteúdo Variado',
+  title: 'Sobre Nós XCloud IPTV - IPTV Streaming Brasil | Conteúdo Variado',
   description:
-    'Conheça a XCloud IPTV, líder em IPTV streaming no Brasil. Plataforma confiável com +100 mil conteúdos, streaming ao vivo com estabilidade e suporte técnico especializado. Descubra nossa missão, visão e valores.',
+    'Conheça a XCloud IPTV, plataforma de IPTV streaming no Brasil. Serviço confiável com conteúdos variados, estabilidade e suporte técnico em português. Missão, visão e valores.',
   keywords: 'sobre xcloudtv brasil, xcloudtv empresa iptv, empresa streaming brasil confiável, xcloud iptv brasil origem, xcloudtv streaming conteúdo variado brasil, plataforma iptv brasil xcloudtv',
   alternates: { canonical: '/sobre-nos' },
   openGraph: {
-    title: 'Sobre Nós XCloud IPTV - IPTV Streaming Brasil | Líder em Conteúdo Variado',
-    description: 'Conheça a XCloud IPTV, plataforma líder de IPTV streaming no Brasil. +100 mil conteúdos, streaming ao vivo com estabilidade e suporte técnico especializado.',
+    title: 'Sobre Nós XCloud IPTV - IPTV Streaming Brasil | Conteúdo Variado',
+    description: 'Conheça a XCloud IPTV, plataforma de IPTV streaming no Brasil. Conteúdos variados, streaming ao vivo com estabilidade e suporte técnico especializado.',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sobre Nós - XcloudTV | Líder em IPTV Streaming Brasil',
-    description: 'Conheça a XcloudTV, líder em IPTV streaming no Brasil. Plataforma confiável com conteúdo variado e suporte especializado.',
+    title: 'Sobre Nós - XCloud IPTV | IPTV Streaming Brasil',
+    description: 'Conheça a XCloud IPTV, plataforma confiável com conteúdo variado e suporte especializado.',
   }
 }
 
@@ -63,7 +68,7 @@ const diferenciais = [
   {
     icone: TrendingUp,
     titulo: 'Estabilidade Superior',
-        descricao: 'Servidores de alta performance com 99.9% de uptime garantido para streaming sem interrupções.'
+        descricao: 'Servidores de alta performance com disponibilidade confiável para streaming contínuo.'
   },
   {
     icone: Users,
@@ -83,32 +88,47 @@ const diferenciais = [
 ]
 
 const conquistas = [
-  { numero: '50.000+', titulo: 'Clientes Ativos' },
-  { numero: '+100 Mil', titulo: 'Conteúdos Disponíveis' },
-  { numero: 'Seg-Sáb', titulo: 'Suporte Técnico' },
-  { numero: '99.9%', titulo: 'Uptime Garantido' }
+  { numero: 'Usuários', titulo: 'Satisfeitos' },
+  { numero: 'Conteúdos', titulo: 'Variados' },
+  { numero: 'Suporte', titulo: 'Seg-Sáb 9h–22h' },
+  { numero: 'Disponibilidade', titulo: 'Confiável' }
 ]
 
 export default function SobreNosPage() {
+  const breadcrumb = SCHEMA_TEMPLATES.breadcrumbList([
+    { name: 'Home', url: '/' },
+    { name: 'Sobre Nós', url: '/sobre-nos' }
+  ])
+
   return (
     <div className="relative min-h-screen">
       <Particles />
+      <MetaTags
+        title="Sobre Nós"
+        description="Conheça a XCloud IPTV, plataforma com conteúdo variado, estabilidade e suporte técnico em português. Missão, visão e valores."
+        canonical="/sobre-nos"
+        keywords={["sobre xcloud iptv", "empresa iptv", "streaming brasil"]}
+      />
+      <JsonLD schema={breadcrumb} />
       
       {/* Hero Section */}
       <section className="relative pt-24 sm:pt-28 py-20 px-4 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
         {/* Background Sutil */}
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-green-900/10 via-transparent to-green-900/5"></div>
-          <div className="absolute top-1/3 left-1/4 w-56 h-56 bg-green-500/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/4 right-1/3 w-40 h-40 bg-green-400/6 rounded-full blur-2xl"></div>
+        <div className="absolute top-1/3 left-1/4 w-56 h-56 bg-green-500/5 rounded-full blur-xl"></div>
+        <div className="absolute bottom-1/4 right-1/3 w-40 h-40 bg-green-400/6 rounded-full blur-md"></div>
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
+          <div className="pt-6 px-6 lg:px-8">
+            <Breadcrumb items={[{ label: 'Sobre Nós' }]} />
+          </div>
           <div className="inline-flex items-center space-x-2 glass-premium rounded-full px-6 py-2 mb-6">
             <Star className="h-4 w-4 text-green-500" />
             <span className="text-sm font-medium text-green-500">Conheça Nossa História</span>
           </div>
           
-          <h1 className="text-4xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-green-500 to-green-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-white">
             XCloud IPTV - IPTV Streaming Brasil
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
@@ -262,8 +282,8 @@ export default function SobreNosPage() {
               <CardContent>
                 <p className="text-gray-300">
                   Investimos constantemente em infraestrutura de última geração para garantir 
-                  <strong>streaming ao vivo</strong> com estabilidade superior. Nossos servidores 
-                  oferecem 99.9% de uptime, garantindo que você nunca perca seus conteúdos favoritos.
+                  <strong>streaming ao vivo</strong> com estabilidade superior. Nossa arquitetura 
+                  entrega disponibilidade confiável para você aproveitar seus conteúdos.
                 </p>
               </CardContent>
             </Card>
@@ -276,9 +296,8 @@ export default function SobreNosPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-300">
-                  Com mais de <strong>100 mil conteúdos disponíveis</strong>, nossa plataforma 
-                  oferece entretenimento completo: filmes, séries, canais ao vivo, esportes e 
-                  programação infantil - tudo em um só lugar.
+                  Com <strong>conteúdos variados disponíveis</strong>, nossa plataforma 
+                  oferece entretenimento completo em um só lugar.
                 </p>
               </CardContent>
             </Card>
@@ -307,8 +326,7 @@ export default function SobreNosPage() {
               <CardContent>
                 <p className="text-gray-300">
                   Oferecemos <strong>planos IPTV acessíveis</strong> com preços em reais, 
-                  começando a partir de R$ 30/mês. Economize até 20% com nosso plano anual 
-                  e tenha streaming completo por preço justo.
+                  incluindo opções mensais, trimestrais, semestrais e anuais.
                 </p>
               </CardContent>
             </Card>
@@ -430,7 +448,7 @@ export default function SobreNosPage() {
               className="bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-6 text-lg"
               asChild
             >
-              <Link href="/teste-gratis">
+              <Link href="/teste-gratis-xcloud-iptv">
                 <CheckCircle2 className="mr-2 h-5 w-5" />
                 Teste Grátis Agora
               </Link>
@@ -441,7 +459,7 @@ export default function SobreNosPage() {
               className="border-green-500 text-green-400 hover:bg-green-500/10 px-8 py-6 text-lg"
               asChild
             >
-              <Link href="/planos">
+              <Link href="/planos-xcloud-iptv">
                 Ver Planos
               </Link>
             </Button>
@@ -449,7 +467,7 @@ export default function SobreNosPage() {
         </div>
       </section>
 
-      {/* JSON-LD Schema */}
+      
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -457,25 +475,8 @@ export default function SobreNosPage() {
             '@context': 'https://schema.org',
             '@type': 'AboutPage',
             name: 'Sobre Nós - XCloud IPTV',
-            description: 'Conheça a XCloud IPTV, líder em streaming IPTV no Brasil',
-            url: 'https://xcloudiptv.com.br/sobre-nos',
-            mainEntity: {
-              '@type': 'Organization',
-              name: 'XCloud IPTV',
-              description: 'XCloud IPTV - Líder em IPTV streaming no Brasil com conteúdo variado, streaming ao vivo e suporte técnico especializado',
-              url: 'https://xcloudiptv.com.br',
-              logo: 'https://xcloudiptv.com.br/anexos/logo_app_xcloudtv.png',
-              sameAs: [
-                'https://xcloudiptv.com.br'
-              ],
-              address: {
-                '@type': 'PostalAddress',
-                addressCountry: 'BR',
-                addressRegion: 'Brasil'
-              },
-              areaServed: 'BR',
-              knowsAbout: ['IPTV streaming', 'streaming ao vivo', 'conteúdo variado', 'entretenimento digital']
-            }
+            description: 'Conheça a XCloud IPTV, plataforma de streaming IPTV no Brasil com conteúdo variado e suporte em português.',
+            url: 'https://xcloudiptv.com.br/sobre-nos'
           })
         }}
       />

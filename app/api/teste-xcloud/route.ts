@@ -20,7 +20,8 @@ interface WebhookResponse {
 }
 
 export async function POST(req: NextRequest) {
-  const WEBHOOK_URL = 'https://n8n.tplay21.in/webhook/teste-xcloudtv'
+  const fallback = 'https://n8n.tplay21.in/webhook/teste-xcloudtv'
+  const WEBHOOK_URL = process.env.NEXT_PUBLIC_TEST_WEBHOOK_URL || fallback
 
   const controller = new AbortController()
   const timer = setTimeout(() => controller.abort(), 10000)

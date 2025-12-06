@@ -96,7 +96,7 @@ export function ProductSchema({
       price,
       priceCurrency,
       availability: `https://schema.org/${availability}`,
-      url: window?.location?.href || '',
+      url: absoluteUrl('/'),
       hasMerchantReturnPolicy: {
         "@type": "MerchantReturnPolicy",
         applicableCountry: "BR",
@@ -180,7 +180,7 @@ export function XCloudPlanProductSchema({ planName, price, period, features }: {
       priceCurrency: "BRL",
       availability: "https://schema.org/InStock",
       priceValidUntil: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
-      url: `https://xcloudiptv.com.br/planos#${planName.toLowerCase()}`,
+      url: absoluteUrl(`/planos-xcloud-iptv#${planName.toLowerCase()}`),
       hasMerchantReturnPolicy: {
         "@type": "MerchantReturnPolicy",
         applicableCountry: "BR",

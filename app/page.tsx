@@ -6,7 +6,8 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/
 import heroImg from './assets/images/interface_xcloudtv.webp'
 import { Badge } from '@/components/ui/badge'
 import { ShieldCheck, Bolt, Headphones, Smartphone, Tv, Download, Lock, Rocket, CheckCircle2, CreditCard, Star, Zap, Crown } from 'lucide-react'
-import { Particles } from '@/components/particles'
+import dynamic from 'next/dynamic'
+const Particles = dynamic(() => import('@/components/particles').then(m => m.Particles), { ssr: false })
 import { createInternalLink } from '@/config/seo'
 import { EXTERNAL_LINKS } from '@/config/links'
 import { MetaTags } from '@/components/seo/MetaTags'
@@ -93,8 +94,8 @@ const faqQuestions = [
 ];
 
 export default function Page() {
-  const pageTitle = 'XCloud IPTV | Assine XCloud IPTV - Streaming Completo no Brasil';
-  const pageDescription = 'XCloud IPTV streaming completo com canais ao vivo, filmes e séries. Teste grátis XCloud IPTV e assine planos acessíveis. XCloud IPTV suporte em português (9h–22h).';
+  const pageTitle = 'XCloud IPTV | Assine XCloud IPTV e Teste Grátis no Brasil';
+  const pageDescription = 'XCloud IPTV com conteúdos variados. Teste grátis e assine planos acessíveis. Suporte em português (9h–22h). Compatível com Android, iOS, Windows e Smart TVs.';
   const pageKeywords = ['xcloud iptv', 'assinar xcloud iptv', 'planos xcloud iptv', 'teste grátis xcloud iptv', 'streaming iptv', 'xcloud tv'];
   
   // Validar conteúdo crítico
@@ -116,7 +117,7 @@ export default function Page() {
         description={pageDescription}
         keywords={pageKeywords}
         canonical="/"
-        ogImage={`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-home.jpg`}
+        ogImage={`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`}
       />
       <JsonLD schema={organizationSchema} />
       <JsonLD schema={faqSchema} />
@@ -133,8 +134,8 @@ export default function Page() {
         {/* Background Sutil */}
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-green-900/10 via-transparent to-green-900/5"></div>
-          <div className="absolute top-1/3 left-1/4 w-56 h-56 bg-green-500/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/4 right-1/3 w-40 h-40 bg-green-400/6 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/3 left-1/4 w-56 h-56 bg-green-500/5 rounded-full blur-xl"></div>
+          <div className="absolute bottom-1/4 right-1/3 w-40 h-40 bg-green-400/6 rounded-full blur-md"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
@@ -152,7 +153,7 @@ export default function Page() {
 
                 <div className="space-y-6">
                   <p className="text-xl lg:text-2xl text-gray-200 leading-relaxed max-w-2xl">
-                    XCloud IPTV oferece streaming completo com canais ao vivo, filmes e séries. Assine XCloud IPTV por apenas R$ 30/mês e faça o teste grátis hoje mesmo.
+                    XCloud IPTV oferece streaming completo com canais ao vivo, filmes e séries. Assine por apenas R$ 30/mês e faça o teste grátis hoje mesmo.
                   </p>
                   
                   {/* Benefícios em Bullets - Diferenciais de Valor */}
@@ -163,7 +164,7 @@ export default function Page() {
                     </div>
                     <div className="flex items-center justify-center lg:justify-start space-x-3">
                       <CheckCircle2 className="h-5 w-5 text-green-400 flex-shrink-0" />
-                      <span className="text-gray-200">Instalação imediata em 5 minutos</span>
+                      <span className="text-gray-200">Instalação imediata em poucos minutos</span>
                     </div>
                     <div className="flex items-center justify-center lg:justify-start space-x-3">
                       <CheckCircle2 className="h-5 w-5 text-green-400 flex-shrink-0" />
@@ -199,7 +200,7 @@ export default function Page() {
               <div className="flex items-center justify-start space-x-8 pt-8">
                 <div className="flex items-center space-x-2 text-gray-300">
                   <ShieldCheck className="h-5 w-5 text-green-400" />
-                  <span className="text-sm font-medium">100% Seguro</span>
+                  <span className="text-sm font-medium">Acesso Seguro</span>
                 </div>
                 <div className="flex items-center space-x-2 text-gray-300">
                   <CheckCircle2 className="h-5 w-5 text-green-400" />
@@ -216,17 +217,18 @@ export default function Page() {
             <div className="relative">
               <div className="relative mx-auto max-w-md lg:max-w-lg xl:max-w-xl">
                 {/* Glow effect sutil */}
-                <div className="absolute inset-0 bg-gradient-to-r from-green-500/15 via-green-400/8 to-green-600/15 rounded-3xl blur-xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-green-500/15 via-green-400/8 to-green-600/15 rounded-3xl blur-md"></div>
                 
-                <div className="relative bg-gray-800/40 backdrop-blur-md border border-green-500/20 rounded-3xl p-4 sm:p-6 shadow-xl transition-all duration-300">
+                <div className="relative bg-gray-800/40 backdrop-blur-sm border border-green-500/20 rounded-3xl p-4 sm:p-6 shadow-xl transition-all duration-300">
                   <Image
                     src={heroImg}
                     alt="Interface da plataforma de streaming com variedade de conteúdo disponível"
                     className="rounded-2xl shadow-lg w-full h-auto object-cover"
                     priority
+                    quality={65}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                     placeholder="blur"
-                    blurDataURL="data:image/webp;base64,UklGRjQAAABXRUJQVlA4ICgAAADQAQCdASoIAAgAAkA4JQBOgB6gEAAAGgA"  // Blur placeholder otimizado
+                    blurDataURL="data:image/webp;base64,UklGRjQAAABXRUJQVlA4ICgAAADQAQCdASoIAAgAAkA4JQBOgB6gEAAAGgA"
                   />
                   
                   {/* Floating badge */}
@@ -241,16 +243,16 @@ export default function Page() {
                 {/* Stats Cards - Prova Social e Urgência */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mt-6">
                   <div className="glass-card rounded-xl p-4 text-center border border-green-500/20 hover:border-green-400/40 transition-all duration-300 min-w-0 break-words">
-                    <div className="text-xl sm:text-2xl font-black bg-gradient-to-r from-green-300 to-green-500 bg-clip-text text-transparent mb-1">+100 Mil</div>
-                    <div className="text-xs text-gray-300 font-medium">Conteúdos</div>
+                    <div className="text-xl sm:text-2xl font-black bg-gradient-to-r from-green-300 to-green-500 bg-clip-text text-transparent mb-1">Conteúdos Variados</div>
+                    <div className="text-xs text-gray-300 font-medium">Biblioteca atualizada</div>
                   </div>
                   <div className="glass-card rounded-xl p-4 text-center border border-green-500/20 hover:border-green-400/40 transition-all duration-300 min-w-0 break-words">
-                    <div className="text-xl sm:text-2xl font-black bg-gradient-to-r from-green-300 to-green-500 bg-clip-text text-transparent mb-1">99.9%</div>
-                    <div className="text-xs text-gray-300 font-medium">Disponibilidade</div>
+                    <div className="text-xl sm:text-2xl font-black bg-gradient-to-r from-green-300 to-green-500 bg-clip-text text-transparent mb-1">Alta Disponibilidade</div>
+                    <div className="text-xs text-gray-300 font-medium">Serviço confiável</div>
                   </div>
                   <div className="glass-card rounded-xl p-4 text-center border border-green-500/20 hover:border-green-400/40 transition-all duration-300 min-w-0 break-words">
-                    <div className="text-xl sm:text-2xl font-black bg-gradient-to-r from-green-300 to-green-500 bg-clip-text text-transparent mb-1">Conteúdos</div>
-                    <div className="text-xs text-gray-300 font-medium">Variados</div>
+                    <div className="text-xl sm:text-2xl font-black bg-gradient-to-r from-green-300 to-green-500 bg-clip-text text-transparent mb-1">Compatibilidade Total</div>
+                    <div className="text-xs text-gray-300 font-medium">Android, iOS, Windows, Smart TVs</div>
                   </div>
                 </div>
               </div>
@@ -264,13 +266,13 @@ export default function Page() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gradient-brand mb-4">
-              Por Que Escolher a XCloud IPTV no Brasil
+              Por que escolher nossa plataforma no Brasil
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Descubra os benefícios exclusivos da plataforma XCloud IPTV
+              Descubra os benefícios exclusivos da plataforma
             </p>
             <h3 className="text-2xl font-semibold text-green-400 mt-6">
-              Streaming Completo XCloud IPTV com Ativação Imediata
+              Streaming completo com ativação imediata
             </h3>
           </div>
           
@@ -279,27 +281,27 @@ export default function Page() {
               <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <CreditCard className="h-8 w-8 text-white" />
               </div>
-              <h4 className="text-xl font-semibold text-white mb-3">Planos Acessíveis XCloud IPTV</h4>
+              <h4 className="text-xl font-semibold text-white mb-3">Planos Acessíveis</h4>
               <p className="text-gray-300">
-                Assine xcloud iptv com descontos progressivos. <Link href={createInternalLink('/planos-xcloud-iptv#anual', 'Plano Anual XCloud IPTV')} className="text-green-300 underline underline-offset-2 hover:text-green-200">Plano anual xcloud iptv com 20% de economia</Link> e maior custo-benefício para seu bolso.
+                Assine com descontos progressivos. <Link href={createInternalLink('/planos-xcloud-iptv#anual', 'Plano Anual')} className="text-green-300 underline underline-offset-2 hover:text-green-200">Plano anual com 20% de economia</Link> e maior custo-benefício.
               </p>
             </div>
             <div className="glass-card rounded-xl p-8 text-center">
               <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <ShieldCheck className="h-8 w-8 text-white" />
               </div>
-              <h4 className="text-xl font-semibold text-white mb-3">Ativação Imediata XCloud IPTV</h4>
+              <h4 className="text-xl font-semibold text-white mb-3">Ativação Imediata</h4>
               <p className="text-gray-400">
-                Comece a usar xcloud iptv em minutos. <span className="text-green-300">Suporte especializado xcloud iptv</span> disponível de segunda a sábado (9h às 22h) quando você precisar.
+                Comece a usar em minutos. <span className="text-green-300">Suporte especializado</span> disponível de segunda a sábado (9h às 22h) quando você precisar.
               </p>
             </div>
             <div className="glass-card rounded-xl p-8 text-center">
               <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Tv className="h-8 w-8 text-white" />
               </div>
-              <h4 className="text-xl font-semibold text-white mb-3">Compatibilidade Total XCloud IPTV</h4>
+              <h4 className="text-xl font-semibold text-white mb-3">Compatibilidade Total</h4>
               <p className="text-gray-300 mb-4">
-                A xcloud iptv funciona em Android TV, celular Android, iOS, Fire Stick, Mi Stick, Windows, TVs LG, Samsung e Roku. Instale xcloud iptv e comece a assistir hoje mesmo em qualquer dispositivo.
+                Compatível com Android TV, celular Android, iOS, Fire Stick, Mi Stick, Windows, TVs LG, Samsung e Roku. Instale e comece a assistir hoje mesmo em qualquer dispositivo.
               </p>
             </div>
           </div>
@@ -311,7 +313,7 @@ export default function Page() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gradient-brand mb-4">
-              Como Começar com a XCloud IPTV em Minutos
+              Como começar em minutos
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Transforme seu entretenimento em minutos. Economize até 70% comparado à TV tradicional.
@@ -323,7 +325,7 @@ export default function Page() {
               <div className="w-16 h-16 gradient-brand rounded-full flex items-center justify-center mx-auto mb-6">
                 <Download className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">1. Escolha Seu Plano XCloud IPTV</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">1. Escolha seu plano</h3>
               <p className="text-gray-300">Selecione o plano ideal para você. <Link href={createInternalLink('/planos-xcloud-iptv#mensal', 'Planos XCloud IPTV Mensal')} className="text-green-500 hover:text-green-400 underline">Planos a partir de R$ 30/mês</Link> com descontos progressivos.</p>
             </div>
 
@@ -477,7 +479,7 @@ export default function Page() {
               Funciona em Todos Seus Dispositivos
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              A XCloud IPTV é compatível com todos os dispositivos que você já possui. Instale em minutos e comece a assistir hoje mesmo.
+              Nossa plataforma é compatível com todos os dispositivos que você já possui. Instale em minutos e comece a assistir hoje mesmo.
             </p>
           </div>
           
@@ -560,7 +562,7 @@ export default function Page() {
                   </tr>
                   <tr className="border-b border-gray-800">
                     <td className="py-4 text-white">Conteúdo Variado</td>
-                    <td className="py-4 text-green-500">✅ Milhares de conteúdos</td>
+                    <td className="py-4 text-green-500">✅ Biblioteca ampla de conteúdos</td>
                     <td className="py-4 text-gray-300">❌ Limitado</td>
                   </tr>
                   <tr className="border-b border-gray-800">
@@ -656,10 +658,10 @@ export default function Page() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gradient-brand mb-4">
-              Perguntas Frequentes Sobre XCloud IPTV
+              Perguntas frequentes
             </h2>
             <p className="text-xl text-gray-400">
-              Tire suas dúvidas sobre a XCloud IPTV
+              Tire suas dúvidas sobre a plataforma
             </p>
           </div>
 
@@ -763,11 +765,11 @@ export default function Page() {
             Pronto para Transformar Seu Entretenimento?
           </h2>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Junte-se a milhares de clientes satisfeitos. Ativação imediata e suporte especializado incluído.
+            Junte-se a clientes satisfeitos no Brasil. Ativação imediata e suporte especializado incluído.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-10 py-8 text-xl font-bold rounded-2xl hover:scale-105 transition-all duration-300 shadow-2xl min-h-[48px]">
-              <Link href={createInternalLink('/planos-xcloud-iptv', 'Escolher Plano XCloud IPTV')} className="flex items-center space-x-3">
+              <Link href={createInternalLink('/planos-xcloud-iptv', 'Escolher Plano')} className="flex items-center space-x-3">
                 <Crown className="h-6 w-6" />
                 <span>Escolher Meu Plano</span>
               </Link>
