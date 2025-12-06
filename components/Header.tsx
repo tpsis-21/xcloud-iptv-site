@@ -1,6 +1,6 @@
 "use client"
 import Link from 'next/link'
-import Image from 'next/image'
+// Substituí Next/Image por <img> para garantir carregamento robusto no mobile
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { Menu, X, Rocket } from 'lucide-react'
@@ -23,15 +23,14 @@ export default function Header() {
     <header className="fixed top-0 w-full z-[10000] bg-black/80 backdrop-blur-xl border-b border-gray-800">
       <nav className="page-container flex h-20 items-center justify-between">
         <Link href="/" aria-label="Página inicial XCloud IPTV" className="flex items-center gap-3">
-          <Image 
-            src={logoSrc} 
-            alt="Logo XCloud IPTV" 
+          <img 
+            src={logoSrc}
+            alt="Logo XCloud IPTV"
             width={150}
             height={40}
-            priority
-            unoptimized
+            loading="eager"
             onError={() => setLogoSrc('/logo-xcloudtv.svg')}
-            className="h-10 w-auto object-contain" 
+            className="h-10 w-auto object-contain"
           />
           <div className="hidden sm:block">
             <div className="text-xl font-bold text-gradient-brand">XCloud IPTV</div>
@@ -78,7 +77,7 @@ export default function Header() {
       </nav>
       
       {mounted && open && createPortal(
-        <div role="dialog" aria-modal="true" className="fixed inset-0 w-full h-screen bg-black/90 z-[10000] backdrop-blur-sm flex justify-end">
+        <div role="dialog" aria-modal="true" className="fixed inset-0 w-full h-screen bg-black/90 z-[2147483647] backdrop-blur-sm flex justify-end">
           <div className="absolute inset-0" onClick={() => setOpen(false)} />
           <aside 
             id="mobile-menu" 
