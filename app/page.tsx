@@ -6,8 +6,7 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/
 import heroImg from './assets/images/interface_xcloudtv.webp'
 import { Badge } from '@/components/ui/badge'
 import { ShieldCheck, Bolt, Headphones, Smartphone, Tv, Download, Lock, Rocket, CheckCircle2, CreditCard, Star, Zap, Crown } from 'lucide-react'
-import dynamic from 'next/dynamic'
-const Particles = dynamic(() => import('@/components/particles').then(m => m.Particles), { ssr: false })
+import { Particles } from '@/components/particles'
 import { createInternalLink } from '@/config/seo'
 import { EXTERNAL_LINKS } from '@/config/links'
 import { MetaTags } from '@/components/seo/MetaTags'

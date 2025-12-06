@@ -19,8 +19,7 @@ import {
   Star
 } from 'lucide-react'
 import { CONTACTS } from '@/config/contacts'
-import dynamic from 'next/dynamic'
-const Particles = dynamic(() => import('@/components/particles').then(m => m.Particles), { ssr: false })
+import { Particles } from '@/components/particles'
 
 export const metadata: Metadata = {
   title: 'Contato XCloud IPTV Brasil - Suporte IPTV Streaming | Email',

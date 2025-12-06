@@ -16,8 +16,7 @@ import {
   Heart,
   Lightbulb
 } from 'lucide-react'
-import dynamic from 'next/dynamic'
-const Particles = dynamic(() => import('@/components/particles').then(m => m.Particles), { ssr: false })
+import { Particles } from '@/components/particles'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
 import { MetaTags } from '@/components/seo/MetaTags'
 import { JsonLD } from '@/components/seo/JsonLD'

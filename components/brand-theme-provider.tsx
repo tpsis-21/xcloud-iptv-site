@@ -62,7 +62,9 @@ export function BrandThemeProvider({ src }: Props) {
         document.documentElement.style.setProperty('--brand-dark', `${h} ${s}% ${darkL}%`)
         document.documentElement.style.setProperty('--accent', `${h} ${Math.min(100, s - 10)}% ${accentL}%`)
         document.documentElement.style.setProperty('--ring', `var(--brand)`)
-      } catch {}
+      } catch (e) {
+        console.warn('BrandThemeProvider: falha ao aplicar tema', e)
+      }
     }
   }, [src])
   return null

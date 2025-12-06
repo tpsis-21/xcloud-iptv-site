@@ -2,9 +2,9 @@
 const path = require('path')
 const nextConfig = {
   experimental: {
-    typedRoutes: true,
     optimizeCss: true,
   },
+  typedRoutes: true,
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
@@ -78,13 +78,11 @@ const nextConfig = {
       },
     ]
   },
-  webpack: (config) => {
-    config.resolve = config.resolve || {}
-    config.resolve.alias = {
-      ...(config.resolve.alias || {}),
+  // Turbopack (Next.js 16): alias via turbopack.resolveAlias
+  turbopack: {
+    resolveAlias: {
       '@': path.resolve(__dirname),
-    }
-    return config
+    },
   },
 }
 
