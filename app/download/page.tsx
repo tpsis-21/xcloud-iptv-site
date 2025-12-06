@@ -68,7 +68,7 @@ export default function DownloadPage() {
       <section className="relative pt-24 sm:pt-28 py-20 z-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h1 className="text-4xl lg:text-6xl font-bold text-gradient-brand mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight text-gradient-brand drop-shadow-2xl sm:whitespace-nowrap mb-6">
               Baixe e Instale XCloud IPTV em Poucos Minutos
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">

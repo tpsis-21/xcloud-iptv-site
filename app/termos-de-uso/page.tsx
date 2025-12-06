@@ -36,9 +36,8 @@ export default function TermosDeUso() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 pb-12 lg:pb-16 max-w-4xl">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="text-gradient-brand">Termos de Uso</span>
-              <span className="block text-gradient-brand">XCloud IPTV</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight text-gradient-brand drop-shadow-2xl sm:whitespace-nowrap mb-6">
+              Termos de Uso XCloud IPTV
             </h1>
             
           </div>

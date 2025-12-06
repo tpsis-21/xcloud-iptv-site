@@ -28,6 +28,9 @@ export default function Header() {
             width={150}
             height={40}
             loading="eager"
+            decoding="async"
+            srcSet="/logo_app_xcloudtv.png 150w, /logo_app_xcloudtv.png 300w"
+            sizes="(max-width: 640px) 120px, 150px"
             onError={() => setLogoSrc('/logo-xcloudtv.svg')}
             className="h-10 w-auto object-contain"
           />
@@ -70,6 +73,8 @@ export default function Header() {
           aria-expanded={open}
           className="md:hidden relative z-50 inline-flex h-12 w-12 items-center justify-center rounded-lg border border-gray-700 bg-black/50 text-white hover:border-brand hover:text-brand-light transition-all duration-300"
           onClick={() => setOpen(true)}
+          onTouchStart={() => setOpen(true)}
+          onPointerDown={() => setOpen(true)}
         >
           <Menu className="h-6 w-6" />
         </button>

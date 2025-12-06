@@ -143,7 +143,7 @@ export default function Page() {
 
           <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-black text-gradient-brand mb-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight text-gradient-brand drop-shadow-2xl sm:whitespace-nowrap mb-6">
                 Planos XCloud IPTV
               </h1>
               <p className="text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">

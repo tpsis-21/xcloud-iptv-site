@@ -127,7 +127,7 @@ export default function SobreNosPage() {
             <span className="text-sm font-medium text-green-500">Conheça Nossa História</span>
           </div>
           
-          <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-gradient-brand">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight text-gradient-brand drop-shadow-2xl sm:whitespace-nowrap mb-6">
             XCloud IPTV - IPTV Streaming Brasil
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">

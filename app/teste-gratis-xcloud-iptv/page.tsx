@@ -96,14 +96,8 @@ export default function Page() {
                 </div>
 
                 <div className="space-y-4">
-                  <h1 className="text-5xl lg:text-7xl xl:text-8xl font-black leading-none">
-                    <span className="text-gradient-brand">
-                      Teste Grátis
-                    </span>
-                    <br />
-                    <span className="text-gradient-brand">
-                      XCloud IPTV
-                    </span>
+                  <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight text-gradient-brand drop-shadow-2xl sm:whitespace-nowrap">
+                    Teste Grátis XCloud IPTV
                   </h1>
                   
                   <div className="text-3xl lg:text-4xl xl:text-5xl font-extrabold bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500 bg-clip-text text-transparent drop-shadow-lg">
