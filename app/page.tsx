@@ -653,6 +653,55 @@ export default function Page() {
         </div>
       </section>
 
+      {/* Seção Depoimentos (Prova Social) */}
+      <section className="py-20 relative" aria-labelledby="depoimentos-title">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 id="depoimentos-title" className="text-4xl lg:text-5xl font-bold text-gradient-brand mb-4">
+              Depoimentos de Clientes XCloud IPTV
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Experiências reais destacando instalação simples, ativação rápida e suporte em português
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {[
+              {
+                quote:
+                  'Instalação simples. Em poucos minutos já estava assistindo, sem complicação.',
+                author: 'Marina Santos, Usuária Android TV',
+              },
+              {
+                quote:
+                  'Precisava de ajuda à noite e o suporte respondeu rápido. Atendimento em português facilitou muito.',
+                author: 'Carlos Almeida, Smart TV Samsung',
+              },
+              {
+                quote:
+                  'Funciona na minha Smart TV e no celular. Troco de dispositivo sem dor de cabeça.',
+                author: 'Luana Ferreira, iOS e TV LG',
+              },
+            ].map((t, i) => (
+              <article key={i} className="glass-card rounded-2xl p-8 border-white/10">
+                <blockquote className="text-gray-200 text-lg leading-relaxed">
+                  “{t.quote}”
+                </blockquote>
+                <div className="mt-4 text-sm text-green-400">{t.author}</div>
+              </article>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Button asChild className="gradient-brand text-white px-8 py-4 text-lg font-semibold rounded-xl">
+              <Link href={createInternalLink('/planos-xcloud-iptv', 'Planos XCloud IPTV')}>
+                Ver Planos
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Seção FAQ */}
       <section className="py-20 relative">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
