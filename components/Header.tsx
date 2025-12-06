@@ -2,7 +2,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import { createPortal } from 'react-dom'
 import { Menu, X, Rocket } from 'lucide-react'
 
 export default function Header() {
@@ -23,7 +22,7 @@ export default function Header() {
       <nav className="page-container flex h-20 items-center justify-between">
         <Link href="/" aria-label="Página inicial XCloud IPTV" className="flex items-center gap-3">
           <Image 
-            src="/logo_header_opt.webp" 
+            src="/logo_app_xcloudtv.png" 
             alt="Logo XCloud IPTV" 
             width={150}
             height={40}
@@ -76,10 +75,9 @@ export default function Header() {
         </button>
       </nav>
       
-      {mounted && open && createPortal(
-        <div className="fixed inset-0 w-full h-full bg-black/90 z-[99999] backdrop-blur-sm flex justify-end" onClick={(e) => {
-          if (e.target === e.currentTarget) setOpen(false)
-        }}>
+      {mounted && open && (
+        <div className="fixed inset-0 w-full h-screen bg-black/90 z-[99999] backdrop-blur-sm flex justify-end">
+          <div className="absolute inset-0" onClick={() => setOpen(false)} />
           <div 
             id="mobile-menu" 
             aria-label="Menu de navegação" 
@@ -87,7 +85,11 @@ export default function Header() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="p-6">
-              <button aria-label="Fechar menu" className="absolute right-6 top-6 inline-flex h-12 w-12 items-center justify-center rounded-lg border border-gray-700 hover:border-brand hover:text-brand-light transition-all duration-300" onClick={() => setOpen(false)}>
+              <button 
+                aria-label="Fechar menu" 
+                className="absolute right-6 top-6 inline-flex h-12 w-12 items-center justify-center rounded-lg border border-gray-700 hover:border-brand hover:text-brand-light transition-all duration-300 z-50 bg-gray-800 text-white" 
+                onClick={() => setOpen(false)}
+              >
                 <X className="h-6 w-6" />
               </button>
               <div className="mt-16 flex flex-col gap-4 text-lg">
@@ -117,7 +119,7 @@ export default function Header() {
               </div>
             </div>
           </div>
-        </div>, document.body
+        </div>
       )}
     </header>
   )
