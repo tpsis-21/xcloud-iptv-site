@@ -2,11 +2,13 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { Menu, X, Rocket } from 'lucide-react'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
+  const [logoSrc, setLogoSrc] = useState('/logo_app_xcloudtv.png')
   useEffect(() => { setMounted(true) }, [])
   useEffect(() => {
     if (open) {
@@ -18,16 +20,17 @@ export default function Header() {
   }, [open])
   
   return (
-    <header className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-gray-800">
+    <header className="fixed top-0 w-full z-[10000] bg-black/80 backdrop-blur-xl border-b border-gray-800">
       <nav className="page-container flex h-20 items-center justify-between">
         <Link href="/" aria-label="Página inicial XCloud IPTV" className="flex items-center gap-3">
           <Image 
-            src="/logo_app_xcloudtv.png" 
+            src={logoSrc} 
             alt="Logo XCloud IPTV" 
             width={150}
             height={40}
             priority
             unoptimized
+            onError={() => setLogoSrc('/logo-xcloudtv.svg')}
             className="h-10 w-auto object-contain" 
           />
           <div className="hidden sm:block">
@@ -65,24 +68,22 @@ export default function Header() {
         
         <button 
           aria-label="Abrir menu" 
+          aria-controls="mobile-menu"
+          aria-expanded={open}
           className="md:hidden relative z-50 inline-flex h-12 w-12 items-center justify-center rounded-lg border border-gray-700 bg-black/50 text-white hover:border-brand hover:text-brand-light transition-all duration-300"
-          onClick={() => {
-            console.log('Abrindo menu mobile...');
-            setOpen(true);
-          }}
+          onClick={() => setOpen(true)}
         >
           <Menu className="h-6 w-6" />
         </button>
       </nav>
       
-      {mounted && open && (
-        <div className="fixed inset-0 w-full h-screen bg-black/90 z-[99999] backdrop-blur-sm flex justify-end">
+      {mounted && open && createPortal(
+        <div role="dialog" aria-modal="true" className="fixed inset-0 w-full h-screen bg-black/90 z-[10000] backdrop-blur-sm flex justify-end">
           <div className="absolute inset-0" onClick={() => setOpen(false)} />
-          <div 
+          <aside 
             id="mobile-menu" 
             aria-label="Menu de navegação" 
-            className="relative h-full w-[85%] max-w-sm bg-gray-900 border-l border-gray-800 shadow-2xl overflow-y-auto"
-            onClick={(e) => e.stopPropagation()}
+            className="fixed right-0 top-0 h-screen w-[85%] max-w-sm bg-gray-900 border-l border-gray-800 shadow-2xl overflow-y-auto"
           >
             <div className="p-6">
               <button 
@@ -118,8 +119,8 @@ export default function Header() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          </aside>
+        </div>, document.body
       )}
     </header>
   )
