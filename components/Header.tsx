@@ -68,21 +68,23 @@ export default function Header() {
           aria-controls="mobile-menu"
           aria-expanded={open}
           className="md:hidden relative z-50 inline-flex h-12 w-12 items-center justify-center rounded-lg border border-gray-700 bg-black/50 text-white hover:border-brand hover:text-brand-light transition-all duration-300"
+          type="button"
           onClick={() => setOpen(true)}
           onTouchStart={() => setOpen(true)}
           onPointerDown={() => setOpen(true)}
+          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setOpen(true) }}
         >
           <Menu className="h-6 w-6" />
         </button>
       </nav>
       
       {mounted && open && createPortal(
-        <div role="dialog" aria-modal="true" className="fixed inset-0 w-full h-screen bg-black/90 z-[2147483647] flex justify-end" style={{ WebkitBackdropFilter: 'blur(4px)', backdropFilter: 'blur(4px)' }}>
+        <div role="dialog" aria-modal="true" className="fixed inset-0 w-full h-screen bg-black/90 z-[2147483647] flex justify-end pointer-events-auto touch-none" style={{ WebkitBackdropFilter: 'blur(4px)', backdropFilter: 'blur(4px)' }} onTouchMove={(e) => e.preventDefault()}>
           <div className="absolute inset-0" onClick={() => setOpen(false)} />
           <aside 
             id="mobile-menu" 
             aria-label="Menu de navegação" 
-            className="fixed right-0 top-0 h-screen w-[85%] max-w-sm bg-gray-900 border-l border-gray-800 shadow-2xl overflow-y-auto z-[2147483647]"
+            className="fixed right-0 top-0 h-screen w-[85%] max-w-sm bg-gray-900 border-l border-gray-800 shadow-2xl overflow-y-auto z-[2147483647] touch-pan-y"
           >
             <div className="p-6">
               <button 

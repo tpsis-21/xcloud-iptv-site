@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card'
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion'
@@ -145,7 +144,7 @@ export default function Page() {
               {/* Headline Principal - Layout Exato */}
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight text-gradient-brand drop-shadow-2xl sm:whitespace-nowrap">
+                   <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight text-gradient-brand drop-shadow-2xl">
                   XCloud IPTV
                   </h1>
                 </div>
@@ -219,15 +218,12 @@ export default function Page() {
                 <div className="absolute inset-0 bg-gradient-to-r from-green-500/15 via-green-400/8 to-green-600/15 rounded-3xl blur-md"></div>
                 
                 <div className="relative bg-gray-800/40 backdrop-blur-sm border border-green-500/20 rounded-3xl p-4 sm:p-6 shadow-xl transition-all duration-300">
-                  <Image
-                    src={heroImg}
+                  <img
+                    src={heroImg.src}
                     alt="Interface da plataforma de streaming com variedade de conteúdo disponível"
                     className="rounded-2xl shadow-lg w-full h-auto object-cover"
-                    priority
-                    quality={65}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                    placeholder="blur"
-                    blurDataURL="data:image/webp;base64,UklGRjQAAABXRUJQVlA4ICgAAADQAQCdASoIAAgAAkA4JQBOgB6gEAAAGgA"
+                    loading="eager"
+                    decoding="async"
                   />
                   
                   {/* Floating badge */}
