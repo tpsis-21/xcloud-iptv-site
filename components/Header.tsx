@@ -1,7 +1,6 @@
 "use client"
 import Link from 'next/link'
 import Image from 'next/image'
-import logoImg from '../app/assets/images/logo_app_xcloudtv.png'
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { Menu, X, Rocket } from 'lucide-react'
@@ -24,10 +23,12 @@ export default function Header() {
       <nav className="page-container flex h-20 items-center justify-between">
         <Link href="/" aria-label="Página inicial XCloud IPTV" className="flex items-center gap-3">
           <Image 
-            src={logoImg} 
+            src="/logo_app_xcloudtv.png" 
             alt="Logo XCloud IPTV" 
+            width={150}
+            height={40}
             priority 
-            className="h-10 w-auto" 
+            className="h-10 w-auto object-contain" 
           />
           <div className="hidden sm:block">
             <div className="text-xl font-bold text-gradient-brand">XCloud IPTV</div>

@@ -178,13 +178,6 @@ export default function Footer() {
             <div className="text-sm text-gray-300 text-center md:text-left">
               <p>&copy; {currentYear} XCloud IPTV. Todos os direitos reservados.</p>
             </div>
-            
-            <div className="flex items-center space-x-4 text-sm text-gray-300">
-              <div className="flex items-center space-x-1">
-                <Star className="h-4 w-4 text-green-500" />
-                <span>Excelente experiência</span>
-              </div>
-            </div>
           </div>
         </div>
       </div>

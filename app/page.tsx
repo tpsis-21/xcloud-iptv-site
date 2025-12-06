@@ -174,7 +174,7 @@ export default function Page() {
               </div>
 
               {/* CTAs - Estratégia de Conversão Otimizada */}
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-6">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 items-center justify-center lg:justify-start lg:items-start">
                 <div className="flex flex-col items-center gap-3">
                   <Button asChild className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 text-base font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 min-h-[44px] min-w-[44px]">
                     <Link href={createInternalLink('/planos-xcloud-iptv', 'Planos XCloud IPTV')} className="flex items-center space-x-2 w-full h-full justify-center">
@@ -521,9 +521,9 @@ export default function Page() {
           </div>
           
           <div className="text-center">
-            <Button asChild className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-10 py-6 text-xl font-bold rounded-2xl hover:scale-105 transition-all duration-300 shadow-2xl min-h-[48px]">
-              <Link href={createInternalLink('/download', 'Download XCloud IPTV')} className="flex items-center space-x-3">
-                <Download className="h-6 w-6" />
+            <Button asChild className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-4 sm:px-10 sm:py-6 text-base sm:text-xl font-bold rounded-2xl hover:scale-105 transition-all duration-300 shadow-2xl min-h-[48px] h-auto whitespace-normal">
+              <Link href={createInternalLink('/download', 'Download XCloud IPTV')} className="flex items-center justify-center space-x-3 text-center">
+                <Download className="h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0" />
                 <span>Ver Guia Completo de Instalação</span>
               </Link>
             </Button>
