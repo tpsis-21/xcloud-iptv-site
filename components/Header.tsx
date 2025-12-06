@@ -1,6 +1,5 @@
 "use client"
 import Link from 'next/link'
-// Substituí Next/Image por <img> para garantir carregamento robusto no mobile
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { Menu, X, Rocket } from 'lucide-react'
