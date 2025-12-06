@@ -4,5 +4,5 @@ nixPkgs = ["nodejs_20", "npm-9_x"]
 [phases.build]
 cmds = ["npm run build"]
 
-[phases.start]
-cmds = ["node .next/standalone/server.js"]
+[start]
+cmd = "node .next/standalone/server.js"
