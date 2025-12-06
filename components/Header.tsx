@@ -7,13 +7,7 @@ import { Menu, X, Rocket } from 'lucide-react'
 export default function Header() {
   const [open, setOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
-  const [logoSrc, setLogoSrc] = useState('/logo_app_xcloudtv.png')
   useEffect(() => { setMounted(true) }, [])
-  useEffect(() => {
-    // Preload logo to avoid flash on mobile
-    const img = new Image()
-    img.src = '/logo_app_xcloudtv.png'
-  }, [])
   useEffect(() => {
     if (open) {
       document.body.style.overflow = 'hidden'
@@ -28,15 +22,12 @@ export default function Header() {
       <nav className="page-container flex h-20 items-center justify-between">
         <Link href="/" aria-label="Página inicial XCloud IPTV" className="flex items-center gap-3">
           <img 
-            src={logoSrc}
+            src="/logo-xcloudtv.svg"
             alt="Logo XCloud IPTV"
             width={150}
             height={40}
             loading="eager"
             decoding="async"
-            srcSet="/logo_app_xcloudtv.png 150w, /logo_app_xcloudtv.png 300w"
-            sizes="(max-width: 640px) 120px, 150px"
-            onError={() => setLogoSrc('/logo-xcloudtv.svg')}
             className="h-10 w-auto object-contain"
           />
           <div className="hidden sm:block">
