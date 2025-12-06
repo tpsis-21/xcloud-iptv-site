@@ -10,6 +10,11 @@ export default function Header() {
   const [logoSrc, setLogoSrc] = useState('/logo_app_xcloudtv.png')
   useEffect(() => { setMounted(true) }, [])
   useEffect(() => {
+    // Preload logo to avoid flash on mobile
+    const img = new Image()
+    img.src = '/logo_app_xcloudtv.png'
+  }, [])
+  useEffect(() => {
     if (open) {
       document.body.style.overflow = 'hidden'
     } else {
@@ -81,12 +86,12 @@ export default function Header() {
       </nav>
       
       {mounted && open && createPortal(
-        <div role="dialog" aria-modal="true" className="fixed inset-0 w-full h-screen bg-black/90 z-[2147483647] backdrop-blur-sm flex justify-end">
+        <div role="dialog" aria-modal="true" className="fixed inset-0 w-full h-screen bg-black/90 z-[2147483647] flex justify-end" style={{ WebkitBackdropFilter: 'blur(4px)', backdropFilter: 'blur(4px)' }}>
           <div className="absolute inset-0" onClick={() => setOpen(false)} />
           <aside 
             id="mobile-menu" 
             aria-label="Menu de navegação" 
-            className="fixed right-0 top-0 h-screen w-[85%] max-w-sm bg-gray-900 border-l border-gray-800 shadow-2xl overflow-y-auto"
+            className="fixed right-0 top-0 h-screen w-[85%] max-w-sm bg-gray-900 border-l border-gray-800 shadow-2xl overflow-y-auto z-[2147483647]"
           >
             <div className="p-6">
               <button 

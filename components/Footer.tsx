@@ -1,6 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image'
-import logoImg from '@/app/assets/images/logo_app_xcloudtv.png'
+// Substituir por <img> nativo usando recurso da pasta public
 import { Button } from '@/components/ui/button'
 import { 
   Smartphone, 
@@ -32,13 +31,15 @@ export default function Footer() {
           {/* Coluna 1 - Sobre */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <Image 
-                src={logoImg}
+              <img 
+                src="/logo_app_xcloudtv.png"
                 alt="XCloud IPTV Logo"
                 width={32}
                 height={32}
-                className="rounded-lg object-contain"
                 loading="lazy"
+                decoding="async"
+                className="rounded-lg object-contain"
+                onError={e => { (e.currentTarget as HTMLImageElement).src = '/logo-xcloudtv.svg' }}
               />
               <h3 className="text-xl font-bold text-white">XCloud IPTV</h3>
             </div>
