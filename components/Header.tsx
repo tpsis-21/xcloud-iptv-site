@@ -23,7 +23,7 @@ export default function Header() {
       <nav className="page-container flex h-20 items-center justify-between">
         <Link href="/" aria-label="Página inicial XCloud IPTV" className="flex items-center gap-3">
           <Image 
-            src="/logo_app_xcloudtv.png" 
+            src="/logo_header_opt.webp" 
             alt="Logo XCloud IPTV" 
             width={150}
             height={40}
@@ -66,17 +66,26 @@ export default function Header() {
         
         <button 
           aria-label="Abrir menu" 
-          className="md:hidden inline-flex h-12 w-12 items-center justify-center rounded-lg border border-gray-700 hover:border-brand hover:text-brand-light transition-all duration-300"
-          onClick={() => setOpen(true)}
+          className="md:hidden relative z-50 inline-flex h-12 w-12 items-center justify-center rounded-lg border border-gray-700 bg-black/50 text-white hover:border-brand hover:text-brand-light transition-all duration-300"
+          onClick={() => {
+            console.log('Abrindo menu mobile...');
+            setOpen(true);
+          }}
         >
           <Menu className="h-6 w-6" />
         </button>
       </nav>
       
       {mounted && open && createPortal(
-        <div className="fixed inset-0 z-[99999]" style={{ zIndex: 99999 }}>
-          <div className="absolute inset-0 bg-black/90 backdrop-blur-xl" onClick={() => setOpen(false)} />
-          <div id="mobile-menu" aria-label="Menu de navegação" className="absolute right-0 top-0 h-screen w-3/4 max-w-sm bg-gray-900/95 backdrop-blur-xl border-l border-gray-800 shadow-2xl overflow-y-auto transition-transform duration-300">
+        <div className="fixed inset-0 w-full h-full bg-black/90 z-[99999] backdrop-blur-sm flex justify-end" onClick={(e) => {
+          if (e.target === e.currentTarget) setOpen(false)
+        }}>
+          <div 
+            id="mobile-menu" 
+            aria-label="Menu de navegação" 
+            className="relative h-full w-[85%] max-w-sm bg-gray-900 border-l border-gray-800 shadow-2xl overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="p-6">
               <button aria-label="Fechar menu" className="absolute right-6 top-6 inline-flex h-12 w-12 items-center justify-center rounded-lg border border-gray-700 hover:border-brand hover:text-brand-light transition-all duration-300" onClick={() => setOpen(false)}>
                 <X className="h-6 w-6" />
