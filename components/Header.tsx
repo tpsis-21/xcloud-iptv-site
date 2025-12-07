@@ -18,16 +18,24 @@ export default function Header() {
   }, [open])
   useEffect(() => {
     const handler = (e: MouseEvent) => {
-      const lt = lastTouchRef.current
-      if (!lt) return
-      const dx = Math.abs(e.clientX - lt.x)
-      const dy = Math.abs(e.clientY - lt.y)
-      const dt = Date.now() - lt.t
-      if (dt < 600 && dx < 25 && dy < 25) {
+      if (openRef.current && openTimeRef.current && Date.now() - openTimeRef.current < 700) {
         e.preventDefault()
         e.stopPropagation()
+        return
       }
-      lastTouchRef.current = null
+      const lt = lastTouchRef.current
+      if (lt) {
+        const dx = Math.abs(e.clientX - lt.x)
+        const dy = Math.abs(e.clientY - lt.y)
+        const dt = Date.now() - lt.t
+        if (dt < 600 && dx < 25 && dy < 25) {
+          e.preventDefault()
+          e.stopPropagation()
+          lastTouchRef.current = null
+          return
+        }
+        lastTouchRef.current = null
+      }
     }
     document.addEventListener('click', handler, true)
     return () => document.removeEventListener('click', handler, true)
@@ -35,15 +43,19 @@ export default function Header() {
   const [canClose, setCanClose] = useState(false)
   const [entered, setEntered] = useState(false)
   const lastTouchRef = useRef<{ x: number; y: number; t: number } | null>(null)
+  const openTimeRef = useRef<number | null>(null)
+  const openRef = useRef(false)
+  useEffect(() => { openRef.current = open }, [open])
   const handleOpen = (e?: any) => {
     if (e) { e.preventDefault(); e.stopPropagation() }
     setCanClose(false)
     setEntered(false)
+    openTimeRef.current = Date.now()
     setTimeout(() => {
       setOpen(true)
       setTimeout(() => {
         setEntered(true)
-        setTimeout(() => setCanClose(true), 450)
+        setTimeout(() => setCanClose(true), 700)
       }, 0)
     }, 0)
   }
@@ -92,20 +104,22 @@ export default function Header() {
           </Link>
         </div>
         
+        {mounted && (
         <button 
           aria-label="Abrir menu" 
           aria-controls="mobile-menu"
           aria-expanded={open}
           className="md:hidden relative z-50 inline-flex h-12 w-12 items-center justify-center rounded-lg border border-gray-700 bg-black/50 text-white hover:border-brand hover:text-brand-light transition-all duration-300"
           style={{ touchAction: 'manipulation' }}
+          suppressHydrationWarning={true}
           type="button"
           disabled={open}
-          onClick={handleOpen}
-          onTouchEnd={(ev) => { const t = (ev as unknown as TouchEvent).changedTouches?.[0]; if (t) { lastTouchRef.current = { x: t.clientX, y: t.clientY, t: Date.now() } } ; handleOpen(ev) }}
+          onPointerDown={(ev) => { lastTouchRef.current = { x: ev.clientX, y: ev.clientY, t: Date.now() }; handleOpen(ev) }}
           onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleOpen(e) }}
         >
           <Menu className="h-6 w-6" />
         </button>
+        )}
       </nav>
       
       {mounted && open && createPortal(
@@ -115,13 +129,12 @@ export default function Header() {
             id="mobile-menu" 
             aria-label="Menu de navegação" 
             className={`fixed right-0 top-0 h-screen w-[85%] max-w-sm bg-gray-900 border-l border-gray-800 shadow-2xl overflow-y-auto z-[2147483647] touch-pan-y transform transition-transform duration-300 ${entered ? 'translate-x-0' : 'translate-x-full'}`}
-            onTransitionEnd={() => setCanClose(true)}
             onClick={(e) => e.stopPropagation()}
           >
             <div className="p-6">
               <button 
                 aria-label="Fechar menu" 
-                className="absolute right-6 top-8 inline-flex h-12 w-12 items-center justify-center rounded-lg border border-gray-700 hover:border-brand hover:text-brand-light transition-all duration-300 z-50 bg-gray-800 text-white" 
+                className="absolute left-6 top-8 inline-flex h-12 w-12 items-center justify-center rounded-lg border border-gray-700 hover:border-brand hover:text-brand-light transition-all duration-300 z-50 bg-gray-800 text-white" 
                 disabled={!canClose}
                 style={{ pointerEvents: canClose ? 'auto' : 'none' }}
                 onClick={() => setOpen(false)}

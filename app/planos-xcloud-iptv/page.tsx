@@ -89,7 +89,7 @@ export default function Page() {
   const planFeatures = [
     'Conteúdos variados',
     '1 conexão simultânea', 
-    'Suporte via email',
+    'Suporte exclusivo via WhatsApp (clientes)',
     'Ativação imediata'
   ];
 
@@ -143,7 +143,7 @@ export default function Page() {
 
           <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight text-gradient-brand drop-shadow-2xl sm:whitespace-nowrap mb-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight text-gradient-brand drop-shadow-2xl mb-6">
                 Planos XCloud IPTV
               </h1>
               <p className="text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
@@ -160,7 +160,7 @@ export default function Page() {
                 </div>
                 <div className="flex items-center space-x-2">
                   <CheckCircle2 className="h-4 w-4 text-green-500" />
-                  <span>Suporte via email</span>
+                  <span>Suporte exclusivo via WhatsApp (clientes)</span>
                 </div>
               </div>
             </div>
@@ -227,7 +227,7 @@ export default function Page() {
                         </div>
                         <div className="flex items-center space-x-2 text-gray-300">
                           <CheckCircle2 className="h-4 w-4 text-green-500" />
-                          <span>Suporte via email</span>
+                          <span>Suporte exclusivo via WhatsApp (clientes)</span>
                         </div>
                         <div className="flex items-center space-x-2 text-gray-300">
                           <CheckCircle2 className="h-4 w-4 text-green-500" />
@@ -306,9 +306,9 @@ export default function Page() {
                 <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Users className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">Suporte Especializado</h3>
+                <h3 className="text-xl font-semibold text-white mb-3">Suporte Exclusivo via WhatsApp</h3>
                 <p className="text-gray-400">
-                  Time de suporte treinado e pronto para ajudar. Resposta rápida e eficiente via email.
+                  Atendimento exclusivo para clientes pelo WhatsApp (9h–22h). Para dúvidas gerais, utilize o e‑mail.
                 </p>
               </div>
               

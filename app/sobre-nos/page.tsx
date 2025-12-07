@@ -101,7 +101,7 @@ export default function SobreNosPage() {
 
   return (
     <div className="relative min-h-screen">
-      <Particles />
+      
       <MetaTags
         title="Sobre Nós"
         description="Conheça a XCloud IPTV, plataforma com conteúdo variado, estabilidade e suporte técnico em português. Missão, visão e valores."
@@ -127,7 +127,7 @@ export default function SobreNosPage() {
             <span className="text-sm font-medium text-green-500">Conheça Nossa História</span>
           </div>
           
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight text-gradient-brand drop-shadow-2xl sm:whitespace-nowrap mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight text-gradient-brand drop-shadow-2xl mb-6">
             XCloud IPTV - IPTV Streaming Brasil
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">

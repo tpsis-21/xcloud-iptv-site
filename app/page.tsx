@@ -182,7 +182,7 @@ export default function Page() {
                       <span>Ver Planos XCloud</span>
                     </Link>
                   </Button>
-                  <Link href={createInternalLink('/planos-xcloud-iptv#mensal', 'Planos XCloud IPTV Mensal')} className="text-xs text-green-300 underline underline-offset-2 hover:text-green-200">Planos a partir de R$ 30/mês</Link>
+                  <span className="text-xs text-gray-300">Planos a partir de R$ 30/mês</span>
                 </div>
                 <div className="flex flex-col items-center gap-3">
                   <Button asChild variant="outline" className="border-2 border-green-500 text-green-500 hover:bg-green-500/10 hover:text-green-400 px-6 py-3 text-base font-bold rounded-xl transition-all duration-300 min-h-[44px] min-w-[44px]">
@@ -325,7 +325,7 @@ export default function Page() {
                 <Download className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">1. Escolha seu plano</h3>
-              <p className="text-gray-300">Selecione o plano ideal para você. <Link href={createInternalLink('/planos-xcloud-iptv#mensal', 'Planos XCloud IPTV Mensal')} className="text-green-500 hover:text-green-400 underline">Planos a partir de R$ 30/mês</Link> com descontos progressivos.</p>
+              <p className="text-gray-300">Selecione o plano ideal para você. <span className="text-green-500">Planos a partir de R$ 30/mês</span> com descontos progressivos.</p>
             </div>
 
             <div className="glass-card rounded-2xl p-8 text-center group hover:scale-105 transition-all duration-300">

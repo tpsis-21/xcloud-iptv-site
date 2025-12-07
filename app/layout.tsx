@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { Inter } from 'next/font/google'
-import Header from '@/components/Header'
+import Header from '@/components/HeaderDynamic'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { hexToHslComponents } from '@/lib/color'
