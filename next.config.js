@@ -11,6 +11,7 @@ const nextConfig = {
   },
   images: {
     formats: ['image/avif', 'image/webp'],
+    unoptimized: true,
   },
   // Headers para performance
   async headers() {

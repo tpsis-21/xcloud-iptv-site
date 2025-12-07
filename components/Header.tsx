@@ -6,8 +6,7 @@ import { Menu, X, Rocket } from 'lucide-react'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
-  const [mounted, setMounted] = useState(false)
-  useEffect(() => { setMounted(true) }, [])
+  
   useEffect(() => {
     if (open) {
       document.body.style.overflow = 'hidden'
@@ -16,6 +15,7 @@ export default function Header() {
     }
     return () => { document.body.style.overflow = '' }
   }, [open])
+
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       if (openRef.current && openTimeRef.current && Date.now() - openTimeRef.current < 700) {
@@ -40,12 +40,15 @@ export default function Header() {
     document.addEventListener('click', handler, true)
     return () => document.removeEventListener('click', handler, true)
   }, [])
+
   const [canClose, setCanClose] = useState(false)
   const [entered, setEntered] = useState(false)
   const lastTouchRef = useRef<{ x: number; y: number; t: number } | null>(null)
   const openTimeRef = useRef<number | null>(null)
   const openRef = useRef(false)
+  
   useEffect(() => { openRef.current = open }, [open])
+  
   const handleOpen = (e?: any) => {
     if (e) { e.preventDefault(); e.stopPropagation() }
     setCanClose(false)
@@ -61,7 +64,7 @@ export default function Header() {
   }
   
   return (
-    <header className="fixed top-0 w-full z-[2147483647] bg-black/80 backdrop-blur-xl border-b border-gray-800">
+    <header className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-gray-800">
       <nav className="page-container flex h-20 items-center justify-between">
         <Link href="/" aria-label="Página inicial XCloud IPTV" className="flex items-center gap-3">
           <img 
@@ -104,14 +107,12 @@ export default function Header() {
           </Link>
         </div>
         
-        {mounted && (
         <button 
           aria-label="Abrir menu" 
           aria-controls="mobile-menu"
           aria-expanded={open}
           className="md:hidden relative z-50 inline-flex h-12 w-12 items-center justify-center rounded-lg border border-gray-700 bg-black/50 text-white hover:border-brand hover:text-brand-light transition-all duration-300"
           style={{ touchAction: 'manipulation' }}
-          suppressHydrationWarning={true}
           type="button"
           disabled={open}
           onPointerDown={(ev) => { lastTouchRef.current = { x: ev.clientX, y: ev.clientY, t: Date.now() }; handleOpen(ev) }}
@@ -119,16 +120,15 @@ export default function Header() {
         >
           <Menu className="h-6 w-6" />
         </button>
-        )}
       </nav>
       
-      {mounted && open && createPortal(
-        <div role="dialog" aria-modal="true" className="fixed inset-0 w-full h-screen bg-black/90 z-[2147483647] flex justify-end" style={{ WebkitBackdropFilter: 'blur(4px)', backdropFilter: 'blur(4px)' }}>
+      {open && createPortal(
+        <div role="dialog" aria-modal="true" className="fixed inset-0 w-full h-screen bg-black/90 z-[100] flex justify-end" style={{ WebkitBackdropFilter: 'blur(4px)', backdropFilter: 'blur(4px)' }}>
           <div className="absolute inset-0" style={{ pointerEvents: canClose ? 'auto' : 'none' }} onClick={() => setOpen(false)} />
           <aside 
             id="mobile-menu" 
             aria-label="Menu de navegação" 
-            className={`fixed right-0 top-0 h-screen w-[85%] max-w-sm bg-gray-900 border-l border-gray-800 shadow-2xl overflow-y-auto z-[2147483647] touch-pan-y transform transition-transform duration-300 ${entered ? 'translate-x-0' : 'translate-x-full'}`}
+            className={`fixed right-0 top-0 h-screen w-[85%] max-w-sm bg-gray-900 border-l border-gray-800 shadow-2xl overflow-y-auto z-[100] touch-pan-y transform transition-transform duration-300 ${entered ? 'translate-x-0' : 'translate-x-full'}`}
             onClick={(e) => e.stopPropagation()}
           >
             <div className="p-6">
