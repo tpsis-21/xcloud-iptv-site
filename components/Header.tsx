@@ -16,14 +16,36 @@ export default function Header() {
     }
     return () => { document.body.style.overflow = '' }
   }, [open])
-  const guardRef = useRef(false)
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      const lt = lastTouchRef.current
+      if (!lt) return
+      const dx = Math.abs(e.clientX - lt.x)
+      const dy = Math.abs(e.clientY - lt.y)
+      const dt = Date.now() - lt.t
+      if (dt < 600 && dx < 25 && dy < 25) {
+        e.preventDefault()
+        e.stopPropagation()
+      }
+      lastTouchRef.current = null
+    }
+    document.addEventListener('click', handler, true)
+    return () => document.removeEventListener('click', handler, true)
+  }, [])
   const [canClose, setCanClose] = useState(false)
+  const [entered, setEntered] = useState(false)
+  const lastTouchRef = useRef<{ x: number; y: number; t: number } | null>(null)
   const handleOpen = (e?: any) => {
     if (e) { e.preventDefault(); e.stopPropagation() }
-    guardRef.current = true
     setCanClose(false)
-    setOpen(true)
-    setTimeout(() => { guardRef.current = false; setCanClose(true) }, 600)
+    setEntered(false)
+    setTimeout(() => {
+      setOpen(true)
+      setTimeout(() => {
+        setEntered(true)
+        setTimeout(() => setCanClose(true), 450)
+      }, 0)
+    }, 0)
   }
   
   return (
@@ -77,7 +99,9 @@ export default function Header() {
           className="md:hidden relative z-50 inline-flex h-12 w-12 items-center justify-center rounded-lg border border-gray-700 bg-black/50 text-white hover:border-brand hover:text-brand-light transition-all duration-300"
           style={{ touchAction: 'manipulation' }}
           type="button"
+          disabled={open}
           onClick={handleOpen}
+          onTouchEnd={(ev) => { const t = (ev as unknown as TouchEvent).changedTouches?.[0]; if (t) { lastTouchRef.current = { x: t.clientX, y: t.clientY, t: Date.now() } } ; handleOpen(ev) }}
           onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleOpen(e) }}
         >
           <Menu className="h-6 w-6" />
@@ -86,16 +110,20 @@ export default function Header() {
       
       {mounted && open && createPortal(
         <div role="dialog" aria-modal="true" className="fixed inset-0 w-full h-screen bg-black/90 z-[2147483647] flex justify-end" style={{ WebkitBackdropFilter: 'blur(4px)', backdropFilter: 'blur(4px)' }}>
-          <div className="absolute inset-0" onClick={() => { if (!canClose) return; setOpen(false) }} />
+          <div className="absolute inset-0" style={{ pointerEvents: canClose ? 'auto' : 'none' }} onClick={() => setOpen(false)} />
           <aside 
             id="mobile-menu" 
             aria-label="Menu de navegação" 
-            className="fixed right-0 top-0 h-screen w-[85%] max-w-sm bg-gray-900 border-l border-gray-800 shadow-2xl overflow-y-auto z-[2147483647] touch-pan-y"
+            className={`fixed right-0 top-0 h-screen w-[85%] max-w-sm bg-gray-900 border-l border-gray-800 shadow-2xl overflow-y-auto z-[2147483647] touch-pan-y transform transition-transform duration-300 ${entered ? 'translate-x-0' : 'translate-x-full'}`}
+            onTransitionEnd={() => setCanClose(true)}
+            onClick={(e) => e.stopPropagation()}
           >
             <div className="p-6">
               <button 
                 aria-label="Fechar menu" 
-                className="absolute right-6 top-6 inline-flex h-12 w-12 items-center justify-center rounded-lg border border-gray-700 hover:border-brand hover:text-brand-light transition-all duration-300 z-50 bg-gray-800 text-white" 
+                className="absolute right-6 top-8 inline-flex h-12 w-12 items-center justify-center rounded-lg border border-gray-700 hover:border-brand hover:text-brand-light transition-all duration-300 z-50 bg-gray-800 text-white" 
+                disabled={!canClose}
+                style={{ pointerEvents: canClose ? 'auto' : 'none' }}
                 onClick={() => setOpen(false)}
               >
                 <X className="h-6 w-6" />
