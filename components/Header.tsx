@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { Menu, X, Rocket } from 'lucide-react'
 import Image from 'next/image'
-import logo from '../assets/logo_app_xcloudtv.png'
+import logo from '@/app/assets/images/logo_app_xcloudtv.png'
 
 export default function Header() {
   const [open, setOpen] = useState(false)

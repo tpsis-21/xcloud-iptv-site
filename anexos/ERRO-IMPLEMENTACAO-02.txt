@@ -1,19 +1,22 @@
-Commit: fix(mobile): imagens locais via <img> com fallback; menu com portal e eventos touch/pointer; h1 sem nowrap e gradiente compatível iOS 
+Commit: fix: configure static assets copy for standalone build in nixpacks and dockerfile 
 ##########################################
 ### Download Github Archive Started...
-### Sat, 06 Dec 2025 15:55:20 GMT
+### Sun, 07 Dec 2025 19:21:13 GMT
 ##########################################
 
 
-╔══════════════ Nixpacks v1.34.1 ══════════════╗
-║ setup      │ nodejs_20, npm-9_x              ║
-║──────────────────────────────────────────────║
-║ install    │ npm i                           ║
-║──────────────────────────────────────────────║
-║ build      │ npm run build                   ║
-║──────────────────────────────────────────────║
-║ start      │ node .next/standalone/server.js ║
-╚══════════════════════════════════════════════╝
+╔═══════════════════════ Nixpacks v1.34.1 ══════════════════════╗
+║ setup      │ nodejs_20, npm-9_x                               ║
+║───────────────────────────────────────────────────────────────║
+║ install    │ npm i                                            ║
+║───────────────────────────────────────────────────────────────║
+║ build      │ npm run build                                    ║
+║            │ mkdir -p .next/standalone/.next                  ║
+║            │ cp -r public .next/standalone/public             ║
+║            │ cp -r .next/static .next/standalone/.next/static ║
+║───────────────────────────────────────────────────────────────║
+║ start      │ node .next/standalone/server.js                  ║
+╚═══════════════════════════════════════════════════════════════╝
 
 
 Saved output to:
@@ -21,7 +24,7 @@ Saved output to:
 #0 building with "default" instance using docker driver
 
 #1 [internal] load build definition from Dockerfile
-#1 transferring dockerfile: 1.33kB done
+#1 transferring dockerfile: 1.92kB done
 #1 DONE 0.0s
 
 #2 [internal] load metadata for ghcr.io/railwayapp/nixpacks:ubuntu-1741046653
@@ -31,96 +34,116 @@ Saved output to:
 #3 transferring context: 2B done
 #3 DONE 0.0s
 
-#4 [stage-0  1/10] FROM ghcr.io/railwayapp/nixpacks:ubuntu-1741046653@sha256:ed406b77fb751927991b8655e76c33a4521c4957c2afeab293be7c63c2a373d2
+#4 [stage-0  1/13] FROM ghcr.io/railwayapp/nixpacks:ubuntu-1741046653@sha256:ed406b77fb751927991b8655e76c33a4521c4957c2afeab293be7c63c2a373d2
 #4 DONE 0.0s
 
 #5 [internal] load build context
-#5 transferring context: 7.87kB done
+#5 transferring context: 5.27MB 0.0s done
 #5 DONE 0.0s
 
-#6 [stage-0  5/10] COPY . /app/.
+#6 [stage-0  2/13] WORKDIR /app/
 #6 CACHED
 
-#7 [stage-0  4/10] RUN nix-env -if .nixpacks/nixpkgs-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7.nix && nix-collect-garbage -d
+#7 [stage-0  3/13] COPY .nixpacks/nixpkgs-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7.nix .nixpacks/nixpkgs-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7.nix
 #7 CACHED
 
-#8 [stage-0  2/10] WORKDIR /app/
+#8 [stage-0  4/13] RUN nix-env -if .nixpacks/nixpkgs-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7.nix && nix-collect-garbage -d
 #8 CACHED
 
-#9 [stage-0  3/10] COPY .nixpacks/nixpkgs-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7.nix .nixpacks/nixpkgs-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7.nix
-#9 CACHED
+#9 [stage-0  5/13] COPY . /app/.
+#9 DONE 0.0s
 
-#10 [stage-0  6/10] RUN --mount=type=cache,id=OlwKWf4EZgI-/root/npm,target=/root/.npm npm i
-#10 CACHED
+#10 [stage-0  6/13] RUN --mount=type=cache,id=OlwKWf4EZgI-/root/npm,target=/root/.npm npm i
+#10 8.824 
+#10 8.824 added 174 packages, and audited 175 packages in 9s
+#10 8.824 
+#10 8.824 42 packages are looking for funding
+#10 8.824   run `npm fund` for details
+#10 8.824 
+#10 8.824 found 0 vulnerabilities
+#10 DONE 9.0s
 
-#11 [stage-0  7/10] COPY . /app/.
-#11 CACHED
+#11 [stage-0  7/13] COPY . /app/.
+#11 DONE 0.0s
 
-#12 [stage-0  8/10] RUN --mount=type=cache,id=OlwKWf4EZgI-next/cache,target=/app/.next/cache --mount=type=cache,id=OlwKWf4EZgI-node_modules/cache,target=/app/node_modules/.cache npm run build
-#12 0.394 
-#12 0.394 > xcloudtv-site@0.1.0 build
-#12 0.394 > next build
-#12 0.394 
-#12 1.014 Attention: Next.js now collects completely anonymous telemetry regarding usage.
-#12 1.014 This information is used to shape Next.js' roadmap and prioritize features.
-#12 1.014 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
-#12 1.014 https://nextjs.org/telemetry
-#12 1.014 
-#12 1.025    ▲ Next.js 16.0.7 (Turbopack)
-#12 1.025    - Experiments (use with caution):
-#12 1.026      ✓ optimizeCss
-#12 1.026 
-#12 1.112    Creating an optimized production build ...
-#12 4.897  ✓ Compiled successfully in 3.6s
-#12 4.901    Running TypeScript ...
-#12 5.010 It looks like you're trying to use TypeScript but do not have the required package(s) installed.
-#12 5.010 Installing dependencies
-#12 5.010 
-#12 5.010 If you are not trying to use TypeScript, please remove the tsconfig.json file from your package root (and any TypeScript files in your app and pages directories).
-#12 5.010 
-#12 5.020 
-#12 5.021 Installing devDependencies (npm):
-#12 5.021 - typescript
-#12 5.021 - @types/node
-#12 5.021 
-#12 9.855 
-#12 9.855 added 295 packages, and audited 470 packages in 5s
-#12 9.855 
-#12 9.855 162 packages are looking for funding
-#12 9.855   run `npm fund` for details
-#12 9.855 
-#12 9.855 found 0 vulnerabilities
-#12 9.866 
-#12 13.31    Collecting page data using 3 workers ...
-#12 13.65    Generating static pages using 3 workers (0/16) ...
-#12 14.12 Error occurred prerendering page "/_not-found". Read more: https://nextjs.org/docs/messages/prerender-error
-#12 14.13 Error: Event handlers cannot be passed to Client Component props.
-#12 14.13   {src: ..., alt: ..., width: 32, height: ..., loading: ..., decoding: ..., className: ..., onError: function onError}
-#12 14.13                                                                                                      ^^^^^^^^^^^^^^^^
-#12 14.13 If you need interactivity, consider converting part of this to a Client Component.
-#12 14.13     at stringify (<anonymous>) {
-#12 14.13   digest: '1855487488'
-#12 14.13 }
-#12 14.13 Export encountered an error on /_not-found/page: /_not-found, exiting the build.
-#12 14.14  ⨯ Next.js build worker exited with code: 1 and signal: null
-#12 14.18 npm notice
-#12 14.18 npm notice New major version of npm available! 10.8.2 -> 11.6.4
-#12 14.18 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.6.4
-#12 14.18 npm notice To update run: npm install -g npm@11.6.4
-#12 14.18 npm notice
-#12 ERROR: process "/bin/bash -ol pipefail -c npm run build" did not complete successfully: exit code: 1
+#12 [stage-0  8/13] RUN --mount=type=cache,id=OlwKWf4EZgI-next/cache,target=/app/.next/cache --mount=type=cache,id=OlwKWf4EZgI-node_modules/cache,target=/app/node_modules/.cache npm run build
+#12 0.289 
+#12 0.289 > xcloudtv-site@0.1.0 build
+#12 0.289 > next build
+#12 0.289 
+#12 0.693 Attention: Next.js now collects completely anonymous telemetry regarding usage.
+#12 0.693 This information is used to shape Next.js' roadmap and prioritize features.
+#12 0.693 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+#12 0.693 https://nextjs.org/telemetry
+#12 0.693 
+#12 0.704    ▲ Next.js 16.0.7 (Turbopack)
+#12 0.704 
+#12 0.766    Creating an optimized production build ...
+#12 4.684  ✓ Compiled successfully in 3.7s
+#12 4.692    Running TypeScript ...
+#12 4.811 It looks like you're trying to use TypeScript but do not have the required package(s) installed.
+#12 4.811 Installing dependencies
+#12 4.811 
+#12 4.811 If you are not trying to use TypeScript, please remove the tsconfig.json file from your package root (and any TypeScript files in your app and pages directories).
+#12 4.811 
+#12 4.816 
+#12 4.817 Installing devDependencies (npm):
+#12 4.817 - typescript
+#12 4.817 - @types/node
+#12 4.817 
+#12 9.548 
+#12 9.548 added 295 packages, and audited 470 packages in 5s
+#12 9.548 
+#12 9.548 162 packages are looking for funding
+#12 9.548   run `npm fund` for details
+#12 9.549 
+#12 9.549 found 0 vulnerabilities
+#12 9.567 
+#12 13.33    Collecting page data using 3 workers ...
+#12 13.67    Generating static pages using 3 workers (0/16) ...
+#12 14.10    Generating static pages using 3 workers (4/16) 
+#12 14.12    Generating static pages using 3 workers (8/16) 
+#12 14.26    Generating static pages using 3 workers (12/16) 
+#12 14.26  ✓ Generating static pages using 3 workers (16/16) in 593.4ms
+#12 14.28    Finalizing page optimization ...
+#12 14.43 
+#12 14.43 Route (app)
+#12 14.43 ┌ ○ /
+#12 14.43 ├ ○ /_not-found
+#12 14.43 ├ ƒ /api/health
+#12 14.43 ├ ƒ /api/teste-xcloud
+#12 14.43 ├ ○ /contato
+#12 14.43 ├ ○ /download
+#12 14.43 ├ ○ /planos
+#12 14.43 ├ ○ /planos-xcloud-iptv
+#12 14.43 ├ ○ /politica-de-privacidade
+#12 14.43 ├ ○ /politica-de-reembolso
+#12 14.43 ├ ○ /sitemap.xml
+#12 14.43 ├ ○ /sobre-nos
+#12 14.43 ├ ○ /termos-de-uso
+#12 14.43 ├ ○ /teste-gratis
+#12 14.43 └ ○ /teste-gratis-xcloud-iptv
+#12 14.43 
+#12 14.43 
+#12 14.43 ○  (Static)   prerendered as static content
+#12 14.43 ƒ  (Dynamic)  server-rendered on demand
+#12 14.43 
+#12 14.48 npm notice
+#12 14.48 npm notice New major version of npm available! 10.8.2 -> 11.6.4
+#12 14.48 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.6.4
+#12 14.48 npm notice To update run: npm install -g npm@11.6.4
+#12 14.48 npm notice
+#12 DONE 14.6s
+
+#13 [stage-0  9/13] RUN --mount=type=cache,id=OlwKWf4EZgI-next/cache,target=/app/.next/cache --mount=type=cache,id=OlwKWf4EZgI-node_modules/cache,target=/app/node_modules/.cache mkdir -p .next/standalone/.next
+#13 DONE 0.0s
+
+#14 [stage-0 10/13] RUN --mount=type=cache,id=OlwKWf4EZgI-next/cache,target=/app/.next/cache --mount=type=cache,id=OlwKWf4EZgI-node_modules/cache,target=/app/node_modules/.cache cp -r public .next/standalone/public
+#14 0.039 cp: cannot stat 'public': No such file or directory
+#14 ERROR: process "/bin/bash -ol pipefail -c cp -r public .next/standalone/public" did not complete successfully: exit code: 1
 ------
- > [stage-0  8/10] RUN --mount=type=cache,id=OlwKWf4EZgI-next/cache,target=/app/.next/cache --mount=type=cache,id=OlwKWf4EZgI-node_modules/cache,target=/app/node_modules/.cache npm run build:
-14.13     at stringify (<anonymous>) {
-14.13   digest: '1855487488'
-14.13 }
-14.13 Export encountered an error on /_not-found/page: /_not-found, exiting the build.
-14.14  ⨯ Next.js build worker exited with code: 1 and signal: null
-14.18 npm notice
-14.18 npm notice New major version of npm available! 10.8.2 -> 11.6.4
-14.18 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.6.4
-14.18 npm notice To update run: npm install -g npm@11.6.4
-14.18 npm notice
+ > [stage-0 10/13] RUN --mount=type=cache,id=OlwKWf4EZgI-next/cache,target=/app/.next/cache --mount=type=cache,id=OlwKWf4EZgI-node_modules/cache,target=/app/node_modules/.cache cp -r public .next/standalone/public:
+0.039 cp: cannot stat 'public': No such file or directory
 ------
 
  5 warnings found (use docker --debug to expand):
@@ -129,18 +152,18 @@ Saved output to:
  - SecretsUsedInArgOrEnv: Do not use ARG or ENV instructions for sensitive data (ARG "JWT_SECRET") (line 11)
  - SecretsUsedInArgOrEnv: Do not use ARG or ENV instructions for sensitive data (ENV "API_SECRET") (line 12)
  - SecretsUsedInArgOrEnv: Do not use ARG or ENV instructions for sensitive data (ENV "JWT_SECRET") (line 12)
-Dockerfile:24
+Dockerfile:26
 --------------------
-  22 |     # build phase
-  23 |     COPY . /app/.
-  24 | >>> RUN --mount=type=cache,id=OlwKWf4EZgI-next/cache,target=/app/.next/cache --mount=type=cache,id=OlwKWf4EZgI-node_modules/cache,target=/app/node_modules/.cache npm run build
-  25 |     
-  26 |     
+  24 |     RUN --mount=type=cache,id=OlwKWf4EZgI-next/cache,target=/app/.next/cache --mount=type=cache,id=OlwKWf4EZgI-node_modules/cache,target=/app/node_modules/.cache npm run build
+  25 |     RUN --mount=type=cache,id=OlwKWf4EZgI-next/cache,target=/app/.next/cache --mount=type=cache,id=OlwKWf4EZgI-node_modules/cache,target=/app/node_modules/.cache mkdir -p .next/standalone/.next
+  26 | >>> RUN --mount=type=cache,id=OlwKWf4EZgI-next/cache,target=/app/.next/cache --mount=type=cache,id=OlwKWf4EZgI-node_modules/cache,target=/app/node_modules/.cache cp -r public .next/standalone/public
+  27 |     RUN --mount=type=cache,id=OlwKWf4EZgI-next/cache,target=/app/.next/cache --mount=type=cache,id=OlwKWf4EZgI-node_modules/cache,target=/app/node_modules/.cache cp -r .next/static .next/standalone/.next/static
+  28 |     
 --------------------
-ERROR: failed to build: failed to solve: process "/bin/bash -ol pipefail -c npm run build" did not complete successfully: exit code: 1
+ERROR: failed to build: failed to solve: process "/bin/bash -ol pipefail -c cp -r public .next/standalone/public" did not complete successfully: exit code: 1
 ##########################################
 ### Error
-### Sat, 06 Dec 2025 15:55:35 GMT
+### Sun, 07 Dec 2025 19:21:37 GMT
 ##########################################
 
-Command failed with exit code 1: docker buildx build --network host -f /etc/easypanel/projects/sites/xcloud/code/.nixpacks/Dockerfile -t easypanel/sites/xcloud --label 'keep=true' --build-arg 'NODE_ENV=production' --build-arg 'PORT=3000' --build-arg 'NEXT_PUBLIC_SITE_URL=https://xcloudiptv.com.br' --build-arg 'JWT_SECRET=vL0JYeTfwFpVe914LirP6yU97WGxEcXg' --build-arg 'API_SECRET=fblnyqqqVuVD8Ldpc6pBa6DLj0AMop48' --build-arg 'NEXT_PUBLIC_GA_MEASUREMENT_ID=G-ZC4JVQZT13' --build-arg 'GIT_SHA=41ad62684e9448035ef451b08291b1fecae1c94c' /etc/easypanel/projects/sites/xcloud/code/
+Command failed with exit code 1: docker buildx build --network host -f /etc/easypanel/projects/sites/xcloud/code/.nixpacks/Dockerfile -t easypanel/sites/xcloud --label 'keep=true' --build-arg 'NODE_ENV=production' --build-arg 'PORT=3000' --build-arg 'NEXT_PUBLIC_SITE_URL=https://xcloudiptv.com.br' --build-arg 'JWT_SECRET=vL0JYeTfwFpVe914LirP6yU97WGxEcXg' --build-arg 'API_SECRET=fblnyqqqVuVD8Ldpc6pBa6DLj0AMop48' --build-arg 'NEXT_PUBLIC_GA_MEASUREMENT_ID=G-ZC4JVQZT13' --build-arg 'GIT_SHA=44f17a8ab5c1d9220525c7a97046c5876538486f' /etc/easypanel/projects/sites/xcloud/code/
