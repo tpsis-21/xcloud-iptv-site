@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card'
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion'
@@ -218,12 +219,15 @@ export default function Page() {
                 <div className="absolute inset-0 bg-gradient-to-r from-green-500/15 via-green-400/8 to-green-600/15 rounded-3xl blur-md"></div>
                 
                 <div className="relative bg-gray-800/40 backdrop-blur-sm border border-green-500/20 rounded-3xl p-4 sm:p-6 shadow-xl transition-all duration-300">
-                  <img
-                    src={heroImg.src}
+                  <Image
+                    src={heroImg}
                     alt="Interface da plataforma de streaming com variedade de conteúdo disponível"
                     className="rounded-2xl shadow-lg w-full h-auto object-cover"
-                    loading="eager"
-                    decoding="async"
+                    priority
+                    quality={70}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                    placeholder="blur"
+                    blurDataURL="data:image/webp;base64,UklGRjQAAABXRUJQVlA4ICgAAADQAQCdASoIAAgAAkA4JQBOgB6gEAAAGgA"
                   />
                   
                   {/* Floating badge */}

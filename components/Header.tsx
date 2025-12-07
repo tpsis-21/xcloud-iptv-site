@@ -18,7 +18,7 @@ export default function Header() {
   }, [open])
   
   return (
-    <header className="fixed top-0 w-full z-[10000] bg-black/80 backdrop-blur-xl border-b border-gray-800">
+    <header className="fixed top-0 w-full z-[2147483647] bg-black/80 backdrop-blur-xl border-b border-gray-800">
       <nav className="page-container flex h-20 items-center justify-between">
         <Link href="/" aria-label="Página inicial XCloud IPTV" className="flex items-center gap-3">
           <img 
@@ -68,10 +68,12 @@ export default function Header() {
           aria-controls="mobile-menu"
           aria-expanded={open}
           className="md:hidden relative z-50 inline-flex h-12 w-12 items-center justify-center rounded-lg border border-gray-700 bg-black/50 text-white hover:border-brand hover:text-brand-light transition-all duration-300"
+          style={{ touchAction: 'manipulation' }}
           type="button"
           onClick={() => setOpen(true)}
           onTouchStart={() => setOpen(true)}
           onPointerDown={() => setOpen(true)}
+          onMouseDown={() => setOpen(true)}
           onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setOpen(true) }}
         >
           <Menu className="h-6 w-6" />
