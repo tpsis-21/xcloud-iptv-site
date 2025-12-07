@@ -170,10 +170,10 @@ export function FormularioTeste({ onSuccess, onError }: FormularioTesteProps) {
   }
 
   return (
-    <div className="glass-card rounded-2xl p-8 border border-green-500/20">
+    <div className="glass-card rounded-2xl p-5 sm:p-8 border border-green-500/20">
       <div className="text-center pb-6">
-        <h3 className="text-2xl font-bold text-white">Solicitar Experiência Grátis</h3>
-        <p className="text-gray-400">Preencha o formulário e receba seu acesso em minutos</p>
+        <h3 className="text-xl sm:text-2xl font-bold text-white">Solicitar Experiência Grátis</h3>
+        <p className="text-sm sm:text-base text-gray-400">Preencha o formulário e receba seu acesso em minutos</p>
       </div>
       
       {error && (

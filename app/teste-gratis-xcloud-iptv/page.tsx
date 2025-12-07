@@ -77,7 +77,7 @@ export default function Page() {
         </div>
         
         {/* Hero Section Melhorada */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-28 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 sm:pt-28 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
           <div className="absolute inset-0 z-0">
             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-green-900/20 via-transparent to-green-900/10"></div>
             <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-green-500/10 rounded-full blur-xl animate-pulse"></div>
@@ -214,16 +214,9 @@ export default function Page() {
               </div>
 
               {/* Formulário de Teste */}
-              <div id="formulario-teste" className="glass-card rounded-2xl p-8 border border-green-500/20 max-w-2xl mx-auto">
-                <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Rocket className="h-8 w-8 text-white" />
-                  </div>
-                  <h2 className="text-3xl font-bold text-white mb-2">Solicite Seu Teste Agora</h2>
-                  <p className="text-gray-400">Preencha o formulário abaixo e receba acesso instantâneo por email</p>
-                </div>
+              <div id="formulario-teste" className="max-w-2xl mx-auto w-full">
                 <FormularioTeste />
-                <p className="text-gray-400 text-sm mt-4">Dúvidas? <Link href="/contato" className="text-green-400 underline">Fale com nosso suporte</Link></p>
+                <p className="text-gray-400 text-sm mt-4 text-center">Dúvidas? <Link href="/contato" className="text-green-400 underline">Fale com nosso suporte</Link></p>
               </div>
             </div>
           </div>
