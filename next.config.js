@@ -2,9 +2,6 @@
 const path = require('path')
 const nextConfig = {
   output: 'standalone',
-  experimental: {
-    optimizeCss: false,
-  },
   typedRoutes: true,
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
