@@ -1,9 +1,8 @@
 "use client"
 import Link from 'next/link'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { Menu, X, Rocket } from 'lucide-react'
-
 import Image from 'next/image'
 
 export default function Header() {
@@ -18,57 +17,13 @@ export default function Header() {
     return () => { document.body.style.overflow = '' }
   }, [open])
 
-  useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      if (openRef.current && openTimeRef.current && Date.now() - openTimeRef.current < 700) {
-        e.preventDefault()
-        e.stopPropagation()
-        return
-      }
-      const lt = lastTouchRef.current
-      if (lt) {
-        const dx = Math.abs(e.clientX - lt.x)
-        const dy = Math.abs(e.clientY - lt.y)
-        const dt = Date.now() - lt.t
-        if (dt < 600 && dx < 25 && dy < 25) {
-          e.preventDefault()
-          e.stopPropagation()
-          lastTouchRef.current = null
-          return
-        }
-        lastTouchRef.current = null
-      }
-    }
-    document.addEventListener('click', handler, true)
-    return () => document.removeEventListener('click', handler, true)
-  }, [])
+  const toggleMenu = () => setOpen(!open)
+  const closeMenu = () => setOpen(false)
 
-  const [canClose, setCanClose] = useState(false)
-  const [entered, setEntered] = useState(false)
-  const lastTouchRef = useRef<{ x: number; y: number; t: number } | null>(null)
-  const openTimeRef = useRef<number | null>(null)
-  const openRef = useRef(false)
-  
-  useEffect(() => { openRef.current = open }, [open])
-  
-  const handleOpen = (e?: any) => {
-    if (e) { e.preventDefault(); e.stopPropagation() }
-    setCanClose(false)
-    setEntered(false)
-    openTimeRef.current = Date.now()
-    setTimeout(() => {
-      setOpen(true)
-      setTimeout(() => {
-        setEntered(true)
-        setTimeout(() => setCanClose(true), 700)
-      }, 0)
-    }, 0)
-  }
-  
   return (
     <header className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-gray-800">
       <nav className="page-container flex h-20 items-center justify-between">
-        <Link href="/" aria-label="Página inicial XCloud IPTV" className="flex items-center gap-3">
+        <Link href="/" aria-label="Página inicial XCloud IPTV" className="flex items-center gap-3" onClick={closeMenu}>
           <Image 
             src="/logo_app_xcloudtv.png"
             alt="XCloud IPTV"
@@ -108,51 +63,50 @@ export default function Header() {
         </div>
         
         <button 
-          aria-label="Abrir menu" 
+          aria-label={open ? "Fechar menu" : "Abrir menu"}
           aria-controls="mobile-menu"
           aria-expanded={open}
           className="md:hidden relative z-50 inline-flex h-12 w-12 items-center justify-center rounded-lg border border-gray-700 bg-black/50 text-white hover:border-brand hover:text-brand-light transition-all duration-300"
-          style={{ touchAction: 'manipulation' }}
           type="button"
-          disabled={open}
-          onPointerDown={(ev) => { lastTouchRef.current = { x: ev.clientX, y: ev.clientY, t: Date.now() }; handleOpen(ev) }}
-          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleOpen(e) }}
+          onClick={toggleMenu}
         >
-          <Menu className="h-6 w-6" />
+          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </nav>
       
       {open && createPortal(
         <div role="dialog" aria-modal="true" className="fixed inset-0 w-full h-screen bg-black/90 z-[100] flex justify-end" style={{ WebkitBackdropFilter: 'blur(4px)', backdropFilter: 'blur(4px)' }}>
-          <div className="absolute inset-0" style={{ pointerEvents: canClose ? 'auto' : 'none' }} onClick={() => setOpen(false)} />
+          <div className="absolute inset-0" onClick={closeMenu} />
           <aside 
             id="mobile-menu" 
             aria-label="Menu de navegação" 
-            className={`fixed right-0 top-0 h-screen w-[85%] max-w-sm bg-gray-900 border-l border-gray-800 shadow-2xl overflow-y-auto z-[100] touch-pan-y transform transition-transform duration-300 ${entered ? 'translate-x-0' : 'translate-x-full'}`}
+            className="fixed right-0 top-0 h-screen w-[85%] max-w-sm bg-gray-900 border-l border-gray-800 shadow-2xl overflow-y-auto z-[100] touch-pan-y"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="p-6">
-              <button 
-                aria-label="Fechar menu" 
-                className="absolute left-6 top-8 inline-flex h-12 w-12 items-center justify-center rounded-lg border border-gray-700 hover:border-brand hover:text-brand-light transition-all duration-300 z-50 bg-gray-800 text-white" 
-                disabled={!canClose}
-                style={{ pointerEvents: canClose ? 'auto' : 'none' }}
-                onClick={() => setOpen(false)}
-              >
-                <X className="h-6 w-6" />
-              </button>
-              <div className="mt-16 flex flex-col gap-4 text-lg">
-                <Link href="/teste-gratis-xcloud-iptv" onClick={() => setOpen(false)} className="flex items-center space-x-3 text-gray-300 hover:text-brand-light transition-colors p-3 rounded-lg hover:bg-gray-800/50 min-h-[44px]">
+              <div className="flex justify-between items-center mb-8">
+                <span className="text-xl font-bold text-white">Menu</span>
+                <button 
+                  aria-label="Fechar menu" 
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-gray-700 hover:border-brand hover:text-brand-light transition-all duration-300 bg-gray-800 text-white" 
+                  onClick={closeMenu}
+                >
+                  <X className="h-6 w-6" />
+                </button>
+              </div>
+              
+              <div className="flex flex-col gap-4 text-lg">
+                <Link href="/teste-gratis-xcloud-iptv" onClick={closeMenu} className="flex items-center space-x-3 text-gray-300 hover:text-brand-light transition-colors p-3 rounded-lg hover:bg-gray-800/50 min-h-[44px]">
                   <Rocket className="h-5 w-5" />
                   <span>Teste Grátis</span>
                 </Link>
-                <Link href="/planos-xcloud-iptv" onClick={() => setOpen(false)} className="text-gray-300 hover:text-brand-light transition-colors p-3 rounded-lg hover:bg-gray-800/50 min-h-[44px]">
+                <Link href="/planos-xcloud-iptv" onClick={closeMenu} className="text-gray-300 hover:text-brand-light transition-colors p-3 rounded-lg hover:bg-gray-800/50 min-h-[44px]">
                   Planos
                 </Link>
-                <Link href="/sobre-nos" onClick={() => setOpen(false)} className="text-gray-300 hover:text-brand-light transition-colors p-3 rounded-lg hover:bg-gray-800/50 min-h-[44px]">
+                <Link href="/sobre-nos" onClick={closeMenu} className="text-gray-300 hover:text-brand-light transition-colors p-3 rounded-lg hover:bg-gray-800/50 min-h-[44px]">
                   Sobre Nós
                 </Link>
-                <Link href="/contato" onClick={() => setOpen(false)} className="text-gray-300 hover:text-brand-light transition-colors p-3 rounded-lg hover:bg-gray-800/50 min-h-[44px]">
+                <Link href="/contato" onClick={closeMenu} className="text-gray-300 hover:text-brand-light transition-colors p-3 rounded-lg hover:bg-gray-800/50 min-h-[44px]">
                   Contato
                 </Link>
               </div>
@@ -161,7 +115,7 @@ export default function Header() {
                   <Rocket className="h-8 w-8 text-brand mx-auto" />
                   <div className="text-white font-semibold">Pronto para começar?</div>
                   <div className="text-gray-400 text-sm">Teste grátis sem compromisso</div>
-                  <Link href="/teste-gratis-xcloud-iptv" onClick={() => setOpen(false)} className="block w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white py-3 rounded-lg font-semibold text-center">
+                  <Link href="/teste-gratis-xcloud-iptv" onClick={closeMenu} className="block w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white py-3 rounded-lg font-semibold text-center">
                     Ativar Teste Grátis
                   </Link>
                 </div>
