@@ -3,7 +3,7 @@ const path = require('path')
 const nextConfig = {
   output: 'standalone',
   experimental: {
-    optimizeCss: false,
+    optimizeCss: true,
   },
   typedRoutes: true,
   compiler: {
