@@ -22,17 +22,15 @@ export default function Header() {
       <nav className="page-container flex h-20 items-center justify-between">
         <Link href="/" aria-label="Página inicial XCloud IPTV" className="flex items-center gap-3">
           <img 
-            src="/logo-xcloudtv.svg"
-            alt="Logo XCloud IPTV"
+            src="/logo_app_xcloudtv.png"
+            alt="XCloud IPTV"
             width={150}
             height={40}
             loading="eager"
             decoding="async"
+            fetchPriority="high"
             className="h-10 w-auto object-contain"
           />
-          <div className="hidden sm:block">
-            <div className="text-xl font-bold text-gradient-brand">XCloud IPTV</div>
-          </div>
         </Link>
         
         <div className="hidden md:flex items-center gap-8 text-sm font-medium">
