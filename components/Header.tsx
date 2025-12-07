@@ -1,6 +1,6 @@
 "use client"
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { Menu, X, Rocket } from 'lucide-react'
 
@@ -16,6 +16,15 @@ export default function Header() {
     }
     return () => { document.body.style.overflow = '' }
   }, [open])
+  const guardRef = useRef(false)
+  const [canClose, setCanClose] = useState(false)
+  const handleOpen = (e?: any) => {
+    if (e) { e.preventDefault(); e.stopPropagation() }
+    guardRef.current = true
+    setCanClose(false)
+    setOpen(true)
+    setTimeout(() => { guardRef.current = false; setCanClose(true) }, 600)
+  }
   
   return (
     <header className="fixed top-0 w-full z-[2147483647] bg-black/80 backdrop-blur-xl border-b border-gray-800">
@@ -68,19 +77,16 @@ export default function Header() {
           className="md:hidden relative z-50 inline-flex h-12 w-12 items-center justify-center rounded-lg border border-gray-700 bg-black/50 text-white hover:border-brand hover:text-brand-light transition-all duration-300"
           style={{ touchAction: 'manipulation' }}
           type="button"
-          onClick={() => setOpen(true)}
-          onTouchStart={() => setOpen(true)}
-          onPointerDown={() => setOpen(true)}
-          onMouseDown={() => setOpen(true)}
-          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setOpen(true) }}
+          onClick={handleOpen}
+          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleOpen(e) }}
         >
           <Menu className="h-6 w-6" />
         </button>
       </nav>
       
       {mounted && open && createPortal(
-        <div role="dialog" aria-modal="true" className="fixed inset-0 w-full h-screen bg-black/90 z-[2147483647] flex justify-end pointer-events-auto touch-none" style={{ WebkitBackdropFilter: 'blur(4px)', backdropFilter: 'blur(4px)' }} onTouchMove={(e) => e.preventDefault()}>
-          <div className="absolute inset-0" onClick={() => setOpen(false)} />
+        <div role="dialog" aria-modal="true" className="fixed inset-0 w-full h-screen bg-black/90 z-[2147483647] flex justify-end" style={{ WebkitBackdropFilter: 'blur(4px)', backdropFilter: 'blur(4px)' }}>
+          <div className="absolute inset-0" onClick={() => { if (!canClose) return; setOpen(false) }} />
           <aside 
             id="mobile-menu" 
             aria-label="Menu de navegação" 
