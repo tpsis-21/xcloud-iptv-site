@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { Menu, X, Rocket } from 'lucide-react'
 
+import Image from 'next/image'
+
 export default function Header() {
   const [open, setOpen] = useState(false)
   
@@ -67,14 +69,12 @@ export default function Header() {
     <header className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-gray-800">
       <nav className="page-container flex h-20 items-center justify-between">
         <Link href="/" aria-label="Página inicial XCloud IPTV" className="flex items-center gap-3">
-          <img 
+          <Image 
             src="/logo_app_xcloudtv.png"
             alt="XCloud IPTV"
             width={150}
             height={40}
-            loading="eager"
-            decoding="async"
-            fetchPriority="high"
+            priority
             className="h-10 w-auto object-contain"
           />
         </Link>
