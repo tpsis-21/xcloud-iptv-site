@@ -816,14 +816,14 @@ export default function Page() {
             Junte-se a clientes satisfeitos no Brasil. Ativação imediata e suporte especializado incluído.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-10 py-8 text-xl font-bold rounded-2xl hover:scale-105 transition-all duration-300 shadow-2xl min-h-[48px]">
-              <Link href={createInternalLink('/planos-xcloud-iptv', 'Escolher Plano')} className="flex items-center space-x-3">
+            <Button asChild className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-10 py-8 text-xl font-bold rounded-2xl hover:scale-105 transition-all duration-300 shadow-2xl min-h-[48px]">
+              <Link href={createInternalLink('/planos-xcloud-iptv', 'Escolher Plano')} className="flex items-center space-x-3 w-full h-full justify-center">
                 <Crown className="h-6 w-6" />
                 <span>Escolher Meu Plano</span>
               </Link>
             </Button>
-            <Button variant="outline" className="px-10 py-8 text-xl font-bold rounded-2xl border-green-500/50 text-green-500 hover:bg-green-500/10 hover:text-green-400 transition-all duration-300 min-h-[48px]">
-              <Link href={createInternalLink('/teste-gratis-xcloud-iptv', 'Experimentar Grátis XCloud IPTV')} className="flex items-center space-x-3 underline underline-offset-2">Experimentar Grátis</Link>
+            <Button asChild variant="outline" className="px-10 py-8 text-xl font-bold rounded-2xl border-green-500/50 text-green-500 hover:bg-green-500/10 hover:text-green-400 transition-all duration-300 min-h-[48px]">
+              <Link href={createInternalLink('/teste-gratis-xcloud-iptv', 'Experimentar Grátis XCloud IPTV')} className="flex items-center space-x-3 underline underline-offset-2 w-full h-full justify-center">Experimentar Grátis</Link>
             </Button>
           </div>
         </div>
