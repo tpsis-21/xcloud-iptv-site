@@ -28,7 +28,13 @@
   --radius: 0.75rem;
 }
 
-html { scroll-behavior: smooth; }
+/* 
+ * Removido scroll-behavior: smooth do HTML global
+ * Isso corrige o problema de posição do scroll ao navegar entre páginas no Next.js
+ * O smooth scroll deve ser aplicado apenas em navegação interna (âncoras) se necessário
+ */
+/* html { scroll-behavior: smooth; } */
+
 body {
   @apply bg-background text-foreground antialiased;
   background: #000000;
