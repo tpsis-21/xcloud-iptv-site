@@ -76,14 +76,14 @@ export function ProductSchema({
           handlingTime: {
             "@type": "QuantitativeValue",
             minValue: 0,
-            maxValue: 5,
-            unitCode: "HUR"
+            maxValue: 0,
+            unitCode: "d"
           },
           transitTime: {
             "@type": "QuantitativeValue",
             minValue: 0,
-            maxValue: 5,
-            unitCode: "HUR"
+            maxValue: 0,
+            unitCode: "d"
           }
         },
         shippingDestination: {
@@ -115,14 +115,14 @@ export function ProductSchema({
           handlingTime: {
             "@type": "QuantitativeValue",
             minValue: 0,
-            maxValue: 5,
-            unitCode: "HUR"
+            maxValue: 0,
+            unitCode: "d"
           },
           transitTime: {
             "@type": "QuantitativeValue",
             minValue: 0,
-            maxValue: 5,
-            unitCode: "HUR"
+            maxValue: 0,
+            unitCode: "d"
           }
         },
         shippingDestination: {
@@ -195,14 +195,14 @@ export function XCloudPlanProductSchema({ planName, price, period, features, des
           handlingTime: {
             "@type": "QuantitativeValue",
             minValue: 0,
-            maxValue: 5,
-            unitCode: "HUR"
+            maxValue: 0,
+            unitCode: "d"
           },
           transitTime: {
             "@type": "QuantitativeValue",
             minValue: 0,
-            maxValue: 5,
-            unitCode: "HUR"
+            maxValue: 0,
+            unitCode: "d"
           }
         },
         shippingDestination: {

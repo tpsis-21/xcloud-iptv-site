@@ -57,6 +57,10 @@ export default function DownloadPage() {
         applicationCategory="MultimediaApplication"
         downloadUrl="https://xcloudiptv.com.br/download"
         screenshot={`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/xcloud-iptv-interface-streaming-app.webp`}
+        aggregateRating={{
+          ratingValue: "4.8",
+          reviewCount: "1250"
+        }}
       />
       
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">
