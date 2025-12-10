@@ -32,8 +32,8 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <img 
-                src="/logo_app_xcloudtv.png"
-                alt="XCloud IPTV Logo"
+                src="/icone-app-xcloud-iptv.png"
+                alt="Logo XCloud IPTV - Rodapé"
                 width={32}
                 height={32}
                 loading="lazy"

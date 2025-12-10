@@ -8,6 +8,7 @@ import { hexToHslComponents } from '@/lib/color'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 import { OrganizationSchema } from '@/components/organization-schema'
 import { SmoothScroll } from '@/components/smooth-scroll'
+import { Suspense } from 'react'
 
 const inter = Inter({ subsets: ['latin'], weight: ['400','700','900'], display: 'swap', preload: true })
 
@@ -59,7 +60,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://static.cloudflareinsights.com" crossOrigin="anonymous" />
       </head>
       <body className={inter.className}>
-        <SmoothScroll />
+        <Suspense fallback={null}>
+          <SmoothScroll />
+        </Suspense>
         <GoogleAnalytics />
         <Header />
         <main className="bg-black text-white">{children}</main>

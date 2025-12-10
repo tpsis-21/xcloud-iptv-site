@@ -222,7 +222,7 @@ export default function Page() {
                 <div className="relative bg-gray-800/40 backdrop-blur-sm border border-green-500/20 rounded-3xl p-4 sm:p-6 shadow-xl transition-all duration-300">
                   <Image
                     src={heroImg}
-                    alt="Interface do Aplicativo XCloud IPTV com Filmes e Séries - Streaming em Alta Definição"
+                    alt="Interface do Aplicativo XCloud IPTV com Filmes e Séries - Streaming de Conteúdo Variado"
                     className="rounded-2xl shadow-lg w-full h-auto object-cover"
                     priority
                     quality={70}
