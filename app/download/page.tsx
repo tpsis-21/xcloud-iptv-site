@@ -28,14 +28,14 @@ export const metadata: Metadata = {
     title: 'Baixar XCloud IPTV | Download App para Android e Smart TV',
     description: 'Faça o download do XCloud IPTV atualizado. Guia de instalação para TV Box, Android, Smart TV (Samsung/LG), Roku e Fire Stick.',
     url: '/download',
-    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`],
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/xcloud-iptv-social-share.svg`],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Baixar XCloud IPTV | Download App para Android e Smart TV',
     description: 'Faça o download do XCloud IPTV atualizado. Guia de instalação para TV Box, Android, Smart TV e Fire Stick.',
-    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`],
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/xcloud-iptv-social-share.svg`],
   },
   alternates: {
     canonical: '/download'
@@ -56,6 +56,7 @@ export default function DownloadPage() {
         operatingSystem="Android, iOS, Windows, Smart TV"
         applicationCategory="MultimediaApplication"
         downloadUrl="https://xcloudiptv.com.br/download"
+        screenshot={`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/xcloud-iptv-interface-streaming-app.webp`}
       />
       
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">

@@ -28,17 +28,17 @@ export const metadata: Metadata = {
   keywords: ['contato xcloudtv brasil', 'suporte xcloud iptv', 'email xcloudtv', 'atendimento xcloudtv', 'xcloud iptv whatsapp', 'xcloud iptv telefone'],
   alternates: { canonical: '/contato' },
   openGraph: {
-    title: 'Contato XCloud IPTV Brasil - Suporte IPTV Streaming | Email',
-    description: 'Entre em contato com a XCloud IPTV Brasil. Suporte técnico de segunda a sábado, 9h às 22h. Tire suas dúvidas sobre XCloud IPTV streaming.',
+    title: 'Fale Conosco | XCloud IPTV Suporte',
+    description: 'Entre em contato com o suporte XCloud IPTV. Atendimento via WhatsApp e E-mail de segunda a sábado. Tire suas dúvidas sobre planos e instalação.',
     url: '/contato',
-    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`],
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/xcloud-iptv-social-share.svg`],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contato - XCloud IPTV | Suporte por Email',
-    description: 'Entre em contato com a XCloud IPTV. Suporte por email.',
-    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`],
+    title: 'Fale Conosco | XCloud IPTV Suporte',
+    description: 'Entre em contato com o suporte XCloud IPTV. Atendimento via WhatsApp e E-mail de segunda a sábado.',
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/xcloud-iptv-social-share.svg`],
   }
 }
 

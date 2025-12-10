@@ -11,14 +11,14 @@ export const metadata: Metadata = {
     title: 'Política de Privacidade - XCloud IPTV',
     description: 'Como coletamos, usamos e protegemos seus dados na XCloud IPTV.',
     url: '/politica-de-privacidade',
-    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`],
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/xcloud-iptv-social-share.svg`],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Política de Privacidade - XCloud IPTV',
     description: 'Como coletamos, usamos e protegemos seus dados na XCloud IPTV.',
-    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`],
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/xcloud-iptv-social-share.svg`],
   }
 }
 

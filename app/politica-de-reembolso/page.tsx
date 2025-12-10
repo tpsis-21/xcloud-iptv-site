@@ -6,7 +6,20 @@ export const metadata: Metadata = {
   title: 'Política de Reembolso - XCloud IPTV',
   description: 'Regras de reembolso e cancelamento de assinatura na XCloud IPTV.',
   keywords: ["política de reembolso", "cancelamento xcloud iptv", "reembolso iptv"],
-  alternates: { canonical: 'https://xcloudiptv.com.br/politica-de-reembolso' }
+  alternates: { canonical: '/politica-de-reembolso' },
+  openGraph: {
+    title: 'Política de Reembolso - XCloud IPTV',
+    description: 'Regras de reembolso e cancelamento de assinatura na XCloud IPTV.',
+    url: '/politica-de-reembolso',
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/xcloud-iptv-social-share.svg`],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Política de Reembolso - XCloud IPTV',
+    description: 'Regras de reembolso e cancelamento de assinatura na XCloud IPTV.',
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/xcloud-iptv-social-share.svg`],
+  }
 }
 
 export default function PoliticaReembolso() {

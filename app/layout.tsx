@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     locale: 'pt_BR',
     type: 'website',
     images: [{
-      url: '/og-image.svg',
+      url: '/xcloud-iptv-social-share.svg',
       width: 1200,
       height: 630,
       alt: 'XCloud IPTV - Streaming de conteúdo completo'
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: 'XCloud IPTV | Streaming de conteúdo completo',
     description:
       'XCloud IPTV: melhor streaming do Brasil. Milhares de canais, filmes e séries. Teste grátis e planos acessíveis.',
-    images: ['/og-image.svg']
+    images: ['/xcloud-iptv-social-share.svg']
   }
 }
 

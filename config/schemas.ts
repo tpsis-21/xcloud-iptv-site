@@ -20,7 +20,7 @@ export const SCHEMA_TEMPLATES = {
     '@type': 'Organization',
     name: SEO_CONFIG.siteName,
     url: SEO_CONFIG.siteUrl,
-    logo: `${SEO_CONFIG.siteUrl}/anexos/logo_app_xcloudtv.png`,
+    logo: `${SEO_CONFIG.siteUrl}/icone-app-xcloud-iptv.png`,
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer service',

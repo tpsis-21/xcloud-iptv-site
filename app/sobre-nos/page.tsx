@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     title: 'Sobre Nós XCloud IPTV - IPTV Streaming Brasil | Conteúdo Variado',
     description: 'Conheça a XCloud IPTV, plataforma de IPTV streaming no Brasil. Conteúdos variados, streaming ao vivo com estabilidade e suporte técnico especializado.',
     url: '/sobre-nos',
-    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`],
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/xcloud-iptv-social-share.svg`],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Sobre Nós - XCloud IPTV | IPTV Streaming Brasil',
     description: 'Conheça a XCloud IPTV, plataforma confiável com conteúdo variado e suporte especializado.',
-    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`],
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/xcloud-iptv-social-share.svg`],
   }
 }
 

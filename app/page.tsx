@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card'
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion'
-import heroImg from '../assets/interface_xcloudtv.webp'
+import heroImg from '../assets/xcloud-iptv-interface-streaming-app.webp'
 import { Badge } from '@/components/ui/badge'
 import { ShieldCheck, Bolt, Headphones, Smartphone, Tv, Download, Lock, Rocket, CheckCircle2, CreditCard, Star, Zap, Crown } from 'lucide-react'
 import { Particles } from '@/components/particles'
@@ -25,13 +25,13 @@ export const metadata: Metadata = {
     title: 'XCloud IPTV | Assine o Melhor App IPTV do Brasil',
     description: 'XCloud IPTV com conteúdos variados. Teste grátis e assine planos acessíveis. Suporte Online. Compatível com Android, iOS, Windows e Smart TVs.',
     url: '/',
-    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`],
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/xcloud-iptv-social-share.svg`],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'XCloud IPTV | Assine o Melhor App IPTV do Brasil',
     description: 'XCloud IPTV com conteúdos variados. Teste grátis e assine planos acessíveis. Suporte Online. Compatível com Android, iOS, Windows e Smart TVs.',
-    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`],
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/xcloud-iptv-social-share.svg`],
   }
 }
 
@@ -113,7 +113,6 @@ const faqQuestions = [
 
 export default function Page() {
   // Schemas JSON-LD
-  const organizationSchema = SCHEMA_TEMPLATES.organization;
   const faqSchema = SCHEMA_TEMPLATES.faqPage(faqQuestions.map(q => ({
     question: q.question,
     answer: q.answer
@@ -121,7 +120,6 @@ export default function Page() {
   
   return (
     <>
-      <JsonLD schema={organizationSchema} />
       <JsonLD schema={faqSchema} />
       
       {/* Schemas avançados */}
@@ -224,7 +222,7 @@ export default function Page() {
                 <div className="relative bg-gray-800/40 backdrop-blur-sm border border-green-500/20 rounded-3xl p-4 sm:p-6 shadow-xl transition-all duration-300">
                   <Image
                     src={heroImg}
-                    alt="Interface da plataforma de streaming com variedade de conteúdo disponível"
+                    alt="Interface do Aplicativo XCloud IPTV com Filmes e Séries - Streaming em Alta Definição"
                     className="rounded-2xl shadow-lg w-full h-auto object-cover"
                     priority
                     quality={70}

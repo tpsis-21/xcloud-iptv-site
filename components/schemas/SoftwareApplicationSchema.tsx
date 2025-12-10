@@ -69,7 +69,7 @@ export function XCloudAppSchema() {
     operatingSystem: "Android, iOS, Windows, Smart TV",
     applicationCategory: "MultimediaApplication",
     downloadUrl: "https://xcloudiptv.com.br/download",
-    screenshot: "https://xcloudiptv.com.br/logo_app_xcloudtv.png",
+    screenshot: "https://xcloudiptv.com.br/icone-app-xcloud-iptv.png",
     publisher: {
       "@type": "Organization",
       name: "XCloud IPTV",

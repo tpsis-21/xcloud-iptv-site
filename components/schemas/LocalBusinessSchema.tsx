@@ -102,7 +102,7 @@ export function XCloudLocalBusinessSchema() {
       }
     ],
     priceRange: "R$",
-    image: "https://xcloudiptv.com.br/anexos/logo_app_xcloudtv.png",
+    image: "https://xcloudiptv.com.br/icone-app-xcloud-iptv.png",
     areaServed: {
       "@type": "Country",
       name: "BR"

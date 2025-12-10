@@ -149,24 +149,20 @@ export function ProductSchema({
 }
 
 // Schema específico para planos XCloud IPTV
-export function XCloudPlanProductSchema({ planName, price, period, features }: {
+export function XCloudPlanProductSchema({ planName, price, period, features, description }: {
   planName: string;
   price: string;
   period: string;
   features: string[];
+  description?: string;
 }) {
-  const planDescriptions = {
-    'Mensal': 'Acesso completo ao XCloud IPTV por 1 mês com suporte técnico especializado',
-    'Trimestral': 'Acesso completo ao XCloud IPTV por 3 meses com suporte técnico especializado',
-    'Semestral': 'Acesso completo ao XCloud IPTV por 6 meses com suporte técnico especializado',
-    'Anual': 'Acesso completo ao XCloud IPTV por 12 meses com suporte técnico especializado'
-  };
+  const defaultDescription = `Acesso completo ao XCloud IPTV por ${period} com suporte técnico especializado`;
 
   const structuredData = {
     "@context": "https://schema.org/",
     "@type": "Product",
     name: `XCloud IPTV ${planName}`,
-    description: planDescriptions[planName as keyof typeof planDescriptions] || `Acesso ao XCloud IPTV - ${planName}`,
+    description: description || defaultDescription,
     sku: `XCLOUD-${planName.toUpperCase().replace(' ', '-')}`,
     brand: {
       "@type": "Brand",

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { Menu, X, Rocket } from 'lucide-react'
 import Image from 'next/image'
-import logo from '@/app/assets/images/logo_app_xcloudtv.png'
+import logo from '@/app/assets/images/icone-app-xcloud-iptv.png'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
@@ -26,7 +26,7 @@ export default function Header() {
         <Link href="/" aria-label="Página inicial XCloud IPTV" className="flex items-center gap-3 relative z-[60]" onClick={closeMenu}>
           <Image 
             src={logo}
-            alt="XCloud IPTV"
+            alt="Logo XCloud IPTV - Aplicativo de Streaming Oficial"
             width={150}
             height={40}
             priority

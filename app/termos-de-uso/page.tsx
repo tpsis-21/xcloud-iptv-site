@@ -14,14 +14,14 @@ export const metadata: Metadata = {
     title: 'Termos de Uso - XCloud IPTV | Políticas e Condições de Serviço',
     description: 'Termos de uso e condições de serviço do XCloud IPTV.',
     url: '/termos-de-uso',
-    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`],
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/xcloud-iptv-social-share.svg`],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Termos de Uso - XCloud IPTV | Políticas e Condições de Serviço',
     description: 'Termos de uso e condições de serviço do XCloud IPTV.',
-    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`],
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/xcloud-iptv-social-share.svg`],
   }
 };
 

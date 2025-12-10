@@ -20,13 +20,13 @@ export const metadata: Metadata = {
     title: 'Planos e Preços XCloud IPTV | Assine a Partir de R$ 30',
     description: 'Confira os planos XCloud IPTV: Mensal, Trimestral e Anual com descontos progressivos. A partir de R$ 30/mês. Liberação imediata.',
     url: '/planos-xcloud-iptv',
-    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`]
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/xcloud-iptv-social-share.svg`]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Planos e Preços XCloud IPTV | Assine a Partir de R$ 30',
     description: 'Confira os planos XCloud IPTV: Mensal, Trimestral e Anual com descontos progressivos. A partir de R$ 30/mês.',
-    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`]
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/xcloud-iptv-social-share.svg`]
   },
   alternates: {
     canonical: '/planos-xcloud-iptv'
@@ -111,6 +111,7 @@ export default function Page() {
           price={plano.preco.toString()}
           period={`${plano.meses} meses`}
           features={planFeatures}
+          description={plano.descricao}
         />
       ))}
 

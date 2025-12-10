@@ -51,3 +51,5 @@ não quero que dê ênfase a qualidade nenhuma de imagem;
 
 é possivel instalar o xcloud tv em: android tv, celular android, ios, fire stick  (via downloader), mi stick (via downloader), windows, smart tvs lg, samsung e roku.
 se for necessário, para instruções de instalação instrua a busca por "XcloudTV" e não "Xcloud IPTV".
+
+Sempre que for fazer uma nova funcionalidade ou alteração de texto,sempre "Consultar o MASTER GUIDE em docs/" antes de iniciar.

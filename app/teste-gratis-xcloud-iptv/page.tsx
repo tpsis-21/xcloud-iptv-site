@@ -17,14 +17,14 @@ export const metadata: Metadata = {
     title: 'Teste Grátis XCloud IPTV | 6 Horas de Acesso Imediato',
     description: 'Solicite seu teste grátis XCloud IPTV agora mesmo. Acesso liberado em instantes, sem necessidade de cartão de crédito.',
     url: '/teste-gratis-xcloud-iptv',
-    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`],
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/xcloud-iptv-social-share.svg`],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Teste Grátis XCloud IPTV | 6 Horas de Acesso Imediato',
     description: 'Solicite seu teste grátis XCloud IPTV agora mesmo. Sem cartão de crédito.',
-    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`],
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/xcloud-iptv-social-share.svg`],
   },
   alternates: {
     canonical: '/teste-gratis-xcloud-iptv'
