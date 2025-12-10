@@ -93,6 +93,14 @@ export function XCloudLocalBusinessSchema() {
     description: "Serviço de consultoria e tecnologia para streaming com suporte especializado em IPTV e soluções de entretenimento digital.",
     url: "https://xcloudiptv.com.br",
     email: "contato@xcloudiptv.com.br",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Atendimento Online",
+      addressLocality: "São Paulo",
+      addressRegion: "SP",
+      postalCode: "01000-000",
+      addressCountry: "BR"
+    },
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
