@@ -66,8 +66,16 @@ export function XCloudInstallationHowToSchema() {
       currency: "BRL",
       value: "0"
     },
-    supply: ["Conexão com internet", "Dispositivo compatível"],
-    tool: ["Smartphone", "Smart TV", "Fire Stick", "Computador"],
+    supply: [
+      { "@type": "HowToSupply", name: "Conexão com internet" },
+      { "@type": "HowToSupply", name: "Dispositivo compatível" }
+    ],
+    tool: [
+      { "@type": "HowToTool", name: "Smartphone" },
+      { "@type": "HowToTool", name: "Smart TV" },
+      { "@type": "HowToTool", name: "Fire Stick" },
+      { "@type": "HowToTool", name: "Computador" }
+    ],
     step: [
       {
         "@type": "HowToStep",
@@ -97,7 +105,8 @@ export function XCloudInstallationHowToSchema() {
         "@type": "HowToStep",
         position: 5,
         name: "Começar a assistir",
-        text: "Pronto! Agora você pode começar a assistir seus conteúdos favoritos através do XCloud IPTV."
+        text: "Pronto! Agora você pode começar a assistir seus conteúdos favoritos através do XCloud IPTV.",
+        image: "https://xcloudiptv.com.br/xcloud-iptv-interface-streaming-app.webp"
       }
     ]
   };
@@ -123,43 +132,45 @@ export function AndroidTVInstallationHowToSchema() {
       currency: "BRL",
       value: "0"
     },
-    supply: ["Android TV", "Conexão com internet"],
-    tool: ["Controle remoto", "Downloader app"],
+    supply: [
+      { "@type": "HowToSupply", name: "Android TV" },
+      { "@type": "HowToSupply", name: "Conexão com internet" }
+    ],
+    tool: [
+      { "@type": "HowToTool", name: "Controle remoto" },
+      { "@type": "HowToTool", name: "Downloader app" }
+    ],
     step: [
       {
         "@type": "HowToStep",
         position: 1,
         name: "Instalar Downloader",
-        text: "Vá para a Google Play Store da sua Android TV e instale o aplicativo 'Downloader'.",
-        image: "https://xcloudiptv.com.br/images/android-tv-downloader.jpg"
+        text: "Vá para a Google Play Store da sua Android TV e instale o aplicativo 'Downloader'."
       },
       {
         "@type": "HowToStep",
         position: 2,
         name: "Ativar fontes desconhecidas",
-        text: "Vá em Configurações > Segurança e restrições > Ativar 'Fontes desconhecidas' para o Downloader.",
-        image: "https://xcloudiptv.com.br/images/android-tv-fontes-desconhecidas.jpg"
+        text: "Vá em Configurações > Segurança e restrições > Ativar 'Fontes desconhecidas' para o Downloader."
       },
       {
         "@type": "HowToStep",
         position: 3,
         name: "Abrir o Downloader",
-        text: "Abra o aplicativo Downloader e insira a URL do XCloud IPTV fornecida no site oficial.",
-        image: "https://xcloudiptv.com.br/images/android-tv-url.jpg"
+        text: "Abra o aplicativo Downloader e insira a URL do XCloud IPTV fornecida no site oficial."
       },
       {
         "@type": "HowToStep",
         position: 4,
         name: "Fazer download e instalar",
-        text: "Clique em 'Go' para baixar o aplicativo XCloud IPTV e depois clique em 'Instalar'.",
-        image: "https://xcloudiptv.com.br/images/android-tv-instalacao.jpg"
+        text: "Clique em 'Go' para baixar o aplicativo XCloud IPTV e depois clique em 'Instalar'."
       },
       {
         "@type": "HowToStep",
         position: 5,
         name: "Abrir o XCloud IPTV",
         text: "Após a instalação, abra o aplicativo XCloud IPTV e configure com suas credenciais.",
-        image: "https://xcloudiptv.com.br/images/android-tv-app-aberto.jpg"
+        image: "https://xcloudiptv.com.br/xcloud-iptv-interface-streaming-app.webp"
       }
     ]
   };
