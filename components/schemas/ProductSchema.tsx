@@ -169,7 +169,7 @@ export function XCloudPlanProductSchema({ planName, price, period, features, des
       name: "XCloud IPTV"
     },
     category: "Software as a Service",
-    image: "https://xcloudiptv.com.br/logo.png",
+    image: "https://xcloudiptv.com.br/icone-app-xcloud-iptv.png",
     offers: {
       "@type": "Offer",
       price: price.replace('R$', '').replace(',', '.'),
