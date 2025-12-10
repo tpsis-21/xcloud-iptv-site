@@ -181,7 +181,7 @@ export default function TermosDeUso() {
                 </p>
                 <div className="bg-gray-700 rounded-lg p-4">
                   <p className="text-gray-300 mb-2">
-                    <strong>Email:</strong> contato@xcloudiptv.com.br
+                    <strong>Email:</strong> <a href="mailto:contato@xcloudiptv.com.br" className="text-emerald-400 hover:text-emerald-300 underline">contato@xcloudiptv.com.br</a>
                   </p>
                   <p className="text-gray-300 mb-2">
                     <strong>Horário de atendimento:</strong> Segunda a sábado, 9h às 22h (horário de Brasília)

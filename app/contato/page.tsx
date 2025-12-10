@@ -136,7 +136,15 @@ export default function ContatoPage() {
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-300 mb-4 font-medium">{canal.descricao}</p>
+                    <p className="text-gray-300 mb-4 font-medium">
+                      {canal.titulo === 'Email' ? (
+                        <a href={`mailto:${canal.descricao}`} className="text-emerald-400 hover:text-emerald-300 underline">
+                          {canal.descricao}
+                        </a>
+                      ) : (
+                        canal.descricao
+                      )}
+                    </p>
                     <Button 
                       className="w-full bg-green-600 hover:bg-green-700 text-white"
                       asChild
