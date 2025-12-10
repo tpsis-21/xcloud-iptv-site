@@ -1,23 +1,17 @@
 import { Metadata } from 'next'
-import { MetaTags } from '@/components/seo/MetaTags'
 import { JsonLD } from '@/components/seo/JsonLD'
 import { SCHEMA_TEMPLATES } from '@/config/schemas'
 
 export const metadata: Metadata = {
   title: 'Política de Reembolso - XCloud IPTV',
   description: 'Regras de reembolso e cancelamento de assinatura na XCloud IPTV.',
+  keywords: ["política de reembolso", "cancelamento xcloud iptv", "reembolso iptv"],
   alternates: { canonical: 'https://xcloudiptv.com.br/politica-de-reembolso' }
 }
 
 export default function PoliticaReembolso() {
   return (
     <>
-      <MetaTags 
-        title="Política de Reembolso - XCloud IPTV"
-        description="Regras de reembolso e cancelamento de assinatura na XCloud IPTV."
-        keywords={["política de reembolso", "cancelamento xcloud iptv", "reembolso iptv"]}
-        canonical="https://xcloudiptv.com.br/politica-de-reembolso"
-      />
       <JsonLD schema={SCHEMA_TEMPLATES.breadcrumbList([
         { name: 'Home', url: '/' },
         { name: 'Política de Reembolso', url: '/politica-de-reembolso' }

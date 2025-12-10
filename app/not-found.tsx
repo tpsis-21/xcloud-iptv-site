@@ -1,9 +1,19 @@
 import Link from 'next/link'
-import { MetaTags } from '@/components/seo/MetaTags'
+import { Metadata } from 'next'
 import { Button } from '@/components/ui/button'
 import { createInternalLink } from '@/config/links'
 import { Particles } from '@/components/particles'
 import { Home, Crown, Sparkles, Download } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: "Página não encontrada (404)",
+  description: "O link acessado não existe ou foi movido. Acesse Home, Planos, Teste grátis ou Contato para continuar.",
+  keywords: ["xcloud iptv", "planos xcloud iptv", "teste xcloud iptv"],
+  robots: {
+    index: false,
+    follow: false
+  }
+}
 
 export default function NotFoundPage() {
   const home = createInternalLink('/', 'Voltar para Home XCloud IPTV')
@@ -13,12 +23,6 @@ export default function NotFoundPage() {
 
   return (
     <>
-      <MetaTags
-        title="Página não encontrada (404)"
-        description="O link acessado não existe ou foi movido. Acesse Home, Planos, Teste grátis ou Contato para continuar."
-        keywords={["xcloud iptv", "planos xcloud iptv", "teste xcloud iptv"]}
-        noindex
-      />
       <div className="relative min-h-[80vh] bg-gradient-to-br from-black via-gray-900 to-gray-800">
         <Particles />
         <div className="absolute inset-0">

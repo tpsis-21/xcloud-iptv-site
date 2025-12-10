@@ -1,23 +1,30 @@
 import { Metadata } from 'next'
-import { MetaTags } from '@/components/seo/MetaTags'
 import { JsonLD } from '@/components/seo/JsonLD'
 import { SCHEMA_TEMPLATES } from '@/config/schemas'
 
 export const metadata: Metadata = {
   title: 'Política de Privacidade - XCloud IPTV',
   description: 'Como coletamos, usamos e protegemos seus dados na XCloud IPTV.',
-  alternates: { canonical: 'https://xcloudiptv.com.br/politica-de-privacidade' }
+  keywords: ["política de privacidade", "privacidade xcloud iptv", "dados pessoais iptv"],
+  alternates: { canonical: '/politica-de-privacidade' },
+  openGraph: {
+    title: 'Política de Privacidade - XCloud IPTV',
+    description: 'Como coletamos, usamos e protegemos seus dados na XCloud IPTV.',
+    url: '/politica-de-privacidade',
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Política de Privacidade - XCloud IPTV',
+    description: 'Como coletamos, usamos e protegemos seus dados na XCloud IPTV.',
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`],
+  }
 }
 
 export default function PoliticaPrivacidade() {
   return (
     <>
-      <MetaTags 
-        title="Política de Privacidade - XCloud IPTV"
-        description="Como coletamos, usamos e protegemos seus dados na XCloud IPTV."
-        keywords={["política de privacidade", "privacidade xcloud iptv", "dados pessoais iptv"]}
-        canonical="https://xcloudiptv.com.br/politica-de-privacidade"
-      />
       <JsonLD schema={SCHEMA_TEMPLATES.breadcrumbList([
         { name: 'Home', url: '/' },
         { name: 'Política de Privacidade', url: '/politica-de-privacidade' }

@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { CheckCircle2, Star, Zap, ShieldCheck, CreditCard, Clock, Users, Smartphone, Tv, Download } from 'lucide-react'
-import { MetaTags } from '@/components/seo/MetaTags'
 import { JsonLD } from '@/components/seo/JsonLD'
 import { SCHEMA_TEMPLATES } from '@/config/schemas'
 import { EXTERNAL_LINKS, createInternalLink } from '@/config/links'
@@ -14,17 +13,20 @@ import { XCloudPlanProductSchema } from '@/components/schemas/ProductSchema'
 import { ReviewSchemaWithProtections, ReviewDisplay, generateSampleReviews } from '@/components/schemas/ReviewSchema'
 
 export const metadata: Metadata = {
-  title: 'Planos XCloud IPTV | Assinar XCloud IPTV no Brasil',
-  description: 'Assine XCloud IPTV com opções mensais, trimestrais, semestrais e anuais. Conteúdos variados, suporte em português (9h–22h) e compatibilidade com Android, iOS, Windows e Smart TVs.',
-  keywords: 'planos xcloud iptv, assinar xcloud iptv, preços xcloud iptv',
+  title: 'Planos e Preços XCloud IPTV | Assine a Partir de R$ 30',
+  description: 'Confira os planos XCloud IPTV: Mensal, Trimestral e Anual com descontos progressivos. A partir de R$ 30/mês. Liberação imediata e suporte incluso.',
+  keywords: ['planos xcloud iptv', 'preço xcloud iptv', 'valor xcloud iptv', 'comprar xcloud iptv', 'assinatura iptv'],
   openGraph: {
-    title: 'Planos XCloud IPTV | Assinar XCloud IPTV no Brasil',
-    description: 'Assine XCloud IPTV com opções mensais, trimestrais, semestrais e anuais. Conteúdos variados, suporte em português (9h–22h) e compatibilidade com Android, iOS, Windows e Smart TVs.'
+    title: 'Planos e Preços XCloud IPTV | Assine a Partir de R$ 30',
+    description: 'Confira os planos XCloud IPTV: Mensal, Trimestral e Anual com descontos progressivos. A partir de R$ 30/mês. Liberação imediata.',
+    url: '/planos-xcloud-iptv',
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Planos XCloud IPTV | Assinar XCloud IPTV no Brasil',
-    description: 'Assine XCloud IPTV com opções mensais, trimestrais, semestrais e anuais. Conteúdos variados, suporte em português (9h–22h) e compatibilidade com Android, iOS, Windows e Smart TVs.'
+    title: 'Planos e Preços XCloud IPTV | Assine a Partir de R$ 30',
+    description: 'Confira os planos XCloud IPTV: Mensal, Trimestral e Anual com descontos progressivos. A partir de R$ 30/mês.',
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`]
   },
   alternates: {
     canonical: '/planos-xcloud-iptv'
@@ -98,14 +100,6 @@ export default function Page() {
 
   return (
     <>
-      {/* Meta tags otimizadas */}
-      <MetaTags
-        title="Planos XCloud IPTV"
-        description="Planos XCloud IPTV: Assinaturas a partir de R$ 30/mês. Assine XCloud IPTV mensal, trimestral R$ 81, semestral R$ 153 e anual R$ 288. Teste grátis disponível."
-        canonical="/planos-xcloud-iptv"
-        keywords={['planos xcloud iptv', 'assinar xcloud iptv', 'preços xcloud']}
-      />
-      
       {/* Schema JSON-LD */}
       <JsonLD schema={plansSchema} />
 

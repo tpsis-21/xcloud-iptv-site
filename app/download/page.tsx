@@ -21,22 +21,24 @@ import { XCloudInstallationHowToSchema, AndroidTVInstallationHowToSchema } from 
 import { SoftwareApplicationSchema } from '@/components/schemas/SoftwareApplicationSchema'
 
 export const metadata: Metadata = {
-  title: 'Baixe e Instale XCloud IPTV | Download Oficial - Tutorial Completo',
-  description:
-    'Guia oficial passo a passo para baixar e instalar XCloud IPTV em Smart TV, Android, iOS, Fire Stick e mais. Downloads seguros, código XCloudTV e suporte dedicado.',
-  keywords: 'download xcloud iptv, como baixar xcloud iptv, instalar xcloud iptv, xcloud iptv download, xcloud iptv smart tv, xcloud iptv android, xcloud iptv ios, xcloud iptv fire stick, codigo xcloudtv',
+  title: 'Baixar XCloud IPTV | Download App para Android e Smart TV',
+  description: 'Faça o download do XCloud IPTV atualizado. Guia de instalação para TV Box, Android, Smart TV (Samsung/LG), Roku e Fire Stick. Baixe agora.',
+  keywords: ['download xcloud iptv', 'baixar xcloud tv', 'instalar xcloud iptv', 'apk xcloud iptv', 'xcloud iptv roku', 'xcloud iptv samsung'],
   openGraph: {
-    title: 'Download XCloud IPTV - Tutorial Completo de Instalação',
-    description: 'Aprenda como baixar e instalar XCloud IPTV em qualquer dispositivo. Smart TV, Android, iOS, Fire Stick - Passo a passo detalhado.',
+    title: 'Baixar XCloud IPTV | Download App para Android e Smart TV',
+    description: 'Faça o download do XCloud IPTV atualizado. Guia de instalação para TV Box, Android, Smart TV (Samsung/LG), Roku e Fire Stick.',
+    url: '/download',
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Download XCloud IPTV - Tutorial Completo de Instalação',
-    description: 'Guia completo para instalar XCloud IPTV em Smart TV, Android, iOS, Fire Stick e mais dispositivos.'
+    title: 'Baixar XCloud IPTV | Download App para Android e Smart TV',
+    description: 'Faça o download do XCloud IPTV atualizado. Guia de instalação para TV Box, Android, Smart TV e Fire Stick.',
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`],
   },
   alternates: {
-    canonical: 'https://xcloudiptv.com.br/download'
+    canonical: '/download'
   }
 }
 

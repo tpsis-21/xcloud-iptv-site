@@ -4,28 +4,30 @@ import { Button } from '@/components/ui/button'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card'
 import { FormularioTeste } from '@/components/FormularioTeste'
 import { Smartphone, Tv, Download, CheckCircle2, Star, Zap, Rocket, Users, Clock, ShieldCheck, Gift, Trophy, Sparkles, TrendingUp } from 'lucide-react'
-import { MetaTags } from '@/components/seo/MetaTags'
 import { JsonLD } from '@/components/seo/JsonLD'
 import { SCHEMA_TEMPLATES } from '@/config/schemas'
 import { EXTERNAL_LINKS, createInternalLink } from '@/config/links'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
 
 export const metadata: Metadata = {
-  title: 'Teste Grátis XCloud IPTV - Experimente Sem Compromisso',
-  description: 'Teste XCloud IPTV sem compromisso e com ativação imediata. Acesso a conteúdos variados. Solicite e experimente já.',
-  keywords: 'teste gratis xcloud iptv, teste iptv xcloud, teste grátis, iptv, streaming, canais ao vivo, filmes, séries',
+  title: 'Teste Grátis XCloud IPTV | 6 Horas de Acesso Imediato',
+  description: 'Solicite seu teste grátis XCloud IPTV agora mesmo. Acesso liberado em instantes, sem necessidade de cartão de crédito. Experimente a melhor qualidade.',
+  keywords: ['teste gratis xcloud iptv', 'teste iptv', 'iptv gratis 6 horas', 'testar xcloud', 'iptv sem trava'],
   openGraph: {
-    title: 'Teste Grátis XCloud IPTV - Acesso Completo',
-    description: 'Teste XCloud IPTV sem compromisso e com ativação imediata. Acesso a conteúdos variados. Solicite e experimente já.',
+    title: 'Teste Grátis XCloud IPTV | 6 Horas de Acesso Imediato',
+    description: 'Solicite seu teste grátis XCloud IPTV agora mesmo. Acesso liberado em instantes, sem necessidade de cartão de crédito.',
+    url: '/teste-gratis-xcloud-iptv',
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Teste Grátis XCloud IPTV - Sem Compromisso',
-    description: 'Teste XCloud IPTV sem compromisso e com ativação imediata. Acesso a conteúdos variados. Solicite e experimente já.',
+    title: 'Teste Grátis XCloud IPTV | 6 Horas de Acesso Imediato',
+    description: 'Solicite seu teste grátis XCloud IPTV agora mesmo. Sem cartão de crédito.',
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`],
   },
   alternates: {
-    canonical: 'https://xcloudiptv.com.br/teste-gratis-xcloud-iptv'
+    canonical: '/teste-gratis-xcloud-iptv'
   }
 }
 
@@ -58,14 +60,6 @@ export default function Page() {
 
   return (
     <>
-      {/* Meta tags otimizadas */}
-      <MetaTags
-        title="Teste Grátis XCloud IPTV"
-        description="Teste XCloud IPTV sem compromisso e com ativação imediata. Acesso a conteúdos variados. Solicite e experimente já."
-        canonical="/teste-gratis-xcloud-iptv"
-        keywords={['teste gratis xcloud iptv', 'teste iptv xcloud', 'experimentar xcloud']}
-      />
-      
       {/* Schemas JSON-LD */}
       <JsonLD schema={testeSchema} />
       <JsonLD schema={faqSchema} />
@@ -268,7 +262,10 @@ export default function Page() {
                 <p className="text-gray-300 mb-4">
                   "Fiz o teste grátis e fiquei impressionado com a qualidade. Assinei o plano anual no mesmo dia!"
                 </p>
-                <div className="text-green-400 font-semibold">- Carlos M., São Paulo</div>
+                <div className="flex items-center justify-between">
+                  <span className="text-green-400 font-semibold text-sm">- Carlos M., São Paulo</span>
+                  <span className="text-xs text-gray-500">12 de Dezembro de 2024</span>
+                </div>
               </div>
 
               <div className="glass-card rounded-xl p-6">
@@ -283,7 +280,10 @@ export default function Page() {
                 <p className="text-gray-300 mb-4">
                   "Melhor custo-benefício do mercado. O teste grátis me convenceu, agora sou assinante fiel."
                 </p>
-                <div className="text-green-400 font-semibold">- Ana L., Rio de Janeiro</div>
+                <div className="flex items-center justify-between">
+                  <span className="text-green-400 font-semibold text-sm">- Ana L., Rio de Janeiro</span>
+                  <span className="text-xs text-gray-500">20 de Fevereiro de 2025</span>
+                </div>
               </div>
 
               <div className="glass-card rounded-xl p-6">
@@ -298,7 +298,10 @@ export default function Page() {
                 <p className="text-gray-300 mb-4">
                   "Instalação super fácil e suporte excelente. Recomendo muito!"
                 </p>
-                <div className="text-green-400 font-semibold">- Roberto S., Belo Horizonte</div>
+                <div className="flex items-center justify-between">
+                  <span className="text-green-400 font-semibold text-sm">- Roberto S., Belo Horizonte</span>
+                  <span className="text-xs text-gray-500">05 de Março de 2025</span>
+                </div>
               </div>
             </div>
           </div>

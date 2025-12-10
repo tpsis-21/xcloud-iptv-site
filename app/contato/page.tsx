@@ -25,17 +25,20 @@ export const metadata: Metadata = {
   title: 'Contato XCloud IPTV Brasil - Suporte IPTV Streaming | Email',
   description:
     'Entre em contato com a XCloud IPTV Brasil. Suporte técnico de segunda a sábado, 9h às 22h. Tire suas dúvidas sobre XCloud IPTV streaming. Atendimento rápido e eficiente.',
-  keywords: 'contato xcloudtv brasil, suporte xcloud iptv, email xcloudtv, atendimento xcloudtv',
+  keywords: ['contato xcloudtv brasil', 'suporte xcloud iptv', 'email xcloudtv', 'atendimento xcloudtv', 'xcloud iptv whatsapp', 'xcloud iptv telefone'],
   alternates: { canonical: '/contato' },
   openGraph: {
     title: 'Contato XCloud IPTV Brasil - Suporte IPTV Streaming | Email',
     description: 'Entre em contato com a XCloud IPTV Brasil. Suporte técnico de segunda a sábado, 9h às 22h. Tire suas dúvidas sobre XCloud IPTV streaming.',
+    url: '/contato',
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Contato - XCloud IPTV | Suporte por Email',
-    description: 'Entre em contato com a XCloud IPTV. Suporte por email.'
+    description: 'Entre em contato com a XCloud IPTV. Suporte por email.',
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`],
   }
 }
 

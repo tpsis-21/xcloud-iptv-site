@@ -1,31 +1,33 @@
 import { Metadata } from 'next';
 import Link from 'next/link'
-import { MetaTags } from '@/components/seo/MetaTags';
 import { JsonLD } from '@/components/seo/JsonLD';
 import { SCHEMA_TEMPLATES } from '@/config/schemas';
 
 export const metadata: Metadata = {
   title: 'Termos de Uso - XCloud IPTV | Políticas e Condições de Serviço',
   description: 'Termos de uso e condições de serviço do XCloud IPTV. Políticas de uso, direitos autorais e responsabilidades do usuário.',
+  keywords: ['termos de uso XCloud IPTV', 'políticas XCloud IPTV', 'condições de serviço IPTV', 'direitos autorais streaming'],
   alternates: {
-    canonical: 'https://xcloudiptv.com.br/termos-de-uso'
+    canonical: '/termos-de-uso'
+  },
+  openGraph: {
+    title: 'Termos de Uso - XCloud IPTV | Políticas e Condições de Serviço',
+    description: 'Termos de uso e condições de serviço do XCloud IPTV.',
+    url: '/termos-de-uso',
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Termos de Uso - XCloud IPTV | Políticas e Condições de Serviço',
+    description: 'Termos de uso e condições de serviço do XCloud IPTV.',
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`],
   }
 };
 
 export default function TermosDeUso() {
-  const pageTitle = 'Termos de Uso - XCloud IPTV | Políticas e Condições de Serviço';
-  const pageDescription = 'Termos de uso e condições de serviço do XCloud IPTV. Políticas de uso, direitos autorais e responsabilidades do usuário.';
-  const pageKeywords = ['termos de uso XCloud IPTV', 'políticas XCloud IPTV', 'condições de serviço IPTV', 'direitos autorais streaming'];
-
   return (
     <>
-      <MetaTags
-        title={pageTitle}
-        description={pageDescription}
-        keywords={pageKeywords}
-        canonical="https://xcloudiptv.com.br/termos-de-uso"
-      />
-      
       <JsonLD schema={SCHEMA_TEMPLATES.organization} />
       <JsonLD schema={SCHEMA_TEMPLATES.breadcrumbList([
         { name: 'Home', url: '/' },

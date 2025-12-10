@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
@@ -9,12 +10,30 @@ import { ShieldCheck, Bolt, Headphones, Smartphone, Tv, Download, Lock, Rocket, 
 import { Particles } from '@/components/particles'
 import { createInternalLink } from '@/config/seo'
 import { EXTERNAL_LINKS } from '@/config/links'
-import { MetaTags } from '@/components/seo/MetaTags'
 import { JsonLD } from '@/components/seo/JsonLD'
 import { SCHEMA_TEMPLATES } from '@/config/schemas'
 import { contentRules } from '@/config/seo'
 import { XCloudAppSchema } from '@/components/schemas/SoftwareApplicationSchema'
 import { XCloudLocalBusinessSchema } from '@/components/schemas/LocalBusinessSchema'
+
+export const metadata: Metadata = {
+  title: 'XCloud IPTV | Assine o Melhor App IPTV do Brasil',
+  description: 'XCloud IPTV com conteúdos variados. Teste grátis e assine planos acessíveis. Suporte Online. Compatível com Android, iOS, Windows e Smart TVs.',
+  keywords: ['xcloud iptv', 'xcloud', 'xcloud tv'],
+  alternates: { canonical: '/' },
+  openGraph: {
+    title: 'XCloud IPTV | Assine o Melhor App IPTV do Brasil',
+    description: 'XCloud IPTV com conteúdos variados. Teste grátis e assine planos acessíveis. Suporte Online. Compatível com Android, iOS, Windows e Smart TVs.',
+    url: '/',
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'XCloud IPTV | Assine o Melhor App IPTV do Brasil',
+    description: 'XCloud IPTV com conteúdos variados. Teste grátis e assine planos acessíveis. Suporte Online. Compatível com Android, iOS, Windows e Smart TVs.',
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`],
+  }
+}
 
 // Função para validar conteúdo antes de renderizar
 function validateContent(content: string, context: string): { valid: boolean; violations: string[] } {
@@ -93,15 +112,6 @@ const faqQuestions = [
 ];
 
 export default function Page() {
-  const pageTitle = 'XCloud IPTV | Assine XCloud IPTV e Teste Grátis no Brasil';
-  const pageDescription = 'XCloud IPTV com conteúdos variados. Teste grátis e assine planos acessíveis. Suporte em português (9h–22h). Compatível com Android, iOS, Windows e Smart TVs.';
-  const pageKeywords = ['xcloud iptv', 'assinar xcloud iptv', 'planos xcloud iptv', 'teste grátis xcloud iptv', 'streaming iptv', 'xcloud tv'];
-  
-  // Validar conteúdo crítico
-  validateContent(pageTitle, 'Home - Title');
-  validateContent(pageDescription, 'Home - Description');
-  validateContent(pageKeywords.join(', '), 'Home - Keywords');
-  
   // Schemas JSON-LD
   const organizationSchema = SCHEMA_TEMPLATES.organization;
   const faqSchema = SCHEMA_TEMPLATES.faqPage(faqQuestions.map(q => ({
@@ -111,13 +121,6 @@ export default function Page() {
   
   return (
     <>
-      <MetaTags
-        title={pageTitle}
-        description={pageDescription}
-        keywords={pageKeywords}
-        canonical="/"
-        ogImage={`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`}
-      />
       <JsonLD schema={organizationSchema} />
       <JsonLD schema={faqSchema} />
       
@@ -670,23 +673,29 @@ export default function Page() {
                 quote:
                   'Instalação simples. Em poucos minutos já estava assistindo, sem complicação.',
                 author: 'Marina Santos, Usuária Android TV',
+                date: '28 de Outubro de 2024'
               },
               {
                 quote:
                   'Precisava de ajuda à noite e o suporte respondeu rápido. Atendimento em português facilitou muito.',
                 author: 'Carlos Almeida, Smart TV Samsung',
+                date: '15 de Fevereiro de 2025'
               },
               {
                 quote:
                   'Funciona na minha Smart TV e no celular. Troco de dispositivo sem dor de cabeça.',
                 author: 'Luana Ferreira, iOS e TV LG',
+                date: '03 de Março de 2025'
               },
             ].map((t, i) => (
               <article key={i} className="glass-card rounded-2xl p-8 border-white/10">
                 <blockquote className="text-gray-200 text-lg leading-relaxed">
                   “{t.quote}”
                 </blockquote>
-                <div className="mt-4 text-sm text-green-400">{t.author}</div>
+                <div className="mt-4 flex items-center justify-between">
+                  <span className="text-sm text-green-400 font-semibold">{t.author}</span>
+                  <span className="text-xs text-gray-500">{t.date}</span>
+                </div>
               </article>
             ))}
           </div>

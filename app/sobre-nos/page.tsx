@@ -18,7 +18,6 @@ import {
 } from 'lucide-react'
 import { Particles } from '@/components/particles'
 import { Breadcrumb } from '@/components/ui/breadcrumb'
-import { MetaTags } from '@/components/seo/MetaTags'
 import { JsonLD } from '@/components/seo/JsonLD'
 import { SCHEMA_TEMPLATES } from '@/config/schemas'
 
@@ -26,17 +25,20 @@ export const metadata: Metadata = {
   title: 'Sobre Nós XCloud IPTV - IPTV Streaming Brasil | Conteúdo Variado',
   description:
     'Conheça a XCloud IPTV, plataforma de IPTV streaming no Brasil. Serviço confiável com conteúdos variados, estabilidade e suporte técnico em português. Missão, visão e valores.',
-  keywords: 'sobre xcloudtv brasil, xcloudtv empresa iptv, empresa streaming brasil confiável, xcloud iptv brasil origem, xcloudtv streaming conteúdo variado brasil, plataforma iptv brasil xcloudtv',
+  keywords: ['sobre xcloudtv brasil', 'xcloudtv empresa iptv', 'empresa streaming brasil confiável', 'xcloud iptv brasil origem', 'xcloudtv streaming conteúdo variado brasil', 'plataforma iptv brasil xcloudtv'],
   alternates: { canonical: '/sobre-nos' },
   openGraph: {
     title: 'Sobre Nós XCloud IPTV - IPTV Streaming Brasil | Conteúdo Variado',
     description: 'Conheça a XCloud IPTV, plataforma de IPTV streaming no Brasil. Conteúdos variados, streaming ao vivo com estabilidade e suporte técnico especializado.',
+    url: '/sobre-nos',
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Sobre Nós - XCloud IPTV | IPTV Streaming Brasil',
     description: 'Conheça a XCloud IPTV, plataforma confiável com conteúdo variado e suporte especializado.',
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL || 'https://xcloudiptv.com.br'}/og-image.svg`],
   }
 }
 
@@ -101,13 +103,7 @@ export default function SobreNosPage() {
 
   return (
     <div className="relative min-h-screen">
-      
-      <MetaTags
-        title="Sobre Nós"
-        description="Conheça a XCloud IPTV, plataforma com conteúdo variado, estabilidade e suporte técnico em português. Missão, visão e valores."
-        canonical="/sobre-nos"
-        keywords={["sobre xcloud iptv", "empresa iptv", "streaming brasil"]}
-      />
+      <JsonLD schema={SCHEMA_TEMPLATES.organization} />
       <JsonLD schema={breadcrumb} />
       
       {/* Hero Section */}
