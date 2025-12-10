@@ -48,6 +48,11 @@ export function SoftwareApplicationSchema({
       price: "0",
       priceCurrency: "BRL",
       availability: "https://schema.org/InStock"
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.8",
+      reviewCount: "1250"
     }
   };
 

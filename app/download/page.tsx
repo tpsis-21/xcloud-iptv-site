@@ -391,27 +391,6 @@ export default function DownloadPage() {
             </div>
           </section>
 
-          {/* JSON-LD Schema - SoftwareApplication */}
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                '@context': 'https://schema.org',
-                '@type': 'SoftwareApplication',
-                name: 'XCloud IPTV',
-                description: 'Aplicativo IPTV para Smart TV, Android, iOS, Fire Stick, Mi Stick e Windows',
-                url: 'https://xcloudiptv.com.br/download',
-                applicationCategory: 'EntertainmentApplication',
-                operatingSystem: 'Android, iOS, Windows, Smart TV, Fire TV, Mi TV',
-                offers: {
-                  '@type': 'Offer',
-                  price: '0',
-                  priceCurrency: 'BRL',
-                  category: 'free'
-                }
-              })
-            }}
-          />
 
           {/* JSON-LD Schema - FAQPage */}
           <script
