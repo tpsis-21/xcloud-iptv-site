@@ -223,6 +223,33 @@ export default function SobreNosPage() {
         </div>
       </section>
 
+      {/* Nossa História - Narrativa Rica */}
+      <section className="py-20 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-flex items-center space-x-2 glass-premium rounded-full px-6 py-2 mb-8">
+            <Target className="h-4 w-4 text-green-500" />
+            <span className="text-sm font-medium text-green-500">Trajetória de Sucesso</span>
+          </div>
+          
+          <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-white">
+            Nossa História
+          </h2>
+          
+          <div className="prose prose-invert prose-lg mx-auto text-gray-300 leading-relaxed">
+            <p className="mb-6">
+              Fundada com o objetivo de transformar o mercado de entretenimento digital, a <strong>XCloud IPTV</strong> nasceu da necessidade 
+              de oferecer uma alternativa de qualidade e confiança no setor de streaming brasileiro. Começamos focados em dois pilares fundamentais: 
+              <strong>estabilidade de sinal</strong> e <strong>atendimento humanizado</strong>.
+            </p>
+            <p>
+              Hoje, evoluímos para uma infraestrutura robusta de servidores, capaz de entregar conteúdo em alta definição sem travamentos para 
+              milhares de famílias em todo o Brasil. Nossa história é construída dia a dia, com cada cliente satisfeito e cada feedback que nos 
+              ajuda a aprimorar nossa plataforma, mantendo sempre o compromisso com a transparência e a qualidade.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Conquistas */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">

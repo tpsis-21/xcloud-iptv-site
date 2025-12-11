@@ -98,10 +98,33 @@ export default function Page() {
   // Gerar reviews de exemplo (em produção, vir do backend)
   const sampleReviews = generateSampleReviews('XCloud IPTV');
 
+  // FAQ Data
+  const faqItems = [
+    {
+      question: 'Quais as formas de pagamento aceitas?',
+      answer: 'Aceitamos pagamentos via PIX para aprovação imediata e cartões de crédito. Todo o processo é seguro e processado automaticamente.'
+    },
+    {
+      question: 'Em quanto tempo meu acesso é liberado?',
+      answer: 'A liberação é imediata e automática assim que o pagamento é confirmado pelo sistema. Você recebe os dados de acesso no seu email.'
+    },
+    {
+      question: 'A renovação é automática?',
+      answer: 'Não. Prezamos pela sua liberdade. Você renova apenas se quiser, sem cobranças surpresas no seu cartão.'
+    },
+    {
+      question: 'Funciona em quais dispositivos?',
+      answer: 'O XCloud IPTV é compatível com Smart TVs (Samsung, LG, Android TV), TV Box, Fire Stick, Mi Stick, Celulares (Android/iOS) e Computadores.'
+    }
+  ];
+
+  const faqSchema = SCHEMA_TEMPLATES.faqPage(faqItems);
+
   return (
     <>
       {/* Schema JSON-LD */}
       <JsonLD schema={plansSchema} />
+      <JsonLD schema={faqSchema} />
 
       {/* Product schemas para cada plano */}
       {planos.map((plano) => (
@@ -345,6 +368,51 @@ export default function Page() {
                 <p className="text-gray-400">
                   Baixe nosso aplicativo e assista onde quiser. Disponível para diversos dispositivos e sistemas operacionais.
                 </p>
+              </div>
+            </div>
+
+            {/* Bloco Narrativo SEO */}
+            <div className="mt-24 max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl font-bold text-white mb-6">
+                Por que escolher os planos XCloud IPTV?
+              </h2>
+              <div className="prose prose-invert mx-auto text-gray-300 leading-relaxed">
+                <p>
+                  Escolher o plano ideal no <strong>XCloud IPTV</strong> é garantir acesso a uma plataforma estável e completa. 
+                  Nossos pacotes foram desenhados para atender desde quem busca economia com o plano anual até quem prefere 
+                  flexibilidade com o plano mensal. Com <strong>ativação imediata</strong> e <strong>suporte dedicado em português</strong>, 
+                  você tem a tranquilidade de um serviço que prioriza a sua experiência de entretenimento, sem travamentos e com a melhor qualidade de imagem.
+                </p>
+              </div>
+            </div>
+
+            {/* Seção FAQ */}
+            <div className="mt-24 max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold text-white mb-4">
+                  Dúvidas Frequentes sobre os Planos
+                </h2>
+                <p className="text-gray-400">
+                  Tudo o que você precisa saber antes de assinar
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                {faqItems.map((faq, index) => (
+                  <Card key={index} className="glass-card border-white/10 hover:border-green-500/30 transition-colors">
+                    <CardHeader>
+                      <CardTitle className="text-white text-lg flex items-start gap-3">
+                        <span className="text-green-500 mt-1">?</span>
+                        {faq.question}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
             </div>
 
