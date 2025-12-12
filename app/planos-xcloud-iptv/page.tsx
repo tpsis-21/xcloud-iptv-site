@@ -281,8 +281,8 @@ export default function Page() {
 
             {/* CTA para teste grátis com link contextual */}
             <div className="text-center mt-16">
-              <h3 className="text-2xl font-bold text-white mb-4">Ainda Não Assinou XCloud IPTV?</h3>
-              <p className="text-gray-400 mb-4">Ainda não tem certeza?</p>
+              <h3 className="text-2xl font-bold text-white mb-4">Ainda com dúvidas sobre assinar XCloud IPTV?</h3>
+              <p className="text-gray-400 mb-4">Faça um teste sem compromisso antes de decidir</p>
               <Link href={testeGratisLink.href}>
                 <Button 
                   variant="outline" 
@@ -302,10 +302,10 @@ export default function Page() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl lg:text-5xl font-bold text-gradient-brand mb-4">
-                Por Que Nos Escolher? Experimente Grátis
+                Vantagens de Assinar XCloud IPTV
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Descubra os benefícios exclusivos que nossa plataforma oferece
+                Descubra por que somos a melhor escolha para seu entretenimento
               </p>
             </div>
             
@@ -364,7 +364,7 @@ export default function Page() {
                 <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Download className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">Download Aplicativo</h3>
+                <h3 className="text-xl font-semibold text-white mb-3">Download Aplicativo XCloud IPTV</h3>
                 <p className="text-gray-400">
                   Baixe nosso aplicativo e assista onde quiser. Disponível para diversos dispositivos e sistemas operacionais.
                 </p>
