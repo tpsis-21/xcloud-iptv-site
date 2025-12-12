@@ -254,7 +254,7 @@ export default function Page() {
                       </div>
                       
                       {/* Botão CTA com link centralizado */}
-                      <Button asChild className={`w-full py-4 text-lg font-semibold rounded-xl transition-all duration-300 min-h-[48px] ${
+                      <Button asChild className={`w-full py-2.5 text-base font-semibold rounded-xl transition-all duration-300 min-h-[44px] ${
                         plano.popular 
                           ? 'gradient-brand text-white shadow-lg hover:shadow-xl' 
                           : 'border-green-500/50 text-green-500 hover:bg-green-500/10'
@@ -286,7 +286,7 @@ export default function Page() {
               <Link href={testeGratisLink.href}>
                 <Button 
                   variant="outline" 
-                  className="border-green-500/50 text-green-500 hover:bg-green-500/10 hover:text-green-400 px-8 py-3 text-lg font-semibold rounded-xl transition-all duration-300"
+                  className="border-green-500/50 text-green-500 hover:bg-green-500/10 hover:text-green-400 px-6 py-2.5 text-base font-semibold rounded-xl transition-all duration-300"
                   aria-label={testeGratisLink.text}
                 >
                   <Clock className="h-5 w-5 mr-2" />

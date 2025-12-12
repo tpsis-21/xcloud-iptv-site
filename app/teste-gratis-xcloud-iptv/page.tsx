@@ -112,14 +112,14 @@ export default function Page() {
               {/* CTAs Principais - Visíveis na primeira tela */}
               <div className="space-y-6">
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-8 py-4 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group min-h-[44px]">
+                  <Button className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-2.5 text-base font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group min-h-[44px]">
                     <Link href="#formulario-teste" className="flex items-center space-x-2">
                       <Rocket className="h-5 w-5 group-hover:scale-110 transition-transform" />
                       <span>Quero Experimentar Agora</span>
                     </Link>
                   </Button>
                   
-                  <Button variant="outline" className="border-2 border-green-500 text-green-400 hover:bg-green-500/10 hover:text-green-300 px-8 py-4 text-lg font-bold rounded-xl transition-all duration-300 min-h-[44px]">
+                  <Button variant="outline" className="border-2 border-green-500 text-green-400 hover:bg-green-500/10 hover:text-green-300 px-6 py-2.5 text-base font-bold rounded-xl transition-all duration-300 min-h-[44px]">
                     <Link href={planosLink.href} className="flex items-center space-x-2">
                       <Star className="h-5 w-5" />
                       <span>Ver Planos Completos</span>
@@ -431,7 +431,7 @@ export default function Page() {
               <Link href="#formulario-teste">
                 <Button 
                   size="lg" 
-                  className="gradient-brand text-white px-8 py-4 text-lg font-semibold rounded-xl"
+                  className="gradient-brand text-white px-6 py-2.5 text-base font-semibold rounded-xl"
                   aria-label="Solicitar teste grátis XCloud IPTV agora"
                 >
                   <Rocket className="h-5 w-5 mr-2" />
