@@ -177,7 +177,7 @@ export default function Page() {
               {/* CTAs - Estratégia de Conversão Otimizada */}
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 items-center justify-center lg:justify-start lg:items-start">
                 <div className="flex flex-col items-center gap-3">
-                  <Button asChild className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 text-base font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 min-h-[44px] min-w-[44px]">
+                  <Button asChild className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-2.5 text-base font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 min-h-[44px] min-w-[44px]">
                     <Link href={createInternalLink('/planos-xcloud-iptv', 'Planos XCloud IPTV')} className="flex items-center space-x-2 w-full h-full justify-center">
                       <Crown className="h-5 w-5" />
                       <span>Ver Planos XCloud</span>
@@ -186,7 +186,7 @@ export default function Page() {
                   <span className="text-xs text-gray-300">Planos a partir de R$ 30/mês</span>
                 </div>
                 <div className="flex flex-col items-center gap-3">
-                  <Button asChild variant="outline" className="border-2 border-green-500 text-green-500 hover:bg-green-500/10 hover:text-green-400 px-6 py-3 text-base font-bold rounded-xl transition-all duration-300 min-h-[44px] min-w-[44px]">
+                  <Button asChild variant="outline" className="border-2 border-green-500 text-green-500 hover:bg-green-500/10 hover:text-green-400 px-6 py-2.5 text-base font-bold rounded-xl transition-all duration-300 min-h-[44px] min-w-[44px]">
                     <Link href={createInternalLink('/teste-gratis-xcloud-iptv', 'Teste Grátis XCloud IPTV')} className="flex items-center space-x-2 w-full h-full justify-center">
                       <Rocket className="h-5 w-5" />
                       <span>Teste Grátis</span>
@@ -266,13 +266,13 @@ export default function Page() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gradient-brand mb-4">
-              Por que escolher nossa plataforma no Brasil
+              Por que escolher XCloud IPTV no Brasil
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Descubra os benefícios exclusivos da plataforma
+              Descubra os benefícios exclusivos da plataforma líder em streaming
             </p>
             <h3 className="text-2xl font-semibold text-green-400 mt-6">
-              Streaming completo com ativação imediata
+              Streaming XCloud com ativação imediata
             </h3>
           </div>
           
@@ -281,7 +281,7 @@ export default function Page() {
               <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <CreditCard className="h-8 w-8 text-white" />
               </div>
-              <h4 className="text-xl font-semibold text-white mb-3">Planos Acessíveis</h4>
+              <h4 className="text-xl font-semibold text-white mb-3">Planos XCloud Acessíveis</h4>
               <p className="text-gray-300">
                 Assine com descontos progressivos. <Link href={createInternalLink('/planos-xcloud-iptv#anual', 'Plano Anual')} className="text-green-300 underline underline-offset-2 hover:text-green-200">Plano anual com 20% de economia</Link> e maior custo-benefício.
               </p>
@@ -290,7 +290,7 @@ export default function Page() {
               <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <ShieldCheck className="h-8 w-8 text-white" />
               </div>
-              <h4 className="text-xl font-semibold text-white mb-3">Ativação Imediata</h4>
+              <h4 className="text-xl font-semibold text-white mb-3">Ativação Imediata do Serviço</h4>
               <p className="text-gray-400">
                 Comece a usar em minutos. <span className="text-green-300">Suporte especializado</span> disponível de segunda a sábado (9h às 22h) quando você precisar.
               </p>
@@ -299,7 +299,7 @@ export default function Page() {
               <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Tv className="h-8 w-8 text-white" />
               </div>
-              <h4 className="text-xl font-semibold text-white mb-3">Compatibilidade Total</h4>
+              <h4 className="text-xl font-semibold text-white mb-3">Compatibilidade Total do App</h4>
               <p className="text-gray-300 mb-4">
                 Compatível com Android TV, celular Android, iOS, Fire Stick, Mi Stick, Windows, TVs LG, Samsung e Roku. Instale e comece a assistir hoje mesmo em qualquer dispositivo.
               </p>
@@ -313,7 +313,7 @@ export default function Page() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gradient-brand mb-4">
-              Como começar em minutos
+              Como começar no XCloud IPTV em minutos
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Transforme seu entretenimento em minutos. Economize até 70% comparado à TV tradicional.
@@ -325,7 +325,7 @@ export default function Page() {
               <div className="w-16 h-16 gradient-brand rounded-full flex items-center justify-center mx-auto mb-6">
                 <Download className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">1. Escolha seu plano</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">1. Escolha seu plano XCloud</h3>
               <p className="text-gray-300">Selecione o plano ideal para você. <span className="text-green-500">Planos a partir de R$ 30/mês</span> com descontos progressivos.</p>
             </div>
 
@@ -333,7 +333,7 @@ export default function Page() {
               <div className="w-16 h-16 gradient-brand rounded-full flex items-center justify-center mx-auto mb-6">
                 <Zap className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">2. Receba Acesso Imediato</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">2. Receba Acesso ao XCloud</h3>
               <p className="text-gray-300">Pagamento confirmado = conta ativada instantaneamente. <span className="text-green-500">Suporte especializado</span> 9h-22h.</p>
             </div>
 
@@ -341,7 +341,7 @@ export default function Page() {
               <div className="w-16 h-16 gradient-brand rounded-full flex items-center justify-center mx-auto mb-6">
                 <Tv className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">3. Aproveite Seu Streaming</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">3. Aproveite Seu Streaming IPTV</h3>
               <p className="text-gray-300">Ativação imediata em minutos. Milhares de conteúdos disponíveis em todos os dispositivos.</p>
             </div>
           </div>
@@ -357,7 +357,7 @@ export default function Page() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gradient-brand mb-4">
-              Planos de Assinatura
+              Planos de Assinatura XCloud
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Compare nossos valores de ativação mensal, trimestral, semestral e anual. Encontre o plano perfeito para você.
@@ -451,7 +451,7 @@ export default function Page() {
                       </div>
                     </div>
                     
-                    <Button asChild className={`w-full ${plano.popular ? 'gradient-brand text-white' : 'border-green-500/50 text-green-500 hover:bg-green-500/10'} py-6 text-lg font-semibold min-h-[48px]`}>
+                    <Button asChild className={`w-full ${plano.popular ? 'gradient-brand text-white' : 'border-green-500/50 text-green-500 hover:bg-green-500/10'} py-3 text-base font-semibold min-h-[44px]`}>
                       <a
                         href={plano.link}
                         target="_blank"
@@ -476,7 +476,7 @@ export default function Page() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gradient-brand mb-4">
-              Funciona em Todos Seus Dispositivos
+              XCloud Funciona em Todos Seus Dispositivos
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Nossa plataforma é compatível com todos os dispositivos que você já possui. Instale em minutos e comece a assistir hoje mesmo.
@@ -522,7 +522,7 @@ export default function Page() {
           </div>
           
           <div className="text-center">
-            <Button asChild className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-4 sm:px-10 sm:py-6 text-base sm:text-xl font-bold rounded-2xl hover:scale-105 transition-all duration-300 shadow-2xl min-h-[48px] h-auto whitespace-normal">
+            <Button asChild className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 sm:px-8 sm:py-3 text-base sm:text-lg font-bold rounded-2xl hover:scale-105 transition-all duration-300 shadow-2xl min-h-[48px] h-auto whitespace-normal">
               <Link href={createInternalLink('/download', 'Download XCloud IPTV')} className="flex items-center justify-center space-x-3 text-center">
                 <Download className="h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0" />
                 <span>Ver Guia Completo de Instalação</span>
@@ -538,7 +538,7 @@ export default function Page() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gradient-brand mb-4">
-              Nossa Plataforma vs TV Tradicional
+              XCloud IPTV vs TV Tradicional
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Compare e descubra as vantagens do streaming moderno
@@ -592,7 +592,7 @@ export default function Page() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gradient-brand mb-4">
-              Top 5 Dicas Para Melhorar sua Experiência de Streaming
+              Top 5 Dicas para Melhorar sua Experiência com XCloud IPTV
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               Maximize seu entretenimento com estas estratégias comprovadas
@@ -699,7 +699,7 @@ export default function Page() {
           </div>
 
           <div className="text-center mt-12">
-            <Button asChild className="gradient-brand text-white px-8 py-4 text-lg font-semibold rounded-xl">
+            <Button asChild className="gradient-brand text-white px-6 py-3 text-base font-semibold rounded-xl">
               <Link href={createInternalLink('/planos-xcloud-iptv', 'Planos XCloud IPTV')}>
                 Ver Planos
               </Link>
@@ -713,7 +713,7 @@ export default function Page() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gradient-brand mb-4">
-              Perguntas frequentes
+              Perguntas frequentes sobre XCloud IPTV
             </h2>
             <p className="text-xl text-gray-400">
               Tire suas dúvidas sobre a plataforma
