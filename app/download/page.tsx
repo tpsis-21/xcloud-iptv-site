@@ -81,9 +81,21 @@ export default function DownloadPage() {
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Guia oficial passo a passo com downloads seguros e código XCloudTV no Downloader. Compatível com Android, iOS, Smart TV e Fire TV Stick. Suporte dedicado incluído.
             </p>
-          </div>
-
-
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+                <Button asChild className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-8 py-4 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 min-h-[50px]">
+                  <Link href={createInternalLink('/planos-xcloud-iptv', 'Planos XCloud IPTV')} className="flex items-center space-x-2">
+                    <Star className="h-5 w-5" />
+                    <span>Ver Planos Disponíveis</span>
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" className="border-2 border-green-500 text-green-500 hover:bg-green-500/10 hover:text-green-400 px-8 py-4 text-lg font-bold rounded-xl transition-all duration-300 min-h-[50px]">
+                  <Link href={createInternalLink('/', 'Página Inicial XCloud IPTV')} className="flex items-center space-x-2">
+                    <ExternalLink className="h-5 w-5" />
+                    <span>Voltar para Início</span>
+                  </Link>
+                </Button>
+              </div>
+            </div>
 
           {/* Smart TV Section */}
           <div id="smart-tv" className="mb-16 scroll-mt-20">
