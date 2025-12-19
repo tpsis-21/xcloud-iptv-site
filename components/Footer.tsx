@@ -94,7 +94,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-2 text-sm text-gray-300">
                 <Zap className="h-4 w-4 text-green-500" />
-                <span>Computador Web</span>
+                <span>Computador</span>
               </div>
             </div>
           </div>
