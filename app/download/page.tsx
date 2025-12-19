@@ -74,14 +74,14 @@ export default function DownloadPage() {
       {/* Hero Section */}
       <section className="relative pt-24 sm:pt-28 py-20 z-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-left mb-16">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight text-gradient-brand drop-shadow-2xl mb-6">
               Baixe e Instale XCloud IPTV em Poucos Minutos
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl">
               Guia oficial passo a passo com downloads seguros e código XCloudTV no Downloader. Compatível com Android, iOS, Smart TV e Fire TV Stick. Suporte dedicado incluído.
             </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+            <div className="flex flex-col sm:flex-row gap-4 justify-start mt-8">
                 <Button asChild className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-8 py-4 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 min-h-[50px]">
                   <Link href={createInternalLink('/planos-xcloud-iptv', 'Planos XCloud IPTV')} className="flex items-center space-x-2">
                     <Star className="h-5 w-5" />
