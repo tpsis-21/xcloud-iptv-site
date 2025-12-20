@@ -25,13 +25,13 @@ export const EXTERNAL_LINKS = {
   // 💰 PAGAMENTOS CAKTO - PLANOS OFICIAIS
   payments: {
     // Plano Mensal - R$ 30,00
-    mensal: 'https://pay.cakto.com.br/f2h6gau',
+    mensal: 'https://pay.cakto.com.br/fhwwr6z',
     // Plano Trimestral - R$ 81,00 
-    trimestral: 'https://pay.cakto.com.br/42n8kgr',
+    trimestral: 'https://pay.cakto.com.br/uqczowy',
     // Plano Semestral - R$ 153,00
-    semestral: 'https://pay.cakto.com.br/3bndnkh',
+    semestral: 'https://pay.cakto.com.br/3c2ajtg',
     // Plano Anual - R$ 288,00
-    anual: 'https://pay.cakto.com.br/3crawid',
+    anual: 'https://pay.cakto.com.br/zekbw38',
   },
   
   // 📱 DOWNLOADS APLICATIVOS
