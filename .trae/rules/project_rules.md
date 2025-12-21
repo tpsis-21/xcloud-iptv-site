@@ -10,10 +10,10 @@ Url do site: xcloudiptv.com.br
 
 ➡️ OS Planos São:
 Planos:
-01 Mês R$ 30,00 > https://pay.cakto.com.br/f2h6gau
-03 Meses DE R$81,00 > https://pay.cakto.com.br/42n8kgr
-06 Meses R$ 153,00 > https://pay.cakto.com.br/3bndnkh
-12 Meses R$ 288,00 > https://pay.cakto.com.br/3crawid
+01 Mês R$ 30,00 > https://pay.cakto.com.br/fhwwr6z
+03 Meses DE R$81,00 > https://pay.cakto.com.br/uqczowy
+06 Meses R$ 153,00 > https://pay.cakto.com.br/3c2ajtg
+12 Meses R$ 288,00 > https://pay.cakto.com.br/zekbw38
 USe os links para redirecionar ao metodo de pagamento no cakto.
 
 
